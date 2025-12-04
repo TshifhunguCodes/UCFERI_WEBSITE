@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Incubation Program | UCfERI - University of Venda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/incubation.css">
+     <link rel="stylesheet" href="css/programs.css">
+   
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <div class="announcement-content">
+                <span class="announcement-tag"><i class="fas fa-bell"></i> Applications Open</span>
+                <span class="announcement-text">Business Incubation 2024 - Closing 29 February 2024</span>
+                <a href="#apply" class="announcement-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-image">
+                            <img src="images/univen-logo.png" alt="University of Venda">
+                        </div>
+                        <div class="logo-text">
+                            <h1>UCfERI</h1>
+                            <p>Entrepreneurship & Rapid Incubation</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li class="dropdown">
+                        <a href="programs.html" class="nav-link active"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="incubation.html" class="active"><i class="fas fa-rocket"></i> Business Incubation</a>
+                            <a href="sweep.html"><i class="fas fa-users"></i> SWEEP Program</a>
+                        </div>
+                    </li>
+                    <li><a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Resources</a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+
+                <!-- CTA Button -->
+                <div class="header-cta">
+                    <a href="tel:0825868078" class="phone-link">
+                        <i class="fas fa-phone"></i>
+                        082 586 8078
+                    </a>
+                    <a href="#apply" class="btn btn-primary">Apply Now</a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Business Incubation Program</h1>
+                <p>Transform your business idea into a successful venture</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="programs.html">Programs</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Business Incubation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section class="program-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Program Overview</h2>
+                    <p class="lead">Comprehensive support for SMMEs and startups to navigate early-stage challenges and increase their chances of success.</p>
+                    
+                    <div class="overview-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Duration</h4>
+                                <p>6-12 Months Intensive Program</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Cohort Size</h4>
+                                <p>Limited to 25 Entrepreneurs</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>UNIVEN Centre for Entrepreneurship Building</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Application Deadline</h4>
+                                <p>29 February 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-image">
+                    <img src="images/incubation-program.jpg" alt="Business Incubation">
+                    <div class="deadline-card">
+                        <div class="deadline-header">
+                            <i class="fas fa-hourglass-half"></i>
+                            <h4>Application Deadline</h4>
+                        </div>
+                        <div class="deadline-content">
+                            <div class="countdown" id="incubation-countdown">
+                                45 days remaining
+                            </div>
+                            <a href="#apply" class="btn btn-primary btn-block">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Benefits -->
+    <section class="program-benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What You'll Gain</h2>
+                <p class="section-subtitle">Comprehensive support for your business journey</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Idea Validation</h3>
+                    <p>Test and validate your business idea with market research and feedback</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Planning</h3>
+                    <p>Develop a comprehensive business plan with financial projections</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Mentorship</h3>
+                    <p>One-on-one guidance from experienced entrepreneurs and industry experts</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Funding Support</h3>
+                    <p>Access to grants, loans, and investor networks for startup capital</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>Connect with investors, partners, and fellow entrepreneurs</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training Workshops</h3>
+                    <p>Weekly workshops on essential business skills and knowledge</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Structure -->
+    <section class="program-structure">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Program Structure</h2>
+                <p class="section-subtitle">6-month intensive program with 3 phases</p>
+            </div>
+            
+            <div class="structure-timeline">
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-number">01</div>
+                        <h3>Foundation Phase<br><span>(Months 1-2)</span></h3>
+                    </div>
+                    <div class="phase-content">
+                        <ul>
+                            <li>Business idea validation</li>
+                            <li>Market research training</li>
+                            <li>Basic financial literacy</li>
+                            <li>Legal requirements workshop</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-number">02</div>
+                        <h3>Development Phase<br><span>(Months 3-4)</span></h3>
+                    </div>
+                    <div class="phase-content">
+                        <ul>
+                            <li>Business plan development</li>
+                            <li>Marketing strategy creation</li>
+                            <li>Financial projections</li>
+                            <li>Pitch deck preparation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-number">03</div>
+                        <h3>Launch Phase<br><span>(Months 5-6)</span></h3>
+                    </div>
+                    <div class="phase-content">
+                        <ul>
+                            <li>Minimum viable product launch</li>
+                            <li>Market entry strategies</li>
+                            <li>Investor pitch preparation</li>
+                            <li>Post-launch support planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Criteria -->
+    <section class="eligibility-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Eligibility Criteria</h2>
+                <p class="section-subtitle">Who can apply for this program</p>
+            </div>
+            
+            <div class="eligibility-grid">
+                <div class="eligibility-card">
+                    <div class="eligibility-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Business Stage</h3>
+                    <p>Pre-idea, startup, or existing SMME (0-5 years)</p>
+                </div>
+                
+                <div class="eligibility-card">
+                    <div class="eligibility-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Based in or serving Vhembe District communities</p>
+                </div>
+                
+                <div class="eligibility-card">
+                    <div class="eligibility-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Commitment</h3>
+                    <p>Available for weekly workshops and mentorship sessions</p>
+                </div>
+                
+                <div class="eligibility-card">
+                    <div class="eligibility-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Business idea should be innovative and scalable</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="application-process" id="apply">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How to Apply</h2>
+                <p class="section-subtitle">Follow these simple steps to submit your application</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Prepare Documents</h3>
+                        <p>Latest photograph and motivational letter explaining your business idea</p>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Submit Application</h3>
+                        <p>Apply online through our portal or email your documents</p>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Interview</h3>
+                        <p>Attend an interview with our selection committee</p>
+                    </div>
+                </div>
+                
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Get Accepted</h3>
+                        <p>Receive acceptance letter and program details</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="application-cta">
+                <div class="cta-content">
+                    <h3>Ready to Apply?</h3>
+                    <p>Submit your application before the deadline: <strong>29 February 2024</strong></p>
+                    <div class="cta-buttons">
+                        <a href="https://lnkd.in/dEzR6BkN" target="_blank" class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i>
+                            Apply Online
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">
+                            <i class="fas fa-question-circle"></i>
+                            Ask Questions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about the program</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there any cost to join the incubation program?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The program is fully funded for selected participants. There are no costs for training, mentorship, or basic resources provided by UCfERI.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What kind of businesses are accepted?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept businesses in various sectors including agriculture, technology, services, manufacturing, and retail. The business should have potential for growth and job creation in Vhembe District.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What support is provided after the 6-month program?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Graduates receive 6 months of post-incubation support including continued mentorship, networking opportunities, and access to funding information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I apply if I'm still employed?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, but you must demonstrate commitment to attending all required sessions and developing your business alongside your employment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/ucferi-logo-white.png" alt="UCfERI">
+                    </div>
+                    <p class="footer-about">
+                        Nurturing entrepreneurs, fostering innovation to propel the greater rural economy 
+                        of Vhembe district.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="incubation.html">Business Incubation</a></li>
+                        <li><a href="sweep.html">SWEEP Program</a></li>
+                        <li><a href="programs.html">All Programs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> UNIVEN Centre for Entrepreneurship Building, Thohoyandou</p>
+                        <p><i class="fas fa-phone"></i> 082 586 8078 / 063 794 3953</p>
+                        <p><i class="fas fa-envelope"></i> ucferi@univen.ac.za</p>
+                        <p><i class="fas fa-globe"></i> www.edhe.co.za</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p>Subscribe for updates on programs and opportunities</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="hashtags">
+                        <span>#creatingfutureleaders</span>
+                        <span>#whereentrepreneursthrive</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2024 University of Venda Centre for Entrepreneurship & Rapid Incubation. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/incubation.js"></script>
+    <script src="js/programs.js"></script>
+</body>
+</html>
