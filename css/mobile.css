@@ -1,0 +1,349 @@
+/* Mobile Responsive Styles */
+
+/* Base mobile styles */
+@media (max-width: 768px) {
+    /* Container adjustments */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+
+    /* Announcement bar */
+    .announcement-bar .announcement-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .announcement-tag,
+    .announcement-text,
+    .announcement-link {
+        margin: 5px 0;
+    }
+
+    /* Header and Navigation */
+    .header {
+        position: relative;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .logo-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo-text p {
+        font-size: 0.8rem;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-link {
+        padding: 15px;
+        justify-content: space-between;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .header-cta {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+        display: none;
+    }
+
+    .header-cta.active {
+        display: flex;
+    }
+
+    .mobile-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        padding: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .quick-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stat {
+        width: 100%;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-large {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Programs Preview */
+    .programs-grid,
+    .services-grid,
+    .events-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .program-card,
+    .service,
+    .event-card,
+    .team-member {
+        width: 100%;
+    }
+
+    /* Trust Section */
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Page Header */
+    .page-header-content h1 {
+        font-size: 2rem;
+    }
+
+    .page-header-content p {
+        font-size: 1rem;
+    }
+
+    /* About Page */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .mission-values {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Timeline */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-year {
+        left: 0;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 0.9rem;
+    }
+
+    /* Programs Page */
+    .programs-grid-large {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .program-card-featured {
+        margin-bottom: 30px;
+    }
+
+    .training-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Comparison Table */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    /* Guidance Options */
+    .guidance-options {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .option {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* Forms */
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Typography adjustments */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .programs-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .training-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mission-values {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .nav-link,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+}
+
+/* Print styles */
+@media print {
+    .announcement-bar,
+    .header,
+    .footer,
+    .hero-cta,
+    .btn {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+}

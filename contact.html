@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Programs | UCfERI - University of Venda</title>
+    <title>Contact UCfERI | University of Venda Centre for Entrepreneurship</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/programs.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="container">
             <div class="announcement-content">
-                <span class="announcement-tag"><i class="fas fa-bell"></i> Applications Open</span>
-                <span class="announcement-text">Multiple Programs Available for 2024/2025</span>
-                <a href="#programs" class="announcement-link">View Programs <i class="fas fa-arrow-right"></i></a>
+                <span class="announcement-tag"><i class="fas fa-bell"></i> New Program</span>
+                <span class="announcement-text">Applications now open for 2024 Business Incubation Program</span>
+                <a href="incubation.html" class="announcement-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -29,7 +30,7 @@
                 <div class="logo">
                     <a href="index.html">
                         <div class="logo-image">
-                            <img src="images/univen-logo.png" alt="University of Venda">
+                            <img src="images/univen-logo.png" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
                         </div>
                         <div class="logo-text">
                             <h1>UCfERI</h1>
@@ -43,15 +44,15 @@
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us</a></li>
                     <li class="dropdown">
-                        <a href="programs.html" class="nav-link active"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
+                        <a href="programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
                             <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
                             <a href="sweep.html"><i class="fas fa-users"></i> SWEEP Program</a>
-                            <a href="#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
+                            <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
                     <li><a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Resources</a></li>
-                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
 
                 <!-- CTA Button -->
@@ -60,17 +61,17 @@
                         <i class="fas fa-phone"></i>
                         082 586 8078
                     </a>
-                    <a href="#apply" class="btn btn-primary">Apply Now</a>
+                    <a href="incubation.html#apply" class="btn btn-primary">Apply Now</a>
                 </div>
 
                 <!-- Mobile Menu Toggle -->
-                <div class="mobile-toggle">
+                <button class="mobile-toggle" aria-label="Toggle mobile menu">
                     <div class="hamburger">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -79,314 +80,664 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content">
-                <h1>Our Programs</h1>
-                <p>Comprehensive entrepreneurship programs for every stage of your journey</p>
+                <h1>Contact UCfERI</h1>
+                <p>Connect with our team for entrepreneurial support, program information, partnership opportunities, or business development assistance</p>
                 <div class="breadcrumb">
                     <a href="index.html">Home</a>
                     <i class="fas fa-chevron-right"></i>
-                    <span>Programs</span>
+                    <span>Contact</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Grid -->
-    <section class="programs-overview" id="programs">
+    <!-- Contact Overview -->
+    <section class="contact-overview">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Choose Your Program</h2>
-                <p class="section-subtitle">Select the program that matches your entrepreneurial goals</p>
-            </div>
-            
-            <div class="programs-grid-large">
-                <div class="program-card-featured incubation">
-                    <div class="program-badge">2024 Intake</div>
-                    <div class="program-content">
-                        <div class="program-icon">
-                            <i class="fas fa-building"></i>
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Get in Touch</h2>
+                    <p class="lead">At UCfERI, we're committed to supporting entrepreneurs at every stage of their journey. Whether you're a student with a startup idea, an existing SMME seeking growth, or a partner looking to collaborate, our team is here to help.</p>
+                    
+                    <div class="contact-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">48h</div>
+                            <div class="stat-label">Average Response Time</div>
                         </div>
-                        <h2>Business Incubation Program</h2>
-                        <p class="program-description">Transform your business idea into a successful venture with our comprehensive 6-12 month incubation program.</p>
-                        
-                        <div class="program-highlights">
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>Idea validation & business planning</span>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>Mentorship from industry experts</span>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>Access to funding opportunities</span>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>Networking with investors</span>
-                            </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Satisfaction Rate</div>
                         </div>
-                        
-                        <div class="program-details">
-                            <div class="detail">
-                                <i class="fas fa-clock"></i>
-                                <span>Duration: 6-12 Months</span>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-users"></i>
-                                <span>Cohort: 25 Entrepreneurs</span>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-calendar"></i>
-                                <span>Deadline: 29 Feb 2024</span>
-                            </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Entrepreneurs Supported</div>
                         </div>
-                        
-                        <div class="program-cta">
-                            <a href="incubation.html" class="btn btn-primary">Learn More</a>
-                            <a href="incubation.html#apply" class="btn btn-outline">Apply Now</a>
+                    </div>
+                    
+                    <div class="office-hours">
+                        <h3><i class="fas fa-clock"></i> Office Hours</h3>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <strong>Monday - Friday</strong>
+                                <p>8:00 AM - 4:30 PM</p>
+                            </div>
+                            <div class="hours-item">
+                                <strong>Saturday</strong>
+                                <p>9:00 AM - 1:00 PM (Workshops only)</p>
+                            </div>
+                            <div class="hours-item">
+                                <strong>Sunday & Public Holidays</strong>
+                                <p>Closed</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="program-card-featured sweep">
-                    <div class="program-badge">Executive 2026</div>
-                    <div class="program-content">
-                        <div class="program-icon">
-                            <i class="fas fa-crown"></i>
+                <div class="overview-image">
+                    <img src="images/contact-office.jpg" alt="UCfERI Office at University of Venda">
+                    <div class="emergency-contact">
+                        <div class="emergency-header">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h4>Urgent Inquiries</h4>
                         </div>
-                        <h2>SWEEP Leadership Program</h2>
-                        <p class="program-description">Join the Student Women Economic Empowerment Programme for leadership development and entrepreneurship skills.</p>
-                        
-                        <div class="program-highlights">
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>7 Executive positions available</span>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>Leadership certificate & training</span>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>Sisterhood circle & networking</span>
-                            </div>
-                            <div class="highlight">
-                                <i class="fas fa-check"></i>
-                                <span>Career enhancement opportunities</span>
-                            </div>
-                        </div>
-                        
-                        <div class="program-details">
-                            <div class="detail">
-                                <i class="fas fa-clock"></i>
-                                <span>Duration: 1 Year</span>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-users"></i>
-                                <span>For: UNIVEN Female Students</span>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-calendar"></i>
-                                <span>Deadline: 02 Dec 2025</span>
-                            </div>
-                        </div>
-                        
-                        <div class="program-cta">
-                            <a href="sweep.html" class="btn btn-secondary">Learn More</a>
-                            <a href="sweep.html#apply" class="btn btn-outline">Apply Now</a>
-                        </div>
+                        <p>For urgent matters outside business hours, please email with "URGENT" in the subject line.</p>
+                        <a href="mailto:ucferi@univen.ac.za" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Send Urgent Email
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Training Programs -->
-    <section class="training-programs" id="training">
+    <!-- Contact Information -->
+    <section class="contact-information">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Training & Workshop Programs</h2>
-                <p class="section-subtitle">Short-term training programs to enhance your skills</p>
+                <h2 class="section-title">Contact Information</h2>
+                <p class="section-subtitle">Multiple ways to reach our team</p>
             </div>
             
-            <div class="training-grid">
-                <div class="training-card">
-                    <div class="training-icon">
-                        <i class="fas fa-chart-line"></i>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>Business Planning Workshop</h3>
-                    <p>Learn to create comprehensive business plans with financial projections</p>
-                    <div class="training-details">
-                        <span><i class="fas fa-clock"></i> 2 Days</span>
-                        <span><i class="fas fa-user"></i> Beginners</span>
-                    </div>
-                    <a href="#" class="btn btn-outline">Register</a>
+                    <h3>Physical Address</h3>
+                    <p>
+                        <strong>University of Venda</strong><br>
+                        Centre for Entrepreneurship Building<br>
+                        Thohoyandou, Limpopo Province<br>
+                        South Africa, 0950<br>
+                        <em class="location-note">Located in the UNESCO Vhembe Biosphere Reserve</em>
+                    </p>
+                    <a href="#" class="btn-link">
+                        <i class="fas fa-directions"></i>
+                        Get Directions
+                    </a>
                 </div>
                 
-                <div class="training-card">
-                    <div class="training-icon">
-                        <i class="fas fa-money-bill-wave"></i>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
                     </div>
-                    <h3>Financial Management</h3>
-                    <p>Essential financial skills for small business owners</p>
-                    <div class="training-details">
-                        <span><i class="fas fa-clock"></i> 3 Days</span>
-                        <span><i class="fas fa-user"></i> Intermediate</span>
+                    <h3>Phone & Email</h3>
+                    <p>
+                        <strong>Main Office:</strong> +27 15 962 8000<br>
+                        <strong>Direct Line:</strong> +27 15 962 8888<br>
+                        <strong>Mobile:</strong> +27 82 586 8078<br>
+                        <strong>Email:</strong> ucferi@univen.ac.za
+                    </p>
+                    <div class="contact-buttons">
+                        <a href="tel:+27159628000" class="btn btn-small">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                        <a href="mailto:ucferi@univen.ac.za" class="btn btn-small btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Email Us
+                        </a>
                     </div>
-                    <a href="#" class="btn btn-outline">Register</a>
                 </div>
                 
-                <div class="training-card">
-                    <div class="training-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Pitching & Presentation</h3>
-                    <p>Master the art of pitching to investors and customers</p>
-                    <div class="training-details">
-                        <span><i class="fas fa-clock"></i> 1 Day</span>
-                        <span><i class="fas fa-user"></i> All Levels</span>
-                    </div>
-                    <a href="#" class="btn btn-outline">Register</a>
-                </div>
-                
-                <div class="training-card">
-                    <div class="training-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Online marketing strategies for business growth</p>
-                    <div class="training-details">
-                        <span><i class="fas fa-clock"></i> 2 Days</span>
-                        <span><i class="fas fa-user"></i> Beginners</span>
-                    </div>
-                    <a href="#" class="btn btn-outline">Register</a>
-                </div>
-                
-                <div class="training-card">
-                    <div class="training-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Legal Requirements</h3>
-                    <p>Understanding legal aspects of running a business</p>
-                    <div class="training-details">
-                        <span><i class="fas fa-clock"></i> 1 Day</span>
-                        <span><i class="fas fa-user"></i> All Levels</span>
-                    </div>
-                    <a href="#" class="btn btn-outline">Register</a>
-                </div>
-                
-                <div class="training-card">
-                    <div class="training-icon">
+                <div class="info-card">
+                    <div class="info-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Team Leadership</h3>
-                    <p>Effective team management and leadership skills</p>
-                    <div class="training-details">
-                        <span><i class="fas fa-clock"></i> 2 Days</span>
-                        <span><i class="fas fa-user"></i> Intermediate</span>
+                    <h3>Team Contacts</h3>
+                    <div class="team-list">
+                        <div class="team-member">
+                            <strong>Dr M. Ganto</strong>
+                            <span>Centre Manager</span>
+                            <small>ganto.m@univen.ac.za</small>
+                        </div>
+                        <div class="team-member">
+                            <strong>Ms S. Mphaphathe</strong>
+                            <span>Business Development</span>
+                            <small>mphaphathe.s@univen.ac.za</small>
+                        </div>
+                        <div class="team-member">
+                            <strong>Mr P. Nyalungu</strong>
+                            <span>Marketing Officer</span>
+                            <small>nyalungu.p@univen.ac.za</small>
+                        </div>
                     </div>
-                    <a href="#" class="btn btn-outline">Register</a>
+                    <a href="#contact-form" class="btn-link">
+                        <i class="fas fa-user-plus"></i>
+                        Contact Specific Person
+                    </a>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Appointments</h3>
+                    <p>
+                        Schedule a meeting with our team for personalized business consultation, funding advice, or mentorship sessions.
+                    </p>
+                    <ul class="appointment-types">
+                        <li><i class="fas fa-check-circle"></i> In-person meetings</li>
+                        <li><i class="fas fa-check-circle"></i> Virtual consultations</li>
+                        <li><i class="fas fa-check-circle"></i> Site visits</li>
+                        <li><i class="fas fa-check-circle"></i> Group workshops</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary btn-small">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Appointment
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Program Comparison -->
-    <section class="comparison-section">
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Program Comparison</h2>
-                <p class="section-subtitle">Find the right program for your needs</p>
+                <h2 class="section-title">Send Us a Message</h2>
+                <p class="section-subtitle">Fill out the form below and our team will get back to you within 48 hours</p>
             </div>
             
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Business Incubation</th>
-                            <th>SWEEP Program</th>
-                            <th>Training Workshops</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Duration</td>
-                            <td>6-12 Months</td>
-                            <td>1 Year</td>
-                            <td>1-3 Days</td>
-                        </tr>
-                        <tr>
-                            <td>Target Audience</td>
-                            <td>Startups & SMMEs</td>
-                            <td>UNIVEN Female Students</td>
-                            <td>All Entrepreneurs</td>
-                        </tr>
-                        <tr>
-                            <td>Focus</td>
-                            <td>Business Development</td>
-                            <td>Leadership & Empowerment</td>
-                            <td>Skill Development</td>
-                        </tr>
-                        <tr>
-                            <td>Mentorship</td>
-                            <td>One-on-One</td>
-                            <td>Group & Individual</td>
-                            <td>Workshop-based</td>
-                        </tr>
-                        <tr>
-                            <td>Funding Support</td>
-                            <td>Yes</td>
-                            <td>Limited</td>
-                            <td>No</td>
-                        </tr>
-                        <tr>
-                            <td>Certificate</td>
-                            <td>Incubation Certificate</td>
-                            <td>Leadership Certificate</td>
-                            <td>Workshop Certificate</td>
-                        </tr>
-                        <tr>
-                            <td>Cost</td>
-                            <td>Free</td>
-                            <td>Free</td>
-                            <td>Some Free, Some Paid</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="form-grid">
+                <div class="form-container">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">
+                                    <i class="fas fa-user"></i>
+                                    Full Name *
+                                </label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number
+                                </label>
+                                <input type="tel" id="phone" name="phone" placeholder="+27 12 345 6789">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="category">
+                                    <i class="fas fa-tag"></i>
+                                    Your Category *
+                                </label>
+                                <select id="category" name="category" required>
+                                    <option value="">Select your category</option>
+                                    <option value="student">UNIVEN Student</option>
+                                    <option value="staff">UNIVEN Staff</option>
+                                    <option value="alumni">UNIVEN Alumni</option>
+                                    <option value="sme">SMME Owner</option>
+                                    <option value="community">Community Member</option>
+                                    <option value="partner">Potential Partner</option>
+                                    <option value="investor">Investor/Donor</option>
+                                    <option value="media">Media/Press</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-bullseye"></i>
+                                Purpose of Contact *
+                            </label>
+                            <div class="purpose-grid">
+                                <label class="purpose-card">
+                                    <input type="radio" name="purpose" value="support" required>
+                                    <div class="purpose-content">
+                                        <i class="fas fa-hands-helping"></i>
+                                        <h4>Business Support</h4>
+                                        <p>Need assistance with your business idea or growth</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="purpose-card">
+                                    <input type="radio" name="purpose" value="funding" required>
+                                    <div class="purpose-content">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <h4>Funding Assistance</h4>
+                                        <p>Looking for funding opportunities or financial advice</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="purpose-card">
+                                    <input type="radio" name="purpose" value="training" required>
+                                    <div class="purpose-content">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <h4>Training Program</h4>
+                                        <p>Interested in our training programs or workshops</p>
+                                    </div>
+                                </label>
+                                
+                                <label class="purpose-card">
+                                    <input type="radio" name="purpose" value="partnership" required>
+                                    <div class="purpose-content">
+                                        <i class="fas fa-handshake"></i>
+                                        <h4>Partnership</h4>
+                                        <p>Want to partner or collaborate with UCfERI</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-pen"></i>
+                                Subject *
+                            </label>
+                            <input type="text" id="subject" name="subject" required placeholder="Brief description of your inquiry">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-alt"></i>
+                                Your Message *
+                            </label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Please provide detailed information about your inquiry, including any specific requirements or deadlines..."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredContact">
+                                    <i class="fas fa-comments"></i>
+                                    Preferred Contact Method
+                                </label>
+                                <select id="preferredContact" name="preferredContact">
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone Call</option>
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="inperson">In-Person Meeting</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="urgency">
+                                    <i class="fas fa-clock"></i>
+                                    Urgency Level
+                                </label>
+                                <select id="urgency" name="urgency">
+                                    <option value="normal">Normal (3-5 business days)</option>
+                                    <option value="medium">Medium (48 hours)</option>
+                                    <option value="high">High (24 hours)</option>
+                                    <option value="urgent">Urgent (Same day)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                            <p class="form-note">
+                                <i class="fas fa-info-circle"></i>
+                                By submitting this form, you agree to our <a href="#">Privacy Policy</a>. We'll respond within 48 hours.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="form-sidebar">
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-question-circle"></i> Need Help Faster?</h3>
+                        <p>Try these alternative contact methods for quicker responses:</p>
+                        
+                        <div class="quick-links">
+                            <a href="tel:+27159628000" class="quick-link">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Call Our Office</strong>
+                                    <span>+27 15 962 8000</span>
+                                </div>
+                            </a>
+                            
+                            <a href="mailto:ucferi@univen.ac.za" class="quick-link">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Send Direct Email</strong>
+                                    <span>ucferi@univen.ac.za</span>
+                                </div>
+                            </a>
+                            
+                            <a href="https://wa.me/27825868078" target="_blank" class="quick-link">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <strong>WhatsApp</strong>
+                                    <span>+27 82 586 8078</span>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="quick-link">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <strong>Book Online</strong>
+                                    <span>Schedule a meeting</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-lightbulb"></i> Before You Contact</h3>
+                        <ul class="tip-list">
+                            <li><i class="fas fa-check"></i> Check our <a href="resources.html">Resources page</a> for FAQs</li>
+                            <li><i class="fas fa-check"></i> Have your business details ready</li>
+                            <li><i class="fas fa-check"></i> Be specific about your needs</li>
+                            <li><i class="fas fa-check"></i> Include relevant documents if needed</li>
+                            <li><i class="fas fa-check"></i> Mention if you're a current participant</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-clock"></i> Response Time</h3>
+                        <div class="response-info">
+                            <div class="response-item">
+                                <div class="response-time">24h</div>
+                                <div class="response-desc">
+                                    <strong>Urgent Inquiries</strong>
+                                    <span>Emergency support requests</span>
+                                </div>
+                            </div>
+                            <div class="response-item">
+                                <div class="response-time">48h</div>
+                                <div class="response-desc">
+                                    <strong>Standard Inquiries</strong>
+                                    <span>Most business support requests</span>
+                                </div>
+                            </div>
+                            <div class="response-item">
+                                <div class="response-time">72h</div>
+                                <div class="response-desc">
+                                    <strong>Complex Inquiries</strong>
+                                    <span>Partnership proposals, funding applications</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Application Guidance -->
-    <section class="application-guidance" id="apply">
+    <!-- Partners Section -->
+    <section class="partners-section">
         <div class="container">
-            <div class="guidance-content">
-                <h2>Need Help Choosing a Program?</h2>
-                <p>Our team can help you select the right program based on your goals and background</p>
+            <div class="section-header">
+                <h2 class="section-title">Strategic Partners</h2>
+                <p class="section-subtitle">Collaborating with leading organizations to enhance entrepreneurial support</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>SEDFA</h3>
+                    <p>Small Enterprise Development and Finance Agency - Our primary funding and development partner supporting SMME growth</p>
+                    <a href="#" class="partner-link">Visit Partner Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
                 
-                <div class="guidance-options">
-                    <div class="option">
-                        <i class="fas fa-comments"></i>
-                        <h3>Free Consultation</h3>
-                        <p>Schedule a 30-minute consultation with our program advisors</p>
-                        <a href="contact.html" class="btn btn-outline">Book Consultation</a>
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-university"></i>
                     </div>
+                    <h3>ABSA Bank</h3>
+                    <p>Financial literacy programs, banking services, and funding opportunities for entrepreneurs</p>
+                    <a href="#" class="partner-link">Visit Partner Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>NIPMO</h3>
+                    <p>National Intellectual Property Management Office - Protecting and commercializing innovations</p>
+                    <a href="#" class="partner-link">Visit Partner Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>TIA</h3>
+                    <p>Technology Innovation Agency - Supporting technology commercialization and innovation</p>
+                    <a href="#" class="partner-link">Visit Partner Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Vhembe District Municipality</h3>
+                    <p>Local government partnership for community development and economic growth initiatives</p>
+                    <a href="#" class="partner-link">Visit Partner Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>THENSA</h3>
+                    <p>Technological Higher Education Network South Africa - Collaboration in tech entrepreneurship</p>
+                    <a href="#" class="partner-link">Visit Partner Site <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visiting Information -->
+    <section class="visiting-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visiting Our Centre</h2>
+                <p class="section-subtitle">Plan your visit to the UCfERI Centre at University of Venda</p>
+            </div>
+            
+            <div class="visiting-grid">
+                <div class="visiting-card">
+                    <h3><i class="fas fa-map-signs"></i> Getting Here</h3>
+                    <p>The UCfERI Centre is located within the University of Venda campus in Thohoyandou, Limpopo.</p>
                     
-                    <div class="option">
-                        <i class="fas fa-file-alt"></i>
-                        <h3>Download Guide</h3>
-                        <p>Get our comprehensive program guide with all details</p>
-                        <a href="#" class="btn btn-outline">Download PDF</a>
+                    <div class="directions">
+                        <h4>From Polokwane:</h4>
+                        <ul>
+                            <li>Take the R71 towards Thohoyandou (approx. 120km)</li>
+                            <li>Follow signs to University of Venda</li>
+                            <li>Enter through Main Gate 1</li>
+                            <li>Follow signage to Centre for Entrepreneurship Building</li>
+                        </ul>
                     </div>
+                </div>
+                
+                <div class="visiting-card">
+                    <h3><i class="fas fa-car"></i> Parking Information</h3>
+                    <p>Visitor parking is available near the Centre for Entrepreneurship Building:</p>
                     
-                    <div class="option">
-                        <i class="fas fa-question-circle"></i>
-                        <h3>FAQ & Support</h3>
-                        <p>Find answers to common questions about our programs</p>
-                        <a href="contact.html" class="btn btn-outline">View FAQs</a>
+                    <div class="parking-info">
+                        <div class="parking-item">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <strong>Visitor Parking</strong>
+                                <span>Zone A, closest to building</span>
+                            </div>
+                        </div>
+                        <div class="parking-item">
+                            <i class="fas fa-wheelchair"></i>
+                            <div>
+                                <strong>Accessible Parking</strong>
+                                <span>Designated spots near entrance</span>
+                            </div>
+                        </div>
+                        <div class="parking-item">
+                            <i class="fas fa-bus"></i>
+                            <div>
+                                <strong>Public Transport</strong>
+                                <span>Taxis available at campus gate</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                
+                <div class="visiting-card">
+                    <h3><i class="fas fa-building"></i> Centre Facilities</h3>
+                    <p>Our centre offers comprehensive facilities for entrepreneurs:</p>
+                    
+                    <div class="facilities">
+                        <span class="facility-tag"><i class="fas fa-wifi"></i> Free WiFi</span>
+                        <span class="facility-tag"><i class="fas fa-coffee"></i> Refreshment Area</span>
+                        <span class="facility-tag"><i class="fas fa-print"></i> Printing Services</span>
+                        <span class="facility-tag"><i class="fas fa-desktop"></i> Computer Lab</span>
+                        <span class="facility-tag"><i class="fas fa-chalkboard"></i> Meeting Rooms</span>
+                        <span class="facility-tag"><i class="fas fa-book"></i> Resource Library</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Interactive Campus Map</h4>
+                    <p>Coming soon - Interactive map to help you navigate to our centre</p>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        Download Campus Map (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Connect on Social Media</h2>
+                <p class="section-subtitle">Stay updated with our latest programs, success stories, and opportunities</p>
+            </div>
+            
+            <div class="social-grid">
+                <a href="#" class="social-card facebook">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>Facebook</h3>
+                        <p>Join our community for updates and discussions</p>
+                        <span class="social-handle">@UCfERI_UNIVEN</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-card twitter">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>Twitter</h3>
+                        <p>Follow us for real-time updates and announcements</p>
+                        <span class="social-handle">@UCfERI_Venda</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-card linkedin">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>LinkedIn</h3>
+                        <p>Connect professionally and explore opportunities</p>
+                        <span class="social-handle">UCfERI UNIVEN</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-card instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>Instagram</h3>
+                        <p>See our programs and success stories in action</p>
+                        <span class="social-handle">@ucferi_univen</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-card youtube">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>YouTube</h3>
+                        <p>Watch tutorials, workshops, and testimonials</p>
+                        <span class="social-handle">UCfERI Channel</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-card whatsapp">
+                    <div class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>WhatsApp Group</h3>
+                        <p>Join our community group for direct support</p>
+                        <span class="social-handle">+27 82 586 8078</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Entrepreneurial Journey?</h2>
+                <p>Whether you're looking for support, want to join a program, or need business advice, our team is here to help you succeed.</p>
+                <div class="cta-buttons">
+                    <a href="incubation.html#apply" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Apply for Incubation
+                    </a>
+                    <a href="tel:+27159628000" class="btn btn-secondary btn-large">
+                        <i class="fas fa-phone"></i>
+                        Call Us Now
+                    </a>
+                    <a href="resources.html" class="btn btn-outline btn-large">
+                        <i class="fas fa-download"></i>
+                        Download Resources
+                    </a>
                 </div>
             </div>
         </div>
@@ -405,11 +756,11 @@
                         of Vhembe district.
                     </p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -438,8 +789,8 @@
                     <h4 class="footer-title">Newsletter</h4>
                     <p>Subscribe for updates on programs and opportunities</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit">
+                        <input type="email" placeholder="Your email address" required aria-label="Email address">
+                        <button type="submit" aria-label="Subscribe">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
@@ -464,7 +815,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="javascript/contact.js"></script>
-    <script src="jvascript/programs.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
