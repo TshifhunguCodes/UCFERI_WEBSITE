@@ -1,90 +1,131 @@
-// Mobile menu functionality
+// Mobile Menu Functionality - Complete Solution
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu elements
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    const dropdowns = document.querySelectorAll('.dropdown > a');
-    const headerCta = document.querySelector('.header-cta');
-
-    // Mobile menu toggle
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
+    const body = document.body;
+    
+    // Only run if mobile toggle exists
+    if (mobileToggle && navMenu) {
+        // Create overlay for mobile menu
+        const overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+        
+        // Toggle menu function
+        function toggleMenu() {
+            mobileToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
-            this.classList.toggle('active');
-            headerCta.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
             
-            // Toggle aria-expanded
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
+            // Accessibility
+            const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            mobileToggle.setAttribute('aria-expanded', !isExpanded);
+        }
+        
+        // Mobile toggle click
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
         });
-    }
-
-    // Dropdown functionality for touch devices
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                parent.classList.toggle('active');
-                
-                // Close other dropdowns
-                dropdowns.forEach(other => {
-                    if (other !== this) {
-                        other.parentElement.classList.remove('active');
+        
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', function() {
+            toggleMenu();
+        });
+        
+        // Close menu when clicking a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        // Handle dropdowns on mobile
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('.nav-link');
+            
+            if (link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropdown.classList.toggle('active');
+                        
+                        // Close other dropdowns
+                        dropdowns.forEach(other => {
+                            if (other !== dropdown) {
+                                other.classList.remove('active');
+                            }
+                        });
                     }
                 });
             }
         });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768 && !e.target.closest('.navbar')) {
-            navMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
-            headerCta.classList.remove('active');
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            
-            // Close all dropdowns
-            dropdowns.forEach(dropdown => {
-                dropdown.parentElement.classList.remove('active');
-            });
-        }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            navMenu.classList.remove('active');
-            mobileToggle.classList.remove('active');
-            headerCta.classList.remove('active');
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            
-            // Close all dropdowns
-            dropdowns.forEach(dropdown => {
-                dropdown.parentElement.classList.remove('active');
-            });
-        }
-    });
-
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 992) {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('menu-open');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                
+                // Close all dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+        
+        // Close menu when clicking outside (for mobile)
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 992 && 
+                navMenu.classList.contains('active') &&
+                !e.target.closest('.nav-menu') && 
+                !e.target.closest('.mobile-toggle')) {
+                toggleMenu();
+            }
+        });
+        
+        // Ensure all dropdowns are closed on page load
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    }
+    
     // Touch swipe for hero slider
     let touchStartX = 0;
     let touchEndX = 0;
     const heroSlider = document.querySelector('.hero-images');
-
+    
     if (heroSlider) {
         heroSlider.addEventListener('touchstart', function(e) {
             touchStartX = e.changedTouches[0].screenX;
         });
-
+        
         heroSlider.addEventListener('touchend', function(e) {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
         });
-
+        
         function handleSwipe() {
             const swipeThreshold = 50;
             const difference = touchStartX - touchEndX;
-
+            
             if (Math.abs(difference) > swipeThreshold) {
                 if (difference > 0) {
                     // Swipe left - next slide
@@ -95,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-
+        
         function triggerSlide(direction) {
             const event = new CustomEvent('slide' + direction);
             document.dispatchEvent(event);
@@ -190,84 +231,4 @@ document.addEventListener('DOMContentLoaded', function() {
             imageObserver.observe(img);
         });
     }
-});
-
-// mobile-menu.js - Mobile Navigation Functionality
-
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const body = document.body;
-    
-    if (mobileToggle && navMenu) {
-        // Create overlay element
-        const overlay = document.createElement('div');
-        overlay.className = 'nav-overlay';
-        document.body.appendChild(overlay);
-        
-        // Toggle menu function
-        function toggleMenu() {
-            mobileToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        }
-        
-        // Mobile toggle click
-        mobileToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu();
-        });
-        
-        // Close menu when clicking overlay
-        overlay.addEventListener('click', function() {
-            toggleMenu();
-        });
-        
-        // Close menu when clicking a nav link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 992) {
-                    toggleMenu();
-                }
-            });
-        });
-        
-        // Handle dropdowns on mobile
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('.nav-link');
-            
-            link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 992) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                }
-            });
-        });
-        
-        // Close menu on window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 992) {
-                mobileToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                overlay.classList.remove('active');
-                body.classList.remove('menu-open');
-            }
-        });
-        
-        // Close menu with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    }
-    
-    // Ensure all dropdowns are closed on page load
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        dropdown.classList.remove('active');
-    });
 });
