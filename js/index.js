@@ -23,43 +23,42 @@ document.addEventListener('DOMContentLoaded', function() {
     initActiveNavigation();
 });
 
-// Mobile Navigation Toggle
-function initMobileNavigation() {
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const hamburger = document.querySelector('.hamburger');
+// function initMobileNavigation() {
+//     const mobileToggle = document.querySelector('.mobile-toggle');
+//     const navMenu = document.querySelector('.nav-menu');
+//     const hamburger = document.querySelector('.hamburger');
     
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
+//     if (mobileToggle && navMenu) {
+//         mobileToggle.addEventListener('click', function() {
+//             navMenu.classList.toggle('active');
+//             hamburger.classList.toggle('active');
             
-            // Animate hamburger to X
-            const spans = hamburger.querySelectorAll('span');
-            if (navMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
+//             // Animate hamburger to X
+//             const spans = hamburger.querySelectorAll('span');
+//             if (navMenu.classList.contains('active')) {
+//                 spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+//                 spans[1].style.opacity = '0';
+//                 spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+//             } else {
+//                 spans[0].style.transform = 'none';
+//                 spans[1].style.opacity = '1';
+//                 spans[2].style.transform = 'none';
+//             }
+//         });
         
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-                const spans = hamburger.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-    }
-}
+//         // Close menu when clicking outside
+//         document.addEventListener('click', function(e) {
+//             if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
+//                 navMenu.classList.remove('active');
+//                 hamburger.classList.remove('active');
+//                 const spans = hamburger.querySelectorAll('span');
+//                 spans[0].style.transform = 'none';
+//                 spans[1].style.opacity = '1';
+//                 spans[2].style.transform = 'none';
+//             }
+//         });
+//     }
+// }
 
 // Hero Slider with 3 Images
 function initHeroSlider() {
@@ -399,69 +398,6 @@ function initActiveNavigation() {
     });
 }
 
-// Add mobile menu styles
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuCSS = `
-        @media (max-width: 992px) {
-            .nav-menu {
-                position: fixed;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: var(--shadow-lg);
-                display: none;
-                z-index: 999;
-                border-top: 1px solid var(--border);
-            }
-            
-            .nav-menu.active {
-                display: flex;
-            }
-            
-            .nav-link {
-                padding: 15px;
-                width: 100%;
-                justify-content: center;
-                border-bottom: 1px solid var(--border);
-            }
-            
-            .nav-link:last-child {
-                border-bottom: none;
-            }
-            
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                border: none;
-                padding-left: 20px;
-                display: none;
-            }
-            
-            .dropdown-content.active {
-                display: block;
-            }
-            
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 6px);
-            }
-            
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
-            }
-        }
-    `;
-    
-    const style = document.createElement('style');
-    style.textContent = mobileMenuCSS;
-    document.head.appendChild(style);
-});
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
