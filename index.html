@@ -20,15 +20,15 @@
 </head>
 <body>
     <!-- Announcement Bar -->
-    <div class="announcement-bar">
+   <div class="announcement-bar">
         <div class="container">
-            <div class="announcement-content">
-                <span class="announcement-tag"><i class="fas fa-bell"></i> Applications Open</span>
+          <!-- <div class="announcement-content">
+               <span class="announcement-tag"><i class="fas fa-bell"></i> Applications Open</span>
                 <span class="announcement-text">Business Incubation 2024 & SWEEP Executive 2026</span>
-                <a href="programs.html" class="announcement-link">Apply Now <i class="fas fa-arrow-right"></i></a>
-            </div>
+                <a href="programs.html" class="announcement-link">Apply Now <i class="fas fa-arrow-right"></i></a> 
+            </div> -->
         </div>
-    </div>
+    </div> 
 
     <!-- Header -->
     <header class="header">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="logo-text">
                             <h1>UCfERI</h1>
-                            <p>Entrepreneurship & Rapid Incubation</p>
+                            <p>Centre for Entrepreneurship & Incubation</p>
                         </div>
                     </a>
                 </div>
@@ -50,7 +50,14 @@
                 <!-- Desktop Navigation -->
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li class="dropdown">     
+                        <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us  <i class="fas fa-chevron-down"></i></a> </a>
+                        <div class="dropdown-content">
+                            <a href="about.html#mission"><i class="fas fa-bullseye"></i> Mission</a>
+                            <a href="about.html#"><i class="fas fa-low-vision"></i> Vision</a>
+                            <a href="about.html#ourjourney"><i class="fas fa-history"></i> History</a>
+                        </div> 
+                    </li>      
                     <li class="dropdown">
                         <a href="programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
@@ -59,19 +66,23 @@
                             <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
-                    <li><a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Resources</a></li>
-                     <li><a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a></li>
+                    <li class="dropdown">
+                       <a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Media <i class="fas fa-chevron-down"></i></a></a>
+                       <div class="dropdown-content">
+                            <a href="resources.html#blog"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="resources.html#news"><i class="fas fa-newspaper"></i> News</a>
+                            <a href="resources.html#events"><i class="fas fa-calendar-alt"></i> Events</a>
+                       </div>
+                    </li>   
+                    <li><a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a></li>
                     <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                      
                 </ul>
 
                 <!-- CTA Button -->
                 <div class="header-cta">
-                    <a href="tel:0825868078" class="phone-link">
-                        <i class="fas fa-phone"></i>
-                        082 586 8078
-                    </a>
-                    <a href="programs.html" class="btn btn-primary">Apply Now</a>
+                   
+                  <!--  <a href="programs.html" class="btn btn-primary">Apply Now</a> -->
                 </div>
 
                 <!-- Mobile Menu Toggle -->
@@ -87,124 +98,93 @@
     </header>
 
     <!-- Hero Section with Sliding Images -->
-    <section class="hero">
-        <!-- Hero Images Container -->
-        <div class="hero-images">
-            <div class="hero-slide active" style="background-image: url('images/univencferi_logo.jpeg');">
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                   
-                </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('images/univencferi_logo.jpeg');">
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    
-                </div>
-            </div>
-            <div class="hero-slide" style="background-image: url('images/u.jpeg');">
-                <div class="slide-overlay"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">Empowering Future Leaders</h2>
-                    <p class="slide-text">Student Women Economic Empowerment Programme</p>
-                </div>
+    <!-- Hero Section with Sliding Images -->
+    <!-- Hero Section with Sliding Images -->
+<section class="hero">
+    <!-- Hero Images Container -->
+    <div class="hero-images">
+        <div class="hero-slide active" style="background-image: url('images/univencferi_logo.jpeg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <!-- Slide content can go here if needed -->
             </div>
         </div>
-
-        <!-- Slide Navigation -->
-        <div class="slide-nav">
-            <button class="slide-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-            <div class="slide-dots">
-                <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
-                <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
-                <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
+        <div class="hero-slide" style="background-image: url('images/women.jpeg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <!-- Slide content can go here if needed -->
             </div>
-            <button class="slide-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
         </div>
+        <div class="hero-slide" style="background-image: url('images/u.jpeg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="slide-title">Empowering Future Leaders</h2>
+                <p class="slide-text">Student Women Economic Empowerment Programme</p>
+            </div>
+        </div>
+    </div>
 
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-text">
-                        <div class="hero-badge">
-                            <span class="badge-text">Since 2023</span>
-                            <div class="badge-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+    <!-- Hero Content Overlay -->
+    <div class="hero-content-overlay">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-text">Since 2023</span>
+                        <div class="badge-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
+                    </div>
 
-                        <h1 class="hero-title">
-                            Unlock Your
-                            <span class="title-highlight">Entrepreneurial</span>
-                            Potential
-                        </h1>
+                    <h1 class="hero-title">
+                        Unlock Your
+                        <span class="title-highlight">Entrepreneurial</span>
+                        Potential
+                    </h1>
 
-                        <p class="hero-description">
-                            University Of Venda Center For Entrepreneurship And Rapid Incubation(UCfERI)
-                             serves as a dynamic hub that nurtures and cultivates entrepreneurs, 
-                            fostering their growth and innovation to propel the greater rural economy 
-                            of the Vhembe district. We provide integrated entrepreneurial development 
-                            support and creative interventions to startups.
-                        </p>
+                    <p class="hero-description">
+                        University Of Venda Center For Entrepreneurship And Rapid Incubation(UCfERI)
+                        serves as a dynamic hub that nurtures and cultivates entrepreneurs,
+                        fostering their growth and innovation to propel the greater rural economy
+                        of the Vhembe district. We provide integrated entrepreneurial development
+                        support and creative interventions to startups.
+                    </p>
 
-
-                        <!-- CTA Buttons -->
-                        <div class="hero-cta">
-                            <a href="incubation.html" class="btn btn-primary btn-large">
-                                <i class="fas fa-rocket"></i>
-                                Start Your Business
-                            </a>
-                            <a href="sweep.html" class="btn btn-secondary btn-large">
-                                <i class="fas fa-users"></i>
-                                Join SWEEP 2026
-                            </a>
-                        </div>
-
-                       
-                            </div>
-                        </div>
+                    <!-- CTA Buttons -->
+                    <div class="hero-cta">
+                        <a href="incubation.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i>
+                            Start Your Business
+                        </a>
+                        <a href="sweep.html" class="btn btn-secondary btn-large">
+                            <i class="fas fa-users"></i>
+                            Join SWEEP 2026
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <i class="fas fa-award"></i>
-                    <h4>SEDFA Accredited</h4>
-                    <p>Recognised Incubation Centre</p>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-handshake"></i>
-                    <h4>Government Partners</h4>
-                    <p>DTI & SEDA Certified</p>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-university"></i>
-                    <h4>University Backed</h4>
-                    <p>University of Venda Support</p>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Proven Impact</h4>
-                    <p>DHET Centre of Excellence</p>
-                </div>
-            </div>
+    <!-- Slide Navigation -->
+    <div class="slide-nav">
+        <button class="slide-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+        <div class="slide-dots">
+            <button class="dot active" data-slide="0" aria-label="Go to slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Go to slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Go to slide 3"></button>
         </div>
-    </section>
+        <button class="slide-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</section>
 
     <!-- Programs Preview -->
     <section class="programs-preview">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Programs</h2>
+                <h2 class="section-title">Our Services</h2>
                 <p class="section-subtitle">Comprehensive support for every stage of entrepreneurship</p>
             </div>
 
@@ -258,7 +238,7 @@
     <section class="services-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
+                <h2 class="section-title">Our Programs</h2>
                 <p class="section-subtitle">Comprehensive support for your entrepreneurial journey</p>
             </div>
 
@@ -313,6 +293,7 @@
             </div>
         </div>
     </section>
+    
 
     <!-- Upcoming Events -->
     <section class="events-section">
@@ -373,6 +354,66 @@
             </div>
         </div>
     </section>
+
+    
+    <!-- Trust Section -->
+   <!-- Trust Section -->
+<section class="trust-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">
+                <span class="badge-text">Trust & Recognition</span>
+                <div class="badge-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <h2 class="section-title">Our Credentials & Partners</h2>
+            <p class="section-subtitle">Recognised and supported by leading institutions and government bodies</p>
+        </div>
+        
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3 class="trust-title">SEDFA Accredited</h3>
+                <p class="trust-description">Recognised Incubation Centre</p>
+                <div class="trust-badge">Certified</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="trust-title">Government Partners</h3>
+                <p class="trust-description">DTI & SEDA Certified</p>
+                <div class="trust-badge">Official Partner</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3 class="trust-title">University Backed</h3>
+                <p class="trust-description">University of Venda Support</p>
+                <div class="trust-badge">Est. 2023</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="trust-title">Proven Impact</h3>
+                <p class="trust-description">DHET Centre of Excellence</p>
+                <div class="trust-badge">Awarded</div>
+            </div>
+        </div>
+        
+        <div class="trust-footer">
+            <p>Trusted by 500+ entrepreneurs and supported by national institutions</p>
+        </div>
+    </div>
+</section>
+
 
     <!-- CTA Section -->
     <section class="cta-section">
