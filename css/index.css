@@ -347,7 +347,7 @@ h1, h2, h3, h4 {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 95vh;
     overflow: hidden;
 }
 
