@@ -1,10 +1,12 @@
 // Complete JavaScript for UCfERI Website
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Mobile Navigation
-    initMobileNavigation();
+    console.log('DOM fully loaded - initializing all components');
     
-    // Initialize Hero Slider if exists
+    // Initialize Mobile Navigation (commented out - uncomment if needed)
+    // initMobileNavigation();
+    
+    // Initialize Hero Slider
     initHeroSlider();
     
     // Initialize Dropdowns
@@ -21,140 +23,163 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize Active Navigation
     initActiveNavigation();
+    
+    // Initialize Partners Carousel (only on pages where it exists)
+    initPartnersCarousel();
 });
 
-// function initMobileNavigation() {
-//     const mobileToggle = document.querySelector('.mobile-toggle');
-//     const navMenu = document.querySelector('.nav-menu');
-//     const hamburger = document.querySelector('.hamburger');
-    
-//     if (mobileToggle && navMenu) {
-//         mobileToggle.addEventListener('click', function() {
-//             navMenu.classList.toggle('active');
-//             hamburger.classList.toggle('active');
-            
-//             // Animate hamburger to X
-//             const spans = hamburger.querySelectorAll('span');
-//             if (navMenu.classList.contains('active')) {
-//                 spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-//                 spans[1].style.opacity = '0';
-//                 spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-//             } else {
-//                 spans[0].style.transform = 'none';
-//                 spans[1].style.opacity = '1';
-//                 spans[2].style.transform = 'none';
-//             }
-//         });
-        
-//         // Close menu when clicking outside
-//         document.addEventListener('click', function(e) {
-//             if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
-//                 navMenu.classList.remove('active');
-//                 hamburger.classList.remove('active');
-//                 const spans = hamburger.querySelectorAll('span');
-//                 spans[0].style.transform = 'none';
-//                 spans[1].style.opacity = '1';
-//                 spans[2].style.transform = 'none';
-//             }
-//         });
-//     }
-// }
+// =============================================
+// HERO SLIDER - FULLY FUNCTIONAL
+// =============================================
 
-// Hero Slider with 3 Images
 function initHeroSlider() {
+    console.log('Initializing Hero Slider...');
+    
     const heroSlides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.slide-prev');
     const nextBtn = document.querySelector('.slide-next');
     
-    if (heroSlides.length === 0) return;
-    
-    let currentSlide = 0;
-    const totalSlides = heroSlides.length;
-    let slideInterval;
-    
-    // Function to show a specific slide
-    function showSlide(n) {
-        // Hide all slides
-        heroSlides.forEach(slide => {
-            slide.classList.remove('active');
-        });
-        
-        // Remove active class from all dots
-        dots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        
-        // Calculate new slide index
-        currentSlide = (n + totalSlides) % totalSlides;
-        
-        // Show current slide
-        heroSlides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
+    // Exit if no slides found
+    if (!heroSlides.length) {
+        console.log('No hero slides found - skipping');
+        return;
     }
     
-    // Function to go to next slide
+    let currentSlide = 0;
+    let autoSlideInterval;
+    
+    // Function to show specific slide
+    function showSlide(n) {
+        // Remove active class from all slides and dots
+        heroSlides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Calculate new index (wrap around)
+        currentSlide = (n + heroSlides.length) % heroSlides.length;
+        
+        // Add active class to current slide and dot
+        heroSlides[currentSlide].classList.add('active');
+        if (dots[currentSlide]) {
+            dots[currentSlide].classList.add('active');
+        }
+        
+        console.log('Showing slide:', currentSlide + 1);
+    }
+    
+    // Next slide function
     function nextSlide() {
         showSlide(currentSlide + 1);
     }
     
-    // Function to go to previous slide
+    // Previous slide function
     function prevSlide() {
         showSlide(currentSlide - 1);
     }
     
-    // Start automatic slideshow
-    function startSlider() {
-        slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    }
-    
-    // Stop automatic slideshow
-    function stopSlider() {
-        clearInterval(slideInterval);
-    }
-    
-    // Event Listeners
+    // Event listeners for buttons
     if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-            stopSlider();
+        prevBtn.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             prevSlide();
-            startSlider();
-        });
+        };
     }
     
     if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            stopSlider();
+        nextBtn.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             nextSlide();
-            startSlider();
-        });
+        };
     }
     
     // Dot navigation
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            stopSlider();
+        dot.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             showSlide(index);
-            startSlider();
-        });
+        };
     });
     
+    // Clear any existing interval
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    
+    // Auto slide every 3 seconds
+    autoSlideInterval = setInterval(nextSlide, 3000);
+    
     // Pause on hover
-    const heroImages = document.querySelector('.hero-images');
-    if (heroImages) {
-        heroImages.addEventListener('mouseenter', stopSlider);
-        heroImages.addEventListener('mouseleave', startSlider);
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', function() {
+            clearInterval(autoSlideInterval);
+        });
+        
+        heroSection.addEventListener('mouseleave', function() {
+            autoSlideInterval = setInterval(nextSlide, 3000);
+        });
     }
     
-    // Start the slider
-    startSlider();
+    // Show first slide
+    showSlide(0);
 }
 
-// Dropdown Menus
+// =============================================
+// MOBILE NAVIGATION - COMMENTED OUT (UNCOMMENT IF NEEDED)
+// =============================================
+
+/*
+function initMobileNavigation() {
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+    
+    if (mobileToggle && navMenu && hamburger) {
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            const spans = hamburger.querySelectorAll('span');
+            if (spans.length >= 3) {
+                if (navMenu.classList.contains('active')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                const spans = hamburger.querySelectorAll('span');
+                if (spans.length >= 3) {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            }
+        });
+    }
+}
+*/
+
+// =============================================
+// DROPDOWN MENUS
+// =============================================
+
 function initDropdowns() {
     const dropdowns = document.querySelectorAll('.dropdown');
     
     dropdowns.forEach(dropdown => {
+        // Desktop hover
         dropdown.addEventListener('mouseenter', function() {
             if (window.innerWidth > 992) {
                 const content = this.querySelector('.dropdown-content');
@@ -185,7 +210,10 @@ function initDropdowns() {
     });
 }
 
-// Newsletter Form
+// =============================================
+// NEWSLETTER FORM
+// =============================================
+
 function initNewsletterForm() {
     const newsletterForm = document.querySelector('.newsletter-form');
     
@@ -194,10 +222,11 @@ function initNewsletterForm() {
             e.preventDefault();
             
             const emailInput = this.querySelector('input[type="email"]');
+            if (!emailInput) return;
+            
             const email = emailInput.value.trim();
             
             if (validateEmail(email)) {
-                // Show success message
                 showNotification('Thank you for subscribing to our newsletter!', 'success');
                 emailInput.value = '';
             } else {
@@ -212,6 +241,10 @@ function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
+
+// =============================================
+// NOTIFICATION SYSTEM
+// =============================================
 
 function showNotification(message, type) {
     // Remove existing notifications
@@ -298,7 +331,10 @@ function showNotification(message, type) {
     }, 3000);
 }
 
-// Countdown Timers
+// =============================================
+// COUNTDOWN TIMERS
+// =============================================
+
 function initCountdownTimers() {
     const incubationDeadline = new Date('2024-02-29T23:59:59').getTime();
     const sweepDeadline = new Date('2025-12-02T23:59:59').getTime();
@@ -334,7 +370,10 @@ function updateCountdown(elementId, deadline) {
     }
 }
 
-// Stats Counter
+// =============================================
+// STATS COUNTER
+// =============================================
+
 function initStatsCounter() {
     const stats = document.querySelectorAll('.stat-number[data-count]');
     
@@ -358,9 +397,8 @@ function initStatsCounter() {
 
 function animateCounter(element, target, suffix) {
     let current = 0;
-    const increment = target / 60; // 60 frames for animation
-    const duration = 1500; // 1.5 seconds
-    const frameDuration = duration / 60;
+    const increment = target / 60;
+    const frameDuration = 1500 / 60;
     
     const timer = setInterval(() => {
         current += increment;
@@ -373,18 +411,22 @@ function animateCounter(element, target, suffix) {
     }, frameDuration);
 }
 
-// Active Navigation
+// =============================================
+// ACTIVE NAVIGATION
+// =============================================
+
 function initActiveNavigation() {
-    const currentPage = window.location.pathname.split('/').pop();
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
+        if (!linkPage) return;
         
         // Handle active state for current page
         if (linkPage === currentPage || 
-            (currentPage === '' && linkPage === 'index.html') ||
-            (currentPage === 'index.html' && linkPage === 'index.html')) {
+            (currentPage === 'index.html' && linkPage === 'index.html') ||
+            (currentPage === '' && linkPage === 'index.html')) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
@@ -398,14 +440,16 @@ function initActiveNavigation() {
     });
 }
 
+// =============================================
+// SMOOTH SCROLLING FOR ANCHOR LINKS
+// =============================================
 
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         
         // Only handle anchor links on same page
-        if (href.startsWith('#') && href.length > 1) {
+        if (href && href.startsWith('#') && href.length > 1) {
             e.preventDefault();
             const targetElement = document.querySelector(href);
             if (targetElement) {
@@ -418,17 +462,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Partners Carousel
-document.addEventListener('DOMContentLoaded', function() {
+// =============================================
+// PARTNERS CAROUSEL - FIXED (SINGLE INSTANCE)
+// =============================================
+
+function initPartnersCarousel() {
     const carousel = document.querySelector('.partners-carousel');
     const slides = document.querySelectorAll('.partner-slide');
     const prevBtn = document.querySelector('.carousel-nav.prev');
     const nextBtn = document.querySelector('.carousel-nav.next');
     const dotsContainer = document.querySelector('.carousel-dots');
     
+    // CHECK IF CAROUSEL EXISTS ON THIS PAGE
+    if (!carousel || !slides.length || !prevBtn || !nextBtn || !dotsContainer) {
+        console.log('Partners carousel not found on this page - skipping');
+        return;
+    }
+    
+    console.log('Initializing Partners Carousel...');
+    
     let currentIndex = 0;
     let slidesPerView = getSlidesPerView();
     let totalSlides = slides.length;
+    
+    // Clear existing dots
+    dotsContainer.innerHTML = '';
     
     // Create dots
     slides.forEach((_, index) => {
@@ -440,7 +498,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     const dots = document.querySelectorAll('.carousel-dots .dot');
-    updateDots();
     
     // Navigation functions
     function getSlidesPerView() {
@@ -450,7 +507,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateCarousel() {
-        const slideWidth = slides[0].offsetWidth + 30; // width + gap
+        if (!slides.length) return;
+        const slideWidth = slides[0].offsetWidth + 30;
         const translateX = -currentIndex * slideWidth;
         carousel.style.transform = `translateX(${translateX}px)`;
         updateDots();
@@ -463,7 +521,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function goToSlide(index) {
-        const maxIndex = totalSlides - slidesPerView;
+        const maxIndex = Math.max(0, totalSlides - slidesPerView);
         currentIndex = Math.max(0, Math.min(index, maxIndex));
         updateCarousel();
     }
@@ -472,29 +530,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const maxIndex = totalSlides - slidesPerView;
         if (currentIndex < maxIndex) {
             currentIndex++;
-            updateCarousel();
         } else {
-            // Loop back to start
             currentIndex = 0;
-            updateCarousel();
         }
+        updateCarousel();
     }
     
     function prevSlide() {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel();
         } else {
-            // Loop to end
             const maxIndex = totalSlides - slidesPerView;
             currentIndex = maxIndex;
-            updateCarousel();
         }
+        updateCarousel();
     }
     
     // Event listeners
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        prevSlide();
+    });
+    
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        nextSlide();
+    });
     
     // Auto slide
     let autoSlideInterval = setInterval(nextSlide, 5000);
@@ -514,33 +575,34 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             slidesPerView = getSlidesPerView();
-            goToSlide(Math.min(currentIndex, totalSlides - slidesPerView));
+            goToSlide(currentIndex);
         }, 250);
     });
     
     // Swipe support for touch devices
     let startX = 0;
-    let endX = 0;
     
     carousel.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
     });
     
     carousel.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
+        const endX = e.changedTouches[0].clientX;
         const diff = startX - endX;
         
-        if (Math.abs(diff) > swipeThreshold) {
+        if (Math.abs(diff) > 50) {
             if (diff > 0) {
-                nextSlide(); // Swipe left
+                nextSlide();
             } else {
-                prevSlide(); // Swipe right
+                prevSlide();
             }
         }
-    }
-});
+    });
+    
+    // Initialize first slide
+    goToSlide(0);
+}
+
+// =============================================
+// END OF JAVASCRIPT
+// =============================================
