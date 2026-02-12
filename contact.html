@@ -23,10 +23,18 @@
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="container">
-            <div class="announcement-content">
+           <!-- <div class="announcement-content">
                 <span class="announcement-tag"><i class="fas fa-bell"></i> New Program</span>
                 <span class="announcement-text">Applications now open for 2024 Business Incubation Program</span>
                 <a href="incubation.html" class="announcement-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div> -->
+        
+            <div class="social-links">
+                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -51,7 +59,14 @@
                 <!-- Desktop Navigation -->
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li class="dropdown">
+                        <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i> Mission</a>
+                            <a href="about.html#mission&vision"><i class="fas fa-low-vision"></i> Vision</a>
+                            <a href="about.html#history"><i class="fas fa-history"></i> History</a>
+                        </div>
+                    </li>    
                     <li class="dropdown">
                         <a href="programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
@@ -60,19 +75,18 @@
                             <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
-                    <li><a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Resources</a></li>
-                     <li><a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a></li>
+                    <li class="dropdown">
+                        <a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Media  <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="resources.html#blog"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="resources.html#news"><i class="fas fa-newspaper"></i> News</a>
+                            <a href="resources.html#events"><i class="fas fa-calendar-alt"></i> Events</a>
+                            <a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a>>
+                       </div>
+                    </li>   
                     <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
 
-                <!-- CTA Button -->
-                <div class="header-cta">
-                    <a href="tel:0825868078" class="phone-link">
-                        <i class="fas fa-phone"></i>
-                        082 586 8078
-                    </a>
-                    <a href="incubation.html#apply" class="btn btn-primary">Apply Now</a>
-                </div>
 
                 <!-- Mobile Menu Toggle -->
                 <button class="mobile-toggle" aria-label="Toggle mobile menu">
@@ -504,7 +518,7 @@
     </section>
 
     <!-- Partners Section -->
-    <section class="partners-section">
+    <section id="partner" class="partners-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Strategic Partners</h2>

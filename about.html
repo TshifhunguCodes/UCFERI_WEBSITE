@@ -22,10 +22,18 @@
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="container">
-            <div class="announcement-content">
+        <!-- <div class="announcement-content">
                 <span class="announcement-tag"><i class="fas fa-bell"></i> Applications Open</span>
                 <span class="announcement-text">Business Incubation 2024 & SWEEP Executive 2026</span>
                 <a href="programs.html" class="announcement-link">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div> -->
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -42,7 +50,7 @@
                         </div>
                         <div class="logo-text">
                             <h1>UCfERI</h1>
-                            <p>Entrepreneurship & Rapid Incubation</p>
+                            <p>Centre for Entrepreneurship & Incubation</p>
                         </div>
                     </a>
                 </div>
@@ -50,7 +58,14 @@
                 <!-- Desktop Navigation -->
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li class="dropdown">
+                       <a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> About Us  <i class="fas fa-chevron-down"></i></a>
+                       <div class="dropdown-content">
+                            <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i> Mission</a>
+                            <a href="about.html#mission&vision"><i class="fas fa-low-vision"></i> Vision</a>
+                            <a href="about.html#history"><i class="fas fa-history"></i> History</a>
+                       </div>
+                    </li>
                     <li class="dropdown">
                         <a href="programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
@@ -59,19 +74,26 @@
                             <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
-                    <li><a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Resources</a></li>
-                      <li><a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a></li>
+                    <li class="dropdown">
+                       <a href="resources.html" class="nav-link"><i class="fas fa-book"></i> Media <i class="fas fa-chevron-down"></i> </a>
+                       <div class="dropdown-content">
+                            <a href="resources.html#blog"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="resources.html#news"><i class="fas fa-newspaper"></i> News</a>
+                            <a href="resources.html#events"><i class="fas fa-calendar-alt"></i> Events</a>
+                            <a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a>
+                       </div>
+                    </li>  
                     <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
 
                 <!-- CTA Button -->
-                <div class="header-cta">
+              <!-- <div class="header-cta">
                     <a href="tel:0825868078" class="phone-link">
                         <i class="fas fa-phone"></i>
                         082 586 8078
                     </a>
                     <a href="programs.html" class="btn btn-primary">Apply Now</a>
-                </div>
+                </div> -->
 
                 <!-- Mobile Menu Toggle -->
                 <button class="mobile-toggle" aria-label="Toggle mobile menu">
@@ -108,8 +130,7 @@
                     <h2>Our Mission & Vision</h2>
                     <p><strong>Vision:</strong> To be a leading centre for entrepreneurial excellence where student entrepreneurs and SMMEs thrive.</p>
                     
-                    <p><strong>Mission:</strong> To accelerate the growth of SMMEs by delivering comprehensive support programmes and fostering strong internal and external networks while creating an inclusive, enabling environment that unlocks the potential of staff, student and community entrepreneurs as drivers of sustainable socio-economic development.</p>
-                    </div>
+                        <p><strong>Mission:</strong> To accelerate the growth of SMMEs by delivering comprehensive support programmes and fostering strong internal and external networks while creating an inclusive, enabling environment that unlocks the potential of staff, student and community entrepreneurs as drivers of sustainable socio-economic development.</p>
                     
                     <p>UCfERI (University of Venda Centre for Entrepreneurship and Rapid Incubation) was established in November 2023 and commenced operations in July 2024. We are located within the UNESCO Vhembe Biosphere Reserve, offering unique opportunities for agro-processing, agro-tourism, and sustainable development.</p>
                     
@@ -136,17 +157,17 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="about-image">
                     <img src="images/team.png" alt="UCfERI Team">
                     <div class="image-caption">
                         <p>Part of the Directorate: Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation</p>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
+    
     <!-- History Timeline -->
     <section class="timeline-section">
         <div class="container">
