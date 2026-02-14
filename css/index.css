@@ -263,41 +263,7 @@ h1, h2, h3, h4 {
 }
 
 /* Dropdown */
-.dropdown {
-    position: relative;
-}
 
-.dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: var(--white);
-    box-shadow: var(--shadow-lg);
-    border-radius: 8px;
-    padding: 10px 0;
-    min-width: 200px;
-    display: none;
-    z-index: 100;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: var(--dark-color);
-    transition: background 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    background: var(--light-color);
-    color: var(--primary-color);
-}
 
 /* Header CTA */
 .header-cta {

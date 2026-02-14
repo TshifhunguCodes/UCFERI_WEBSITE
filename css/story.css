@@ -213,44 +213,7 @@ p { margin-bottom: 1rem; }
     color: var(--primary-color);
 }
 
-.dropdown {
-    position: relative;
-}
 
-.dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--white);
-    min-width: 200px;
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--border-radius);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: var(--transition);
-    z-index: 100;
-}
-
-.dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 12px 15px;
-    text-decoration: none;
-    color: var(--dark-color);
-    border-bottom: 1px solid var(--light-color);
-    transition: var(--transition);
-}
-
-.dropdown-content a:hover {
-    background-color: var(--light-color);
-    color: var(--primary-color);
-}
 
 .header-cta {
     display: flex;
