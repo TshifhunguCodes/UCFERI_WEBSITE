@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Only run if mobile toggle exists
     if (mobileToggle && navMenu) {
+        
         // Create overlay for mobile menu
         const overlay = document.createElement('div');
         overlay.className = 'nav-overlay';
@@ -35,11 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleMenu();
         });
         
-        // Close menu when clicking a nav link
+        // Close menu when clicking a nav link (but not for dropdown toggles)
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 992) {
+            link.addEventListener('click', function(e) {
+                // Don't close menu if clicking on a dropdown toggle
+                if (window.innerWidth <= 992 && !this.parentElement.classList.contains('dropdown')) {
                     toggleMenu();
                 }
             });

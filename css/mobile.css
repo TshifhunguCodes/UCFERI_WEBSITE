@@ -24,7 +24,13 @@
 
     /* Header and Navigation */
     .header {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .navbar {
@@ -46,38 +52,6 @@
         font-size: 0.8rem;
     }
 
-    .nav-menu {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        z-index: 1000;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-link {
-        padding: 15px;
-        justify-content: space-between;
-    }
-
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        width: 100%;
-    }
-
     .header-cta {
         width: 100%;
         justify-content: center;
@@ -87,13 +61,6 @@
 
     .header-cta.active {
         display: flex;
-    }
-
-    .mobile-toggle {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 20px;
     }
 
     /* Hero Section */
@@ -348,20 +315,76 @@
     }
 }
 
-/* Mobile Menu Styles - Add these */
+/* Mobile Menu Styles - Consolidated for max-width: 992px */
 @media (max-width: 992px) {
-    /* Hide desktop menu */
+    /* Header - Fixed position for mobile */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show mobile toggle button */
+    .mobile-toggle {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+    }
+
+    /* Hamburger icon */
+    .mobile-toggle .hamburger {
+        display: flex;
+        flex-direction: column;
+        width: 24px;
+        height: 18px;
+        justify-content: space-between;
+    }
+
+    .mobile-toggle .hamburger span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: #333;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+    /* Hamburger animation - unified */
+    .mobile-toggle.active .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-toggle.active .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-toggle.active .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile menu - slide in from right */
     .nav-menu {
         display: none;
         position: fixed;
         top: 0;
         right: 0;
         width: 280px;
+        max-width: 85%;
         height: 100vh;
-        background: var(--white);
+        background: white;
         flex-direction: column;
         padding: 80px 20px 20px;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
         z-index: 1000;
         overflow-y: auto;
         transition: transform 0.3s ease;
@@ -376,51 +399,86 @@
     /* Menu items */
     .nav-menu li {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 
     .nav-link {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding: 15px;
         border-radius: 8px;
-        font-size: 1.1rem;
+        font-size: 1rem;
         width: 100%;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 500;
+        transition: all 0.3s ease;
     }
 
-    /* Dropdown styles */
+    .nav-link:hover {
+        background: #f3f4f6;
+        color: #0066B3;
+    }
+
+    .nav-link.active {
+        background: #0066B3;
+        color: white;
+    }
+
+    /* Dropdown styles for mobile */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown > .nav-link::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.active > .nav-link::after {
+        transform: rotate(180deg);
+    }
+
     .dropdown-content {
         position: static;
         display: none;
-        background: var(--light-color);
+        background: #f3f4f6;
         box-shadow: none;
         border-radius: 8px;
-        margin-top: 10px;
+        margin-top: 5px;
         width: 100%;
+        padding: 5px 0;
     }
 
     .dropdown.active .dropdown-content {
         display: block;
     }
 
-    /* Show mobile toggle */
-    .mobile-toggle {
-        display: block;
-        order: 2;
-        z-index: 1001;
+    .dropdown-content a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 15px 12px 25px;
+        text-decoration: none;
+        color: #1f2937;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
     }
 
-    /* Hamburger animation */
-    .mobile-toggle.active .hamburger span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+    .dropdown-content a:hover {
+        background: #e5e7eb;
+        color: #0066B3;
+        padding-left: 30px;
     }
 
-    .mobile-toggle.active .hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-toggle.active .hamburger span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+    .dropdown-content a i {
+        width: 20px;
+        text-align: center;
+        color: #0066B3;
     }
 
     /* Prevent body scroll when menu is open */
@@ -438,95 +496,33 @@
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
         z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .nav-overlay.active {
         display: block;
+        opacity: 1;
+    }
+
+    /* Add padding to body to account for fixed header */
+    body {
+        padding-top: 0;
     }
 }
 
-/* Mobile toggle button - CRITICAL */
-.mobile-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-}
-
-.mobile-toggle .hamburger {
-    display: flex;
-    flex-direction: column;
-    width: 24px;
-    height: 18px;
-    justify-content: space-between;
-}
-
-.mobile-toggle .hamburger span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: #333;
-    transition: all 0.3s ease;
-}
-
-/* Mobile menu overlay */
-.nav-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-}
-
-.nav-overlay.active {
-    display: block;
-}
-
-@media (max-width: 992px) {
+/* Ensure proper display above 992px */
+@media (min-width: 993px) {
     .mobile-toggle {
-        display: block;
-    }
-    
-    /* Hide desktop menu on mobile */
-    .nav-menu {
         display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        padding: 80px 20px 20px;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-        overflow-y: auto;
     }
-    
-    .nav-menu.active {
-        display: flex;
+
+    .nav-menu {
+        display: flex !important;
+        transform: none;
     }
-    
-    /* Hamburger animation */
-    .mobile-toggle.active .hamburger span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .mobile-toggle.active .hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .mobile-toggle.active .hamburger span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-    
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-        overflow: hidden;
+
+    .nav-overlay {
+        display: none !important;
     }
 }
