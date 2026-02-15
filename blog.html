@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/video-player.css">
 </head>
 <body>
     <!-- Announcement Bar -->
@@ -44,8 +45,8 @@
                     <li class="dropdown">
                         <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
-                            <a href="about.html#mission"><i class="fas fa-bullseye"></i> Mission</a>
-                            <a href="about.html#vision"><i class="fas fa-low-vision"></i> Vision</a>
+                            <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i> Mission</a>
+                            <a href="about.html#mission&vision"><i class="fas fa-low-vision"></i> Vision</a>
                             <a href="about.html#history"><i class="fas fa-history"></i> History</a>
                         </div>
                     </li>
@@ -63,7 +64,8 @@
                             <a href="blog.html" class="active"><i class="fas fa-blog"></i> Blog</a>
                             <a href="news.html"><i class="fas fa-newspaper"></i> News</a>
                             <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
-                            <a href="success-story.html"><i class="fas fa-trophy"></i> Success Story</a>
+                            <a href="resources.html"><i class="fas fa-book"></i>Resources</a>
+                            <a href="story.html"><i class="fas fa-trophy"></i> Success Story</a>
                         </div>
                     </li>
                     <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -96,44 +98,51 @@
 
     <!-- Featured Blog Post - Dr Miu Ganto -->
     <section class="featured-post">
-        <div class="container">
-            <div class="featured-grid">
-                <div class="featured-content">
-                    <div class="post-category">Entrepreneurial Journey</div>
-                    <h2>"A journey of a thousand miles begins with a single step." - Lao Tzu</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> January 26, 2026</span>
-                        <span><i class="far fa-user"></i> Dr. Miu Ganto</span>
-                        <span><i class="fas fa-tag"></i> #ucferi #SMMEvoices</span>
-                    </div>
-                    <div class="post-excerpt">
-                        <p>Dr Miu Ganto, Commercialisation specialist and acting manager of UCFERI, reflects on her entrepreneurial journey. <em>"You do not need to wait for your business plans to be perfect. You need to use whatever you have to take that first step!"</em></p>
-                    </div>
-                    <div class="featured-hashtags">
-                        <span>#ucferi</span>
-                        <span>#SMMEvoices</span>
-                        <span>#whereentrepreneursthrive</span>
-                        <span>#univenentrepreneurship</span>
-                        <span>#mandelaweeks</span>
-                        <span>#mandeladay2025</span>
-                    </div>
-                    <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Interview</a>
+    <div class="container">
+        <div class="featured-grid">
+            <div class="featured-content">
+                <div class="post-category">Entrepreneurial Journey</div>
+                <h2>"A journey of a thousand miles begins with a single step." - Lao Tzu</h2>
+                <div class="post-meta">
+                    <span><i class="far fa-calendar"></i> January 26, 2026</span>
+                    <span><i class="far fa-user"></i> Dr. Mlu Ganto</span>
+                    <span><i class="fas fa-tag"></i> #ucferi #SMMEvoices</span>
                 </div>
-                <div class="featured-media">
-                    <!-- Video Placeholder for Dr Miu Ganto -->
-                    <div class="media-placeholder video" data-video="dr-miu-ganto">
-                        <div class="play-button">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="media-caption">Dr. Miu Ganto - Commercialisation Specialist</div>
-                        <div class="placeholder-badge">Interview</div>
+                <div class="post-excerpt">
+                    <p>Dr Mlu Ganto, Commercialisation specialist and acting manager of UCFERI, reflects on her entrepreneurial journey. <em>"You do not need to wait for your business plans to be perfect. You need to use whatever you have to take that first step!"</em></p>
+                </div>
+                <div class="featured-hashtags">
+                    <span>#ucferi</span>
+                    <span>#SMMEvoices</span>
+                    <span>#whereentrepreneursthrive</span>
+                    <span>#univenentrepreneurship</span>
+                    <span>#mandelaweeks</span>
+                    <span>#mandeladay2025</span>
+                </div>
+                <a href="#" class="btn btn-primary watch-interview-btn" data-video="dr-miu-ganto"><i class="fas fa-play"></i> Watch Full Interview</a>
+            </div>
+            <div class="featured-media">
+                <!-- YouTube Video Player for Dr Miu Ganto -->
+                <div class="video-player-container featured" data-video-id="dr-miu-ganto">
+                    <!-- YouTube Embed -->
+                    <div class="youtube-container">
+                        <iframe 
+                            class="youtube-iframe"
+                            src="https://youtu.be/8aVLGyBxFj0?si=4VTj-hDF6WKTiDND"
+                            title="Dr. Miu Ganto Interview"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                    <!-- Image Placeholder alternative -->
-                    <div class="media-placeholder image" style="background-image: url('images/new/hero1.jpeg')"></div>
+                    <div class="media-caption">Dr. Miu Ganto - Commercialisation Specialist</div>
+                    <div class="placeholder-badge">Interview</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    
 
     <!-- Blog Grid -->
     <section class="blog-grid-section">
@@ -155,10 +164,18 @@
                 <!-- Blog Post 1: Given Mapaya Success -->
                 <article class="blog-card" data-category="success">
                     <div class="card-media">
-                        <!-- Image Placeholder for Given Mapaya -->
-                        <div class="media-placeholder image" data-type="image">
-                            <img src="images/placeholder/given-mapaya.jpg" alt="Given Mapaya" onerror="this.style.display='none'; this.parentElement.classList.add('fallback');">
-                            <div class="media-fallback">📸 Given Mapaya</div>
+                        <div class="video-player-container small" data-video-id="given-mapaya">
+                            <video class="video-player" poster="images/placeholder/given-mapaya.jpg">
+                                <source src="videos/given-mapaya-story.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-controls compact">
+                                <button class="video-control-btn play-pause"><i class="fas fa-play"></i></button>
+                                <div class="video-progress">
+                                    <div class="video-progress-filled" style="width: 0%;"></div>
+                                </div>
+                                <span class="video-time">2:30</span>
+                            </div>
+                            <div class="placeholder-badge">Success Story</div>
                         </div>
                     </div>
                     <div class="card-content">
@@ -173,16 +190,25 @@
                             <span>#whereentrepreneursthrive</span>
                             <span>#yaei</span>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more watch-interview-btn" data-video="given-mapaya">Watch Given's Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Blog Post 2: 2026 DOING Year -->
                 <article class="blog-card" data-category="entrepreneurship inspiration">
                     <div class="card-media">
-                        <div class="media-placeholder video small" data-video="doing-2026">
-                            <i class="fas fa-play"></i>
-                            <span>Video Message</span>
+                        <div class="video-player-container small" data-video-id="doing-2026">
+                            <video class="video-player" poster="images/placeholder/doing-2026.jpg">
+                                <source src="videos/doing-2026-message.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-controls compact">
+                                <button class="video-control-btn play-pause"><i class="fas fa-play"></i></button>
+                                <div class="video-progress">
+                                    <div class="video-progress-filled" style="width: 45%;"></div>
+                                </div>
+                                <span class="video-time">1:45</span>
+                            </div>
+                            <div class="placeholder-badge">Video Message</div>
                         </div>
                     </div>
                     <div class="card-content">
@@ -198,15 +224,25 @@
                             <span>#UNIVENLeadsTheFuture</span>
                             <span>#univenstudents</span>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more watch-interview-btn" data-video="doing-2026">Watch Message <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Blog Post 3: Ubuntu Heritage Day -->
                 <article class="blog-card" data-category="culture inspiration">
                     <div class="card-media">
-                        <div class="media-placeholder image" data-type="image">
-                            <div class="media-fallback">🌍 Ubuntu</div>
+                        <div class="video-player-container small" data-video-id="ubuntu-celebration">
+                            <video class="video-player" poster="images/placeholder/ubuntu-heritage.jpg">
+                                <source src="videos/ubuntu-celebration.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-controls compact">
+                                <button class="video-control-btn play-pause"><i class="fas fa-play"></i></button>
+                                <div class="video-progress">
+                                    <div class="video-progress-filled" style="width: 0%;"></div>
+                                </div>
+                                <span class="video-time">2:15</span>
+                            </div>
+                            <div class="placeholder-badge">Heritage</div>
                         </div>
                     </div>
                     <div class="card-content">
@@ -222,16 +258,25 @@
                             <span>#HeritageDay2025</span>
                             <span>#Ubuntu</span>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more watch-interview-btn" data-video="ubuntu-celebration">Watch Celebration <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Blog Post 4: UCFERI 2nd Anniversary -->
                 <article class="blog-card" data-category="events">
                     <div class="card-media">
-                        <div class="media-placeholder video small" data-video="anniversary">
-                            <i class="fas fa-play"></i>
-                            <span>2 Years</span>
+                        <div class="video-player-container small" data-video-id="anniversary">
+                            <video class="video-player" poster="images/placeholder/anniversary.jpg">
+                                <source src="videos/anniversary-highlights.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-controls compact">
+                                <button class="video-control-btn play-pause"><i class="fas fa-play"></i></button>
+                                <div class="video-progress">
+                                    <div class="video-progress-filled" style="width: 60%;"></div>
+                                </div>
+                                <span class="video-time">3:20</span>
+                            </div>
+                            <div class="placeholder-badge">2 Years</div>
                         </div>
                     </div>
                     <div class="card-content">
@@ -247,7 +292,7 @@
                             <span>#Innovation</span>
                             <span>#AfricanInnovation</span>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more watch-interview-btn" data-video="anniversary">Watch Highlights <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
@@ -258,6 +303,22 @@
             </div>
         </div>
     </section>
+
+    <!-- Video Modal for fullscreen playback -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <video id="modalVideo" class="modal-video" controls>
+                <source src="" type="video/mp4">
+            </video>
+            <div class="video-modal-controls">
+                <button class="video-modal-btn" id="modalPrev"><i class="fas fa-backward"></i></button>
+                <button class="video-modal-btn" id="modalPlayPause"><i class="fas fa-play"></i></button>
+                <button class="video-modal-btn" id="modalStop"><i class="fas fa-stop"></i></button>
+                <button class="video-modal-btn" id="modalNext"><i class="fas fa-forward"></i></button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -327,7 +388,8 @@
         </div>
     </footer>
 
-    <script src="mobile.js"></script>
-    <script src="blog.js"></script>
+    <script src="js/mobile.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/video-player.js"></script>
 </body>
 </html>

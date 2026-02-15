@@ -300,14 +300,14 @@ body {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg,#3498db);
+    background: linear-gradient(135deg, #110de0);
     padding: 80px 0;
     text-align: center;
 }
 
 .page-header-content h1 {
     font-size: 48px;
-    color: var(--dark-color);
+    color: var(--white);
     margin-bottom: 15px;
 }
 
@@ -340,7 +340,7 @@ body {
 }
 
 .breadcrumb span {
-    color: var(--dark-color);
+    color: var(--success-color);
     font-weight: 500;
 }
 
