@@ -96,7 +96,7 @@
     </section>
 
     <!-- Featured News: SABC SME OnPoint -->
-    <section class="featured-news">
+   <section class="featured-news">
     <div class="container">
         <div class="featured-news-card">
             <div class="featured-news-content">
@@ -119,26 +119,22 @@
                 </div>
             </div>
             <div class="featured-news-media">
-                <!-- Video Placeholder that loads video on click -->
-                <div class="media-placeholder video" onclick="loadVideo(this, '8aVLGyBxFj0')">
-                    <div class="play-button">
-                        <i class="fas fa-play-circle"></i>
-                    </div>
-                    <div class="media-caption">SME OnPoint - SABC Discussion</div>
-                    <div class="placeholder-badge">Watch Now</div>
-                    <div class="youtube-link">youtu.be/8aVLGyBxFj0</div>
+                <!-- Video loads immediately -->
+                <div class="video-container">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/8aVLGyBxFj0" 
+                        title="SME OnPoint - SABC Discussion" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<script>
-function loadVideo(element, videoId) {
-    // Replace the placeholder with an iframe
-    element.innerHTML = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-}
-</script>
 
     <!-- News Grid -->
     <section class="news-grid-section">
@@ -150,6 +146,7 @@ function loadVideo(element, videoId) {
                 <article class="news-item">
                     <div class="news-item-media">
                         <div class="media-placeholder image">
+                            <img src="images/ubuntu.jpeg" alt="Makhado Crossing Outreach">
                             <div class="media-fallback">📸 Makhado Crossing</div>
                         </div>
                     </div>
@@ -167,6 +164,7 @@ function loadVideo(element, videoId) {
                 <!-- News 2: 2026 DOING Year Announcement -->
                 <article class="news-item">
                     <div class="news-item-media">
+                        <img src="images/newyear.jpeg" alt="2026 DOING Year Announcement">
                         <div class="media-placeholder video small">
                             <i class="fas fa-play"></i>
                             <span>2026 Message</span>
@@ -193,6 +191,7 @@ function loadVideo(element, videoId) {
                 <article class="news-item">
                     <div class="news-item-media">
                         <div class="media-placeholder image">
+                            <img src="images/heritage.jpeg" alt="UCFERI Business Services">
                             <div class="media-fallback">💼 Business Services</div>
                         </div>
                     </div>
