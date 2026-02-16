@@ -97,41 +97,48 @@
 
     <!-- Featured News: SABC SME OnPoint -->
     <section class="featured-news">
-        <div class="container">
-            <div class="featured-news-card">
-                <div class="featured-news-content">
-                    <span class="news-tag"><i class="fas fa-tv"></i> SABC Feature</span>
-                    <h2>University Perspectives on Entrepreneurship</h2>
-                    <div class="news-meta">
-                        <span><i class="far fa-calendar"></i> January 28, 2026</span>
-                        <span><i class="far fa-user"></i> Mr Donald Morema, Manager: Economic Activation</span>
-                    </div>
-                    <p class="news-summary">The University of Venda featured on SME OnPoint panel discussion on SABC. The discussion reflected on the role of universities in preparing students and aspiring entrepreneurs with the necessary knowledge, skills and networks to grow sustainable enterprises.</p>
-                    <div class="news-links">
-                        <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Discussion</a>
-                        <a href="https://youtu.be/8aVLGyBxFj0" target="_blank" class="btn btn-outline"><i class="fab fa-youtube"></i> YouTube Link</a>
-                    </div>
-                    <div class="news-hashtags">
-                        <span>#2026AcademicYear</span>
-                        <span>#UNIVENLeadsTheFuture</span>
-                        <span>#CreatingFutureLeaders</span>
-                        <span>#StrategicVision2026_2030</span>
-                    </div>
+    <div class="container">
+        <div class="featured-news-card">
+            <div class="featured-news-content">
+                <span class="news-tag"><i class="fas fa-tv"></i> SABC Feature</span>
+                <h2>University Perspectives on Entrepreneurship</h2>
+                <div class="news-meta">
+                    <span><i class="far fa-calendar"></i> January 28, 2026</span>
+                    <span><i class="far fa-user"></i> Mr Donald Morema, Manager: Economic Activation</span>
                 </div>
-                <div class="featured-news-media">
-                    <!-- Video Placeholder for SABC Interview -->
-                    <div class="media-placeholder video" data-video="sabc-sme-onpoint">
-                        <div class="play-button">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div class="media-caption">SME OnPoint - SABC Discussion</div>
-                        <div class="placeholder-badge">Watch Now</div>
-                        <div class="youtube-link">youtu.be/8aVLGyBxFj0</div>
+                <p class="news-summary">The University of Venda featured on SME OnPoint panel discussion on SABC. The discussion reflected on the role of universities in preparing students and aspiring entrepreneurs with the necessary knowledge, skills and networks to grow sustainable enterprises.</p>
+                <div class="news-links">
+                    <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Discussion</a>
+                    <a href="https://youtu.be/8aVLGyBxFj0?si=4VTj-hDF6WKTiDND" target="_blank" class="btn btn-outline"><i class="fab fa-youtube"></i> YouTube Link</a>
+                </div>
+                <div class="news-hashtags">
+                    <span>#2026AcademicYear</span>
+                    <span>#UNIVENLeadsTheFuture</span>
+                    <span>#CreatingFutureLeaders</span>
+                    <span>#StrategicVision2026_2030</span>
+                </div>
+            </div>
+            <div class="featured-news-media">
+                <!-- Video Placeholder that loads video on click -->
+                <div class="media-placeholder video" onclick="loadVideo(this, '8aVLGyBxFj0')">
+                    <div class="play-button">
+                        <i class="fas fa-play-circle"></i>
                     </div>
+                    <div class="media-caption">SME OnPoint - SABC Discussion</div>
+                    <div class="placeholder-badge">Watch Now</div>
+                    <div class="youtube-link">youtu.be/8aVLGyBxFj0</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+function loadVideo(element, videoId) {
+    // Replace the placeholder with an iframe
+    element.innerHTML = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+</script>
 
     <!-- News Grid -->
     <section class="news-grid-section">
@@ -180,25 +187,7 @@
                     </div>
                 </article>
 
-                <!-- News 3: Given Mapaya YAEI -->
-                <article class="news-item">
-                    <div class="news-item-media">
-                        <div class="media-placeholder image">
-                            <div class="media-fallback">🏆 Given Mapaya</div>
-                        </div>
-                    </div>
-                    <div class="news-item-content">
-                        <span class="news-date"><i class="far fa-calendar"></i> November 24, 2025</span>
-                        <h3>Given Mapaya selected as Top 30 finalist - YAEI x Absa</h3>
-                        <p>Our entrepreneurial star Given Mapaya keeps shining on national stages. He has been selected as a top 30 finalist of the Young African Entrepreneurs Institute x Absa South Africa 2025 Youth Entrepreneurship Programme. Positioning University Of Venda for Impact.</p>
-                        <div class="news-hashtags">
-                            <span>#yaei</span>
-                            <span>#Absa</span>
-                            <span>#YouthEntrepreneurship</span>
-                        </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+                
 
                 <!-- News 4: UCFERI Services Announcement -->
                 <article class="news-item">
@@ -222,56 +211,8 @@
                     </div>
                 </article>
 
-                <!-- News 5: HALT Prize Competition -->
-                <article class="news-item highlight">
-                    <div class="news-item-media">
-                        <div class="media-placeholder video small">
-                            <i class="fas fa-trophy"></i>
-                            <span>$1M Prize</span>
-                        </div>
-                    </div>
-                    <div class="news-item-content">
-                        <span class="news-tag-urgent">🔥 COMPETITION</span>
-                        <span class="news-date"><i class="far fa-calendar"></i> Deadline: February 24, 2026</span>
-                        <h3>LOCAL COMPETITION: Solve global challenges & win $1,000,000</h3>
-                        <p>Solve global challenges through social entrepreneurship and stand a chance to win $1,000,000 in seed funding.</p>
-                        <div class="competition-details">
-                            <p><strong>Who Can Apply?</strong> Registered UNIVEN Students (Undergraduate & Postgraduate). Students can apply as individuals or Teams of 2-4 Members. Members can come from different institutions but at least 1 member must be from UNIVEN.</p>
-                            <ul>
-                                <li>✅ Build a business model that solves real-world problems using the UN Sustainable Development Goals.</li>
-                                <li>✅ Present a 4-minute pitch to a panel of expert judges.</li>
-                                <li>✅ Qualify for the global regional summit and compete for $1M in seed funding.</li>
-                            </ul>
-                            <div class="event-datetime">
-                                <p><i class="fas fa-calendar-alt"></i> 24 February 2026, 09h00 to 15h00</p>
-                                <p><i class="fas fa-map-marker-alt"></i> UCERI BOARDROOM, School of Education Building, UNIVEN</p>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-small">Apply Now</a>
-                    </div>
-                </article>
-
-                <!-- News 6: UCFERI 2nd Anniversary -->
-                <article class="news-item">
-                    <div class="news-item-media">
-                        <div class="media-placeholder video small">
-                            <i class="fas fa-birthday-cake"></i>
-                            <span>2 Years</span>
-                        </div>
-                    </div>
-                    <div class="news-item-content">
-                        <span class="news-date"><i class="far fa-calendar"></i> November 14, 2025</span>
-                        <h3>Two years of igniting ideas - UCFERI at 2!</h3>
-                        <p>From our humble beginnings in 2023 to becoming a thriving hub for studentpreneurs, innovators, founders, digital creatives and community changemakers, the journey has been nothing short of remarkable. Thank you to every student, partner, mentor, founder, staff member, and community supporter.</p>
-                        <p class="quote">"Here's to the next decade of innovation, impact, entrepreneurship and African excellence, from Thohoyandou to the world."</p>
-                        <div class="news-hashtags">
-                            <span>#UCFERIat2</span>
-                            <span>#AfricanInnovation</span>
-                            <span>#TownshipEconomy</span>
-                        </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+             
+              
             </div>
 
             <!-- Load More -->
