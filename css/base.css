@@ -13,9 +13,9 @@
 
 :root {
     /* Primary Colors */
-    --primary-color: #2316da;      /* Main brand blue - Standard across most files */
+    --primary-color: #2316da;      /* Main brand blue */
     --secondary-color: #df7b1d;   /* Orange - Secondary brand color */
-    --accent-color: #e67e22;      /* Accent orange - Consistent across files */
+    --accent-color: #e67e22;      /* Accent orange */
     
     /* Status Colors */
     --success-color: #27ae60;     /* Green - Success states */
@@ -194,7 +194,7 @@ a:hover {
 
 .btn-outline {
     background: transparent;
-    border-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
 }
 
@@ -224,6 +224,62 @@ a:hover {
     text-decoration: underline;
     transform: none;
     box-shadow: none;
+}
+
+/* ========================================
+   PAGE HEADER & BREADCRUMBS
+   ======================================== */
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 100px 0 60px;
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 700;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    color: var(--white);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.breadcrumb a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.breadcrumb i {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    color: var(--white);
 }
 
 /* ========================================

@@ -9,57 +9,7 @@
         width: 100%;
     }
 
-    /* Announcement bar */
-    .announcement-bar .announcement-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .announcement-tag,
-    .announcement-text,
-    .announcement-link {
-        margin: 5px 0;
-    }
-
-    /* Header and Navigation */
-    .header {
-        z-index: 1000;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-        padding: 10px 0;
-    }
-
-    .logo {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 15px;
-    }
-
-    .logo-text h1 {
-        font-size: 1.5rem;
-    }
-
-    .logo-text p {
-        font-size: 0.8rem;
-    }
-
-    .header-cta {
-        width: 100%;
-        justify-content: center;
-        margin-top: 15px;
-        display: none;
-    }
-
-    .header-cta.active {
-        display: flex;
-    }
-
-    /* Hero Section */
+    /* Hero Section overrides */
     .hero-content {
         padding: 40px 0;
     }
@@ -87,34 +37,29 @@
         gap: 10px;
     }
 
-    .btn-large {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Programs Preview */
+    /* Grids overrides */
     .programs-grid,
     .services-grid,
     .events-grid,
-    .team-grid {
-        grid-template-columns: 1fr;
+    .team-grid,
+    .trust-grid,
+    .about-grid,
+    .mission-values,
+    .programs-grid-large,
+    .training-grid {
+        grid-template-columns: 1fr !important;
         gap: 20px;
     }
 
     .program-card,
     .service,
     .event-card,
-    .team-member {
+    .team-member,
+    .option {
         width: 100%;
     }
 
-    /* Trust Section */
-    .trust-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Page Header */
+    /* Page Header overrides */
     .page-header-content h1 {
         font-size: 2rem;
     }
@@ -123,18 +68,7 @@
         font-size: 1rem;
     }
 
-    /* About Page */
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .mission-values {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Timeline */
+    /* Timeline overrides */
     .timeline::before {
         left: 20px;
     }
@@ -151,22 +85,7 @@
         font-size: 0.9rem;
     }
 
-    /* Programs Page */
-    .programs-grid-large {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .program-card-featured {
-        margin-bottom: 30px;
-    }
-
-    .training-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Comparison Table */
+    /* Table Responsiveness */
     .table-responsive {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -181,70 +100,9 @@
         flex-direction: column;
         gap: 20px;
     }
-
-    .option {
-        width: 100%;
-    }
-
-    /* Footer */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-col {
-        width: 100%;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    /* Forms */
-    .newsletter-form {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .newsletter-form input {
-        width: 100%;
-    }
-
-    /* Buttons */
-    .btn {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-    }
-
-    /* Typography adjustments */
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 1.75rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
 }
 
-/* Tablet styles */
+/* Tablet styles (769px to 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .container {
         padding-left: 20px;
@@ -252,22 +110,10 @@
     }
 
     .programs-grid,
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .training-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .mission-values {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+    .services-grid,
+    .training-grid,
+    .footer-grid,
+    .mission-values,
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -291,236 +137,4 @@
     }
 }
 
-/* Print styles */
-@media print {
-    .announcement-bar,
-    .header,
-    .footer,
-    .hero-cta,
-    .btn {
-        display: none;
-    }
-
-    body {
-        font-size: 12pt;
-    }
-
-    .container {
-        width: 100%;
-        padding: 0;
-    }
-}
-
-/* Mobile Menu Styles - Consolidated for max-width: 992px */
-@media (max-width: 992px) {
-    /* Header - Fixed position for mobile */
-    .header {
-        position: relative;
-        z-index: 1000;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Show mobile toggle button */
-    .mobile-toggle {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 20px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        z-index: 1001;
-    }
-
-    /* Hamburger icon */
-    .mobile-toggle .hamburger {
-        display: flex;
-        flex-direction: column;
-        width: 24px;
-        height: 18px;
-        justify-content: space-between;
-    }
-
-    .mobile-toggle .hamburger span {
-        display: block;
-        height: 2px;
-        width: 100%;
-        background: #333;
-        transition: all 0.3s ease;
-        border-radius: 2px;
-    }
-
-    /* Hamburger animation - unified */
-    .mobile-toggle.active .hamburger span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .mobile-toggle.active .hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-toggle.active .hamburger span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-
-     .mobile-toggle.active {
-        display: none;
-     }
-
-    /* Mobile menu - slide in from right */
-    .nav-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
-        max-width: 85%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        padding: 80px 20px 20px;
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
-        z-index: 1000;
-        overflow-y: auto;
-        transition: transform 0.3s ease;
-        transform: translateX(100%);
-    }
-
-    .nav-menu.active {
-        display: flex;
-        transform: translateX(0);
-    }
-
-    /* Menu items */
-    .nav-menu li {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    .nav-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px;
-        border-radius: 8px;
-        font-size: 1rem;
-        width: 100%;
-        text-decoration: none;
-        color: #1a1a1a;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-
-    .nav-link:hover {
-        background: #f3f4f6;
-        color: #0066B3;
-    }
-
-    .nav-link.active {
-        background: #0066B3;
-        color: white;
-    }
-
-    /* Dropdown styles for mobile */
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown > .nav-link::after {
-        content: '\f107';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        margin-left: 5px;
-        transition: transform 0.3s ease;
-    }
-
-    .dropdown.active > .nav-link::after {
-        transform: rotate(180deg);
-    }
-
-    .dropdown-content {
-        position: static;
-        display: none;
-        background: #f3f4f6;
-        box-shadow: none;
-        border-radius: 8px;
-        margin-top: 5px;
-        width: 100%;
-        padding: 5px 0;
-    }
-
-    .dropdown.active .dropdown-content {
-        display: block;
-    }
-
-    .dropdown-content a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 15px 12px 25px;
-        text-decoration: none;
-        color: #1f2937;
-        transition: all 0.3s ease;
-        font-size: 0.95rem;
-    }
-
-    .dropdown-content a:hover {
-        background: #e5e7eb;
-        color: #0066B3;
-        padding-left: 30px;
-    }
-
-    .dropdown-content a i {
-        width: 20px;
-        text-align: center;
-        color: #0066B3;
-    }
-
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-        overflow: hidden;
-    }
-
-    /* Overlay when menu is open */
-    .nav-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .nav-overlay.active {
-        display: block;
-        opacity: 1;
-    }
-
-    /* Add padding to body to account for fixed header */
-    body {
-        padding-top: 0;
-    }
-}
-
-/* Ensure proper display above 992px */
-@media (min-width: 993px) {
-    .mobile-toggle {
-        display: none;
-    }
-
-    .nav-menu {
-        display: flex !important;
-        transform: none;
-    }
-
-    .nav-overlay {
-        display: none !important;
-    }
-}
+/* Print styles handled in base.css */
