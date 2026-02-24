@@ -24,10 +24,6 @@
 
     /* Header and Navigation */
     .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
         z-index: 1000;
         background: white;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -319,10 +315,7 @@
 @media (max-width: 992px) {
     /* Header - Fixed position for mobile */
     .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        position: relative;
         z-index: 1000;
         background: white;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -371,6 +364,11 @@
     .mobile-toggle.active .hamburger span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
+
+
+     .mobile-toggle.active {
+        display: none;
+     }
 
     /* Mobile menu - slide in from right */
     .nav-menu {
