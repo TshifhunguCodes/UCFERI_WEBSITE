@@ -1,41 +1,14 @@
 // Programs Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const dropdowns = document.querySelectorAll('.dropdown > a');
-    
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.classList.toggle('active');
-            
-            // Update aria-expanded attribute
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-        });
-    }
-    
-    // Dropdown functionality for mobile
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                parent.classList.toggle('active');
-            }
-        });
-    });
-    
+document.addEventListener('DOMContentLoaded', function () {
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
-    
+
     faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
+        question.addEventListener('click', function () {
             const faqItem = this.parentElement;
             faqItem.classList.toggle('active');
-            
+
             // Close other FAQ items
             if (faqItem.classList.contains('active')) {
                 faqQuestions.forEach(otherQuestion => {
@@ -47,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Countdown Timer
     function updateCountdown() {
         const incubationDeadline = new Date('2024-02-29').getTime();
         const sweepDeadline = new Date('2025-12-02').getTime();
         const now = new Date().getTime();
-        
+
         // Incubation countdown
         const incubationElement = document.getElementById('incubation-countdown');
         if (incubationElement) {
@@ -66,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 incubationElement.style.color = '#e74c3c';
             }
         }
-        
+
         // SWEEP countdown
         const sweepElement = document.getElementById('sweep-countdown');
         if (sweepElement) {
@@ -80,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
+
     // Initialize countdown
     updateCountdown();
     setInterval(updateCountdown, 86400000); // Update daily
-    
+
     // Training Modal
     const modal = document.getElementById('trainingModal');
     const modalBtns = document.querySelectorAll('.training-modal-btn');
@@ -96,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalSchedule = document.getElementById('modalSchedule');
     const modalAudience = document.getElementById('modalAudience');
     const modalRegisterBtn = document.getElementById('modalRegisterBtn');
-    
+
     // Training data
     const trainingData = {
         'business-planning': {
@@ -190,65 +163,65 @@ document.addEventListener('DOMContentLoaded', function() {
             registerLink: 'contact.html?training=team-leadership'
         }
     };
-    
+
     // Open modal
     modalBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const trainingId = this.getAttribute('data-training');
             const data = trainingData[trainingId];
-            
+
             if (data) {
                 modalTitle.textContent = data.title;
                 modalSubtitle.textContent = data.subtitle;
                 modalOverview.textContent = data.overview;
                 modalSchedule.textContent = data.schedule;
                 modalAudience.textContent = data.audience;
-                
+
                 // Clear previous learning points
                 modalLearning.innerHTML = '';
-                
+
                 // Add new learning points
                 data.learning.forEach(point => {
                     const li = document.createElement('li');
                     li.textContent = point;
                     modalLearning.appendChild(li);
                 });
-                
+
                 // Set register link
-                modalRegisterBtn.onclick = function() {
+                modalRegisterBtn.onclick = function () {
                     window.location.href = data.registerLink;
                 };
-                
+
                 // Show modal
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
         });
     });
-    
+
     // Close modal
     closeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
     });
-    
+
     // Close modal when clicking outside
-    modal.addEventListener('click', function(e) {
+    modal.addEventListener('click', function (e) {
         if (e.target === modal) {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
     });
-    
+
     // Newsletter Form Submission
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
+        newsletterForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const email = this.querySelector('input[type="email"]').value;
-            
+
             // Simple validation
             if (email && email.includes('@')) {
                 // In a real application, you would send this to a server
@@ -259,15 +232,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -277,26 +250,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Animate elements on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
+
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
             }
         });
     }, observerOptions);
-    
+
     // Observe elements to animate
     document.querySelectorAll('.program-card, .training-card, .stat-card').forEach(card => {
         observer.observe(card);
     });
-    
+
     // Add animation class when element comes into view
     const cards = document.querySelectorAll('.program-card, .training-card, .stat-card');
     cards.forEach(card => {
@@ -304,8 +277,8 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
-    
-    const cardObserver = new IntersectionObserver(function(entries) {
+
+    const cardObserver = new IntersectionObserver(function (entries) {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
@@ -318,18 +291,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {
         threshold: 0.1
     });
-    
+
     cards.forEach(card => {
         cardObserver.observe(card);
     });
-    
+
     // Responsive table handling
     function handleResponsiveTables() {
         const tables = document.querySelectorAll('.comparison-table');
         tables.forEach(table => {
             const headers = Array.from(table.querySelectorAll('th')).map(th => th.textContent);
             const rows = table.querySelectorAll('tbody tr');
-            
+
             if (window.innerWidth <= 768) {
                 rows.forEach(row => {
                     const cells = row.querySelectorAll('td');
@@ -349,17 +322,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     handleResponsiveTables();
     window.addEventListener('resize', handleResponsiveTables);
-    
+
     // Program filter functionality (if needed in future)
     const programFilter = document.querySelector('.program-filter');
     if (programFilter) {
-        programFilter.addEventListener('change', function() {
+        programFilter.addEventListener('change', function () {
             const filterValue = this.value;
             const cards = document.querySelectorAll('.program-card, .training-card');
-            
+
             cards.forEach(card => {
                 if (filterValue === 'all' || card.classList.contains(filterValue)) {
                     card.style.display = 'block';

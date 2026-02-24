@@ -145,7 +145,7 @@
     z-index: 100;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 993px) {
   .dropdown:hover .dropdown-content {
     display: block;
   }
@@ -336,6 +336,7 @@
         transition: all 0.3s ease;
         border-radius: 2px;
     }
+    
 
     /* Hamburger animation - unified */
     .mobile-toggle.active .hamburger span:nth-child(1) {
@@ -400,8 +401,7 @@
     }
 
     .nav-link.active {
-        background: var(--primary-color);
-        color: white;
+        color: var(--primary-color);
     }
 
     /* Dropdown styles for mobile */
@@ -476,5 +476,59 @@
         z-index: 999;
         opacity: 0;
         transition: opacity 0.3s ease;
+    }
+
+    /* Mobile Nav Logo - Standardized */
+    .mobile-nav-logo {
+        display: block;
+        padding: 0 15px 25px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-nav-logo a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+
+    .mobile-nav-logo img {
+        height: 40px;
+        width: auto;
+        border-radius: 4px;
+    }
+
+    .mobile-nav-logo span {
+        font-family: 'Source Serif Pro', serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--danger-color);
+    }
+
+    .nav-menu {
+        padding-top: 25px; /* Reduced top padding as logo handles spacing */
+    }
+
+    .mobile-toggle {
+        top: 15px !important; /* Force position fix */
+        right: 15px !important;
+        background: white; /* Ensure visibility */
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1002 !important; /* Stay above everything */
+    }
+    
+    .mobile-toggle.active {
+        position: fixed; /* Stick it to the top right when menu is open */
+        background: #f3f4f6;
+        box-shadow: none;
+    }
+}
+
+/* Global hidden state for mobile logo on desktop */
+@media (min-width: 993px) {
+    .mobile-nav-logo {
+        display: none !important;
     }
 }

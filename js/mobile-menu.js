@@ -1,133 +1,123 @@
-// Mobile Menu Functionality - Complete Solution
-document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Functionality - Standardized Solution
+document.addEventListener('DOMContentLoaded', function () {
     // Mobile menu elements
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const body = document.body;
-    
+    const breakpoint = 992; // Consistent with CSS
+
     // Only run if mobile toggle exists
     if (mobileToggle && navMenu) {
-        
-        // Create overlay for mobile menu
-        const overlay = document.createElement('div');
-        overlay.className = 'nav-overlay';
-        document.body.appendChild(overlay);
-        
+
+        // Create overlay if it doesn't exist
+        let overlay = document.querySelector('.nav-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'nav-overlay';
+            document.body.appendChild(overlay);
+        }
+
         // Toggle menu function
         function toggleMenu() {
-            mobileToggle.classList.toggle('active');
+            const isActive = mobileToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
             overlay.classList.toggle('active');
             body.classList.toggle('menu-open');
-            
+
             // Accessibility
-            const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-            mobileToggle.setAttribute('aria-expanded', !isExpanded);
+            mobileToggle.setAttribute('aria-expanded', isActive);
         }
-        
+
         // Mobile toggle click
-        mobileToggle.addEventListener('click', function(e) {
+        mobileToggle.addEventListener('click', function (e) {
             e.stopPropagation();
             toggleMenu();
         });
-        
+
         // Close menu when clicking overlay
-        overlay.addEventListener('click', function() {
-            toggleMenu();
+        overlay.addEventListener('click', function () {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
         });
-        
-        // Close menu when clicking a nav link (but not for dropdown toggles)
+
+        // Handle nav links
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Don't close menu if clicking on a dropdown toggle
-                if (window.innerWidth <= 992 && !this.parentElement.classList.contains('dropdown')) {
+            link.addEventListener('click', function (e) {
+                const isDropdown = this.parentElement.classList.contains('dropdown');
+
+                // On mobile, dropdown links should toggle the dropdown
+                if (window.innerWidth <= breakpoint && isDropdown) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const parent = this.parentElement;
+                    const wasActive = parent.classList.contains('active');
+
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown.active').forEach(other => {
+                        if (other !== parent) {
+                            other.classList.remove('active');
+                        }
+                    });
+
+                    parent.classList.toggle('active');
+                } else if (window.innerWidth <= breakpoint && !isDropdown) {
+                    // Close menu on normal link click
                     toggleMenu();
                 }
             });
         });
-        
-        // Handle dropdowns on mobile
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(dropdown => {
-            const link = dropdown.querySelector('.nav-link');
-            
-            if (link) {
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 992) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        dropdown.classList.toggle('active');
-                        
-                        // Close other dropdowns
-                        dropdowns.forEach(other => {
-                            if (other !== dropdown) {
-                                other.classList.remove('active');
-                            }
-                        });
-                    }
-                });
-            }
-        });
-        
-        // Close menu on window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 992) {
+
+        // Close menu on window resize if switching to desktop
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > breakpoint) {
                 mobileToggle.classList.remove('active');
                 navMenu.classList.remove('active');
                 overlay.classList.remove('active');
                 body.classList.remove('menu-open');
                 mobileToggle.setAttribute('aria-expanded', 'false');
-                
+
                 // Close all dropdowns
-                dropdowns.forEach(dropdown => {
+                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
                     dropdown.classList.remove('active');
                 });
             }
         });
-        
+
         // Close menu with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && navMenu.classList.contains('active')) {
                 toggleMenu();
             }
         });
-        
-        // Close menu when clicking outside (for mobile)
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 992 && 
-                navMenu.classList.contains('active') &&
-                !e.target.closest('.nav-menu') && 
-                !e.target.closest('.mobile-toggle')) {
-                toggleMenu();
-            }
-        });
-        
-        // Ensure all dropdowns are closed on page load
-        dropdowns.forEach(dropdown => {
+
+        // Initial state cleanup
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.querySelectorAll('.dropdown.active').forEach(dropdown => {
             dropdown.classList.remove('active');
         });
     }
-    
+
     // Touch swipe for hero slider
     let touchStartX = 0;
     let touchEndX = 0;
     const heroSlider = document.querySelector('.hero-images');
-    
+
     if (heroSlider) {
-        heroSlider.addEventListener('touchstart', function(e) {
+        heroSlider.addEventListener('touchstart', function (e) {
             touchStartX = e.changedTouches[0].screenX;
         });
-        
-        heroSlider.addEventListener('touchend', function(e) {
+
+        heroSlider.addEventListener('touchend', function (e) {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
         });
-        
+
         function handleSwipe() {
             const swipeThreshold = 50;
             const difference = touchStartX - touchEndX;
-            
+
             if (Math.abs(difference) > swipeThreshold) {
                 if (difference > 0) {
                     // Swipe left - next slide
@@ -138,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        
+
         function triggerSlide(direction) {
             const event = new CustomEvent('slide' + direction);
             document.dispatchEvent(event);
@@ -151,7 +141,7 @@ function updateCountdown() {
     const incubationDeadline = new Date('2024-02-29').getTime();
     const sweepDeadline = new Date('2025-12-02').getTime();
     const now = new Date().getTime();
-    
+
     // Incubation countdown
     const incubationElement = document.getElementById('incubation-countdown');
     if (incubationElement) {
@@ -163,7 +153,7 @@ function updateCountdown() {
             incubationElement.textContent = 'Application closed';
         }
     }
-    
+
     // SWEEP countdown
     const sweepElement = document.getElementById('sweep-countdown');
     if (sweepElement) {
@@ -178,7 +168,7 @@ function updateCountdown() {
 }
 
 // Initialize countdown
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     updateCountdown();
     setInterval(updateCountdown, 86400000); // Update daily
 });
@@ -187,12 +177,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function validateForm(form) {
     const inputs = form.querySelectorAll('input[required], textarea[required]');
     let isValid = true;
-    
+
     inputs.forEach(input => {
         if (!input.value.trim()) {
             isValid = false;
             input.classList.add('error');
-            
+
             // Add error message
             if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error-message')) {
                 const error = document.createElement('span');
@@ -209,17 +199,17 @@ function validateForm(form) {
             }
         }
     });
-    
+
     return isValid;
 }
 
 // Lazy loading for images
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if ('IntersectionObserver' in window) {
         const lazyImages = document.querySelectorAll('img[data-src]');
-        
-        const imageObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+
+        const imageObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
@@ -228,8 +218,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
-        lazyImages.forEach(function(img) {
+
+        lazyImages.forEach(function (img) {
             imageObserver.observe(img);
         });
     }

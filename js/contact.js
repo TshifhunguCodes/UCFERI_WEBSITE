@@ -1,48 +1,25 @@
 // contact.js - Contact Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const spans = mobileToggle.querySelectorAll('span');
-            
-            if (navMenu.classList.contains('active')) {
-                // Animate to X
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                // Return to hamburger
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-    }
-    
+document.addEventListener('DOMContentLoaded', function () {
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const formObject = {};
             formData.forEach((value, key) => {
                 formObject[key] = value;
             });
-            
+
             // Show loading state
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
+
             // Simulate form submission
             setTimeout(() => {
                 // Show success message
@@ -58,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 `;
-                
+
                 // Style success message
                 successMessage.style.cssText = `
                     background: linear-gradient(135deg, var(--success-color), #2ecc71);
@@ -68,30 +45,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     margin-top: 30px;
                     animation: fadeIn 0.5s ease;
                 `;
-                
+
                 // Style content inside
                 const successContent = successMessage.querySelector('.success-content');
                 successContent.style.display = 'flex';
                 successContent.style.alignItems = 'flex-start';
                 successContent.style.gap = '20px';
-                
+
                 const icon = successContent.querySelector('i');
                 icon.style.fontSize = '3rem';
                 icon.style.marginTop = '5px';
-                
+
                 successContent.querySelector('h3').style.margin = '0 0 10px 0';
                 successContent.querySelector('p').style.margin = '0 0 8px 0';
-                
+
                 // Insert success message
                 const formFooter = this.querySelector('.form-footer');
                 formFooter.parentNode.insertBefore(successMessage, formFooter.nextSibling);
-                
+
                 // Reset form after 5 seconds
                 setTimeout(() => {
                     this.reset();
                     successMessage.style.opacity = '0';
                     successMessage.style.transition = 'opacity 0.3s ease';
-                    
+
                     setTimeout(() => {
                         successMessage.remove();
                         submitBtn.innerHTML = originalText;
@@ -101,16 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
-    
+
     // Purpose card selection styling
     const purposeCards = document.querySelectorAll('.purpose-card');
     purposeCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function () {
             purposeCards.forEach(c => {
                 c.classList.remove('selected');
             });
             this.classList.add('selected');
-            
+
             // Update radio button
             const radio = this.querySelector('input[type="radio"]');
             if (radio) {
@@ -118,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Add CSS for animations
     const style = document.createElement('style');
     style.textContent = `
@@ -154,31 +131,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Form validation
     if (contactForm) {
         const inputs = contactForm.querySelectorAll('input, select, textarea');
         inputs.forEach(input => {
-            input.addEventListener('blur', function() {
+            input.addEventListener('blur', function () {
                 if (this.value.trim() === '' && this.hasAttribute('required')) {
                     this.style.borderColor = 'var(--danger-color)';
                 } else {
                     this.style.borderColor = '#e0e6eb';
                 }
             });
-            
-            input.addEventListener('focus', function() {
+
+            input.addEventListener('focus', function () {
                 this.style.borderColor = 'var(--primary-color)';
             });
         });
     }
-    
+
     // Phone number formatting
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
+        phoneInput.addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
-            
+
             if (value.length > 0) {
                 if (value.length <= 2) {
                     value = '+27 ' + value;
@@ -190,20 +167,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     value = '+27 ' + value.substr(2, 3) + ' ' + value.substr(5, 3) + ' ' + value.substr(8, 4);
                 }
             }
-            
+
             e.target.value = value;
         });
     }
-    
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             if (href !== '#') {
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
-                
+
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,

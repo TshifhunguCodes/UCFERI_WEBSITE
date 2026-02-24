@@ -1,19 +1,9 @@
 // events.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const body = document.body;
-    
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
-            body.classList.toggle('mobile-menu-active');
-        });
-    }
-
+document.addEventListener('DOMContentLoaded', function () {
     // Register Now button
     const registerBtn = document.querySelector('.event-registration .btn-primary');
     if (registerBtn) {
-        registerBtn.addEventListener('click', function(e) {
+        registerBtn.addEventListener('click', function (e) {
             e.preventDefault();
             alert('📝 Registration form for Entrepreneurship Awareness Workshop (May 7, 2025) would open');
         });
@@ -22,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply Now for competition
     const applyBtn = document.querySelector('.competition-info .btn-primary');
     if (applyBtn) {
-        applyBtn.addEventListener('click', function(e) {
+        applyBtn.addEventListener('click', function (e) {
             e.preventDefault();
             alert('💰 HALT Prize Competition application form would open\nDeadline: February 24, 2026');
         });
@@ -30,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Video placeholders
     const videoPlaceholders = document.querySelectorAll('.media-placeholder');
-    
+
     videoPlaceholders.forEach(placeholder => {
-        placeholder.addEventListener('click', function() {
+        placeholder.addEventListener('click', function () {
             let eventName = 'Event video';
             const parent = this.closest('.featured-event-card, .past-event-card, .competition-card');
             if (parent) {
@@ -46,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Watch recording links
     const watchLinks = document.querySelectorAll('.watch-link, .event-media-placeholder.small');
     watchLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             const eventCard = this.closest('.past-event-card');
             const eventTitle = eventCard?.querySelector('h3')?.textContent || 'Past event';
@@ -57,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hashtag clicks
     const hashtags = document.querySelectorAll('.event-hashtags span');
     hashtags.forEach(tag => {
-        tag.addEventListener('click', function() {
+        tag.addEventListener('click', function () {
             alert(`🔍 Browse events with ${this.textContent}`);
         });
     });
