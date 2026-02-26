@@ -128,48 +128,44 @@ function initHeroSlider() {
 // =============================================
 // MOBILE NAVIGATION - COMMENTED OUT (UNCOMMENT IF NEEDED)
 // =============================================
-
-/*
-function initMobileNavigation() {
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const hamburger = document.querySelector('.hamburger');
+// Social Media Popup Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const socialToggle = document.querySelector('.social-toggle');
+    const socialPopup = document.querySelector('.social-popup');
+    const socialOverlay = document.querySelector('.social-overlay');
+    const closeSocial = document.querySelector('.close-social');
     
-    if (mobileToggle && navMenu && hamburger) {
-        mobileToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            
-            const spans = hamburger.querySelectorAll('span');
-            if (spans.length >= 3) {
-                if (navMenu.classList.contains('active')) {
-                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-                    spans[1].style.opacity = '0';
-                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-                } else {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            }
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-                const spans = hamburger.querySelectorAll('span');
-                if (spans.length >= 3) {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            }
+    if (socialToggle) {
+        socialToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            socialPopup.classList.add('active');
+            socialOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
     }
-}
-*/
+    
+    // Close popup functions
+    function closeSocialPopup() {
+        socialPopup.classList.remove('active');
+        socialOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    if (closeSocial) {
+        closeSocial.addEventListener('click', closeSocialPopup);
+    }
+    
+    if (socialOverlay) {
+        socialOverlay.addEventListener('click', closeSocialPopup);
+    }
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && socialPopup.classList.contains('active')) {
+            closeSocialPopup();
+        }
+    });
+});
 
 // =============================================
 // DROPDOWN MENUS
