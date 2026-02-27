@@ -1,0 +1,41 @@
+linkedin = https://www.linkedin.com/company/univencferi/posts/?feedView=all
+
+facebook = https://www.facebook.com/profile.php?id=61559043681399
+
+ticktok =https://www.tiktok.com/@univen.cferi
+
+instagram =https://www.instagram.com/univen.cferi/
+
+youtube = https://www.youtube.com/@UCfERIPressClub
+
+whatsapp = https://api.whatsapp.com/send?phone=27796788140
+
+logo colors
+red = #D32F2F
+blue = #1e3a8a
+Laptop
+logo height =59px 
+h1 font size = 1.4rem
+para font size = 0.79rem
+
+mobile
+height phone = 79px
+
+announcement bar padding =12px
+
+:root {
+    /* Matched Color Palette from programs.html */
+    --primary:  #df7b1d;       /* Dark Blue - Stability & Professionalism */
+    --secondary: #2316da;     /* Blue - Trust & Reliability */
+    --accent: #3ba710;        /* Orange - Energy & Action */
+    --dark: #2c3e50;          /* Dark Blue */
+    --light: #ecf0f1;         /* Light Gray Background */
+    --text: #333333;          /* Dark Text */
+    --text-light: #666666;    /* Light Text */
+    --white: #FFFFFF;
+    --border: #e0e0e0;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
+    --overlay: rgba(44, 62, 80, 0.85); /* Dark blue with opacity */
+}
