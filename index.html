@@ -8,20 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/header-footer-home.css">
-    <link rel="stylesheet" href="css/mobile.css">
+  
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4L52LZVHL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H4L52LZVHL');
-</script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4L52LZVHL"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H4L52LZVHL');
+   </script>
 </head>
 <body>
+
+    <!-- ================================================== -->
     <!-- Announcement Bar -->
+    <!--================================================== -->
    <div class="announcement-bar">
         <div class="container">
           <div class="announcement-content">
@@ -33,7 +35,9 @@
         </div>
     </div> 
 
+    <!-- ================================================== -->
     <!-- Header -->
+    <!--================================================== -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -62,10 +66,22 @@
                         </div> 
                     </li>      
                     <li class="dropdown">
-                        <a href="programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
+                        <a href="programs.html" class="nav-link">
+                           <i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i>
+                        </a>
                         <div class="dropdown-content">
-                            <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
-                            <a href="student-network.html"><i class="fas fa-users"></i> CEEIIC Student Network</a>
+                           <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
+                           <div class="nested-dropdown">
+                               <a href="#" class="nested-dropdown-toggle">
+                                  <i class="fas fa-users"></i> CEEIIC Student Network 
+                                  <i class="fas fa-chevron-right"></i>
+                               </a>
+                               <div class="nested-dropdown-content">
+                                  <a href="student-network.html"><i class="fas fa-eye"></i>CEEIIC Overview</a>
+                                  <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                  <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
+                              </div>
+                            </div>
                             <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
@@ -85,29 +101,28 @@
                  
                  
                 <!-- Mobile Menu Toggle -->
-                 <div class="mobile-actions"> 
-                   <!--  <button class="social-toggle" aria-label="Toggle social media">
-                 <i class="fas fa-share-alt"></i>
-               </button>-->
-      
-            <button class="mobile-toggle" aria-label="Toggle mobile menu">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-    </div>
+                <div class="mobile-actions"> 
+                   <button class="mobile-toggle" aria-label="Toggle mobile menu">
+                      <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </button>
+                </div>
                
             </nav>
         </div>
     </header>
 
+
+
+    <!-- =============================================== -->
     <!-- Hero Section with Sliding Images -->
-   <!-- Hero Section with Sliding Images -->
-<section class="hero">
+    <!--================================================== -->
+    <section class="hero">
     <!-- Hero Images Container -->
-    <div class="hero-images">
+      <div class="hero-images">
         <div class="hero-slide active" style="background-image: url('images/new/hero1.jpeg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
@@ -116,25 +131,24 @@
                
             </div>
         </div>
-    </div>
-            </div>
-        </div>
-        <div class="hero-slide" style="background-image: url('images/new/hero2.jpeg');">
+      </div>
+
+      <div class="hero-slide" style="background-image: url('images/new/hero2.jpeg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2 class="slide-title">Student Women Economic Empowerment</h2>
                 <p class="slide-text">Empowering future female leaders</p>
             </div>
-            
-        </div>
-        <div class="hero-slide" style="background-image: url('images/new/hero3.jpeg');">
+      </div>
+
+       <div class="hero-slide" style="background-image: url('images/new/hero3.jpeg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2 class="slide-title">CEEIIC Student Network</h2>
                 <p class="slide-text">Connecting students across the Vhembe district</p>
             </div>
         </div>
-    </div>
+    
 
     <!-- Hero Content Overlay -->
       <div class="hero-content-overlay">
@@ -167,12 +181,13 @@
     </div>
 </section>
 
-<!-- About Section - Split Layout with Image Cards -->
-<!-- About Section - Split Layout with Stacked Corner Images -->
+<!-- =====================================================================  -->
+<!-- About Section  -->
+<!--===================================================================== --> 
 <section class="about-section">
     <div class="container">
         <div class="about-split-layout">
-            <!-- Left Side - Content (NO BUTTONS) -->
+           
             <div class="about-left">
                 <div class="about-badge">
                     <span class="badge-text">Since 2023</span>
@@ -206,7 +221,6 @@
                     <!-- Main Image - Centered -->
                     <div class="main-image">
                         <img src="images/new/WhatsApp Image 2026-02-11 at 19.08.53 (3).jpeg" alt="Entrepreneurs at UCfERI">
-                        <!-- Floating Badge on Main Image -->
                         <div class="floating-badge">
                             <i class="fas fa-rocket"></i>
                             <span>Innovation Hub</span>
@@ -233,7 +247,9 @@
     </div>
 </section>
 
-<!-- Programs Preview our programs list -->
+<!-- ================================================== -->
+<!-- Programs Section -->
+<!--================================================== -->
     <section class="programs-preview">
         <div class="container">
             <div class="section-header">
@@ -287,7 +303,9 @@
         </div>
     </section>
 
+    <!-- ================================================== -->
     <!-- Services Section -->
+    <!--================================================== -->
     <section class="services-section">
         <div class="container">
             <div class="section-header">
@@ -348,16 +366,17 @@
     </section>
     
     
-     <!-- Upcoming Events Section -->
-       <!-- Upcoming Events Section -->
-<section class="events-section">
-    <div class="container">
-        <div class="section-header">
+    <!-- ================================================ -->
+    <!-- Upcoming Events Section -->
+    <!--================================================== -->
+    <section class="events-section">
+      <div class="container">
+         <div class="section-header">
             <h2 class="section-title">Upcoming Events</h2>
             <p class="section-subtitle">Join our innovation challenges and workshops</p>
-        </div>
+         </div>
 
-        <div class="events-grid">
+         <div class="events-grid">
             <!-- Event 1: Waste Innovation Challenge -->
             <div class="event-card">
                 <div class="event-image" onclick="openPopup('popup1')">
@@ -440,39 +459,40 @@
             </div>
 
         </div>
-    </div>
+      </div>
 
             
 
-    <!-- Popups for full images -->
-    <div id="popup1" class="popup">
+     <!-- Popups for full images -->
+     <div id="popup1" class="popup">
         <div class="popup-content">
             <img src="images/waste.jpeg" alt="Waste Innovation Challenge">
             <button class="close-btn" onclick="closePopup('popup1')">Close</button>
         </div>
-    </div>
+     </div>
 
-    <div id="popup2" class="popup">
+     <div id="popup2" class="popup">
         <div class="popup-content">
             <img src="images/hult.jpeg" alt="Local Competition">
             <button class="close-btn" onclick="closePopup('popup2')">Close</button>
         </div>
-    </div>
+     </div>
 
-    <div id="popup3" class="popup">
+     <div id="popup3" class="popup">
         <div class="popup-content">
             <img src="images/map.jpeg" alt="The System Challenge">
             <button class="close-btn" onclick="closePopup('popup3')">Close</button>
         </div>
-    </div>
-</section>
+     </div>
+   </section>
     
 
     
+    <!-- =========================================== -->
     <!-- Trust Section -->
-   <!-- Trust Section -->
-<section class="trust-section">
-    <div class="container">
+    <!--============================================== -->
+    <section class="trust-section">
+      <div class="container">
         <div class="section-header">
             <div class="section-badge">
                 <span class="badge-text">Trust & Recognition</span>
@@ -524,11 +544,12 @@
         <div class="trust-footer">
             <p>Trusted by 500+ entrepreneurs and supported by national institutions</p>
         </div>
-    </div>
-</section>
+      </div>
+   </section>
 
-
-    <!-- CTA Section -->
+    <!-- ================================================== -->
+    <!-- CTA Section Credentials -->
+    <!--================================================== -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
@@ -548,8 +569,9 @@
         </div>
     </section>
 
+    <!-- ============================================================= -->
     <!-- Partners Section -->
-     <!-- Partners Section -->
+    <!--============================================================== -->
     <section class="partners-section">
     <div class="container">
         <!-- Section Header -->
@@ -669,7 +691,9 @@
     </div>
    </section>
 
+    <!-- ================================================== -->
     <!-- Footer -->
+     <!--================================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -740,10 +764,6 @@
         </div>
     </footer>
     
-    <!-- Accessibility Widget - Always Visible -->
-     <!-- Accessibility Widget -->
-       
-
     <!-- JavaScript -->
     <script src="js/index.js"></script>
    <script src="js/mobile-menu.js"></script>

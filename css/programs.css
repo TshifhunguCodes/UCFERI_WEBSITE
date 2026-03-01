@@ -33,6 +33,13 @@ body {
     padding: 0 20px;
 }
 
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -93,9 +100,11 @@ body {
 }
 
 
-
+/* ================================================================*/
 
 /* Page Header */
+
+/* =================================================================*/
 .page-header {
     background: linear-gradient(135deg, #1313e4);
     padding: 80px 0;
@@ -361,7 +370,9 @@ body {
     gap: 15px;
 }
 
+/*=========================================
 /* Training Programs */
+/*========================================*/
 .training-programs {
     padding: 80px 0;
     background: var(--white);
@@ -431,7 +442,9 @@ body {
     justify-content: center;
 }
 
+/*==========================================*/
 /* Program Comparison */
+/*==========================================*/
 .program-comparison {
     padding: 80px 0;
     background: var(--light-color);
@@ -495,7 +508,9 @@ body {
     border-right: none;
 }
 
+/*==========================================
 /* Application Process */
+/*==========================================*/
 .application-process {
     padding: 80px 0;
     background: var(--white);
@@ -616,7 +631,9 @@ body {
     border-radius: 5px;
 }
 
+/*==========================================
 /* FAQ Section */
+/*==========================================*/
 .faq-section {
     padding: 80px 0;
     background: var(--light-color);
@@ -684,7 +701,9 @@ body {
     border-top: 1px solid var(--light-color);
 }
 
+/*==========================================
 /* CTA Section */
+/*==========================================*/
 .cta-section {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));

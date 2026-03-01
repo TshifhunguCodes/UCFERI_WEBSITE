@@ -5,44 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Incubation Program | UCfERI - University of Venda</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/incubation.css">
-    <link rel="stylesheet" href="css/programs.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/header-footer-home.css">
+  
+    
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4L52LZVHL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H4L52LZVHL');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4L52LZVHL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H4L52LZVHL');
+    </script>
 </head>
 <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="container">
-            <!-- <div class="announcement-content">
-                <span class="announcement-tag"><i class="fas fa-bell"></i> Applications Open</span>
-                <span class="announcement-text">Business Incubation 2024 - Closing 29 February 2024</span>
-                <a href="#apply" class="announcement-link">Apply Now <i class="fas fa-arrow-right"></i></a>
-            </div> -->
-
-             <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
     </div>
 
-
-
-                <!-- Header -->
+    <!-- ================================================== -->
+    <!-- Header -->
+    <!--================================================== -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -71,10 +63,22 @@
                         </div> 
                     </li>      
                     <li class="dropdown">
-                        <a href="programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
+                        <a href="programs.html" class="nav-link">
+                           <i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i>
+                        </a>
                         <div class="dropdown-content">
-                            <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
-                            <a href="student-network.html"><i class="fas fa-users"></i> CEEIIC Student Network</a>
+                           <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
+                           <div class="nested-dropdown">
+                               <a href="#" class="nested-dropdown-toggle">
+                                  <i class="fas fa-users"></i> CEEIIC Student Network 
+                                  <i class="fas fa-chevron-right"></i>
+                               </a>
+                               <div class="nested-dropdown-content">
+                                  <a href="student-network.html"><i class="fas fa-eye"></i>CEEIIC Overview</a>
+                                  <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                  <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
+                              </div>
+                            </div>
                             <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
@@ -94,45 +98,40 @@
                  
                  
                 <!-- Mobile Menu Toggle -->
-                 <div class="mobile-actions"> 
-                   <!--  <button class="social-toggle" aria-label="Toggle social media">
-                 <i class="fas fa-share-alt"></i>
-               </button>-->
-      
-            <button class="mobile-toggle" aria-label="Toggle mobile menu">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-    </div>
+                <div class="mobile-actions"> 
+                   <button class="mobile-toggle" aria-label="Toggle mobile menu">
+                      <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </button>
+                </div>
                
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-   <section class="page-header">
-    <div class="container">
-        <div class="page-header-content">
-            
-            
-            <!-- Text Content -->
-            <div class="header-text-content">
-                <h1>Business Incubation Program</h1>
-                <p>Transform your business idea into a successful venture with SEDFA-accredited support</p>
-                <div class="breadcrumb">
-                    <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <a href="programs.html">Programs</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>Business Incubation</span>
-                </div>
+
+
+    <!-- Hero Section - Full Bleed Image -->
+    <section class="hero-incubation">
+        <div class="hero-image-container">
+            <img src="images/univencferi_logo.jpeg" alt="Business Incubation Program at UCfERI" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content container">
+            <h1>Business Incubation Program</h1>
+            <p>Transform your business idea into a successful venture with SEDFA-accredited support</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="programs.html">Programs</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Business Incubation</span>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Program Overview -->
     <section class="program-overview">
@@ -196,10 +195,8 @@
                             <h4>Application Deadline</h4>
                         </div>
                         <div class="deadline-content">
-                            <div class="countdown" id="incubation-countdown">
-                                Loading...
-                            </div>
-                            <a href="#apply" class="btn btn-primary btn-block">Apply Now</a>
+                            <div class="countdown" id="incubation-countdown">Loading...</div>
+                            <a href="#apply" class="btn btn-secondary btn-block">Apply Now</a>
                             <p class="deadline-note"><small>Applications close 29 February 2024</small></p>
                         </div>
                     </div>
@@ -209,7 +206,7 @@
     </section>
 
     <!-- Program Benefits -->
-    <section class="program-benefits">
+    <section class="benefits-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">What You'll Gain</h2>
@@ -217,50 +214,38 @@
             </div>
             
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
+                <div class="benefit">
+                    <div class="benefit-icon"><i class="fas fa-lightbulb"></i></div>
                     <h3>Idea Validation & Business Planning</h3>
                     <p>Test and validate your business idea with market research and develop comprehensive business plans with financial projections</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
+                <div class="benefit">
+                    <div class="benefit-icon"><i class="fas fa-handshake"></i></div>
                     <h3>Structured Mentorship</h3>
                     <p>One-on-one guidance from experienced entrepreneurs and industry experts through our structured mentorship program</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
+                <div class="benefit">
+                    <div class="benefit-icon"><i class="fas fa-money-bill-wave"></i></div>
                     <h3>Funding Support</h3>
                     <p>Access to grants, loans, and investor networks for startup capital with funding readiness assessments</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
+                <div class="benefit">
+                    <div class="benefit-icon"><i class="fas fa-network-wired"></i></div>
                     <h3>Market Access</h3>
                     <p>Connect with potential buyers, partners, and explore export opportunities in agro-processing and related sectors</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
+                <div class="benefit">
+                    <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Skills Development</h3>
                     <p>Weekly workshops on essential business skills: pitching, sales, marketing, business strategy and finance</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
+                <div class="benefit">
+                    <div class="benefit-icon"><i class="fas fa-balance-scale"></i></div>
                     <h3>Compliance Support</h3>
                     <p>Guidance on legal, tax, and regulatory requirements with compliance workshops and documentation templates</p>
                 </div>
@@ -269,7 +254,7 @@
     </section>
 
     <!-- Program Structure -->
-    <section class="program-structure">
+    <section class="structure-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Program Structure</h2>
@@ -278,49 +263,43 @@
             
             <div class="structure-timeline">
                 <div class="phase">
-                    <div class="phase-header">
-                        <div class="phase-number">01</div>
-                        <h3>Foundation Phase<br><span>(Months 1-2)</span></h3>
-                    </div>
+                    <div class="phase-number">01</div>
                     <div class="phase-content">
+                        <h3>Foundation Phase <span>(Months 1-2)</span></h3>
                         <ul>
-                            <li>Business idea validation and market research</li>
-                            <li>Basic financial literacy training</li>
-                            <li>Legal requirements and compliance workshop</li>
-                            <li>Entrepreneurial mindset development</li>
-                            <li>Resource hub access for business templates</li>
+                            <li><i class="fas fa-check"></i> Business idea validation and market research</li>
+                            <li><i class="fas fa-check"></i> Basic financial literacy training</li>
+                            <li><i class="fas fa-check"></i> Legal requirements and compliance workshop</li>
+                            <li><i class="fas fa-check"></i> Entrepreneurial mindset development</li>
+                            <li><i class="fas fa-check"></i> Resource hub access for business templates</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="phase">
-                    <div class="phase-header">
-                        <div class="phase-number">02</div>
-                        <h3>Development Phase<br><span>(Months 3-4)</span></h3>
-                    </div>
+                    <div class="phase-number">02</div>
                     <div class="phase-content">
+                        <h3>Development Phase <span>(Months 3-4)</span></h3>
                         <ul>
-                            <li>Comprehensive business plan development</li>
-                            <li>Marketing strategy creation and digital presence</li>
-                            <li>Financial projections and funding readiness</li>
-                            <li>Pitch deck preparation and presentation skills</li>
-                            <li>Product development and prototyping support</li>
+                            <li><i class="fas fa-check"></i> Comprehensive business plan development</li>
+                            <li><i class="fas fa-check"></i> Marketing strategy creation and digital presence</li>
+                            <li><i class="fas fa-check"></i> Financial projections and funding readiness</li>
+                            <li><i class="fas fa-check"></i> Pitch deck preparation and presentation skills</li>
+                            <li><i class="fas fa-check"></i> Product development and prototyping support</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="phase">
-                    <div class="phase-header">
-                        <div class="phase-number">03</div>
-                        <h3>Launch & Growth Phase<br><span>(Months 5-12)</span></h3>
-                    </div>
+                    <div class="phase-number">03</div>
                     <div class="phase-content">
+                        <h3>Launch & Growth Phase <span>(Months 5-12)</span></h3>
                         <ul>
-                            <li>Minimum viable product launch</li>
-                            <li>Market entry and customer acquisition strategies</li>
-                            <li>Investor pitch preparation and networking</li>
-                            <li>Scaling operations for job creation</li>
-                            <li>Post-launch support planning (6 months additional)</li>
+                            <li><i class="fas fa-check"></i> Minimum viable product launch</li>
+                            <li><i class="fas fa-check"></i> Market entry and customer acquisition strategies</li>
+                            <li><i class="fas fa-check"></i> Investor pitch preparation and networking</li>
+                            <li><i class="fas fa-check"></i> Scaling operations for job creation</li>
+                            <li><i class="fas fa-check"></i> Post-launch support planning (6 months additional)</li>
                         </ul>
                     </div>
                 </div>
@@ -338,49 +317,37 @@
             
             <div class="eligibility-grid">
                 <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <i class="fas fa-check-circle"></i>
                     <h3>Business Stage</h3>
                     <p>Pre-idea, startup, or existing SMME (0-5 years old)</p>
                 </div>
                 
                 <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <i class="fas fa-check-circle"></i>
                     <h3>Geographic Focus</h3>
                     <p>Based in or serving Vhembe District communities</p>
                 </div>
                 
                 <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <i class="fas fa-check-circle"></i>
                     <h3>Commitment Level</h3>
                     <p>Available for weekly workshops and mentorship sessions</p>
                 </div>
                 
                 <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <i class="fas fa-check-circle"></i>
                     <h3>Innovation Potential</h3>
                     <p>Business idea should be innovative and scalable</p>
                 </div>
                 
                 <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <i class="fas fa-check-circle"></i>
                     <h3>Sector Alignment</h3>
                     <p>Agriculture, technology, manufacturing, services, or retail with growth potential</p>
                 </div>
                 
                 <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <i class="fas fa-check-circle"></i>
                     <h3>Target Groups</h3>
                     <p>Youth, women, people with disabilities, rural and township-based entrepreneurs prioritized</p>
                 </div>
@@ -405,10 +372,6 @@
                     </div>
                 </div>
                 
-                <div class="step-arrow">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
@@ -417,20 +380,12 @@
                     </div>
                 </div>
                 
-                <div class="step-arrow">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Selection Interview</h3>
                         <p>Attend an interview with our selection committee to discuss your business potential</p>
                     </div>
-                </div>
-                
-                <div class="step-arrow">
-                    <i class="fas fa-arrow-right"></i>
                 </div>
                 
                 <div class="step">
@@ -447,11 +402,11 @@
                     <h3>Ready to Transform Your Business?</h3>
                     <p>Submit your application before the deadline: <strong>29 February 2024</strong></p>
                     <div class="cta-buttons">
-                        <a href="https://lnkd.in/dEzR6BkN" target="_blank" class="btn btn-primary btn-large">
+                        <a href="https://lnkd.in/dEzR6BkN" target="_blank" class="btn btn-secondary btn-large">
                             <i class="fas fa-rocket"></i>
                             Apply Online
                         </a>
-                        <a href="contact.html" class="btn btn-secondary btn-large">
+                        <a href="contact.html" class="btn btn-outline btn-large">
                             <i class="fas fa-question-circle"></i>
                             Ask Questions
                         </a>
@@ -466,7 +421,7 @@
     </section>
 
     <!-- Post-Incubation Support -->
-    <section class="post-incubation">
+    <section class="support-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Post-Incubation Support</h2>
@@ -570,7 +525,9 @@
         </div>
     </section>
 
+    <!-- ================================================== -->
     <!-- Footer -->
+     <!--================================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -583,11 +540,11 @@
                         of Vhembe district.
                     </p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61559043681399" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=27796788140" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/company/univencferi/posts/?feedView=all" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/univen.cferi/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@UCfERIPressClub" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -596,9 +553,9 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="incubation.html">Business Incubation</a></li>
-                        <li><a href="sweep.html">SWEEP Program</a></li>
-                      
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="student-network.html">Ceeiic home</a></li>
+                        <li><a href="story.html">Story</a></li>
                     </ul>
                 </div>
                 
@@ -640,7 +597,7 @@
             </div>
         </div>
     </footer>
-
+    
     <!-- JavaScript -->
     <script src="js/mobile-menu.js"></script>
     <script src="js/incubation.js"></script>

@@ -9,7 +9,9 @@
         width: 100%;
     }
 
+    /*=============================================================== */
     /* Announcement bar */
+    /*=============================================================== */
     .announcement-bar .announcement-content {
         flex-direction: column;
         text-align: center;
@@ -96,40 +98,14 @@
         top: 20px;
     }
 
+    /*=============================================================== */
     /* Hero Section */
-    .hero-content {
-        padding: 40px 0;
-    }
+    /*=============================================================== */
+   
 
-    .hero-title {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-    }
-
-    .quick-stats {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .stat {
-        width: 100%;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btn-large {
-        width: 100%;
-        text-align: center;
-    }
-
+    /*=============================================================== */
     /* Programs Preview */
+    /*=============================================================== */
     .programs-grid,
     .services-grid,
     .events-grid,
@@ -145,7 +121,9 @@
         width: 100%;
     }
 
+    /*=============================================================== */
     /* Trust Section */
+    /*=============================================================== */
     .trust-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -160,34 +138,8 @@
         font-size: 1rem;
     }
 
-    /* About Page */
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
 
-    .mission-values {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* Timeline */
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item {
-        padding-left: 50px;
-    }
-
-    .timeline-year {
-        left: 0;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 0.9rem;
-    }
-
+   
     /* Programs Page */
     .programs-grid-large {
         grid-template-columns: 1fr;

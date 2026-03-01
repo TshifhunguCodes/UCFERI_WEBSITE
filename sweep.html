@@ -5,42 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SWEEP Program | UCfERI - University of Venda</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/sweep.css">
-    <link rel="stylesheet" href="css/programs.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/header-footer-home.css">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4L52LZVHL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H4L52LZVHL');
-</script>
+    
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H4L52LZVHL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H4L52LZVHL');
+    </script>
 </head>
 <body>
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         <div class="container">
-            <!-- <div class="announcement-content">
-                <span class="announcement-tag"><i class="fas fa-bell"></i> Applications Open</span>
-                <span class="announcement-text">SWEEP Executive 2026 - Join the Leadership Team</span>
-                <a href="#apply" class="announcement-link">Apply Now <i class="fas fa-arrow-right"></i></a>
-            </div> -->
-
-             <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
     </div>
 
+    <!-- ================================================== -->
     <!-- Header -->
+    <!--================================================== -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -69,10 +62,22 @@
                         </div> 
                     </li>      
                     <li class="dropdown">
-                        <a href="programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i></a>
+                        <a href="programs.html" class="nav-link">
+                           <i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i>
+                        </a>
                         <div class="dropdown-content">
-                            <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
-                            <a href="student-network.html"><i class="fas fa-users"></i> CEEIIC Student Network</a>
+                           <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
+                           <div class="nested-dropdown">
+                               <a href="#" class="nested-dropdown-toggle">
+                                  <i class="fas fa-users"></i> CEEIIC Student Network 
+                                  <i class="fas fa-chevron-right"></i>
+                               </a>
+                               <div class="nested-dropdown-content">
+                                  <a href="student-network.html"><i class="fas fa-eye"></i>CEEIIC Overview</a>
+                                  <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                  <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
+                              </div>
+                            </div>
                             <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
@@ -92,50 +97,40 @@
                  
                  
                 <!-- Mobile Menu Toggle -->
-                 <div class="mobile-actions"> 
-                   <!--  <button class="social-toggle" aria-label="Toggle social media">
-                 <i class="fas fa-share-alt"></i>
-               </button>-->
-      
-            <button class="mobile-toggle" aria-label="Toggle mobile menu">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-    </div>
+                <div class="mobile-actions"> 
+                   <button class="mobile-toggle" aria-label="Toggle mobile menu">
+                      <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </button>
+                </div>
                
             </nav>
         </div>
     </header>
 
 
-    <!-- Page Header -->
-     <section class="page-header sweep-header">
-    <div class="container">
-        <div class="page-header-content">
-            <!-- Picture Placeholder - You insert your image here -->
-            <div class="header-image-container">
-               <img src="images/women.jpeg" alt="SWEEP Leadership Program" class="header-image">
-                <div class="image-overlay"></div>
-            </div>
-            
-            <!-- Text Content -->
-            <div class="header-text-content">
-                <h1>SWEEP Leadership Program</h1>
-                <p>Student Women Economic Empowerment Programme - Executive 2025/26</p>
-                <div class="breadcrumb">
-                    <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <a href="programs.html">Programs</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>SWEEP Program</span>
-                </div>
+    <!-- Hero Section - Full bleed image -->
+    <section class="hero-sweep">
+        <div class="hero-image-container">
+            <img src="images/women.jpeg" alt="SWEEP Leadership Program participants" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content container">
+            <h1>SWEEP Leadership Program</h1>
+            <p>Student Women Economic Empowerment Programme - Executive 2025/26</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="programs.html">Programs</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>SWEEP</span>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- Program Overview -->
     <section class="program-overview">
         <div class="container">
@@ -181,9 +176,7 @@
                             <h4>Application Deadline</h4>
                         </div>
                         <div class="deadline-content">
-                            <div class="countdown" id="sweep-countdown">
-                                Loading...
-                            </div>
+                            <div class="countdown" id="sweep-countdown">Loading...</div>
                             <a href="#apply" class="btn btn-secondary btn-block">Join SWEEP 2026</a>
                             <p class="deadline-note"><small>Applications close 02 December 2025</small></p>
                         </div>
@@ -203,9 +196,7 @@
             
             <div class="positions-grid">
                 <div class="position-card">
-                    <div class="position-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
+                    <div class="position-icon"><i class="fas fa-user-tie"></i></div>
                     <h3>Chairlady</h3>
                     <p>Lead the executive team, represent SWEEP at university events, and oversee program implementation</p>
                     <div class="position-responsibilities">
@@ -213,11 +204,8 @@
                         <span><i class="fas fa-users"></i> Team management</span>
                     </div>
                 </div>
-                
                 <div class="position-card">
-                    <div class="position-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
+                    <div class="position-icon"><i class="fas fa-user-friends"></i></div>
                     <h3>Deputy Chairlady</h3>
                     <p>Support the Chairlady, oversee daily operations, and coordinate between executive members</p>
                     <div class="position-responsibilities">
@@ -225,11 +213,8 @@
                         <span><i class="fas fa-coordination"></i> Team coordination</span>
                     </div>
                 </div>
-                
                 <div class="position-card">
-                    <div class="position-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
+                    <div class="position-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>Secretary</h3>
                     <p>Manage documentation, record meeting minutes, and handle official correspondence</p>
                     <div class="position-responsibilities">
@@ -237,11 +222,8 @@
                         <span><i class="fas fa-calendar"></i> Meeting coordination</span>
                     </div>
                 </div>
-                
                 <div class="position-card">
-                    <div class="position-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
+                    <div class="position-icon"><i class="fas fa-money-bill-wave"></i></div>
                     <h3>Financial Officer</h3>
                     <p>Handle finances, budgeting, fundraising, and financial reporting for SWEEP activities</p>
                     <div class="position-responsibilities">
@@ -249,11 +231,8 @@
                         <span><i class="fas fa-fundraising"></i> Fundraising</span>
                     </div>
                 </div>
-                
                 <div class="position-card">
-                    <div class="position-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
+                    <div class="position-icon"><i class="fas fa-bullhorn"></i></div>
                     <h3>Public Relations Officer</h3>
                     <p>Manage communications, publicity, social media, and brand visibility for SWEEP</p>
                     <div class="position-responsibilities">
@@ -261,11 +240,8 @@
                         <span><i class="fas fa-share-alt"></i> Social media</span>
                     </div>
                 </div>
-                
                 <div class="position-card">
-                    <div class="position-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
+                    <div class="position-icon"><i class="fas fa-handshake"></i></div>
                     <h3>Outreach & Partnerships Officer</h3>
                     <p>Build relationships, establish partnerships, and coordinate community engagement</p>
                     <div class="position-responsibilities">
@@ -273,11 +249,8 @@
                         <span><i class="fas fa-hands-helping"></i> Community outreach</span>
                     </div>
                 </div>
-                
                 <div class="position-card">
-                    <div class="position-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
+                    <div class="position-icon"><i class="fas fa-calendar-alt"></i></div>
                     <h3>Events & Programs Officer</h3>
                     <p>Organize events, workshops, and programs for SWEEP members and the university community</p>
                     <div class="position-responsibilities">
@@ -300,66 +273,35 @@
             <div class="eligibility-list">
                 <div class="eligibility-item">
                     <i class="fas fa-user-graduate"></i>
-                    <div class="eligibility-content">
-                        <h3>Female Student at UNIVEN</h3>
-                        <p>Currently enrolled as a female student at University of Venda for the 2025 academic year</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Female Student at UNIVEN</h3><p>Currently enrolled as a female student at University of Venda for the 2025 academic year</p></div>
                 </div>
-                
                 <div class="eligibility-item">
                     <i class="fas fa-calendar-times"></i>
-                    <div class="eligibility-content">
-                        <h3>Not in Final Year</h3>
-                        <p>2025 must NOT be your final year of study (you should be returning in 2026)</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Not in Final Year</h3><p>2025 must NOT be your final year of study (you should be returning in 2026)</p></div>
                 </div>
-                
                 <div class="eligibility-item">
                     <i class="fas fa-lightbulb"></i>
-                    <div class="eligibility-content">
-                        <h3>Creative & Innovative</h3>
-                        <p>Demonstrate creativity, innovative thinking, and problem-solving abilities</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Creative & Innovative</h3><p>Demonstrate creativity, innovative thinking, and problem-solving abilities</p></div>
                 </div>
-                
                 <div class="eligibility-item">
                     <i class="fas fa-smile"></i>
-                    <div class="eligibility-content">
-                        <h3>Positive Attitude</h3>
-                        <p>Maintain a positive, solution-oriented mindset with resilience and determination</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Positive Attitude</h3><p>Maintain a positive, solution-oriented mindset with resilience and determination</p></div>
                 </div>
-                
                 <div class="eligibility-item">
                     <i class="fas fa-users"></i>
-                    <div class="eligibility-content">
-                        <h3>Team Player</h3>
-                        <p>Ability to work effectively in teams and collaborate with diverse individuals</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Team Player</h3><p>Ability to work effectively in teams and collaborate with diverse individuals</p></div>
                 </div>
-                
                 <div class="eligibility-item">
                     <i class="fas fa-clock"></i>
-                    <div class="eligibility-content">
-                        <h3>Time Management</h3>
-                        <p>Flexible with good time management skills to balance studies and leadership role</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Time Management</h3><p>Flexible with good time management skills to balance studies and leadership role</p></div>
                 </div>
-                
                 <div class="eligibility-item">
                     <i class="fas fa-comments"></i>
-                    <div class="eligibility-content">
-                        <h3>Communication Skills</h3>
-                        <p>Have good verbal and written communication skills in English</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Communication Skills</h3><p>Have good verbal and written communication skills in English</p></div>
                 </div>
-                
                 <div class="eligibility-item">
                     <i class="fas fa-rocket"></i>
-                    <div class="eligibility-content">
-                        <h3>Entrepreneurial Spirit</h3>
-                        <p>Demonstrate entrepreneurial spirit, drive, and interest in economic empowerment</p>
-                    </div>
+                    <div class="eligibility-content"><h3>Entrepreneurial Spirit</h3><p>Demonstrate entrepreneurial spirit, drive, and interest in economic empowerment</p></div>
                 </div>
             </div>
         </div>
@@ -378,86 +320,43 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Prepare Your Application Documents</h3>
-                        <p>Prepare the following documents:</p>
                         <ul>
                             <li><strong>Latest photograph</strong> (professional headshot preferred)</li>
-                            <li><strong>Motivational letter</strong> explaining:
-                                <ul>
-                                    <li>Why you want to join SWEEP</li>
-                                    <li>Which position you're interested in and why</li>
-                                    <li>Your relevant skills and experience</li>
-                                    <li>Your vision for women empowerment</li>
-                                </ul>
-                            </li>
+                            <li><strong>Motivational letter</strong> explaining: why SWEEP, preferred position, skills, vision</li>
                             <li><strong>Academic transcript</strong> (unofficial copy acceptable)</li>
                         </ul>
                     </div>
                 </div>
-                
                 <div class="instruction-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Submit via Email</h3>
-                        <p>Email your complete application documents to both addresses:</p>
                         <div class="email-addresses">
-                            <div class="email-address">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:makele.magoro@univen.ac.za">makele.magoro@univen.ac.za</a>
-                            </div>
-                            <div class="email-address">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:sach.mphahla@univen.ac.za">sach.mphahla@univen.ac.za</a>
-                            </div>
+                            <div class="email-address"><i class="fas fa-envelope"></i> <a href="mailto:makele.magoro@univen.ac.za">makele.magoro@univen.ac.za</a></div>
+                            <div class="email-address"><i class="fas fa-envelope"></i> <a href="mailto:sach.mphahla@univen.ac.za">sach.mphahla@univen.ac.za</a></div>
                         </div>
-                        <p class="email-note"><strong>Note:</strong> Applications must be sent to BOTH email addresses to be considered.</p>
+                        <p class="email-note"><strong>Note:</strong> Applications must be sent to BOTH email addresses.</p>
                     </div>
                 </div>
-                
                 <div class="instruction-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Application Deadline</h3>
-                        <p>All applications must be submitted by:</p>
                         <div class="deadline-display">
                             <i class="fas fa-calendar-check"></i>
-                            <div>
-                                <strong>02 December 2025</strong>
-                                <p>23:59 South African Time</p>
-                            </div>
+                            <div><strong>02 December 2025</strong> <p>23:59 SAST</p></div>
                         </div>
-                        <p class="deadline-warning"><i class="fas fa-exclamation-triangle"></i> Late applications will NOT be considered.</p>
+                        <p class="deadline-warning"><i class="fas fa-exclamation-triangle"></i> Late applications NOT considered.</p>
                     </div>
                 </div>
             </div>
             
             <div class="contact-support">
-                <h3>Need Help with Your Application?</h3>
-                <p>Contact our SWEEP coordinators for assistance:</p>
+                <h3>Need Help?</h3>
                 <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone Support</h4>
-                            <a href="tel:0860211577">086 021 1577</a>
-                            <p>Monday-Friday, 8:00 AM - 4:00 PM</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <div>
-                            <h4>Website & Resources</h4>
-                            <a href="https://www.edhe.co.za" target="_blank">www.edhe.co.za</a>
-                            <p>Entrepreneurship Development in Higher Education portal</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>In-Person Assistance</h4>
-                            <p>UCfERI Building, UNIVEN Campus</p>
-                            <p>Thohoyandou, Limpopo</p>
-                        </div>
-                    </div>
+                    <div class="contact-item"><i class="fas fa-phone"></i> <div><h4>Phone</h4><a href="tel:0860211577">086 021 1577</a><p>Mon-Fri 8am-4pm</p></div></div>
+                    <div class="contact-item"><i class="fas fa-globe"></i> <div><h4>Website</h4><a href="https://www.edhe.co.za" target="_blank">www.edhe.co.za</a></div></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div><h4>UCfERI Building</h4><p>UNIVEN Campus, Thohoyandou</p></div></div>
                 </div>
             </div>
         </div>
@@ -470,71 +369,15 @@
                 <h2 class="section-title">Benefits of Joining SWEEP</h2>
                 <p class="section-subtitle">What you gain as a SWEEP Executive member</p>
             </div>
-            
             <div class="benefits-grid">
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Official Leadership Certificate</h3>
-                    <p>Receive official UNIVEN certification for your executive role, recognized by future employers</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Professional Networking</h3>
-                    <p>Connect with professionals, entrepreneurs, and fellow leaders across various industries</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Skill Development</h3>
-                    <p>Develop leadership, management, communication, and entrepreneurial skills through training</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Career Enhancement</h3>
-                    <p>Boost your CV with executive experience that stands out to graduate employers</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Supportive Community</h3>
-                    <p>Join a supportive sisterhood circle of like-minded ambitious women</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Partnership Opportunities</h3>
-                    <p>Access to industry partnerships, internships, and career opportunities</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Academic Recognition</h3>
-                    <p>Recognition from university leadership and potential recommendation letters</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Entrepreneurship Exposure</h3>
-                    <p>Exposure to entrepreneurship programs, pitch competitions, and startup opportunities</p>
-                </div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-award"></i></div><h3>Official Leadership Certificate</h3><p>Receive official UNIVEN certification.</p></div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-network-wired"></i></div><h3>Professional Networking</h3><p>Connect with professionals and leaders.</p></div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Skill Development</h3><p>Leadership, management, communication.</p></div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-briefcase"></i></div><h3>Career Enhancement</h3><p>Boost your CV with executive experience.</p></div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-users"></i></div><h3>Supportive Community</h3><p>Sisterhood of ambitious women.</p></div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-handshake"></i></div><h3>Partnership Opportunities</h3><p>Access to industry partners.</p></div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div><h3>Academic Recognition</h3><p>Recommendation letters, university recognition.</p></div>
+                <div class="benefit"><div class="benefit-icon"><i class="fas fa-rocket"></i></div><h3>Entrepreneurship Exposure</h3><p>Pitch competitions, startup opportunities.</p></div>
             </div>
         </div>
     </section>
@@ -546,27 +389,11 @@
                 <h2 class="section-title">SWEEP in the UCfERI Ecosystem</h2>
                 <p class="section-subtitle">Part of UNIVEN's comprehensive entrepreneurship support system</p>
             </div>
-            
             <div class="ecosystem-content">
-                <div class="ecosystem-item">
-                    <h3><i class="fas fa-sitemap"></i> Directorate Structure</h3>
-                    <p>SWEEP operates under the <strong>Directorate of Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation (DCEEIIC)</strong>, ensuring institutional support and resources.</p>
-                </div>
-                
-                <div class="ecosystem-item">
-                    <h3><i class="fas fa-project-diagram"></i> Student-Led Programs Network</h3>
-                    <p>Connected with other student initiatives: Entrepreneurship Student Ambassadors Programme (ESAP), Indigenous Knowledge Systems Ambassadors Programme (IKSAP), Map the System, Sustainable Beekeeping, Black Management Forum-Student Chapter (BMFSC), StoptheSpot, Skills for the Future Programme (SFFP), and Enactus.</p>
-                </div>
-                
-                <div class="ecosystem-item">
-                    <h3><i class="fas fa-university"></i> University Integration</h3>
-                    <p>SWEEP executives work closely with UCfERI, Economic Activation Office, Community Engagement unit, and other university departments to implement women empowerment programs.</p>
-                </div>
-                
-                <div class="ecosystem-item">
-                    <h3><i class="fas fa-handshake"></i> External Partnerships</h3>
-                    <p>Access to partnerships with SEDFA, ABSA Bank, Vhembe District Municipality, NIPMO, TIA, and other industry partners through UCfERI networks.</p>
-                </div>
+                <div class="ecosystem-item"><h3><i class="fas fa-sitemap"></i> Directorate Structure</h3><p>Operates under the Directorate of Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation (DCEEIIC).</p></div>
+                <div class="ecosystem-item"><h3><i class="fas fa-project-diagram"></i> Student-Led Programs Network</h3><p>Connected with ESAP, IKSAP, Map the System, Sustainable Beekeeping, BMFSC, StoptheSpot, SFFP, Enactus.</p></div>
+                <div class="ecosystem-item"><h3><i class="fas fa-university"></i> University Integration</h3><p>Works with UCfERI, Economic Activation Office, Community Engagement.</p></div>
+                <div class="ecosystem-item"><h3><i class="fas fa-handshake"></i> External Partnerships</h3><p>SEDFA, ABSA Bank, Vhembe District Municipality, NIPMO, TIA.</p></div>
             </div>
         </div>
     </section>
@@ -575,20 +402,17 @@
     <section class="motto-section">
         <div class="container">
             <div class="motto-content">
-                <div class="motto-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
+                <div class="motto-icon"><i class="fas fa-heart"></i></div>
                 <h2>The future is female: Leadership, Entrepreneurship and love ❤️🌍</h2>
-                <p>Join us in creating the next generation of female leaders and entrepreneurs at University of Venda. Be part of the change you want to see in your community and the world.</p>
-                <a href="#apply" class="btn btn-secondary btn-large">
-                    <i class="fas fa-users"></i>
-                    Apply for SWEEP 2026
-                </a>
+                <p>Join us in creating the next generation of female leaders and entrepreneurs at University of Venda.</p>
+                <a href="#apply" class="btn btn-secondary btn-large"><i class="fas fa-users"></i> Apply for SWEEP 2026</a>
             </div>
         </div>
     </section>
 
+      <!-- ================================================== -->
     <!-- Footer -->
+     <!--================================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -601,11 +425,11 @@
                         of Vhembe district.
                     </p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61559043681399" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=27796788140" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/company/univencferi/posts/?feedView=all" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/univen.cferi/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@UCfERIPressClub" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -614,9 +438,9 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="incubation.html">Business Incubation</a></li>
-                        <li><a href="sweep.html">SWEEP Program</a></li>
-                        <li><a href="programs.html">All Programs</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="events.html">Events</a></li>
                     </ul>
                 </div>
                 
@@ -642,7 +466,6 @@
                     <div class="hashtags">
                         <span>#creatingfutureleaders</span>
                         <span>#whereentrepreneursthrive</span>
-                        <span>#SWEEP2026</span>
                     </div>
                 </div>
             </div>
@@ -659,8 +482,8 @@
             </div>
         </div>
     </footer>
+    
 
-    <!-- JavaScript -->
     <script src="js/mobile-menu.js"></script>
     <script src="js/sweep.js"></script>
 </body>

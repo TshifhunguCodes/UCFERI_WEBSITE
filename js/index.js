@@ -614,6 +614,35 @@ window.onclick = function(event) {
     }
 }
 
+// Add nested dropdown handling
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+    
+    // Handle nested dropdowns for mobile
+    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+    
+    if (window.innerWidth <= 768) {
+        nestedDropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.nested-dropdown-toggle');
+            
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+        });
+    }
+    
+    // Handle window resize for nested dropdowns
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            nestedDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+});
+
 // =============================================
 // END OF JAVASCRIPT
 // =============================================

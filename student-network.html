@@ -2,27 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>CEEIIC Student Network | University of Venda</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Manrope + Source Serif Pro -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/ceeiic-style.css">
+    <!-- External CSS with your exact styling -->
+    <link rel="stylesheet" href="css/ceeiic-home.css">
     <link rel="stylesheet" href="css/header-footer-home.css">
 </head>
 <body>
+    
+    
+    <!-- ================================================== -->
     <!-- Announcement Bar -->
-    <div class="announcement-bar">
+    <!--================================================== -->
+   <div class="announcement-bar">
         <div class="container">
-            <div class="announcement-content">
+          <div class="announcement-content">
                 <span class="announcement-tag"><i class="fas fa-bullhorn"></i> Join Us</span>
                 <span class="announcement-text">CEEIIC Student Network - Applications Open for 2026</span>
                 <a href="ceeiic-programs.html#open-applications" class="announcement-link">Apply Now <i class="fas fa-arrow-right"></i></a>
             </div>
+            
         </div>
-    </div>
+    </div> 
 
-    <!-- Header (EXACT same as index.html) -->
-     <!-- Header -->
+    <!-- ================================================== -->
+    <!-- Header -->
+    <!--================================================== -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -40,36 +49,61 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                  <ul class="nav-menu">
-                    
-                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>      
-                    <li><a href="ceeiic-about.html" class="nav-link"><i class="fas fa-info-circle"></i> About CEEIIC Network </a></li>   
-                    <li class="dropdown">
-                        <a href="ceeiic-programs.html" class="nav-link"><i class="fas fa-graduation-cap"></i> CEEIIC Programs <i class="fas fa-chevron-down"></i></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="dropdown">     
+                        <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us  <i class="fas fa-chevron-down"></i></a> </a>
                         <div class="dropdown-content">
-                            <a href="sweep.html"><i class="fas fa-female"></i> SWEEP</a>
-                            <a href="esap.html"><i class="fas fa-user-graduate"></i> ESAP</a>
-                            <a href="young-leaders.html"><i class="fas fa-users"></i> Young Leaders Connect</a>
+                            <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i> Mission</a>
+                            <a href="about.html#mission&vision"><i class="fas fa-low-vision"></i> Vision</a>
+                            <a href="about.html#history"><i class="fas fa-history"></i> History</a>
+                        </div> 
+                    </li>      
+                    <li class="dropdown">
+                        <a href="programs.html" class="nav-link">
+                           <i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                           <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
+                           <div class="nested-dropdown">
+                               <a href="#" class="nested-dropdown-toggle">
+                                  <i class="fas fa-users"></i> CEEIIC Student Network 
+                                  <i class="fas fa-chevron-right"></i>
+                               </a>
+                               <div class="nested-dropdown-content">
+                                  <a href="student-network.html"><i class="fas fa-eye"></i>CEEIIC Overview</a>
+                                  <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                  <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
+                              </div>
+                            </div>
+                            <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                         </div>
                     </li>
+                    <li class="dropdown">
+                       <a href="#" class="nav-link"><i class="fas fa-photo-video"></i> Media <i class="fas fa-chevron-down"></i></a></a>
+                       <div class="dropdown-content">
+                            <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="news.html"><i class="fas fa-newspaper"></i> News</a>
+                            <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+                            <a href="resources.html"><i class="fas fa-book"></i>Resources</a>
+                   <a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a>
+                       </div>
+                    </li>   
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                      
                 </ul>
                  
                  
                 <!-- Mobile Menu Toggle -->
-                 <div class="mobile-actions"> 
-                   <!--  <button class="social-toggle" aria-label="Toggle social media">
-                 <i class="fas fa-share-alt"></i>
-               </button>-->
-      
-            <button class="mobile-toggle" aria-label="Toggle mobile menu">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-    </div>
+                <div class="mobile-actions"> 
+                   <button class="mobile-toggle" aria-label="Toggle mobile menu">
+                      <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </button>
+                </div>
                
             </nav>
         </div>
@@ -78,21 +112,21 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-images">
-            <div class="hero-slide active" style="background-image: url('images/new/WhatsApp\ Image\ 2026-02-11\ at\ 19.08.55.jpeg');">
+            <div class="hero-slide active" style="background-image: url('images/ceeiic1.jpeg'); background-size: cover; background-position: center;">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2 class="slide-title">CEEIIC Student Network</h2>
                     <p class="slide-text">A unified platform for student-led innovation and entrepreneurship</p>
                 </div>
             </div>
-            <div class="hero-slide" style="background-image: url('images/ceeiic2.jpeg');">
+            <div class="hero-slide" style="background-image: url('images/ceeiic2.jpeg'); background-size: cover; background-position: center;">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2 class="slide-title">Student Women Economic Empowerment</h2>
                     <p class="slide-text">Empowering future female leaders through SWEEP</p>
                 </div>
             </div>
-            <div class="hero-slide" style="background-image: url('images/new/WhatsApp\ Image\ 2026-02-11\ at\ 19.08.53\ \(2\).jpeg');">
+            <div class="hero-slide" style="background-image: url('images/ceeiic3.jpeg'); background-size: cover; background-position: center;">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
                     <h2 class="slide-title">10+ Student Programs</h2>
@@ -105,7 +139,7 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-cta">
-                        <a href="ceeiic-about.html" class="btn btn-primary btn-large">
+                        <a href="#about" class="btn btn-primary btn-large">
                             <i class="fas fa-info-circle"></i> About CEEIIC Network
                         </a>
                         <a href="ceeiic-programs.html" class="btn btn-secondary btn-large">
@@ -127,77 +161,152 @@
         </div>
     </section>
 
-   
 
     <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-split-layout">
-                <div class="about-left">
-                    <div class="about-badge">
-                       
-                        <div class="badge-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <h1 class="about-title">
-                        CEEIIC
-                        <span class="title-highlight">Student</span>
-                        Network
-                    </h1>
-
-                    <div class="about-description-container">
-                        <p class="about-description">
-                            The CEEIIC Student Network is a formalised coordination and collaboration platform 
-                            established to strengthen and align student-led programmes operating under the CEEIIC ecosystem. 
-                            We break down silos and cultivate cross-programme collaboration through coordinated planning, 
-                            joint events, and shared learning spaces.
-                        </p>
-                    </div>
-
-                    <div class="about-button-container">
-                        <a href="ceeiic-about.html" class="btn btn-primary btn-large">
-                            <i class="fas fa-arrow-right"></i> Learn More About Us
-                        </a>
+    <!-- About Section - Redesigned Professional -->
+<section id="about" class="about-section">
+    <div class="about-background">
+        <div class="about-overlay"></div>
+        <div class="about-bg-pattern"></div>
+    </div>
+    
+    <div class="container">
+        <div class="about-split-layout">
+            <div class="about-left">
+                <div class="about-badge">
+                    <span class="badge-text">ABOUT CEEIIC STUDENT NETWORK</span>
+                    <div class="badge-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
 
-                <div class="about-right">
-                    <div class="image-collage">
-                        <div class="main-image">
-                            <img src="images/ceeiic2.jpeg" alt="CEEIIC Students">
-                            <div class="floating-badge">
-                                <i class="fas fa-users"></i>
-                                <span>10+ Programs</span>
-                            </div>
+                <h2 class="about-title">
+                    Empowering Student
+                    <span class="title-highlight">Innovation & Leadership</span>
+                </h2>
+
+                <div class="about-description-container">
+                    <p class="about-description lead">
+                        The CEEIIC Student Network is a formalised coordination and collaboration platform established to strengthen and align student-led programmes operating under the CEEIIC ecosystem.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>10+ Student Programs</span>
                         </div>
-                        <div class="side-image top-right">
-                            <img src="images/ceeiic1.jpeg" alt="Student Collaboration">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cross-Programme Collaboration</span>
                         </div>
-                        <div class="side-image bottom-left">
-                            <img src="images/ceeiic3.jpeg" alt="Student Leadership">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Shared Resources & Skills</span>
                         </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Institutional Impact</span>
+                        </div>
+                    </div>
+
+                    <p class="about-description">
+                        We break down silos and cultivate cross-programme collaboration through coordinated planning, joint events, and shared learning spaces. The Network enables students to openly collaborate, share resources, exchange skills, and support one another's initiatives, creating an enabling environment for collective growth and ecosystem-wide success.
+                    </p>
+                    
+                    <div class="strategic-badge">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Aligned with Univen's Strategic Thrusts: Student Centeredness • Research & Innovation • People & Environment • Internationalisation</span>
                     </div>
                 </div>
             </div>
 
-            <div class="about-decoration decoration-1"></div>
-            <div class="about-decoration decoration-2"></div>
-            <div class="about-decoration decoration-3"></div>
+            <div class="about-right">
+                <div class="image-collage">
+                    <!-- Main Center Image -->
+                    <div class="main-image">
+                        <img src="images/ceeiic1.jpeg" alt="CEEIIC Students Collaborating">
+                        <div class="image-overlay-content">
+                            <span class="image-tag">Student Leadership</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Left Image -->
+                    <div class="side-image top-left">
+                        <img src="images/ceeiic2.jpeg" alt="Entrepreneurship Workshop">
+                        <div class="side-image-overlay">
+                            <span>Innovation</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Right Image -->
+                    <div class="side-image bottom-right">
+                        <img src="images/ceeiic3.jpeg" alt="Community Engagement">
+                        <div class="side-image-overlay">
+                            <span>Community</span>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission-section">
+        <div class="container">
+            <div class="vm-grid">
+                <div class="vm-card vision">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>An empowered, connected, and proactive student community that actively contributes to academic excellence, leadership, Entrepreneurship, Inclusive innovation and societal Impact.</p>
+                </div>
+                <div class="vm-card mission">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To unite students through networking, capacity building, advocacy, and innovation, while promoting leadership, collaboration, and positive changes within the institution and communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Student Programs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Partner Organizations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Student Led</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Values Section -->
     <section class="values-section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Our Values</span>
-                <h2 class="section-title">Core Values</h2>
-                <p class="section-subtitle">The principles that guide our student network</p>
-            </div>
+            <span class="section-badge">Our Values</span>
+            <h2 class="section-title">Core <span class="title-highlight">Principles</span></h2>
+            <p class="section-subtitle">The ten values that guide every programme and interaction</p>
 
             <div class="values-grid">
                 <div class="value-item"><i class="fas fa-handshake"></i> Co-creation</div>
@@ -208,19 +317,18 @@
                 <div class="value-item"><i class="fas fa-graduation-cap"></i> Co-learning</div>
                 <div class="value-item"><i class="fas fa-rocket"></i> Entrepreneurial Mindset</div>
                 <div class="value-item"><i class="fas fa-star"></i> Creation of Value</div>
-                <div class="value-item"><i class="fas fa-lightbulb"></i> Open Innovation</div>
+                <div class="value-item"><i class="fas fa-lightbulb"></i> Open Inclusive Innovation</div>
                 <div class="value-item"><i class="fas fa-check-circle"></i> Accountability</div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Preview -->
-    <section class="programs-preview">
+    <!-- Programs Preview Section -->
+    <section id="programs" class="programs-preview">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Programs</h2>
-                <p class="section-subtitle">Discover student-led initiatives driving innovation and impact</p>
-            </div>
+            <span class="section-badge">Our Ecosystem</span>
+            <h2 class="section-title">Student <span class="title-highlight">Programmes</span></h2>
+            <p class="section-subtitle">Ten+ initiatives under one network, each with unique mandate and impact</p>
 
             <div class="programs-grid">
                 <div class="program-card">
@@ -291,14 +399,14 @@
             </div>
 
             <div class="text-center">
-                <a href="ceeiic-programs.html" class="btn btn-primary btn-large">
+                <a href="ceeiic-programs.html" class="btn btn-outline btn-large">
                     <i class="fas fa-arrow-right"></i> View All Programs
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Additional Programs -->
+    <!-- Additional Programs Showcase -->
     <section class="programs-showcase">
         <div class="container">
             <div class="showcase-grid">
@@ -318,55 +426,171 @@
         </div>
     </section>
 
-    <!-- Partners Section -->
-    <section class="partners-section">
+    <!-- Strategic Value Section -->
+    <section class="strategic-value">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Strategic Alliances</span>
-                <h2 class="section-title">Our <span class="title-highlight">Partners</span></h2>
-                <p class="section-subtitle">Collaborating with leading organizations</p>
-            </div>
+            <span class="section-badge">Value Proposition</span>
+            <h2 class="section-title">Strategic <span class="title-highlight">Impact</span></h2>
+            <p class="section-subtitle">The CEEIIC-SN adds value at three levels</p>
 
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <h4>Bankseta</h4>
-                    <p>SFFP Partner</p>
+            <div class="strategic-grid">
+                <div class="strategic-card">
+                    <h3><i class="fas fa-university"></i> Institutional</h3>
+                    <ul>
+                        <li>✓ Strengthens student-centeredness (ST1)</li>
+                        <li>✓ Advances research, innovation, entrepreneurship (ST2)</li>
+                        <li>✓ Supports people, health, environment (ST3)</li>
+                        <li>✓ Enhances internationalization & partnerships (ST4)</li>
+                    </ul>
                 </div>
-                <div class="partner-card">
-                    <h4>Vhembe Education</h4>
-                    <p>Department of Education</p>
+                <div class="strategic-card">
+                    <h3><i class="fas fa-building"></i> Directorate</h3>
+                    <ul>
+                        <li>✓ Reduces duplication and programme silos</li>
+                        <li>✓ Centralises reporting and impact tracking</li>
+                        <li>✓ Improves succession planning</li>
+                        <li>✓ Strengthens institutional memory</li>
+                    </ul>
                 </div>
-                <div class="partner-card">
-                    <h4>Enactus</h4>
-                    <p>National Office</p>
-                </div>
-                <div class="partner-card">
-                    <h4>SEDFA</h4>
-                    <p>ESAP Partner</p>
-                </div>
-                <div class="partner-card">
-                    <h4>Monate Chicken</h4>
-                    <p>ESAP Partner</p>
-                </div>
-                <div class="partner-card">
-                    <h4>BeeAfrican</h4>
-                    <p>Beekeeping Partner</p>
-                </div>
-                <div class="partner-card">
-                    <h4>Oxford University</h4>
-                    <p>Map the System</p>
-                </div>
-                <div class="partner-card">
-                    <h4>IWF</h4>
-                    <p>Young Leaders Connect</p>
-                </div>
-                <div class="partner-card">
-                    <h4>EDHE</h4>
-                    <p>SWEEP Partner</p>
+                <div class="strategic-card">
+                    <h3><i class="fas fa-user-graduate"></i> Student</h3>
+                    <ul>
+                        <li>✓ Access to diverse opportunities</li>
+                        <li>✓ Leadership development pathways</li>
+                        <li>✓ Peer-to-peer learning and mentorship</li>
+                        <li>✓ Increased visibility and employability</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Target Group Section -->
+    <section class="target-group">
+        <div class="container">
+            <div class="target-content">
+                <h2 class="section-title">Target <span class="title-highlight">Beneficiaries</span></h2>
+                <p>Undergraduate and postgraduate students across all faculties, including student representatives (SRC).</p>
+                <h3>Program Attributes:</h3>
+                <ul>
+                    <li>✓ Programs that promote research-based learning, problem-solving, and interdisciplinary collaboration</li>
+                    <li>✓ Programs that promote participation, diversity, and equitable access to opportunities</li>
+                    <li>✓ Programs that focus on community development, social entrepreneurship, and societal impact</li>
+                    <li>✓ Programs that equip students with practical, professional, and leadership skills</li>
+                    <li>✓ Programs that directly support enterprise development, business creation, and innovation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <span class="section-badge">Strategic Partners</span>
+            <h2 class="section-title">Current <span class="title-highlight">Stakeholders</span></h2>
+            <p class="section-subtitle">Collaborating with leading organisations for student success</p>
+
+            <div class="partners-grid">
+                <div class="partner-card"><h4>Bankseta</h4><p>SfFP</p></div>
+                <div class="partner-card"><h4>Vhembe Education</h4><p>SfFP</p></div>
+                <div class="partner-card"><h4>Enactus National</h4><p>Enactus</p></div>
+                <div class="partner-card"><h4>SEDFA</h4><p>ESAP</p></div>
+                <div class="partner-card"><h4>Monate Chicken</h4><p>ESAP</p></div>
+                <div class="partner-card"><h4>BeeAfrican</h4><p>Beekeeping</p></div>
+                <div class="partner-card"><h4>Oxford University</h4><p>Map the System</p></div>
+                <div class="partner-card"><h4>IWF</h4><p>Young Leaders Connect</p></div>
+                <div class="partner-card"><h4>EDHE</h4><p>SWEEP</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruitment Section -->
+    <section class="recruitment-section">
+        <div class="container">
+            <div class="recruitment-box">
+                <div class="recruitment-text">
+                    <span class="section-badge" style="background-color: rgba(255,255,255,0.15); color: white;">Join the network</span>
+                    <h2>Any Univen student can join</h2>
+                    <p>Undergraduate and postgraduate students across all faculties. Participate in any programme of your choice and gain access to leadership pathways, mentorship, and opportunities.</p>
+                    
+                    <div class="benefits-box">
+                        <h4>Recruitment Process:</h4>
+                        <ul class="recruitment-list">
+                            <li><i class="fas fa-check-circle"></i> Programs incepted within the directorate or spin-offs</li>
+                            <li><i class="fas fa-check-circle"></i> Alignment with shared values</li>
+                            <li><i class="fas fa-check-circle"></i> Submit program overview, ToR, log frame for assessment</li>
+                            <li><i class="fas fa-check-circle"></i> No political programs, parties, or societies</li>
+                            <li><i class="fas fa-check-circle"></i> Active participation = recognition</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#open-applications" class="btn btn-primary btn-large" style="background-color: white; color: #2316da; border: none;">Find a programme <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Activities & Expected Outcomes -->
+    <section class="activities">
+        <div class="container">
+            <div class="activities-grid">
+                <div class="activities-card">
+                    <h3><i class="fas fa-calendar-alt"></i> Key Activities</h3>
+                    <ul>
+                        <li>✓ Entrepreneurship and Inclusive innovation</li>
+                        <li>✓ Leadership and capacity-building workshops</li>
+                        <li>✓ Mentorship and peer support programs</li>
+                        <li>✓ Academic and career development sessions</li>
+                        <li>✓ Networking events and student dialogues</li>
+                        <li>✓ Advocacy campaigns and community outreach</li>
+                    </ul>
+                </div>
+                <div class="outcomes-card">
+                    <h3><i class="fas fa-chart-line"></i> Expected Outcomes</h3>
+                    <ul>
+                        <li>✓ One unified student ecosystem</li>
+                        <li>✓ Shared calendar & annual activity roadmap</li>
+                        <li>✓ Consistent data collection & impact reporting</li>
+                        <li>✓ Stronger institutional support and recognition</li>
+                        <li>✓ Seamless recruitment process for student programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance Section -->
+    <section class="governance">
+        <div class="container">
+            <span class="section-badge">Structure</span>
+            <h2 class="section-title">Governance & <span class="title-highlight">Oversight</span></h2>
+            
+            <div class="governance-content">
+                <div class="governance-card">
+                    <h3>Governance Structure</h3>
+                    <p>The governance structure of the network shall comprise of support staff and the executive leaders of the respective programmes within the network.</p>
+                    <ul>
+                        <li>All programs submit Quarterly and Yearly reports</li>
+                        <li>Performance analyzed annually by coordinators and unit managers</li>
+                        <li>Program Coordinators from each unit</li>
+                        <li>Executives of each program</li>
+                    </ul>
+                </div>
+                <div class="governance-card">
+                    <h3>Sustainability</h3>
+                    <p>The network will sustain its operations through:</p>
+                    <ul>
+                        <li>Partnerships</li>
+                        <li>Fundraising activities</li>
+                        <li>Sponsorships</li>
+                        <li>Grants</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -375,10 +599,10 @@
                 <h2>Ready to Join the Network?</h2>
                 <p>Any Univen student can join through any participating program</p>
                 <div class="cta-buttons">
-                    <a href="ceeiic-programs.html#open-applications" class="btn btn-primary btn-large">
+                    <a href="#open-applications" class="btn btn-primary btn-large">
                         <i class="fas fa-rocket"></i> Apply Now
                     </a>
-                    <a href="ceeiic-about.html" class="btn btn-secondary btn-large">
+                    <a href="#about" class="btn btn-secondary btn-large">
                         <i class="fas fa-info-circle"></i> Learn More
                     </a>
                 </div>
@@ -386,7 +610,9 @@
         </div>
     </section>
 
-     <!-- Footer -->
+    <!-- ================================================== -->
+    <!-- Footer -->
+     <!--================================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -456,8 +682,64 @@
             </div>
         </div>
     </footer>
-    
 
-    <script src="js/ceeiic-main.js"></script>
+    <!-- Simple JavaScript for mobile menu and hero slides -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // Hero slides
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.slide-prev');
+            const nextBtn = document.querySelector('.slide-next');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                currentSlide = index;
+            }
+            
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', function() {
+                    let newIndex = currentSlide - 1;
+                    if (newIndex < 0) newIndex = slides.length - 1;
+                    showSlide(newIndex);
+                });
+                
+                nextBtn.addEventListener('click', function() {
+                    let newIndex = currentSlide + 1;
+                    if (newIndex >= slides.length) newIndex = 0;
+                    showSlide(newIndex);
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', function() {
+                        showSlide(index);
+                    });
+                });
+            }
+            
+            // Auto-rotate slides every 5 seconds
+            setInterval(function() {
+                let newIndex = currentSlide + 1;
+                if (newIndex >= slides.length) newIndex = 0;
+                showSlide(newIndex);
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
