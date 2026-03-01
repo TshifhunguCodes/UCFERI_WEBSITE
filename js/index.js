@@ -599,6 +599,21 @@ function initPartnersCarousel() {
     goToSlide(0);
 }
 
+function openPopup(popupId) {
+    document.getElementById(popupId).classList.add('show');
+}
+
+function closePopup(popupId) {
+    document.getElementById(popupId).classList.remove('show');
+}
+
+// Close popup when clicking outside
+window.onclick = function(event) {
+    if (event.target.classList.contains('popup')) {
+        event.target.classList.remove('show');
+    }
+}
+
 // =============================================
 // END OF JAVASCRIPT
 // =============================================
