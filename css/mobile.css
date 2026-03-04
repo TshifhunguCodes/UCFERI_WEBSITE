@@ -333,7 +333,7 @@
 
     .nav-link {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         padding: 15px;
         border-radius: 8px;
         font-size: 1.1rem;
@@ -405,6 +405,15 @@
     cursor: pointer;
     padding: 10px;
     z-index: 1001;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+@media (max-width: 992px) {
+    .mobile-toggle {
+        display: block;
+    }
 }
 
 .mobile-toggle .hamburger {
@@ -448,9 +457,8 @@
     .nav-menu {
         display: none;
         position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
+        top: 10%;
+        width: 100vw;
         height: 100vh;
         background: white;
         flex-direction: column;
