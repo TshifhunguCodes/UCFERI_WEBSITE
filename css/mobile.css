@@ -457,9 +457,8 @@
     .nav-menu {
         display: none;
         position: fixed;
-        top: 10%;
+        top: 25%;
         width: 100vw;
-        height: 100vh;
         background: white;
         flex-direction: column;
         padding: 80px 20px 20px;
