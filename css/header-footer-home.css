@@ -98,7 +98,7 @@
 }
 
 .logo-image img {
-    height: 50px;
+    height: 80px;
     width: auto;
 }
 
@@ -140,16 +140,6 @@
 
 .nav-link.active {
     color: var(--primary-color);
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--primary-color);
 }
 
 /* Dropdown */

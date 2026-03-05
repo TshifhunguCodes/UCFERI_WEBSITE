@@ -3,8 +3,7 @@
 /* Base mobile styles */
 @media (max-width: 768px) {
     .container {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 0;
         width: 100%;
     }
 
@@ -31,17 +30,21 @@
     }
 
     .logo {
-        width: 100%;
+        width: 80%;
         justify-content: center;
         margin-bottom: 15px;
+        margin-right: 40px;
+    }
+    .logo img{
+        width: 100px;
     }
 
     .logo-text h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .logo-text p {
-        font-size: 0.8rem;
+        font-size: 1.2rem;
     }
 
     .header-cta {
@@ -222,7 +225,7 @@
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
         z-index: 1000;
         overflow-y: auto;
-        border-radius: 20px;
+    
     }
 
     .nav-menu.active {
@@ -262,7 +265,7 @@
     }
 
     .nav-link.active {
-        color: #2316da;
+        color: #da1616;
         background: rgba(35, 22, 218, 0.08);
     }
 
