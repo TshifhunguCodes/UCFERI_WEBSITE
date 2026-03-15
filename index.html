@@ -190,54 +190,55 @@
     <!-- =============================================== -->
     <!-- Hero Section with Sliding Images -->
     <!--================================================== -->
-    <section class="hero">
+
+<section class="hero">
     <!-- Hero Images Container -->
-      <div class="hero-images">
-        <div class="hero-slide active" style="background-image: url('images/new/hero1.jpeg');">
+    <div class="hero-images">
+        <!-- Slide 1 - Video Background (No buttons) -->
+        <div class="hero-slide active">
+            <div class="slide-video-container">
+                <video class="slide-video" autoplay muted loop playsinline>
+                    <source src="images/hero-video.mp4" type="video/mp4">
+                    <source src="images/hero-background.webm" type="video/webm">
+                </video>
+            </div>
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2 class="slide-title">University of Venda CfERI</h2>
                 <p class="slide-text">Nurturing entrepreneurs, fostering innovation</p>
-               
             </div>
         </div>
-      </div>
 
-      <div class="hero-slide" style="background-image: url('images/new/hero2.jpeg');">
+        <!-- Slide 2 - SWEEP Image with 1 button -->
+        <div class="hero-slide" style="background-image: url('images/new/hero2.jpeg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2 class="slide-title">Student Women Economic Empowerment</h2>
                 <p class="slide-text">Empowering future female leaders</p>
-            </div>
-      </div>
-
-       <div class="hero-slide" style="background-image: url('images/new/hero3.jpeg');">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-                <h2 class="slide-title">CEEIIC Student Network</h2>
-                <p class="slide-text">Connecting students across the Vhembe district</p>
-            </div>
-        </div>
-    
-
-    <!-- Hero Content Overlay -->
-      <div class="hero-content-overlay">
-        <div class="container">
-            <div class="hero-content">
-                <!-- CTA Buttons -->
-                <div class="hero-cta">
-                    <a href="student-network.html" class="btn btn-primary btn-large">
-                        <i class="fas fa-rocket"></i>
-                        CEEIIC Student Network
-                    </a>
-                    <a href="sweep.html" class="btn btn-secondary btn-large">
+                <div class="slide-buttons">
+                    <a href="sweep.html" class="btn btn-primary">
                         <i class="fas fa-users"></i>
                         Join SWEEP 2026
                     </a>
                 </div>
             </div>
         </div>
-    </div>    
+
+        <!-- Slide 3 - CEEIIC Image with 1 button -->
+        <div class="hero-slide" style="background-image: url('images/new/hero3.jpeg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="slide-title">CEEIIC Student Network</h2>
+                <p class="slide-text">Connecting students across the Vhembe district</p>
+                <div class="slide-buttons">
+                    <a href="ceeiic-student-network.html" class="btn btn-primary">
+                        <i class="fas fa-users"></i>
+                        Join CEEIIC Network
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Slide Navigation -->
     <div class="slide-nav">
