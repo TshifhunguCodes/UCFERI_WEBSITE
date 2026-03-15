@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/header-footer-home.css">
-    <link rel="stylesheet" href="css/mobile.css">
+
     <link rel="stylesheet" href="css/programs.css">
     
 
@@ -25,7 +25,7 @@
     <!-- ======================================================-->
     <!-- Announcement Bar -->
     <!-- ======================================================-->
-   <div class="announcement-bar">
+     <!-- <div class="announcement-bar">
         <div class="container">
           <div class="announcement-content">
                 <span class="announcement-tag"><i class="fas fa-bullhorn"></i> Join Us</span>
@@ -34,88 +34,158 @@
             </div>
             
         </div>
-    </div> 
+    </div>  -->
 
     
    <!-- ================================================== -->
     <!-- Header -->
     <!--================================================== -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html">
-                        <div class="logo-image">
-                            <img src="images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
-                        </div>
-                        <div class="logo-text">
-                            <h1>UCfERI</h1>
-                            <p>Centre for Entrepreneurship & Incubation</p>
-                        </div>
+     <section class="header-modern">
+        <nav class="header-modern__nav" aria-label="Main navigation">
+            <!-- Logo with UCfERI branding -->
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-image">
+                        <img src="images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
+                    </div>
+                    <div class="logo-text">
+                        <h1>UCfERI</h1>
+                        <p>Centre for Entrepreneurship & Incubation</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <ul class="header-modern__links">
+                <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                
+                <li class="dropdown">     
+                    <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i> Mission</a>
+                        <a href="about.html#mission&vision"><i class="fas fa-low-vision"></i> Vision</a>
+                        <a href="about.html#history"><i class="fas fa-history"></i> History</a>
+                    </div> 
+                </li>      
+                
+                <li class="dropdown">
+                    <a href="programs.html" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i>
                     </a>
+                    <div class="dropdown-content">
+                        <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-dropdown-toggle">
+                                <i class="fas fa-users"></i> CEEIIC Student Network 
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                            <div class="nested-dropdown-content">
+                                <a href="student-network.html"><i class="fas fa-eye"></i> CEEIIC Overview</a>
+                                <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
+                            </div>
+                        </div>
+                        <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
+                    </div>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="nav-link"><i class="fas fa-photo-video"></i> Media <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+                        <a href="news.html"><i class="fas fa-newspaper"></i> News</a>
+                        <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+                        <a href="resources.html"><i class="fas fa-book"></i> Resources</a>
+                        <a href="story.html"><i class="fas fa-trophy"></i> Success Story</a>
+                    </div>
+                </li>   
+                
+                <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button type="button" class="header-modern__menu-btn" id="mobile-menu-button" 
+                    aria-controls="mobile-menu" aria-expanded="false" aria-label="Open main menu">
+                <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu with Perfectly Aligned Options -->
+        <div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
+            <div class="header-modern__mobile-links">
+                <!-- Home -->
+                <a href="index.html" class="header-modern__mobile-link"><i class="fas fa-home"></i> Home</a>
+                
+                <!-- About Us Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                        <span class="mobile-dropdown-toggle-left">
+                            <i class="fas fa-info-circle"></i> About Us
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="about.html#mission&vision" class="header-modern__mobile-link"><i class="fas fa-bullseye"></i> Mission</a>
+                        <a href="about.html#mission&vision" class="header-modern__mobile-link"><i class="fas fa-low-vision"></i> Vision</a>
+                        <a href="about.html#history" class="header-modern__mobile-link"><i class="fas fa-history"></i> History</a>
+                    </div>
                 </div>
 
-                <!-- Desktop Navigation -->
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="dropdown">     
-                        <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us  <i class="fas fa-chevron-down"></i></a> </a>
-                        <div class="dropdown-content">
-                            <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i> Mission</a>
-                            <a href="about.html#mission&vision"><i class="fas fa-low-vision"></i> Vision</a>
-                            <a href="about.html#history"><i class="fas fa-history"></i> History</a>
-                        </div> 
-                    </li>      
-                    <li class="dropdown">
-                        <a href="programs.html" class="nav-link">
-                           <i class="fas fa-graduation-cap"></i> Programs <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <div class="dropdown-content">
-                           <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
-                           <div class="nested-dropdown">
-                               <a href="#" class="nested-dropdown-toggle">
-                                  <i class="fas fa-users"></i> CEEIIC Student Network 
-                                  <i class="fas fa-chevron-right"></i>
-                               </a>
-                               <div class="nested-dropdown-content">
-                                  <a href="student-network.html"><i class="fas fa-eye"></i>CEEIIC Overview</a>
-                                  <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
-                                  <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
-                              </div>
-                            </div>
-                            <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                       <a href="#" class="nav-link"><i class="fas fa-photo-video"></i> Media <i class="fas fa-chevron-down"></i></a>
-                       <div class="dropdown-content">
-                            <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
-                            <a href="news.html"><i class="fas fa-newspaper"></i> News</a>
-                            <a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
-                            <a href="resources.html"><i class="fas fa-book"></i>Resources</a>
-                   <a href="story.html" class="nav-link"><i class="fas fa-trophy"></i> Sucess Story</a>
-                       </div>
-                    </li>   
-                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
-                     
-                </ul>
-                 
-                 
-                <!-- Mobile Menu Toggle -->
-                <div class="mobile-actions"> 
-                   <button class="mobile-toggle" aria-label="Toggle mobile menu">
-                      <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </div>
+                <!-- Programs Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                        <span class="mobile-dropdown-toggle-left">
+                            <i class="fas fa-graduation-cap"></i> Programs
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="incubation.html" class="header-modern__mobile-link"><i class="fas fa-rocket"></i> Business Incubation</a>
+                        
+                        <!-- CEEIIC Student Network Nested Dropdown -->
+                        <div class="mobile-dropdown">
+                            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                                <span class="mobile-dropdown-toggle-left">
+                                    <i class="fas fa-users"></i> CEEIIC Student Network
+                                </span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="mobile-dropdown-content">
+                                <a href="student-network.html" class="header-modern__mobile-link"><i class="fas fa-eye"></i> CEEIIC Overview</a>
+                                <a href="ceeiic-programs.html" class="header-modern__mobile-link"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                <a href="sweep.html" class="header-modern__mobile-link"><i class="fas fa-file-alt"></i> SWEEP</a>
+                            </div>
+                        </div>
+                        
+                        <a href="programs.html#training" class="header-modern__mobile-link"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
+                    </div>
                 </div>
-               
-            </nav>
+
+                <!-- Media Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                        <span class="mobile-dropdown-toggle-left">
+                            <i class="fas fa-photo-video"></i> Media
+                        </span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="mobile-dropdown-content">
+                        <a href="blog.html" class="header-modern__mobile-link"><i class="fas fa-blog"></i> Blog</a>
+                        <a href="news.html" class="header-modern__mobile-link"><i class="fas fa-newspaper"></i> News</a>
+                        <a href="events.html" class="header-modern__mobile-link"><i class="fas fa-calendar-alt"></i> Events</a>
+                        <a href="resources.html" class="header-modern__mobile-link"><i class="fas fa-book"></i> Resources</a>
+                        <a href="story.html" class="header-modern__mobile-link"><i class="fas fa-trophy"></i> Success Story</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <a href="contact.html" class="header-modern__mobile-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
         </div>
-    </header>
+    </section>
+
 
 
     <!--  =================================================-->
