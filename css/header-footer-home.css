@@ -496,52 +496,85 @@ body {
         height: 60px;
     }
 }
-
 /* Mobile styles */
 @media (max-width: 767.98px) {
     .header-modern__nav {
-        padding: 0.75rem 1rem;
+        padding: 0.5rem 0.75rem; /* Reduced padding */
     }
 
-    .logo-text h1 {
-        font-size: 1.4rem;
-    }
-
-    .logo-text p {
-        font-size: 0.7rem;
-        color: #2316da;
-        font-weight: 500;
-        margin-top: 2px;
-        display: block; /* Ensure it's displayed */
+    .logo a {
+        gap: 0.3rem; /* Reduced gap between image and text */
     }
 
     .logo-image {
-        width: 55px;
-        height: 55px;
+        width: 45px; /* Slightly smaller on mobile */
+        height: 45px;
     }
+
+    .logo-text h1 {
+        font-size: 1.2rem; /* Reduced from 1.4rem */
+        line-height: 1.1;
+    }
+     .logo-text p {
+        font-size: 0.6rem;
+        color: #2316da;
+        font-weight: 500;
+        margin-top: 0;
+        display: block !important; /* Force show */
+        white-space: normal; /* Allow text to wrap */
+        line-height: 1.2;
+    }
+    
 
     .header-modern__mobile-menu[aria-hidden="false"] {
         display: block;
     }
 }
 
-/* Small mobile styles - Only hide on very small screens if needed */
+/* Small mobile styles */
 @media (max-width: 480px) {
-    .logo-text h1 {
-        font-size: 1.3rem;
+    .header-modern__nav {
+        padding: 0.4rem 0.6rem;
     }
 
     .logo-image {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
-    
-    /* Option 1: Keep paragraph visible */
+
+    .logo-text h1 {
+        font-size: 1.1rem;
+    }
+
     .logo-text p {
-        display: block; /* Keep it visible */
-        font-size: 0.65rem; /* Slightly smaller for very small screens */
+        font-size: 0.55rem; /* Even smaller for very small screens */
+        max-width: 130px;
     }
-   
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+    .logo-image {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    .logo-text p {
+        font-size: 0.5rem;
+        max-width: 110px;
+    }
+}
+
+/* For extremely small screens (below 320px) */
+@media (max-width: 320px) {
+    .logo-text p {
+        max-width: 90px;
+        font-size: 0.45rem;
+    }
 }
 
 /* =============================================================================== */
