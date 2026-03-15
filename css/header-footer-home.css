@@ -509,6 +509,10 @@ body {
 
     .logo-text p {
         font-size: 0.7rem;
+        color: #2316da;
+        font-weight: 500;
+        margin-top: 2px;
+        display: block; /* Ensure it's displayed */
     }
 
     .logo-image {
@@ -521,12 +525,8 @@ body {
     }
 }
 
-/* Small mobile styles */
+/* Small mobile styles - Only hide on very small screens if needed */
 @media (max-width: 480px) {
-    .logo-text p {
-        display: none;
-    }
-
     .logo-text h1 {
         font-size: 1.3rem;
     }
@@ -535,7 +535,14 @@ body {
         width: 50px;
         height: 50px;
     }
-}  
+    
+    /* Option 1: Keep paragraph visible */
+    .logo-text p {
+        display: block; /* Keep it visible */
+        font-size: 0.65rem; /* Slightly smaller for very small screens */
+    }
+   
+}
 
 /* =============================================================================== */
 
