@@ -3,7 +3,7 @@
 :root {
     /* Matched Color Palette from programs.html */
     --primary:  #df7b1d;       /* Dark Blue - Stability & Professionalism */
-    --secondary: #2316da;     /* Blue - Trust & Reliability */
+    --secondary: #5349d6;     /* Blue aligned to announcement bar */
     --accent: #3ba710;        /* Orange - Energy & Action */
     --dark: #2c3e50;          /* Dark Blue */
     --light: #ecf0f1;         /* Light Gray Background */
@@ -56,7 +56,7 @@ h1, h2, h3, h4 {
 /* Page Header */
 .page-header {
     padding: 100px 0 60px;
-    background: linear-gradient(135deg, blue);
+    background: linear-gradient(90deg, #5349d6, #5249d4);
     color: var(--white);
     text-align: center;
 }
@@ -477,7 +477,7 @@ h1, h2, h3, h4 {
 
 .value i {
     font-size: 2rem;
-    color: blue;
+    color: #5349d6;
     margin-bottom: 15px;
 }
 
@@ -538,7 +538,7 @@ h1, h2, h3, h4 {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: blue;
+    background: #5349d6;
 }
 
 .timeline-item {
@@ -556,7 +556,7 @@ h1, h2, h3, h4 {
     top: 0;
     width: 60px;
     height: 60px;
-    background: blue;
+    background: #5349d6;
     color: var(--white);
     border-radius: 50%;
     display: flex;

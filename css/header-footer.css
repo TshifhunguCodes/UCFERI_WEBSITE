@@ -101,7 +101,8 @@ body {
 
 .logo-text p {
     font-size: 0.8rem;
-    color: var(--primary-color);
+    color: #5349d6;
+    font-weight: 700;
     margin: 0;
 }
 

@@ -862,7 +862,7 @@ h1, h2, h3, h4 {
 /* Page Header - Mobile First */
 .page-header {
     padding: 60px 0 30px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: #5349d6;
     color: var(--white);
     text-align: center;
 }

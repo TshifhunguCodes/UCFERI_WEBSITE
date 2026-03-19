@@ -2,9 +2,10 @@
 /* CSS Variables & Base */
 /* ==================================================== */
 :root {
-    --primary-color: #2c3e50;
-    --accent-color: #e67e22;
-    --accent-light: #f39c12;
+    --primary-color: #5349d6;
+    --secondary-color: #5249d4;
+    --accent-color: #5349d6;
+    --accent-light: #5249d4;
     --dark-color: #1a252f;
     --light-color: #f8f9fa;
     --gray-color: #6c757d;
@@ -46,7 +47,7 @@ h1, h2, h3, h4 {
 /* ==================================================== */
 .contact-hero {
     padding: 100px 0;
-     background: linear-gradient(135deg, #2316da, #e74c3c);
+     background: #5349d6;
     color: var(--white);
     text-align: center;
     position: relative;
@@ -94,7 +95,7 @@ h1, h2, h3, h4 {
 /* ==================================================== */
 .quick-connect {
     padding: 60px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: var(--light-color);
     position: relative;
     overflow: hidden;
 }
@@ -106,7 +107,7 @@ h1, h2, h3, h4 {
     right: -50px;
     width: 200px;
     height: 200px;
-    background: radial-gradient(circle, rgba(35, 22, 218, 0.03) 0%, transparent 70%);
+    background: rgba(83, 73, 214, 0.05);
     border-radius: 50%;
     z-index: 0;
 }
@@ -118,7 +119,7 @@ h1, h2, h3, h4 {
     left: -50px;
     width: 200px;
     height: 200px;
-    background: radial-gradient(circle, rgba(231, 76, 60, 0.03) 0%, transparent 70%);
+    background: rgba(83, 73, 214, 0.05);
     border-radius: 50%;
     z-index: 0;
 }
@@ -150,26 +151,18 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
-    background-size: 200% 100%;
-    animation: gradientShift 3s linear infinite;
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: var(--primary-color);
 }
 
 .connect-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(35, 22, 218, 0.15);
+    box-shadow: 0 20px 40px rgba(83, 73, 214, 0.18);
 }
 
 .connect-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, rgba(35, 22, 218, 0.1), rgba(231, 76, 60, 0.1));
+    background: rgba(83, 73, 214, 0.12);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -181,7 +174,7 @@ h1, h2, h3, h4 {
 }
 
 .connect-card:hover .connect-icon {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--white);
     transform: scale(1.1) rotate(5deg);
 }
@@ -213,23 +206,23 @@ h1, h2, h3, h4 {
     justify-content: center;
     gap: 8px;
     padding: 10px 20px;
-    background: linear-gradient(135deg, rgba(35, 22, 218, 0.05), rgba(231, 76, 60, 0.05));
+    background: rgba(83, 73, 214, 0.08);
     color: var(--primary-color);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    border: 1px solid rgba(35, 22, 218, 0.1);
+    border: 1px solid rgba(83, 73, 214, 0.14);
     width: 100%;
 }
 
 .connect-action:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--white);
     border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(35, 22, 218, 0.3);
+    box-shadow: 0 5px 15px rgba(83, 73, 214, 0.3);
 }
 
 /* Social Media Icons */
@@ -239,7 +232,7 @@ h1, h2, h3, h4 {
     gap: 10px;
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid rgba(35, 22, 218, 0.1);
+    border-top: 1px solid rgba(83, 73, 214, 0.14);
     flex-wrap: wrap;
 }
 
@@ -256,18 +249,17 @@ h1, h2, h3, h4 {
     text-decoration: none;
 }
 
-.connect-social-link.facebook { background: #1877F2; }
-.connect-social-link.instagram { 
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
-.connect-social-link.linkedin { background: #0077B5; }
-.connect-social-link.youtube { background: #FF0000; }
-.connect-social-link.tiktok { 
-    background: #000000;
+.connect-social-link.facebook,
+.connect-social-link.instagram,
+.connect-social-link.linkedin,
+.connect-social-link.youtube,
+.connect-social-link.tiktok {
+    background: #5349d6;
     position: relative;
 }
+
 .connect-social-link.tiktok i {
-    text-shadow: 2px 2px 0 #25F4EE, -2px -2px 0 #FE2C55;
+    text-shadow: none;
 }
 
 .connect-social-link:hover {
@@ -357,7 +349,7 @@ h1, h2, h3, h4 {
 }
 
 .location-map {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     padding: 60px 40px;
     display: flex;
     align-items: center;
@@ -448,7 +440,7 @@ h1, h2, h3, h4 {
 }
 
 .urgent-note {
-    background: #fff3e0;
+    background: rgba(83, 73, 214, 0.08);
     padding: 20px;
     border-radius: 12px;
     display: flex;
@@ -516,7 +508,7 @@ h1, h2, h3, h4 {
 .team-avatar {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -632,7 +624,7 @@ h1, h2, h3, h4 {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.1);
+    box-shadow: 0 0 0 4px rgba(83, 73, 214, 0.12);
 }
 
 .form-group input::placeholder,
@@ -641,7 +633,7 @@ h1, h2, h3, h4 {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: var(--white);
     padding: 16px 32px;
     border: none;
@@ -763,7 +755,7 @@ h1, h2, h3, h4 {
 /* ==================================================== */
 .cta-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: var(--white);
     text-align: center;
 }

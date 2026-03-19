@@ -148,8 +148,8 @@ body {
 
 .logo-text p {
     font-size: 0.85rem;
-    color:#5349d6 ;
-    font-weight: 500;
+    color: #5349d6;
+    font-weight: 700;
     margin-top: 2px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -519,8 +519,8 @@ body {
     }
      .logo-text p {
         font-size: 0.6rem;
-        color: #2316da;
-        font-weight: 500;
+        color: #5349d6;
+        font-weight: 700;
         margin-top: 0;
         display: block !important; /* Force show */
         white-space: normal; /* Allow text to wrap */
@@ -630,6 +630,80 @@ body {
 .social-links a:hover {
     background: var(--primary-color);
     transform: translateY(-3px);
+}
+
+@keyframes incubationSocialFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.incubation-page .announcement-bar,
+.social-announcement-page .announcement-bar {
+    padding: 8px 0;
+}
+
+.incubation-page .announcement-bar .container,
+.social-announcement-page .announcement-bar .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.incubation-page .announcement-bar .social-links,
+.social-announcement-page .announcement-bar .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.incubation-page .announcement-bar .social-links a,
+.social-announcement-page .announcement-bar .social-links a {
+    width: 30px;
+    height: 30px;
+    font-size: 0.82rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    animation: incubationSocialFloat 3s ease-in-out infinite;
+}
+
+.incubation-page .announcement-bar .social-links a:nth-child(2),
+.social-announcement-page .announcement-bar .social-links a:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.incubation-page .announcement-bar .social-links a:nth-child(3),
+.social-announcement-page .announcement-bar .social-links a:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.incubation-page .announcement-bar .social-links a:nth-child(4),
+.social-announcement-page .announcement-bar .social-links a:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.incubation-page .announcement-bar .social-links a:nth-child(5),
+.social-announcement-page .announcement-bar .social-links a:nth-child(5) {
+    animation-delay: 0.48s;
+}
+
+.incubation-page .announcement-bar .social-links a:hover,
+.social-announcement-page .announcement-bar .social-links a:hover {
+    background: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    transform: translateY(-3px) scale(1.05);
 }
 
 .footer-title {

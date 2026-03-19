@@ -246,7 +246,8 @@
 
 .logo-text p {
     font-size: 0.8rem;
-    color: var(--primary-color);
+    color: #5349d6;
+    font-weight: 700;
     margin: 0;
 }
 
@@ -965,7 +966,7 @@
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: #5349d6;
     padding: 60px 0 40px;
     color: var(--white);
 }

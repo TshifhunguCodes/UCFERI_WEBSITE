@@ -112,8 +112,7 @@ p { margin-bottom: 1rem; }
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, rgba(14, 10, 230, 0.9), rgba(236, 147, 13, 0.9)),
-                url('images/success-stories-bg.jpg') center/cover;
+    background: #5349d6;
     color: var(--white);
     padding: 80px 0 60px;
     text-align: center;

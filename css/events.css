@@ -16,7 +16,7 @@
 }
 
 .events-header {
-    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    background: #5349d6;
 }
 
 /* Featured Event Section */

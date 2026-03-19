@@ -37,7 +37,7 @@ body {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: #5349d6;
     padding: 60px 0 40px;
     color: var(--white);
 }
