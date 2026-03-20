@@ -39,6 +39,7 @@
 /* When on SWEEP page, change announcement bar to pink */
 body.sweep-page .announcement-bar {
     background: linear-gradient(135deg, #ff69b4, #ff1493);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 /* Change logo colors on SWEEP page */
@@ -67,7 +68,7 @@ body.sweep-page .logo-text p {
 .announcement-content {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
 }
