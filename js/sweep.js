@@ -145,28 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Back to Top Button
-    const backToTopBtn = document.createElement('a');
-    backToTopBtn.href = '#';
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-    document.body.appendChild(backToTopBtn);
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
-    
-    backToTopBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
     
     // Intersection Observer for Animations
     const observerOptions = {

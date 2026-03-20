@@ -40,6 +40,7 @@ body {
     background: #5349d6;
     padding: 60px 0 40px;
     color: var(--white);
+    text-align: center;
 }
 
 .page-header h1 {
@@ -51,6 +52,7 @@ body {
 .breadcrumb {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     font-size: 0.9rem;
 }

@@ -15,7 +15,32 @@
 }
 
 .news-header {
-    background: #5349d6;
+    background: linear-gradient(135deg, #5349d6, #3b32b0);
+    padding: 80px 0 60px;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.news-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.news-header .breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.news-header .breadcrumb a {
+    color: var(--white);
+    text-decoration: none;
 }
 
 /* Featured News */

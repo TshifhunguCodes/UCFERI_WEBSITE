@@ -44,15 +44,20 @@
 
 }
 
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    color: var(--dark);
+    font-family: 'Manrope', sans-serif;
+    color: var(--dark-color);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -61,15 +66,16 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    position: relative;
-    z-index: 2;
 }
+
 /* Typography */
 h1, h2, h3, h4 {
     font-family: 'Source Serif Pro', serif;
     font-weight: 700;
     line-height: 1.2;
 }
+
+
 /* ===== HERO SECTION - FULL BLEED IMAGE ===== */
 .hero-sweep {
     position: relative;
