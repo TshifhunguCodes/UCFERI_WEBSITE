@@ -3,33 +3,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded - initializing all components');
     
-    // Initialize Mobile Navigation (commented out - uncomment if needed)
-    // initMobileNavigation();
-    
-    // Initialize Hero Slider
+    // Initialize all components
     initHeroSlider();
-    
-    // Initialize Dropdowns
     initDropdowns();
-    
-    // Initialize Newsletter Form
+    initMobileMenu();
     initNewsletterForm();
-    
-    // Initialize Countdown Timers
-    initCountdownTimers();
-    
-    // Initialize Stats Counter
-    initStatsCounter();
-    
-    // Initialize Active Navigation
     initActiveNavigation();
-    
-    // Initialize Partners Carousel (only on pages where it exists)
     initPartnersCarousel();
+    initNestedDropdowns();
+    initSmoothScrolling();
+    initPopupHandlers();
 });
 
 // =============================================
-// HERO SLIDER - FULLY FUNCTIONAL
+// HERO SLIDER - WITH VIDEO SUPPORT
 // =============================================
 
 function initHeroSlider() {
@@ -39,8 +26,8 @@ function initHeroSlider() {
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.slide-prev');
     const nextBtn = document.querySelector('.slide-next');
+    const videos = document.querySelectorAll('.slide-video');
     
-    // Exit if no slides found
     if (!heroSlides.length) {
         console.log('No hero slides found - skipping');
         return;
@@ -49,119 +36,122 @@ function initHeroSlider() {
     let currentSlide = 0;
     let autoSlideInterval;
     
-    // Function to show specific slide
+    function pauseAllVideos() {
+        videos.forEach(video => {
+            if (video) video.pause();
+        });
+    }
+    
+    function playCurrentVideo(index) {
+        const currentVideo = heroSlides[index]?.querySelector('.slide-video');
+        if (currentVideo) {
+            currentVideo.play().catch(e => console.log('Video autoplay failed:', e));
+        }
+    }
+    
     function showSlide(n) {
-        // Remove active class from all slides and dots
         heroSlides.forEach(slide => slide.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
         
-        // Calculate new index (wrap around)
         currentSlide = (n + heroSlides.length) % heroSlides.length;
         
-        // Add active class to current slide and dot
         heroSlides[currentSlide].classList.add('active');
-        if (dots[currentSlide]) {
-            dots[currentSlide].classList.add('active');
-        }
+        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+        
+        pauseAllVideos();
+        playCurrentVideo(currentSlide);
         
         console.log('Showing slide:', currentSlide + 1);
     }
     
-    // Next slide function
-    function nextSlide() {
-        showSlide(currentSlide + 1);
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+    
+    function resetInterval() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(nextSlide, 5000);
     }
     
-    // Previous slide function
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
-    
-    // Event listeners for buttons
+    // Event listeners
     if (prevBtn) {
-        prevBtn.onclick = function(e) {
+        prevBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
             prevSlide();
-        };
+            resetInterval();
+        });
     }
     
     if (nextBtn) {
-        nextBtn.onclick = function(e) {
+        nextBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
             nextSlide();
-        };
+            resetInterval();
+        });
     }
     
-    // Dot navigation
     dots.forEach((dot, index) => {
-        dot.onclick = function(e) {
+        dot.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
             showSlide(index);
-        };
+            resetInterval();
+        });
     });
     
-    // Clear any existing interval
-    if (autoSlideInterval) clearInterval(autoSlideInterval);
-    
-    // Auto slide every 3 seconds
-    autoSlideInterval = setInterval(nextSlide, 3000);
+    // Auto slide
+    autoSlideInterval = setInterval(nextSlide, 5000);
     
     // Pause on hover
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
-        heroSection.addEventListener('mouseenter', function() {
-            clearInterval(autoSlideInterval);
-        });
-        
-        heroSection.addEventListener('mouseleave', function() {
-            autoSlideInterval = setInterval(nextSlide, 3000);
+        heroSection.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        heroSection.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(nextSlide, 5000);
         });
     }
     
-    // Show first slide
+    // Touch swipe for mobile
+    let touchStartX = 0;
+    heroSection?.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+    heroSection?.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) { nextSlide(); resetInterval(); }
+        if (touchEndX > touchStartX + threshold) { prevSlide(); resetInterval(); }
+    });
+    
     showSlide(0);
 }
 
 // =============================================
-// MOBILE NAVIGATION - COMMENTED OUT (UNCOMMENT IF NEEDED)
+// MOBILE MENU
 // =============================================
- // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', function() {
-                const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-                menuBtn.setAttribute('aria-expanded', !expanded);
-                mobileMenu.setAttribute('aria-hidden', expanded);
-            });
 
-            // Close mobile menu on window resize if desktop
-            window.addEventListener('resize', function() {
-                if (window.innerWidth >= 768) {
-                    menuBtn.setAttribute('aria-expanded', 'false');
-                    mobileMenu.setAttribute('aria-hidden', 'true');
-                }
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
-                    menuBtn.setAttribute('aria-expanded', 'false');
-                    mobileMenu.setAttribute('aria-hidden', 'true');
-                }
-            });
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (!menuBtn || !mobileMenu) return;
+    
+    menuBtn.addEventListener('click', function() {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !expanded);
+        mobileMenu.setAttribute('aria-hidden', expanded);
+    });
+    
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+            menuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
         }
-
-        // Mobile dropdown toggle function
-        function toggleMobileDropdown(button) {
-            button.classList.toggle('active');
-            const content = button.nextElementSibling;
-            content.classList.toggle('show');
+    });
+    
+    document.addEventListener('click', function(event) {
+        if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+            menuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
         }
+    });
+}
 
 // =============================================
 // DROPDOWN MENUS
@@ -197,6 +187,35 @@ function initDropdowns() {
                         content.style.display = content.style.display === 'block' ? 'none' : 'block';
                     }
                 }
+            });
+        }
+    });
+}
+
+// =============================================
+// NESTED DROPDOWNS (Mobile)
+// =============================================
+
+function initNestedDropdowns() {
+    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+    
+    if (window.innerWidth <= 768) {
+        nestedDropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.nested-dropdown-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            nestedDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
             });
         }
     });
@@ -239,11 +258,9 @@ function validateEmail(email) {
 // =============================================
 
 function showNotification(message, type) {
-    // Remove existing notifications
     const existingNotifications = document.querySelectorAll('.notification');
     existingNotifications.forEach(notification => notification.remove());
     
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.innerHTML = `
@@ -253,10 +270,8 @@ function showNotification(message, type) {
         </div>
     `;
     
-    // Add to body
     document.body.appendChild(notification);
     
-    // Add styles if not already added
     if (!document.querySelector('#notification-styles')) {
         const style = document.createElement('style');
         style.id = 'notification-styles';
@@ -274,133 +289,29 @@ function showNotification(message, type) {
                 max-width: 400px;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             }
-            
-            .notification.success {
-                background: var(--accent, #57CC99);
-            }
-            
-            .notification.error {
-                background: #E53E3E;
-            }
-            
+            .notification.success { background: #57CC99; }
+            .notification.error { background: #E53E3E; }
             .notification-content {
                 display: flex;
                 align-items: center;
                 gap: 12px;
             }
-            
             @keyframes slideIn {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
             }
-            
             @keyframes slideOut {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
             }
         `;
         document.head.appendChild(style);
     }
     
-    // Remove after 3 seconds
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
+        setTimeout(() => notification.remove(), 300);
     }, 3000);
-}
-
-// =============================================
-// COUNTDOWN TIMERS
-// =============================================
-
-function initCountdownTimers() {
-    const incubationDeadline = new Date('2024-02-29T23:59:59').getTime();
-    const sweepDeadline = new Date('2025-12-02T23:59:59').getTime();
-    
-    // Update countdowns every second
-    setInterval(() => {
-        updateCountdown('incubation-countdown', incubationDeadline);
-        updateCountdown('sweep-countdown', sweepDeadline);
-    }, 1000);
-}
-
-function updateCountdown(elementId, deadline) {
-    const element = document.getElementById(elementId);
-    if (!element) return;
-    
-    const now = new Date().getTime();
-    const timeLeft = deadline - now;
-    
-    if (timeLeft < 0) {
-        element.textContent = "Application Closed";
-        return;
-    }
-    
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    
-    if (days > 30) {
-        element.textContent = `${days} days remaining`;
-    } else if (days > 0) {
-        element.textContent = `${days}d ${hours}h remaining`;
-    } else {
-        element.textContent = `${hours} hours remaining`;
-    }
-}
-
-// =============================================
-// STATS COUNTER
-// =============================================
-
-function initStatsCounter() {
-    const stats = document.querySelectorAll('.stat-number[data-count]');
-    
-    if (stats.length === 0) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const stat = entry.target;
-                const target = parseInt(stat.getAttribute('data-count'));
-                const suffix = stat.textContent.includes('%') ? '%' : '';
-                
-                animateCounter(stat, target, suffix);
-                observer.unobserve(stat);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    stats.forEach(stat => observer.observe(stat));
-}
-
-function animateCounter(element, target, suffix) {
-    let current = 0;
-    const increment = target / 60;
-    const frameDuration = 1500 / 60;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target + suffix;
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current) + suffix;
-        }
-    }, frameDuration);
 }
 
 // =============================================
@@ -415,7 +326,6 @@ function initActiveNavigation() {
         const linkPage = link.getAttribute('href');
         if (!linkPage) return;
         
-        // Handle active state for current page
         if (linkPage === currentPage || 
             (currentPage === 'index.html' && linkPage === 'index.html') ||
             (currentPage === '' && linkPage === 'index.html')) {
@@ -424,7 +334,6 @@ function initActiveNavigation() {
             link.classList.remove('active');
         }
         
-        // Handle dropdown parent active state
         if (linkPage === 'programs.html' && 
             (currentPage === 'incubation.html' || currentPage === 'sweep.html')) {
             link.classList.add('active');
@@ -433,29 +342,51 @@ function initActiveNavigation() {
 }
 
 // =============================================
-// SMOOTH SCROLLING FOR ANCHOR LINKS
+// SMOOTH SCROLLING
 // =============================================
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // Only handle anchor links on same page
-        if (href && href.startsWith('#') && href.length > 1) {
-            e.preventDefault();
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#') && href.length > 1) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
+        });
     });
-});
+}
 
 // =============================================
-// PARTNERS CAROUSEL - FIXED (SINGLE INSTANCE)
+// POPUP HANDLERS
+// =============================================
+
+function initPopupHandlers() {
+    window.openPopup = function(popupId) {
+        const popup = document.getElementById(popupId);
+        if (popup) popup.classList.add('show');
+    };
+    
+    window.closePopup = function(popupId) {
+        const popup = document.getElementById(popupId);
+        if (popup) popup.classList.remove('show');
+    };
+    
+    window.onclick = function(event) {
+        if (event.target.classList.contains('popup')) {
+            event.target.classList.remove('show');
+        }
+    };
+}
+
+// =============================================
+// PARTNERS CAROUSEL
 // =============================================
 
 function initPartnersCarousel() {
@@ -465,9 +396,8 @@ function initPartnersCarousel() {
     const nextBtn = document.querySelector('.carousel-nav.next');
     const dotsContainer = document.querySelector('.carousel-dots');
     
-    // CHECK IF CAROUSEL EXISTS ON THIS PAGE
     if (!carousel || !slides.length || !prevBtn || !nextBtn || !dotsContainer) {
-        console.log('Partners carousel not found on this page - skipping');
+        console.log('Partners carousel not found - skipping');
         return;
     }
     
@@ -477,10 +407,8 @@ function initPartnersCarousel() {
     let slidesPerView = getSlidesPerView();
     let totalSlides = slides.length;
     
-    // Clear existing dots
     dotsContainer.innerHTML = '';
     
-    // Create dots
     slides.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.className = 'dot';
@@ -491,7 +419,6 @@ function initPartnersCarousel() {
     
     const dots = document.querySelectorAll('.carousel-dots .dot');
     
-    // Navigation functions
     function getSlidesPerView() {
         if (window.innerWidth < 768) return 1;
         if (window.innerWidth < 1200) return 2;
@@ -499,7 +426,6 @@ function initPartnersCarousel() {
     }
     
     function updateCarousel() {
-        if (!slides.length) return;
         const slideWidth = slides[0].offsetWidth + 30;
         const translateX = -currentIndex * slideWidth;
         carousel.style.transform = `translateX(${translateX}px)`;
@@ -520,48 +446,26 @@ function initPartnersCarousel() {
     
     function nextSlide() {
         const maxIndex = totalSlides - slidesPerView;
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
+        currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
         updateCarousel();
     }
     
     function prevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            const maxIndex = totalSlides - slidesPerView;
-            currentIndex = maxIndex;
-        }
+        const maxIndex = totalSlides - slidesPerView;
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
         updateCarousel();
     }
     
-    // Event listeners
-    prevBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        prevSlide();
-    });
+    prevBtn.addEventListener('click', (e) => { e.preventDefault(); prevSlide(); });
+    nextBtn.addEventListener('click', (e) => { e.preventDefault(); nextSlide(); });
     
-    nextBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        nextSlide();
-    });
-    
-    // Auto slide
     let autoSlideInterval = setInterval(nextSlide, 5000);
     
-    // Pause auto-slide on hover
-    carousel.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
-    
+    carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
     carousel.addEventListener('mouseleave', () => {
         autoSlideInterval = setInterval(nextSlide, 5000);
     });
     
-    // Handle window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -571,249 +475,15 @@ function initPartnersCarousel() {
         }, 250);
     });
     
-    // Swipe support for touch devices
     let startX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-    });
-    
+    carousel.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
     carousel.addEventListener('touchend', (e) => {
         const endX = e.changedTouches[0].clientX;
         const diff = startX - endX;
-        
         if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
+            diff > 0 ? nextSlide() : prevSlide();
         }
     });
     
-    // Initialize first slide
     goToSlide(0);
 }
-
-function openPopup(popupId) {
-    document.getElementById(popupId).classList.add('show');
-}
-
-function closePopup(popupId) {
-    document.getElementById(popupId).classList.remove('show');
-}
-
-// Close popup when clicking outside
-window.onclick = function(event) {
-    if (event.target.classList.contains('popup')) {
-        event.target.classList.remove('show');
-    }
-}
-
-// Add nested dropdown handling
-document.addEventListener('DOMContentLoaded', function() {
-    // ... existing code ...
-    
-    // Handle nested dropdowns for mobile
-    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
-    
-    if (window.innerWidth <= 768) {
-        nestedDropdowns.forEach(dropdown => {
-            const toggle = dropdown.querySelector('.nested-dropdown-toggle');
-            
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                dropdown.classList.toggle('active');
-            });
-        });
-    }
-    
-    // Handle window resize for nested dropdowns
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            nestedDropdowns.forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
-        }
-    });
-});
-
-// =============================================
-// HERO SLIDER - WITH VIDEO SUPPORT
-// =============================================
-
-function initHeroSlider() {
-    console.log('Initializing Hero Slider...');
-    
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.slide-prev');
-    const nextBtn = document.querySelector('.slide-next');
-    const videos = document.querySelectorAll('.slide-video');
-    
-    // Exit if no slides found
-    if (!heroSlides.length) {
-        console.log('No hero slides found - skipping');
-        return;
-    }
-    
-    let currentSlide = 0;
-    let autoSlideInterval;
-    
-    // Function to pause all videos
-    function pauseAllVideos() {
-        videos.forEach(video => {
-            if (video) {
-                video.pause();
-            }
-        });
-    }
-    
-    // Function to play video in current slide
-    function playCurrentVideo(index) {
-        const currentVideo = heroSlides[index]?.querySelector('.slide-video');
-        if (currentVideo) {
-            // Play video with promise catch for autoplay issues
-            currentVideo.play().catch(e => {
-                console.log('Video autoplay failed:', e);
-            });
-        }
-    }
-    
-    // Function to show specific slide
-    function showSlide(n) {
-        // Remove active class from all slides and dots
-        heroSlides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Calculate new index (wrap around)
-        currentSlide = (n + heroSlides.length) % heroSlides.length;
-        
-        // Add active class to current slide and dot
-        heroSlides[currentSlide].classList.add('active');
-        if (dots[currentSlide]) {
-            dots[currentSlide].classList.add('active');
-        }
-        
-        // Handle video playback
-        pauseAllVideos();
-        playCurrentVideo(currentSlide);
-        
-        console.log('Showing slide:', currentSlide + 1);
-    }
-    
-    // Next slide function
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-    
-    // Previous slide function
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
-    
-    // Event listeners for buttons
-    if (prevBtn) {
-        prevBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            prevSlide();
-            resetInterval();
-        });
-    }
-    
-    if (nextBtn) {
-        nextBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            nextSlide();
-            resetInterval();
-        });
-    }
-    
-    // Dot navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            showSlide(index);
-            resetInterval();
-        });
-    });
-    
-    // Auto slide function
-    function startInterval() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    }
-    
-    function resetInterval() {
-        clearInterval(autoSlideInterval);
-        startInterval();
-    }
-    
-    // Start auto sliding
-    startInterval();
-    
-    // Pause on hover
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        heroSection.addEventListener('mouseenter', function() {
-            clearInterval(autoSlideInterval);
-        });
-        
-        heroSection.addEventListener('mouseleave', function() {
-            startInterval();
-        });
-    }
-    
-    // Touch swipe for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    if (heroSection) {
-        heroSection.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        heroSection.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-    }
-    
-    function handleSwipe() {
-        const threshold = 50;
-        if (touchEndX < touchStartX - threshold) {
-            nextSlide();
-            resetInterval();
-        }
-        if (touchEndX > touchStartX + threshold) {
-            prevSlide();
-            resetInterval();
-        }
-    }
-    
-    // Handle video loadeddata event to ensure smooth playback
-    videos.forEach(video => {
-        video.addEventListener('loadeddata', function() {
-            console.log('Video loaded:', this.src);
-        });
-        
-        // Handle video errors
-        video.addEventListener('error', function(e) {
-            console.log('Video error:', e);
-        });
-    });
-    
-    // Show first slide and play its video
-    showSlide(0);
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initHeroSlider();
-});
-// =============================================
-// END OF JAVASCRIPT
-// =============================================

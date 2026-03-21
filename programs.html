@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/header-footer-home.css">
-
     <link rel="stylesheet" href="css/programs.css">
     
 
@@ -43,11 +42,10 @@
     <!--================================================== -->
      <section class="header-modern">
         <nav class="header-modern__nav" aria-label="Main navigation">
-            <!-- Logo with UCfERI branding -->
             <div class="logo">
                 <a href="index.html">
                     <div class="logo-image">
-                        <img src="images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
+                        <img src="assets/images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
                     </div>
                     <div class="logo-text">
                         <h1>UCfERI</h1>
@@ -113,13 +111,10 @@
             </button>
         </nav>
 
-        <!-- Mobile Menu with Perfectly Aligned Options -->
         <div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
             <div class="header-modern__mobile-links">
-                <!-- Home -->
                 <a href="index.html" class="header-modern__mobile-link"><i class="fas fa-home"></i> Home</a>
                 
-                <!-- About Us Dropdown -->
                 <a href="events.html" class="header-modern__mobile-link"><i class="fas fa-calendar-alt"></i> Events</a>
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
@@ -135,7 +130,6 @@
                     </div>
                 </div>
 
-                <!-- Programs Dropdown -->
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                         <span class="mobile-dropdown-toggle-left">
@@ -146,7 +140,6 @@
                     <div class="mobile-dropdown-content">
                         <a href="incubation.html" class="header-modern__mobile-link"><i class="fas fa-rocket"></i> Business Incubation</a>
                         
-                        <!-- CEEIIC Student Network Nested Dropdown -->
                         <div class="mobile-dropdown">
                             <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                                 <span class="mobile-dropdown-toggle-left">
@@ -165,7 +158,6 @@
                     </div>
                 </div>
 
-                <!-- Media Dropdown -->
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                         <span class="mobile-dropdown-toggle-left">
@@ -181,7 +173,6 @@
                     </div>
                 </div>
 
-                <!-- Contact -->
                 <a href="contact.html" class="header-modern__mobile-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </div>
@@ -218,10 +209,10 @@
             </div>
 
             <div class="programs-grid">
-                <!-- Business Incubation -->
+        
                 <div class="program-card incubation-card" id="incubation">
                     <div class="program-header">
-                        <div class="program-badge">2024 Intake</div>
+                        <div class="program-badge">2026 Intake Coming Soon</div>
                         <div class="program-icon">
                             <i class="fas fa-building"></i>
                         </div>
@@ -278,7 +269,6 @@
                     </div>
                 </div>
 
-                <!-- SWEEP Program -->
                 <div class="program-card sweep-card" id="sweep">
                     <div class="program-header">
                         <div class="program-badge">Executive 2026</div>
@@ -328,10 +318,10 @@
                         </div>
 
                         <div class="program-cta">
-                            <a href="sweep.html" class="btn btn-secondary">
+                            <a href="student-network.html#about" class="btn btn-secondary">
                                 <i class="fas fa-info-circle"></i> Learn More
                             </a>
-                            <a href="sweep.html#apply" class="btn btn-outline">
+                            <a href="student-network.html" class="btn btn-outline">
                                 <i class="fas fa-users"></i> Apply Now
                             </a>
                         </div>
@@ -341,7 +331,6 @@
         </div>
     </section>
 
-    <!-- Training Programs -->
     <section class="training-programs" id="training">
         <div class="container">
             <div class="section-header">
@@ -436,7 +425,7 @@
             </div>
 
             <div class="view-all-training">
-                <a href="contact.html" class="btn btn-primary">
+                <a href="contact.html#contact-form" class="btn btn-primary">
                     <i class="fas fa-calendar"></i> Request Custom Training
                 </a>
                 <a href="resources.html" class="btn btn-outline">
@@ -580,13 +569,13 @@
                         <h4>Business Incubation</h4>
                         <div class="deadline-date">29 February 2024</div>
                         <div class="countdown" id="incubation-countdown"></div>
-                        <a href="incubation.html#apply" class="btn btn-primary btn-small">Apply Now</a>
+                        <!-- <a href="incubation.html#apply" class="btn btn-primary btn-small">Apply Now</a> -->
                     </div>
                     <div class="deadline-card">
                         <h4>SWEEP 2026</h4>
                         <div class="deadline-date">02 December 2025</div>
                         <div class="countdown" id="sweep-countdown"></div>
-                        <a href="sweep.html#apply" class="btn btn-secondary btn-small">Apply Now</a>
+                       <!-- <a href="sweep.html#apply" class="btn btn-secondary btn-small">Apply Now</a> -->
                     </div>
                 </div>
             </div>
@@ -672,7 +661,7 @@
                     <a href="sweep.html#apply" class="btn btn-secondary btn-large">
                         <i class="fas fa-users"></i> Join SWEEP 2026
                     </a>
-                    <a href="contact.html" class="btn btn-outline btn-large">
+                    <a href="contact.html#contact-form" class="btn btn-outline btn-large">
                         <i class="fas fa-comments"></i> Schedule Consultation
                     </a>
                 </div>
@@ -688,7 +677,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="images/univencferi_logo.jpeg" alt="UCfERI">
+                        <img src="assets/images/univencferi_logo.jpeg" alt="UCfERI">
                     </div>
                     <p class="footer-about">
                         Nurturing entrepreneurs, fostering innovation to propel the greater rural economy 
@@ -756,7 +745,6 @@
    
 
     <!-- JavaScript -->
-    <script src="js/mobile-menu.js"></script>
     <script src="js/programs.js"></script>
 </body>
 </html>

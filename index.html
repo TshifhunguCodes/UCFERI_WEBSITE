@@ -47,7 +47,7 @@
             <div class="logo">
                 <a href="index.html">
                     <div class="logo-image">
-                        <img src="images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
+                        <img src="assets/images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
                     </div>
                     <div class="logo-text">
                         <h1>UCfERI</h1>
@@ -112,13 +112,12 @@
             </button>
         </nav>
 
-        <!-- Mobile Menu with Perfectly Aligned Options -->
+     
         <div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
             <div class="header-modern__mobile-links">
-                <!-- Home -->
+               
                 <a href="index.html" class="header-modern__mobile-link"><i class="fas fa-home"></i> Home</a>
                 
-                <!-- About Us Dropdown -->
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                         <span class="mobile-dropdown-toggle-left">
@@ -133,7 +132,7 @@
                     </div>
                 </div>
 
-                <!-- Programs Dropdown -->
+               
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                         <span class="mobile-dropdown-toggle-left">
@@ -144,7 +143,7 @@
                     <div class="mobile-dropdown-content">
                         <a href="incubation.html" class="header-modern__mobile-link"><i class="fas fa-rocket"></i> Business Incubation</a>
                         
-                        <!-- CEEIIC Student Network Nested Dropdown -->
+                       
                         <div class="mobile-dropdown">
                             <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                                 <span class="mobile-dropdown-toggle-left">
@@ -165,7 +164,6 @@
 
                 <a href="events.html" class="header-modern__mobile-link"><i class="fas fa-calendar-alt"></i> Events</a>
 
-                <!-- Media Dropdown -->
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                         <span class="mobile-dropdown-toggle-left">
@@ -193,13 +191,12 @@
     <!--================================================== -->
 
 <section class="hero">
-    <!-- Hero Images Container -->
+    
     <div class="hero-images">
-        <!-- Slide 1 - Video Background (No buttons) -->
         <div class="hero-slide active">
             <div class="slide-video-container">
                 <video class="slide-video" autoplay muted loop playsinline>
-                    <source src="images/hero-video.mp4" type="video/mp4">
+                    <source src="assets/video/hero-banner-video.mp4" type="video/mp4">
                     <source src="images/hero-background.webm" type="video/webm">
                 </video>
             </div>
@@ -210,8 +207,8 @@
             </div>
         </div>
 
-        <!-- Slide 2 - SWEEP Image with 1 button -->
-        <div class="hero-slide" style="background-image: url('images/new/hero2.jpeg');">
+      
+        <div class="hero-slide" style="background-image: url('assets/images/hero-banner-image1.jpeg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2 class="slide-title">Student Women Economic Empowerment</h2>
@@ -225,8 +222,8 @@
             </div>
         </div>
 
-        <!-- Slide 3 - CEEIIC Image with 1 button -->
-        <div class="hero-slide" style="background-image: url('images/new/hero3.jpeg');">
+      
+        <div class="hero-slide" style="background-image: url('assets/images/hero-banner-image3.jpeg');">
             <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h2 class="slide-title">CEEIIC Student Network</h2>
@@ -241,7 +238,7 @@
         </div>
     </div>
 
-    <!-- Slide Navigation -->
+   
     <div class="slide-nav">
         <button class="slide-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
         <div class="slide-dots">
@@ -287,26 +284,23 @@
                 </div>
             </div>
             
-            <!-- Right Side - Stacked Corner Images -->
+            
             <div class="about-right">
                 <div class="image-collage">
-                    <!-- Main Image - Centered -->
                     <div class="main-image">
-                        <img src="images/new/WhatsApp Image 2026-02-11 at 19.08.53 (3).jpeg" alt="Entrepreneurs at UCfERI">
+                        <img src="assets/images/about-middle-image.jpeg" alt="Entrepreneurs at UCfERI">
                         <div class="floating-badge">
                             <i class="fas fa-rocket"></i>
                             <span>Innovation Hub</span>
                         </div>
                     </div>
                     
-                    <!-- Side Image - Top Right Corner (shifted right of middle) -->
                     <div class="side-image top-right">
-                        <img src="images/new/WhatsApp Image 2026-02-11 at 19.08.53.jpeg" alt="Startup Support">
+                        <img src="assets/images/about-top-right-image.jpeg" alt="Startup Support">
                     </div>
                     
-                    <!-- Side Image - Bottom Left Corner (shifted left of middle) -->
                     <div class="side-image bottom-left">
-                        <img src="images/new/WhatsApp Image 2026-02-11 at 19.08.56.jpeg" alt="Innovation Lab">
+                        <img src="assets/images/about-bottom-left-image.jpeg" alt="Innovation Lab">
                     </div>
                 </div>
             </div>
@@ -447,12 +441,34 @@
             <h2 class="section-title">Upcoming Events</h2>
             <p class="section-subtitle">Join our innovation challenges and workshops</p>
          </div>
-
+           
          <div class="events-grid">
-            <!-- Event 1: Waste Innovation Challenge -->
+
+                <div class="event-card">
+                <div class="event-image" onclick="openPopup('popup2')">
+                    <img src="assets/events/enactus-image.jpeg" alt="Local Competition">
+                </div>
+                <div class="event-content">
+                    <span class="event-badge">#ENACTUS UNIVEN</span>
+                    <h3>Activation And Campus Training</h3>
+                    <p class="event-description"> </p>
+                    
+                    <div class="event-details">
+                        <p><i class="fas fa-calendar"></i> <strong>Date:</strong> 13 March 2026</p>
+                        <p><i class="fas fa-clock"></i> <strong>Time:</strong> 11:00am</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Venue:</strong> Cafeteria</p>
+                        <p><i class="fas fa-university"></i> <strong>Location:</strong> University Of Venda</p>
+                    </div>
+                    <div class="event-buttons">
+                        <a href="events.html" class="btn btn-outline btn-learn">Learn More</a>
+                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=2KmL80xVokiuQhOx5_PHlxxzuGUzuMxHioFD1_RUHi9UQlRCVllRMk1TMk80VE41UkhTUU02QVk3Ti4u&origin=QRCode" class="btn btn-primary btn-apply">RSVP</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="event-card">
                 <div class="event-image" onclick="openPopup('popup1')">
-                    <img src="images/waste.jpeg" alt="Waste Innovation Challenge">
+                    <img src="assets/events/waste-challenege-image.jpeg" alt="Waste Innovation Challenge">
                 </div>
                 <div class="event-content">
                     <h3>WASTE INNOVATION CHALLENGE</h3>
@@ -472,10 +488,10 @@
                 </div>
             </div>
 
-            <!-- Event 2: The System Challenge -->
+        
             <div class="event-card">
                 <div class="event-image" onclick="openPopup('popup3')">
-                    <img src="images/map.jpeg" alt="The System Challenge">
+                    <img src="assets/events/map-challenge-image.jpeg" alt="The System Challenge">
                 </div>
                 <div class="event-content">
                     <h3>THE SYSTEM</h3>
@@ -501,34 +517,6 @@
                     </div>
                 </div>
             </div>
-        
-    
-
-            <!-- Event 3: Local Competition -->
-            <div class="event-card">
-                <div class="event-image" onclick="openPopup('popup2')">
-                    <img src="images/hult.jpeg" alt="Local Competition">
-                </div>
-                <div class="event-content">
-                    <span class="event-badge"># LOCAL COMPETITION</span>
-                    <h3>Solve Global Challenges Through Social Entrepreneurship</h3>
-                    <p class="event-description">Build a business model that solves real-world problems using the UN Sustainable Development Goals.</p>
-                    <div class="prize">
-                        <strong>$1,000,000</strong>
-                        <span>in seed funding</span>
-                    </div>
-                    <div class="event-details">
-                        <p><i class="fas fa-calendar"></i> <strong>Date:</strong> 24 February 2026</p>
-                        <p><i class="fas fa-clock"></i> <strong>Time:</strong> 09h00 - 15h00</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Venue:</strong> UCFERI BOARDROOM</p>
-                        <p><i class="fas fa-university"></i> <strong>Location:</strong> School of Education Building, UNIVEN</p>
-                    </div>
-                    <div class="event-buttons">
-                        <a href="#" class="btn btn-outline btn-learn">Learn More</a>
-                        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=2KmL80xVokiuQhOx5_PHl2t_mPgHKfZBh-hTorIhAqNURVVMUEtVTUpTSDhYWUNXVkNWQUU0ME04MC4u&origin=QRCode" class="btn btn-primary btn-apply">Apply Now</a>
-                    </div>
-                </div>
-            </div>
 
         </div>
       </div>
@@ -538,21 +526,21 @@
      <!-- Popups for full images -->
      <div id="popup1" class="popup">
         <div class="popup-content">
-            <img src="images/waste.jpeg" alt="Waste Innovation Challenge">
+            <img src="assets/events/waste-challenege-image.jpeg" alt="Waste Innovation Challenge">
             <button class="close-btn" onclick="closePopup('popup1')">Close</button>
         </div>
      </div>
 
      <div id="popup2" class="popup">
         <div class="popup-content">
-            <img src="images/hult.jpeg" alt="Local Competition">
+            <img src="assets/events/enactus-image.jpeg" alt="Local Competition">
             <button class="close-btn" onclick="closePopup('popup2')">Close</button>
         </div>
      </div>
 
      <div id="popup3" class="popup">
         <div class="popup-content">
-            <img src="images/map.jpeg" alt="The System Challenge">
+            <img src="assets/events/map-challenge-image.jpeg" alt="The System Challenge">
             <button class="close-btn" onclick="closePopup('popup3')">Close</button>
         </div>
      </div>
@@ -669,78 +657,70 @@
         <!-- Partners Carousel -->
         <div class="partners-carousel-container">
             <div class="partners-carousel">
-                <!-- Partner 1: SEDFA -->
                 <div class="partner-slide">
                     <div class="partner-card">
                         <div class="partner-logo">
-                            <img src="images/partners/sedfa-logo.jpeg" alt="SEDFA Logo" class="partner-logo-img">
+                            <img src="assets/partners/sedfa-logo.jpeg" alt="SEDFA Logo" class="partner-logo-img">
                         </div>
                         <h3 class="partner-name">SEDFA</h3>
                     </div>
                 </div>
 
-                <!-- Partner 2: ABSA Bank -->
                 <div class="partner-slide">
                     <div class="partner-card">
                         <div class="partner-logo">
-                            <img src="images/partners/absa-logo.png" alt="ABSA Bank Logo" class="partner-logo-img">
+                            <img src="assets/partners/absa-logo.png" alt="ABSA Bank Logo" class="partner-logo-img">
                         </div>
                         <h3 class="partner-name">ABSA Bank</h3>
                     </div>
                 </div>
 
-                <!-- Partner 3: NIPMO -->
                 <div class="partner-slide">
                     <div class="partner-card">
                         <div class="partner-logo">
-                            <img src="images/partners/nipmo-logo.jpeg" alt="NIPMO Logo" class="partner-logo-img">
+                            <img src="assets/partners/nipmo-logo.jpeg" alt="NIPMO Logo" class="partner-logo-img">
                         </div>
                         <h3 class="partner-name">NIPMO</h3>
                     </div>
                 </div>
 
-                <!-- Partner 4: TIA -->
                 <div class="partner-slide">
                     <div class="partner-card">
                         <div class="partner-logo">
-                            <img src="images/partners/tia-logo.webp" alt="TIA Logo" class="partner-logo-img">
+                            <img src="assets/partners/tia-logo.webp" alt="TIA Logo" class="partner-logo-img">
                         </div>
                         <h3 class="partner-name">TIA</h3>
                     </div>
                 </div>
 
-                <!-- Partner 5: Vhembe District Municipality -->
                 <div class="partner-slide">
                     <div class="partner-card">
                         <div class="partner-logo">
-                            <img src="images/partners/vhembe-logo.png" alt="Vhembe District Municipality Logo" class="partner-logo-img">
+                            <img src="assets/partners/vhembe-logo.png" alt="Vhembe District Municipality Logo" class="partner-logo-img">
                         </div>
                         <h3 class="partner-name">Vhembe District Municipality</h3>
                     </div>
                 </div>
 
-                <!-- Partner 6: THENSA -->
                 <div class="partner-slide">
                     <div class="partner-card">
                         <div class="partner-logo">
-                            <img src="images/partners/thensa-logo.png" alt="THENSA Logo" class="partner-logo-img">
+                            <img src="assets/partners/thensa-logo.png" alt="THENSA Logo" class="partner-logo-img">
                         </div>
                         <h3 class="partner-name">THENSA</h3>
                     </div>
                 </div>
 
-                <!-- Partner 7: University of Venda -->
                 <div class="partner-slide">
                     <div class="partner-card">
                         <div class="partner-logo">
-                            <img src="images/partners/univen-logo.jpg" alt="University of Venda Logo" class="partner-logo-img">
+                            <img src="assets/partners/univen-logo.jpg" alt="University of Venda Logo" class="partner-logo-img">
                         </div>
                         <h3 class="partner-name">University of Venda</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- Carousel Navigation -->
             <button class="carousel-nav prev" aria-label="Previous partners">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -748,12 +728,11 @@
                 <i class="fas fa-chevron-right"></i>
             </button>
             
-            <!-- Carousel Dots -->
             <div class="carousel-dots"></div>
         </div>
  
  
-        <!-- View All Partners Button -->
+
         <div class="partners-cta">
             <a href="contact.html#partner" class="btn btn-secondary">
                 View All Partners
@@ -771,7 +750,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="images/univencferi_logo.jpeg" alt="UCfERI">
+                        <img src="assets/images/univencferi_logo.jpeg" alt="UCfERI">
                     </div>
                     <p class="footer-about">
                         Nurturing entrepreneurs, fostering innovation to propel the greater rural economy 
@@ -835,9 +814,7 @@
             </div>
         </div>
     </footer>
-    
-    <!-- JavaScript -->
+
     <script src="js/index.js"></script>
-   <script src="js/mobile-menu.js"></script>
 </body>
 </html>

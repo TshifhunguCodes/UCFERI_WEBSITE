@@ -1,0 +1,40 @@
+<div class="modal-menu" id="modalMenu">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <button class="close-button" id="closeModal">&times;</button>
+    <nav class="modal-nav">
+      <ul>
+        <li>
+          <a href="#"><i class="fas fa-home"></i>Home</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-info-circle"></i>About</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-graduation-cap"></i>Programs</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-calendar-alt"></i>Events</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-newspaper"></i>News</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-book"></i>Resources</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-envelope"></i>Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<button class="open-button" id="openModal">Open Menu</button>
+
+<script>
+  // Basic JavaScript to handle modal opening and closing
+  document.getElementById('openModal').addEventListener('click', () => document.getElementById('modalMenu').classList.add('active'));
+  document.getElementById('closeModal').addEventListener('click', () => document.getElementById('modalMenu').classList.remove('active'));
+  document.querySelector('.modal-overlay').addEventListener('click', () => document.getElementById('modalMenu').classList.remove('active'));
+</script>

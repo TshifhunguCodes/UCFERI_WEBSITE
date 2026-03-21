@@ -4,8 +4,6 @@
 :root {
     --primary-color: #5349d6;
     --secondary-color: #5249d4;
-    --accent-color: #5349d6;
-    --accent-light: #5249d4;
     --dark-color: #1a252f;
     --light-color: #f8f9fa;
     --gray-color: #6c757d;
@@ -47,7 +45,7 @@ h1, h2, h3, h4 {
 /* ==================================================== */
 .contact-hero {
     padding: 100px 0;
-     background: #5349d6;
+    background: #5349d6;
     color: var(--white);
     text-align: center;
     position: relative;
@@ -72,7 +70,7 @@ h1, h2, h3, h4 {
     max-width: 800px;
     margin: 0 auto;
 }
- 
+
 .contact-hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
@@ -247,19 +245,7 @@ h1, h2, h3, h4 {
     font-size: 1rem;
     transition: all 0.3s ease;
     text-decoration: none;
-}
-
-.connect-social-link.facebook,
-.connect-social-link.instagram,
-.connect-social-link.linkedin,
-.connect-social-link.youtube,
-.connect-social-link.tiktok {
-    background: #5349d6;
-    position: relative;
-}
-
-.connect-social-link.tiktok i {
-    text-shadow: none;
+    background: var(--primary-color);
 }
 
 .connect-social-link:hover {
@@ -267,124 +253,44 @@ h1, h2, h3, h4 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .connect-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .quick-connect {
-        padding: 40px 0;
-    }
-    
-    .connect-social {
-        gap: 8px;
-    }
-    
-    .connect-social-link {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .connect-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .connect-card {
-        padding: 25px 20px;
-    }
-    
-    .connect-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .connect-card h3 {
-        font-size: 1.1rem;
-    }
-    
-    .connect-main {
-        font-size: 1rem;
-    }
-    
-    .connect-social {
-        gap: 6px;
-    }
-    
-    .connect-social-link {
-        width: 30px;
-        height: 30px;
-        font-size: 0.85rem;
-    }
-}
-
-
-
-
-
 /* ==================================================== */
 /* Location & Hours */
 /* ==================================================== */
-.location-hours {
-    padding: 80px 0;
-    background: var(--light-color);
-}
-
-.location-wrapper {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 40px;
-    background: var(--white);
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-}
-
+/* Location & Hours - Updated with Real Map */
 .location-map {
+    position: relative;
+    padding: 0;
     background: var(--primary-color);
-    padding: 60px 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
+    flex-direction: column;
 }
 
-.map-placeholder {
+.map-container {
+    flex: 1;
+    min-height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: block;
+}
+
+.map-buttons-container {
+    padding: 20px;
+    background: var(--primary-color);
     text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-.map-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.map-placeholder h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.map-placeholder p {
-    margin-bottom: 30px;
-    opacity: 0.95;
-    line-height: 1.8;
-}
-
-.map-buttons {
+.map-buttons-container .map-buttons {
     display: flex;
     gap: 15px;
     justify-content: center;
 }
 
-.map-buttons .btn {
+.map-buttons-container .btn {
     background: rgba(255,255,255,0.2);
     color: var(--white);
     border: 1px solid rgba(255,255,255,0.3);
@@ -393,13 +299,17 @@ h1, h2, h3, h4 {
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.map-buttons .btn:hover {
+.map-buttons-container .btn:hover {
     background: var(--white);
     color: var(--primary-color);
 }
 
+/* Hours Card - Keep as is */
 .hours-card {
     padding: 40px;
 }
@@ -411,7 +321,7 @@ h1, h2, h3, h4 {
 }
 
 .hours-card h3 i {
-    color: var(--accent-color);
+    color: var(--primary-color);
     margin-right: 10px;
 }
 
@@ -449,13 +359,77 @@ h1, h2, h3, h4 {
 }
 
 .urgent-note i {
-    color: var(--accent-color);
+    color: var(--primary-color);
     font-size: 1.5rem;
 }
 
 .urgent-note p {
     color: var(--dark-color);
     font-size: 0.95rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .location-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container {
+        min-height: 300px;
+    }
+    
+    .map-container iframe {
+        min-height: 300px;
+    }
+    
+    .map-buttons-container .map-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .map-buttons-container .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .hours-card {
+        padding: 30px;
+    }
+    
+    .hours-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .map-container {
+        min-height: 250px;
+    }
+    
+    .map-container iframe {
+        min-height: 250px;
+    }
+    
+    .hours-card {
+        padding: 25px 20px;
+    }
+    
+    .hours-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .hours-row {
+        font-size: 0.9rem;
+    }
+    
+    .urgent-note {
+        padding: 15px;
+    }
+    
+    .urgent-note p {
+        font-size: 0.85rem;
+    }
 }
 
 /* ==================================================== */
@@ -525,7 +499,7 @@ h1, h2, h3, h4 {
 }
 
 .team-role {
-    color: var(--accent-color);
+    color: var(--primary-color);
     font-weight: 600;
     margin-bottom: 20px;
     font-size: 0.95rem;
@@ -541,7 +515,7 @@ h1, h2, h3, h4 {
 }
 
 .team-email:hover, .team-phone:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 .team-email i, .team-phone i {
@@ -550,7 +524,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==================================================== */
-/* Contact Form - Redesigned */
+/* Contact Form */
 /* ==================================================== */
 .contact-form-section {
     padding: 80px 0;
@@ -623,7 +597,7 @@ h1, h2, h3, h4 {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 4px rgba(83, 73, 214, 0.12);
 }
 
@@ -674,7 +648,7 @@ h1, h2, h3, h4 {
 }
 
 .info-box h4 i {
-    color: var(--accent-color);
+    color: var(--primary-color);
     margin-right: 10px;
 }
 
@@ -692,7 +666,7 @@ h1, h2, h3, h4 {
 
 .time-badge {
     display: inline-block;
-    background: var(--accent-color);
+    background: var(--primary-color);
     color: var(--white);
     padding: 4px 8px;
     border-radius: 6px;
@@ -707,11 +681,20 @@ h1, h2, h3, h4 {
 }
 
 .tip-list li i {
-    color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.tip-list li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.tip-list li a:hover {
+    text-decoration: underline;
 }
 
 /* ==================================================== */
-/* Partners Section - Simplified */
+/* Partners Section */
 /* ==================================================== */
 .partners-section {
     padding: 60px 0;
@@ -739,7 +722,7 @@ h1, h2, h3, h4 {
 
 .partner-item i {
     font-size: 2rem;
-    color: var(--accent-color);
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -751,7 +734,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==================================================== */
-/* CTA Section - Simplified */
+/* CTA Section */
 /* ==================================================== */
 .cta-section {
     padding: 80px 0;
@@ -814,9 +797,9 @@ h1, h2, h3, h4 {
     transform: translateY(-2px);
 }
 
-/* ==================================================== */
+
 /* Mobile Responsive */
-/* ==================================================== */
+
 @media screen and (max-width: 1024px) {
     .connect-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -832,29 +815,52 @@ h1, h2, h3, h4 {
 }
 
 @media screen and (max-width: 768px) {
-    .contact-hero-wrapper {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .hero-stats {
-        justify-content: center;
-    }
-    
-    .hero-stat-item {
-        text-align: center;
+    .contact-hero {
+        padding: 80px 0 60px;
     }
     
     .location-wrapper {
         grid-template-columns: 1fr;
     }
     
+    .location-map {
+        padding: 40px 30px;
+    }
+    
+    .map-placeholder h3 {
+        font-size: 1.5rem;
+    }
+    
+    .map-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .map-buttons .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .hours-card {
+        padding: 30px;
+    }
+    
+    .hours-card h3 {
+        font-size: 1.5rem;
+    }
+    
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
     
     .form-row {
         grid-template-columns: 1fr;
+    }
+    
+    .form-wrapper {
+        padding: 30px;
     }
     
     .cta-buttons {
@@ -871,37 +877,147 @@ h1, h2, h3, h4 {
     }
 }
 
-@media screen and (max-width: 480px) {
-    .contact-hero {
-        padding: 60px 0 40px;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
+@media screen and (max-width: 576px) {
+    .connect-grid {
+        grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .connect-grid {
-        grid-template-columns: 1fr;
+    .quick-connect {
+        padding: 40px 0;
+    }
+    
+    .connect-card {
+        padding: 25px 20px;
+    }
+    
+    .connect-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .connect-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .connect-main {
+        font-size: 1rem;
+    }
+    
+    .connect-social {
+        gap: 8px;
+    }
+    
+    .connect-social-link {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
     }
     
     .team-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .team-contact-card {
+        padding: 25px;
+    }
+    
+    .team-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+    
+    .team-contact-card h4 {
+        font-size: 1.2rem;
     }
     
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .partner-item {
+        padding: 20px 15px;
+    }
+    
+    .partner-item i {
+        font-size: 1.5rem;
+    }
+    
+    .partner-item span {
+        font-size: 0.8rem;
     }
     
     .form-wrapper {
         padding: 20px;
     }
     
-    .map-buttons {
-        flex-direction: column;
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-hero {
+        padding: 60px 0 40px;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .location-map {
+        padding: 30px 20px;
+    }
+    
+    .map-placeholder i {
+        font-size: 3rem;
+    }
+    
+    .map-placeholder h3 {
+        font-size: 1.3rem;
+    }
+    
+    .map-placeholder p {
+        font-size: 0.9rem;
     }
     
     .hours-card {
-        padding: 30px 20px;
+        padding: 25px 20px;
+    }
+    
+    .hours-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .hours-row {
+        font-size: 0.9rem;
+    }
+    
+    .urgent-note {
+        padding: 15px;
+    }
+    
+    .urgent-note p {
+        font-size: 0.85rem;
     }
 }

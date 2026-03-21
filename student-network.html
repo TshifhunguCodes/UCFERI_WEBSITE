@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>CEEIIC Student Network | University of Venda</title>
-    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: Manrope + Source Serif Pro -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- External CSS with your exact styling -->
     <link rel="stylesheet" href="css/ceeiic-home.css">
     <link rel="stylesheet" href="css/header-footer-home.css">
     
-  
-
 </head>
 <body>
     
@@ -37,11 +32,10 @@
     <!--================================================== -->
   <section class="header-modern">
         <nav class="header-modern__nav" aria-label="Main navigation">
-            <!-- Logo with UCfERI branding -->
             <div class="logo">
                 <a href="index.html">
                     <div class="logo-image">
-                        <img src="images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
+                        <img src="assets/images/univencferi_logo.jpeg" alt="University of Venda Centre for Entrepreneurship & Rapid Incubation">
                     </div>
                     <div class="logo-text">
                         <h1>UCfERI</h1>
@@ -107,13 +101,10 @@
             </button>
         </nav>
 
-        <!-- Mobile Menu with Perfectly Aligned Options -->
         <div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
             <div class="header-modern__mobile-links">
-                <!-- Home -->
                 <a href="index.html" class="header-modern__mobile-link"><i class="fas fa-home"></i> Home</a>
                 
-                <!-- About Us Dropdown -->
                 <a href="events.html" class="header-modern__mobile-link"><i class="fas fa-calendar-alt"></i> Events</a>
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
@@ -129,7 +120,6 @@
                     </div>
                 </div>
 
-                <!-- Programs Dropdown -->
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                         <span class="mobile-dropdown-toggle-left">
@@ -140,7 +130,6 @@
                     <div class="mobile-dropdown-content">
                         <a href="incubation.html" class="header-modern__mobile-link"><i class="fas fa-rocket"></i> Business Incubation</a>
                         
-                        <!-- CEEIIC Student Network Nested Dropdown -->
                         <div class="mobile-dropdown">
                             <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                                 <span class="mobile-dropdown-toggle-left">
@@ -159,7 +148,6 @@
                     </div>
                 </div>
 
-                <!-- Media Dropdown -->
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
                         <span class="mobile-dropdown-toggle-left">
@@ -175,34 +163,33 @@
                     </div>
                 </div>
 
-                <!-- Contact -->
                 <a href="contact.html" class="header-modern__mobile-link"><i class="fas fa-envelope"></i> Contact</a>
             </div>
         </div>
     </section>
 
- <!-- Hero Section - Video Background -->
-  <!-- Hero Section - Video Background -->
-<section class="hero">
-    <!-- Video Background -->
-    <div class="hero-video-container">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="images/ceeiic-video.mp4" type="video/mp4">
+       
+       <!-- ====================================================================== -->
+       <!-- Hero Section - Video Background -->
+       <!-- ====================================================================== -->
+    <section class="hero">
+       <div class="hero-video-container">
+          <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/video/ceeiic-hero-banner-video.mp4" type="video/mp4">
             <source src="images/hero-background.webm" type="video/webm">
             Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-    
-    <!-- Hero Content with Title and Description -->
-    <div class="hero-content-overlay">
+          </video>
+          <div class="video-overlay"></div>
+         </div>
+ 
+        <div class="hero-content-overlay">
         <div class="container">
             <div class="hero-content">
-                <!-- Title and Description -->
+            
                 <h1 class="hero-title">CEEIIC STUDENT NETWORK</h1>
                 <p class="hero-description">The CEEIIC Student Network coordinates and strengthens student-led programs within the CEEIIC ecosystem.</p>
                 
-                <!-- CTA Buttons -->
+              
                 <div class="hero-cta">
                     <a href="#about" class="btn btn-primary btn-large">
                         <i class="fas fa-info-circle"></i> About CEEIIC Network
@@ -213,13 +200,14 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+       </div>
+    </section>
 
-
-    <!-- About Section -->
-    <!-- About Section - Redesigned Professional -->
+    <!-- =============================================================================-->
+<!-- About Section - Redesigned with Animations -->
+<!-- =============================================================================-->
 <section id="about" class="about-section">
+    <!-- Background Elements -->
     <div class="about-background">
         <div class="about-overlay"></div>
         <div class="about-bg-pattern"></div>
@@ -227,6 +215,7 @@
     
     <div class="container">
         <div class="about-split-layout">
+            <!-- Left Column - Content -->
             <div class="about-left">
                 <div class="about-badge">
                     <span class="badge-text">ABOUT CEEIIC STUDENT NETWORK</span>
@@ -277,11 +266,12 @@
                 </div>
             </div>
 
+            <!-- Right Column - Image Collage -->
             <div class="about-right">
                 <div class="image-collage">
                     <!-- Main Center Image -->
                     <div class="main-image">
-                        <img src="images/ceeiic1.jpeg" alt="CEEIIC Students Collaborating">
+                        <img src="assets/images/ceeiic-about-main.jpeg" alt="CEEIIC Students Collaborating">
                         <div class="image-overlay-content">
                             <span class="image-tag">Student Leadership</span>
                         </div>
@@ -289,7 +279,7 @@
                     
                     <!-- Top Left Image -->
                     <div class="side-image top-left">
-                        <img src="images/ceeiic2.jpeg" alt="Entrepreneurship Workshop">
+                        <img src="assets/images/ceeiic-about-top-left.jpeg" alt="Entrepreneurship Workshop">
                         <div class="side-image-overlay">
                             <span>Innovation</span>
                         </div>
@@ -297,20 +287,25 @@
                     
                     <!-- Bottom Right Image -->
                     <div class="side-image bottom-right">
-                        <img src="images/ceeiic3.jpeg" alt="Community Engagement">
+                        <img src="assets/images/about-bottom-left-image.jpeg" alt="Community Engagement">
                         <div class="side-image-overlay">
                             <span>Community</span>
                         </div>
                     </div>
                     
-                    
+                    <!-- Optional Decorative Elements -->
+                    <div class="floating-shape shape-1"></div>
+                    <div class="floating-shape shape-2"></div>
+                    <div class="floating-shape shape-3"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+    <!-- ======================================================================= -->
     <!-- Vision & Mission Section -->
+    <!-- ====================================================================== -->
     <section class="vision-mission-section">
         <div class="container">
             <div class="vm-grid">
@@ -332,7 +327,9 @@
         </div>
     </section>
 
-     <!-- Stats Section -->
+    <!-- ======================================================================================= --> 
+    <!-- Stats Section -->
+    <!-- ======================================================================================= -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
@@ -356,7 +353,9 @@
         </div>
     </section>
 
+    <!-- ============================================================================== -->    
     <!-- Values Section -->
+    <!-- ==============================================================================-->
     <section class="values-section">
         <div class="container">
             <span class="section-badge">Our Values</span>
@@ -378,7 +377,9 @@
         </div>
     </section>
 
+    <!-- ======================================================================= -->
     <!-- Programs Preview Section -->
+    <!-- =======================================================================-->
     <section id="programs" class="programs-preview">
         <div class="container">
             <span class="section-badge">Our Ecosystem</span>
@@ -481,7 +482,9 @@
         </div>
     </section>
 
+    <!-- ======================================================================= -->
     <!-- Strategic Value Section -->
+    <!-- =======================================================================-->
     <section class="strategic-value">
         <div class="container">
             <span class="section-badge">Value Proposition</span>
@@ -519,8 +522,10 @@
             </div>
         </div>
     </section>
-
+ 
+    <!-- ============================================================================-->
     <!-- Target Group Section -->
+    <!-- ============================================================================ -->
     <section class="target-group">
         <div class="container">
             <div class="target-content">
@@ -538,7 +543,9 @@
         </div>
     </section>
 
+    <!-- =============================================================================-->
     <!-- Partners Section -->
+    <!-- =============================================================================-->
     <section class="partners-section">
         <div class="container">
             <span class="section-badge">Strategic Partners</span>
@@ -559,7 +566,9 @@
         </div>
     </section>
 
+    <!--=====================================================================================-->
     <!-- Recruitment Section -->
+    <!-- ==================================================================================== -->
     <section class="recruitment-section">
         <div class="container">
             <div class="recruitment-box">
@@ -579,7 +588,7 @@
                         </ul>
                     </div>
                     
-                    <a href="#open-applications" class="btn btn-primary btn-large" style="background-color: white; color: #2316da; border: none;">Find a programme <i class="fas fa-arrow-right"></i></a>
+                    <a href="ceeiic-programs.html#open-applications" class="btn btn-primary btn-large" style="background-color: white; color: #2316da; border: none;">Find a programme <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -614,7 +623,9 @@
         </div>
     </section>
 
+    <!-- ==================================================================================================-->
     <!-- Governance Section -->
+    <!-- ==================================================================================================-->
     <section class="governance">
         <div class="container">
             <span class="section-badge">Structure</span>
@@ -646,15 +657,16 @@
     </section>
 
   
-
+    <!-- ============================================================= -->
     <!-- CTA Section -->
+    <!-- ============================================================= -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Join the Network?</h2>
                 <p>Any Univen student can join through any participating program</p>
                 <div class="cta-buttons">
-                    <a href="#open-applications" class="btn btn-primary btn-large">
+                    <a href="ceeiic-programs.html#open-applications" class="btn btn-primary btn-large">
                         <i class="fas fa-rocket"></i> Apply Now
                     </a>
                     <a href="#about" class="btn btn-secondary btn-large">
@@ -673,7 +685,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="images/univencferi_logo.jpeg" alt="UCfERI">
+                        <img src="assets/images/univencferi_logo.jpeg" alt="UCfERI">
                     </div>
                     <p class="footer-about">
                         Nurturing entrepreneurs, fostering innovation to propel the greater rural economy 
@@ -737,65 +749,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/mobile-menu.js"></script>
+    <script src="js/ceeiic-main.js"></script>
     <script src="js/index.js"></script>
-    <!-- Simple JavaScript for mobile menu and hero slides -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (mobileToggle && navMenu) {
-                mobileToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
-            }
-            
-            // Hero slides
-            const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.dot');
-            const prevBtn = document.querySelector('.slide-prev');
-            const nextBtn = document.querySelector('.slide-next');
-            let currentSlide = 0;
-            
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
-                });
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-                currentSlide = index;
-            }
-            
-            if (prevBtn && nextBtn) {
-                prevBtn.addEventListener('click', function() {
-                    let newIndex = currentSlide - 1;
-                    if (newIndex < 0) newIndex = slides.length - 1;
-                    showSlide(newIndex);
-                });
-                
-                nextBtn.addEventListener('click', function() {
-                    let newIndex = currentSlide + 1;
-                    if (newIndex >= slides.length) newIndex = 0;
-                    showSlide(newIndex);
-                });
-                
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', function() {
-                        showSlide(index);
-                    });
-                });
-            }
-            
-            // Auto-rotate slides every 5 seconds
-            setInterval(function() {
-                let newIndex = currentSlide + 1;
-                if (newIndex >= slides.length) newIndex = 0;
-                showSlide(newIndex);
-            }, 5000);
-        });
-    </script>
 </body>
 </html>

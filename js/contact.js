@@ -2,27 +2,29 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
     
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const spans = mobileToggle.querySelectorAll('span');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
             
-            if (navMenu.classList.contains('active')) {
-                // Animate to X
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            if (!isExpanded) {
+                mobileMenu.style.display = 'block';
             } else {
-                // Return to hamburger
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                mobileMenu.style.display = 'none';
             }
         });
     }
+
+    window.toggleMobileDropdown = function(button) {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (content) {
+            content.classList.toggle('show');
+        }
+    };
     
     // Contact form submission
     const contactForm = document.getElementById('contactForm');

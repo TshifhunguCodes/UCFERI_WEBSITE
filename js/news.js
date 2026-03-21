@@ -1,14 +1,29 @@
 // news.js
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const body = document.body;
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
     
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
-            body.classList.toggle('mobile-menu-active');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            
+            if (!isExpanded) {
+                mobileMenu.style.display = 'block';
+            } else {
+                mobileMenu.style.display = 'none';
+            }
         });
     }
+
+    window.toggleMobileDropdown = function(button) {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (content) {
+            content.classList.toggle('show');
+        }
+    };
 
     // Video placeholders
     const videoPlaceholders = document.querySelectorAll('.media-placeholder.video');
