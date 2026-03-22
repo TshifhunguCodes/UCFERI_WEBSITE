@@ -487,3 +487,39 @@ function initPartnersCarousel() {
     
     goToSlide(0);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Pages where announcement bar should show on mobile
+    const allowedPages = ['blog.html', 'events.html', 'news.html', 'story.html'];
+    
+    const currentPage = window.location.pathname.split('/').pop();
+    const isMobile = window.innerWidth <= 768;
+    
+    // On mobile, show only on allowed pages
+    if (isMobile && allowedPages.includes(currentPage)) {
+        const announcementBar = document.querySelector('.announcement-bar');
+        if (announcementBar) {
+            announcementBar.style.display = 'block';
+        }
+    }
+    
+    // Handle window resize (if user rotates device)
+    window.addEventListener('resize', function() {
+        const isNowMobile = window.innerWidth <= 768;
+        const announcementBar = document.querySelector('.announcement-bar');
+        
+        if (announcementBar) {
+            if (!isNowMobile) {
+                // On desktop - always show
+                announcementBar.style.display = 'block';
+            } else {
+                // On mobile - only show on allowed pages
+                if (allowedPages.includes(currentPage)) {
+                    announcementBar.style.display = 'block';
+                } else {
+                    announcementBar.style.display = 'none';
+                }
+            }
+        }
+    });
+});
