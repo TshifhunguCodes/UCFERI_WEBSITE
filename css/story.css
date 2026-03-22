@@ -1,12 +1,11 @@
-/* success-stories.css - Success Stories Page */
+/* success-stories.css - Success Stories Page - Clean Version */
 
 :root {
-    --primary-color:  #110de0;
-    --secondary-color: #e96900;
+    --primary-color: #2316da;
+    --secondary-color: #df7b1d;
     --accent-color: #e67e22;
     --success-color: #27ae60;
     --warning-color: #f39c12;
-    --danger-color: #e74c3c;
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
     --gray-color: #95a5a6;
@@ -76,7 +75,7 @@ p { margin-bottom: 1rem; }
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
+    background-color: #1a0fb0;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -87,7 +86,7 @@ p { margin-bottom: 1rem; }
 }
 
 .btn-secondary:hover {
-    background-color: #8e44ad;
+    background-color: #c96a15;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -108,11 +107,9 @@ p { margin-bottom: 1rem; }
     font-size: 1.1rem;
 }
 
-
-
 /* Page Header */
 .page-header {
-    background: #5349d6;
+    background: linear-gradient(135deg, #5349d6, #3b32b0);
     color: var(--white);
     padding: 80px 0 60px;
     text-align: center;
@@ -157,24 +154,7 @@ p { margin-bottom: 1rem; }
     font-size: 0.8rem;
 }
 
-/* Mobile Header Fixes */
-@media (max-width: 768px) {
-    .page-header-content h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-    .page-header-content p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-}
-
-/* Impact Stats */
-.impact-stats {
-    padding: 80px 0;
-    background-color: var(--light-color);
-}
-
+/* Section Header */
 .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -183,11 +163,33 @@ p { margin-bottom: 1rem; }
 .section-title {
     color: var(--dark-color);
     margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
 .section-subtitle {
     color: var(--gray-color);
     font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Impact Stats */
+.impact-stats {
+    padding: 80px 0;
+    background-color: var(--light-color);
 }
 
 .stats-grid {
@@ -235,7 +237,7 @@ p { margin-bottom: 1rem; }
 }
 
 .featured-content {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(155, 89, 182, 0.05));
+    background: linear-gradient(135deg, rgba(35, 22, 218, 0.05), rgba(223, 123, 29, 0.03));
     border-radius: 20px;
     padding: 40px;
     position: relative;
@@ -363,37 +365,26 @@ p { margin-bottom: 1rem; }
     border-left-color: var(--success-color);
 }
 
-/* Success Stories Grid */
-.stories-grid {
+/* Detailed Story Section */
+.story-detail-section {
     padding: 80px 0;
     background-color: var(--light-color);
 }
 
-.stories-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.story-card {
+.story-detail-card {
     background-color: var(--white);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    transition: var(--transition);
 }
 
-.story-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-}
-
-.story-header {
+.story-header-detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     border-bottom: 1px solid var(--light-color);
+    background: linear-gradient(135deg, rgba(35, 22, 218, 0.05), rgba(223, 123, 29, 0.02));
 }
 
 .story-category {
@@ -402,30 +393,30 @@ p { margin-bottom: 1rem; }
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--white);
+    background-color: var(--success-color);
 }
 
-.story-category.agro-processing { background-color: var(--success-color); }
-.story-category.technology { background-color: var(--primary-color); }
-.story-category.sustainability { background-color: var(--warning-color); }
-.story-category.manufacturing { background-color: var(--accent-color); }
+.story-category.wellness {
+    background-color: var(--success-color);
+}
 
 .story-year {
     color: var(--gray-color);
     font-weight: 500;
 }
 
-.story-content {
+.story-content-detail {
     padding: 30px;
 }
 
-.entrepreneur-profile {
+.entrepreneur-profile-detail {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;
 }
 
-.profile-image {
+.profile-image-detail {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -433,13 +424,13 @@ p { margin-bottom: 1rem; }
     border: 4px solid var(--light-color);
 }
 
-.profile-image img {
+.profile-image-detail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.profile-info h3 {
+.profile-info-detail h3 {
     margin-bottom: 5px;
     color: var(--dark-color);
 }
@@ -457,13 +448,13 @@ p { margin-bottom: 1rem; }
     color: var(--gray-color);
 }
 
-.story-title {
+.story-title-detail {
     color: var(--dark-color);
     margin-bottom: 30px;
     font-size: 1.8rem;
 }
 
-.story-stats {
+.story-stats-detail {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -497,13 +488,13 @@ p { margin-bottom: 1rem; }
     color: var(--gray-color);
 }
 
-.story-body h4 {
+.story-body-detail h4 {
     color: var(--dark-color);
     margin-top: 25px;
     margin-bottom: 15px;
 }
 
-.story-body p {
+.story-body-detail p {
     color: var(--dark-color);
     line-height: 1.7;
 }
@@ -518,7 +509,6 @@ p { margin-bottom: 1rem; }
     align-items: flex-start;
     gap: 10px;
     margin-bottom: 15px;
-    padding-left: 0;
 }
 
 .story-support i {
@@ -527,7 +517,7 @@ p { margin-bottom: 1rem; }
 }
 
 .story-impact {
-    background-color: rgba(52, 152, 219, 0.05);
+    background-color: rgba(35, 22, 218, 0.05);
     padding: 20px;
     border-radius: var(--border-radius);
     margin: 25px 0;
@@ -562,7 +552,7 @@ p { margin-bottom: 1rem; }
     font-weight: 600;
 }
 
-.story-footer {
+.story-footer-detail {
     padding: 25px 30px;
     border-top: 1px solid var(--light-color);
     display: flex;
@@ -587,11 +577,6 @@ p { margin-bottom: 1rem; }
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-.story-actions {
-    display: flex;
-    gap: 15px;
 }
 
 /* How We Help */
@@ -675,9 +660,9 @@ p { margin-bottom: 1rem; }
 }
 
 .step-content li:before {
-    content: '•';
+    content: '✓';
     position: absolute;
-    left: 10px;
+    left: 0;
     color: var(--primary-color);
     font-weight: bold;
 }
@@ -710,49 +695,179 @@ p { margin-bottom: 1rem; }
     flex-wrap: wrap;
 }
 
-/* Newsletter */
-.newsletter-section {
-    padding: 60px 0;
-    background-color: var(--light-color);
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .help-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .help-steps::before {
+        display: none;
+    }
 }
 
-.newsletter-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
+@media (max-width: 992px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .featured-image img {
+        height: 300px;
+    }
+    
+    .story-stats-detail {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
 
-.newsletter-text h3 {
-    color: var(--dark-color);
-    margin-bottom: 10px;
+@media (max-width: 768px) {
+    .page-header {
+        padding: 60px 0 40px;
+    }
+    
+    .page-header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .featured-content {
+        padding: 25px;
+    }
+    
+    .featured-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .featured-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .story-quote {
+        padding: 20px;
+    }
+    
+    .story-quote p {
+        font-size: 1rem;
+    }
+    
+    .entrepreneur-profile-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-location {
+        justify-content: center;
+    }
+    
+    .story-title-detail {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .story-stats-detail .stat {
+        justify-content: center;
+    }
+    
+    .help-steps {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+        border-width: 5px;
+    }
+    
+    .step-content {
+        padding: 20px;
+    }
+    
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .story-footer-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tags {
+        justify-content: center;
+    }
 }
 
-.newsletter-text p {
-    color: var(--gray-color);
-    margin: 0;
-}
-
-.newsletter-form {
-    display: flex;
-    gap: 10px;
-    flex: 1;
-    max-width: 500px;
-}
-
-.newsletter-form input {
-    flex: 1;
-    padding: 15px 20px;
-    border: 2px solid var(--light-color);
-    border-radius: var(--border-radius);
-    font-family: 'Manrope', sans-serif;
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.newsletter-form input:focus {
-    outline: none;
-    border-color: var(--primary-color);
+@media (max-width: 576px) {
+    .featured-image img {
+        height: 220px;
+    }
+    
+    .story-quote p {
+        font-size: 0.9rem;
+    }
+    
+    .story-highlights li {
+        font-size: 0.9rem;
+    }
+    
+    .story-challenge, .story-solution {
+        padding: 15px;
+    }
+    
+    .story-challenge p, .story-solution p {
+        font-size: 0.9rem;
+    }
+    
+    .entrepreneur-quote {
+        padding: 20px;
+    }
+    
+    .entrepreneur-quote p {
+        font-size: 0.95rem;
+    }
+    
+    .tag {
+        font-size: 0.75rem;
+    }
 }
