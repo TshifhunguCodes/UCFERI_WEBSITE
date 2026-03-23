@@ -1,23 +1,23 @@
 :root {
-    /* Professional Color Palette - Updated to match first code */
-    --primary-color: #2316da;       /* Primary Blue previos color #3498db*/
-    --secondary-color: #df7b1d;     /* Purple previous color #9b59b6;  */
-    --accent-color: #e67e22;        /* Orange */
-    --success-color: #27ae60;       /* Green   #27ae60 */
-    --danger-color: #e74c3c;        /* Red */
-    --dark-color: #2c3e50;          /* Dark Blue */
-    --light-color: #ecf0f1;         /* Light Gray */
-    --gray-color: #95a5a6;          /* Gray */
-    --white: #ffffff;               /* White */
-    --border: #E0E0E0;              /* Border color */
-    --text: #333333;                /* Text color */
-    --text-light: #666666;          /* Light text */
+   
+    --primary-color: #2316da;       
+    --secondary-color: #df7b1d;     
+    --accent-color: #e67e22;       
+    --success-color: #27ae60;      
+    --danger-color: #e74c3c;        
+    --dark-color: #2c3e50;          
+    --light-color: #ecf0f1;        
+    --gray-color: #95a5a6;         
+    --white: #ffffff;              
+    --border: #E0E0E0;              
+    --text: #333333;               
+    --text-light: #666666;         
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
     --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
-    --overlay: rgba(52, 152, 219, 0.85); /* Primary with opacity */
+    --overlay: rgba(52, 152, 219, 0.85);
     
-    /* Alias variables for consistency with first code */
+  
     --primary: #3498db;
     --secondary: #9b59b6;
     --accent: #e67e22;
@@ -121,8 +121,77 @@ body.sweep-page .logo-text p {
     }
 }
 
+/* ================================================== */
+/* Announcement Bar - Layout Override for This Page   */
+/* ================================================== */
+
+/* Override for announcement content layout */
+.announcement-bar .announcement-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Ensure tag stays on left */
+.announcement-bar .announcement-tag {
+    flex-shrink: 0;
+    margin-right: auto;
+}
+
+/* Center text - pushes to middle */
+.announcement-bar .announcement-text {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* Link stays on right */
+.announcement-bar .announcement-link {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* Mobile - Hide announcement bar (as per existing requirement) */
+@media (max-width: 768px) {
+    .announcement-bar {
+        display: none;
+    }
+}
+
+/* Tablet responsive - adjust spacing when screen is smaller */
+@media (max-width: 992px) and (min-width: 769px) {
+    .announcement-bar .announcement-content {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .announcement-bar .announcement-tag {
+        margin-right: 0;
+    }
+    
+    .announcement-bar .announcement-link {
+        margin-left: 0;
+    }
+}
+
+/* When content wraps on smaller desktops */
+@media (max-width: 850px) and (min-width: 769px) {
+    .announcement-bar .announcement-content {
+        justify-content: space-between;
+    }
+    
+    .announcement-bar .announcement-tag {
+        margin-right: 0;
+    }
+    
+    .announcement-bar .announcement-link {
+        margin-left: 0;
+    }
+}
+
 /* =============================================================================== */
-/* Header - Mobile Navigation Menu - Fixed with Sharp Corners */
+/* Header 
 /* =============================================================================== */
 
 * {
