@@ -631,12 +631,22 @@ body {
     }
     
     .logo-image {
-        width: 70px;
-        height: 70px;
+        width: 55px;
+        height: 55px;
     }
     
     .logo-text {
-        display: none;
+        height: 55px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.3rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.65rem;
+        max-width: 120px;
+        line-height: 1.2;
     }
     
     .mobile-menu-header {
@@ -657,8 +667,21 @@ body {
 
 @media (max-width: 480px) {
     .logo-image {
-        width: 65px;
-        height: 65px;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .logo-text {
+        height: 48px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.15rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.6rem;
+        max-width: 100px;
     }
     
     .menu-item-container,
@@ -1292,7 +1315,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(6px);
     z-index: 1999;
     opacity: 0;
