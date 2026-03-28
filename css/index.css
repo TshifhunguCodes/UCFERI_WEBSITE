@@ -1,8 +1,8 @@
 :root {
     --primary-color: #5349d6;
     --primary-color-rgb: 83, 73, 214;
-    --secondary-color: #df7b1d;
-    --accent-color: #e67e22;
+    --secondary-color: #AB392C;
+    --accent-color: #AB392C;
     --accent-color-rgb: 230, 126, 34;
     --success-color: #27ae60;
     --success-color-rgb: 39, 174, 96;
@@ -554,107 +554,46 @@ h1, h2, h3, h4 {
 }
 
 .about-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: linear-gradient(135deg, 
-        rgba(var(--primary-color-rgb), 0.15), 
-        rgba(var(--accent-color-rgb), 0.1));
-    padding: 12px 28px;
-    border-radius: 50px;
-    margin-bottom: 30px;
-    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    animation: badgeFloat 4s ease-in-out infinite;
-    box-shadow: 0 8px 32px rgba(var(--primary-color-rgb), 0.1);
-}
-
-.about-badge::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, 
-        var(--primary-color), 
-        var(--accent-color), 
-        var(--primary-color));
-    z-index: -1;
-    border-radius: 52px;
-    animation: borderRotate 3s linear infinite;
-    opacity: 0.5;
-    filter: blur(2px);
-}
-
-@keyframes borderRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    display: inline-block;
+    margin-bottom: 24px;
 }
 
 .badge-text {
-    color: var(--primary-color);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    color:  #df7b1d;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     position: relative;
-    z-index: 1;
+    display: inline-block;
 }
 
-.badge-dots {
-    display: flex;
-    gap: 8px;
-}
-
-.badge-dots span {
-    width: 10px;
-    height: 10px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    animation: pulseDots 1.5s infinite ease-in-out;
-    box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.5);
-}
-
-.badge-dots span:nth-child(2) { animation-delay: 0.2s; }
-.badge-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes pulseDots {
-    0%, 100% { 
-        opacity: 0.4; 
-        transform: scale(0.8); 
-    }
-    50% { 
-        opacity: 1; 
-        transform: scale(1.2); 
-    }
+/* Optional: Add a simple separator line for elegance */
+.badge-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--accent-red);
+    opacity: 0.3;
 }
 
 .about-title {
-    font-size: clamp(2.8rem, 5vw, 3.8rem);
+     font-size: clamp(2.8rem, 5vw, 3.8rem);
     line-height: 1.1;
     margin-bottom: 25px;
     font-weight: 800;
     color: var(--dark-color);
     position: relative;
-    animation: fadeInUp 0.8s ease forwards;
+  
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 
 .about-title .title-highlight {
-    color: var(--accent-color);
+    color:   #df7b1d;
     position: relative;
     display: inline-block;
 }
@@ -666,7 +605,6 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 12px;
-    background: rgba(var(--accent-color-rgb), 0.2);
     z-index: -1;
     border-radius: 6px;
 }
@@ -799,36 +737,6 @@ h1, h2, h3, h4 {
     position: absolute;
     z-index: 1;
     pointer-events: none;
-}
-
-.decoration-1 {
-    top: 10%;
-    left: 5%;
-    width: 80px;
-    height: 80px;
-    border: 3px solid rgba(var(--primary-color-rgb), 0.1);
-    border-radius: 50%;
-    animation: spin 20s linear infinite;
-}
-
-.decoration-2 {
-    bottom: 20%;
-    right: 8%;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: pulseGlow 4s ease-in-out infinite alternate;
-}
-
-.decoration-3 {
-    top: 40%;
-    right: 15%;
-    width: 40px;
-    height: 40px;
-    background: rgba(var(--primary-color-rgb), 0.05);
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -1533,7 +1441,7 @@ h1, h2, h3, h4 {
 /*=====================================================*/
 .cta-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #5349d6 0%, #3558e8 100%);
+    background: linear-gradient(135deg,  #32639F 0%, #0E214C 100%);
     color: var(--white);
     text-align: center;
 }
@@ -1633,7 +1541,7 @@ h1, h2, h3, h4 {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+   
 }
 
 .trust-item::before {
@@ -1643,7 +1551,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+ 
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -1671,7 +1579,7 @@ h1, h2, h3, h4 {
 
 .trust-item:hover .trust-icon {
     transform: scale(1.1);
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: blue;
 }
 
 .trust-icon i {
@@ -1834,13 +1742,9 @@ h1, h2, h3, h4 {
     font-weight: 800;
     color: var(--dark-color);
     margin-bottom: 20px;
-    line-height: 1.2;
+  
 }
 
-.partners-section .section-title .title-highlight {
-    color: var(--accent-color);
-    position: relative;
-}
 
 .partners-section .section-title .title-highlight::after {
     content: '';
@@ -1896,7 +1800,7 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+   
     position: relative;
     overflow: hidden;
 }
@@ -1908,9 +1812,6 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, 
-        var(--primary-color), 
-        var(--accent-color));
     background-size: 200% 100%;
     animation: gradientShift 3s linear infinite;
 }
