@@ -18,11 +18,7 @@ body {
 
 .policy-hero {
     padding: 88px 0 52px;
-    background:
-        radial-gradient(circle at top right, rgba(223, 123, 29, 0.18), transparent 30%),
-        radial-gradient(circle at top left, rgba(35, 22, 218, 0.12), transparent 32%),
-        linear-gradient(135deg, rgba(35, 22, 218, 0.96), rgba(223, 123, 29, 0.9));
-    color: var(--white);
+    background:#292470;
 }
 
 .policy-hero__content {
@@ -35,7 +31,7 @@ body {
     gap: 8px;
     padding: 8px 14px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.16);
+    background: white;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.03em;
@@ -47,12 +43,14 @@ body {
     font-family: 'Source Serif Pro', serif;
     font-size: clamp(2.4rem, 5vw, 4rem);
     line-height: 1.05;
+    color : white;
 }
 
 .policy-hero p {
     font-size: 1.08rem;
     line-height: 1.8;
     max-width: 680px;
+    color : white;
 }
 
 .policy-main {

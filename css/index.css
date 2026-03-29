@@ -137,8 +137,8 @@ h1, h2, h3, h4 {
     font-weight: 800;
     margin-bottom: 14px;
     line-height: 1.2;
-    color: #ffffff;
-    background: linear-gradient(to right, #ffffff 0%, #4f46e5 100%);
+    color: white;
+    background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -151,7 +151,7 @@ h1, h2, h3, h4 {
     color: #ffffff;
     padding: 8px 20px;
     background: rgba(0, 0, 0, 0.2);
-    border-left: 4px solid #4f46e5;
+    border-left: 4px solid #1B3555;
     border-radius: 0 8px 8px 0;
     display: inline-block;
     max-width: 620px;
@@ -171,8 +171,8 @@ h1, h2, h3, h4 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 24px;
-    border-radius: 50px;
+     padding: 10px 24px;
+    border-radius: 0;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
@@ -185,13 +185,13 @@ h1, h2, h3, h4 {
 }
 
 .hero .btn-primary {
-    background: linear-gradient(90deg, #5349d6 0%, #5249d4 100%);
+    background: #1B3555;
     color: white;
     box-shadow: 0 4px 15px rgba(83, 73, 214, 0.4);
 }
 
 .hero .btn-primary:hover {
-    background: linear-gradient(90deg, #5249d4 0%, #5349d6 100%);
+    background: #1B3555;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(83, 73, 214, 0.5);
 }
@@ -201,25 +201,25 @@ h1, h2, h3, h4 {
 }
 
 .btn-outline {
-    border: 2px solid #5349d6;
-    color: #5349d6;
+    border: 2px solid #1B3555;
+    color: #1B3555;
     background: transparent;
 }
 
 .btn-outline:hover {
-    background: #5349d6;
+    background: #1B3555;
     color: white;
 }
 
 .btn-primary {
-    background: #5349d6;
+    background: #1B3555;
     color: white;
-    border: 2px solid #5349d6;
+    border: 2px solid #1B3555;
 }
 
 .btn-primary:hover {
-    background: #5249d4;
-    border-color: #5249d4;
+    background: #1B3555;
+    border-color:  #1B3555;
 }
 
 .btn-secondary {
@@ -559,7 +559,7 @@ h1, h2, h3, h4 {
 }
 
 .badge-text {
-    color:  #df7b1d;
+    color:  #c24132;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -585,7 +585,7 @@ h1, h2, h3, h4 {
     line-height: 1.1;
     margin-bottom: 25px;
     font-weight: 800;
-    color: var(--dark-color);
+    color: black;
     position: relative;
   
 }
@@ -593,7 +593,7 @@ h1, h2, h3, h4 {
 
 
 .about-title .title-highlight {
-    color:   #df7b1d;
+    color:   #c24132;
     position: relative;
     display: inline-block;
 }
@@ -1032,7 +1032,7 @@ h1, h2, h3, h4 {
 .service-icon {
     width: 60px;
     height: 60px;
-    background: #5349d6;
+    background: #1B3555;
     color: var(--white);
     border-radius: 50%;
     display: flex;

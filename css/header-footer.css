@@ -57,7 +57,7 @@ body.sweep-page .logo-text p {
 /*============================================================================== */
 
 .announcement-bar {
-    background: linear-gradient(90deg, #5349d6, #5249d4);
+    background: #3262BA;
     color: var(--white);
     padding: 15px 0;
 }
@@ -265,7 +265,7 @@ body {
 
 .logo-text p {
     font-size: 0.85rem;
-    color: #292470;
+    color: #2A4B78;
     font-weight: 600;
     margin: 0;
     line-height: 1.3;
