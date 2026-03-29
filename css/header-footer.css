@@ -250,6 +250,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 0;
+    line-height: 1;
     height: 70px; /* Match logo image height */
 }
 
@@ -258,7 +260,7 @@ body {
     font-weight: 700;
     color: #c24132;
     font-family: 'Source Serif Pro', serif;
-    line-height: 1.2;
+    line-height: 0.95;
     margin: 0;
     letter-spacing: -0.02em;
 }
@@ -267,8 +269,8 @@ body {
     font-size: 0.85rem;
     color: #2A4B78;
     font-weight: 600;
-    margin: 0;
-    line-height: 1.3;
+    margin: -0.2rem 0 0;
+    line-height: 0.95;
 }
 
 /* Mobile Menu Button */
@@ -1938,4 +1940,292 @@ body {
     .page-header h1 {
         font-size: 2.2rem;
     }
+}
+
+/* Shared header logo override: use the landscape banner image only */
+.logo a {
+    gap: 0;
+}
+
+.header-modern {
+    background: #ffffff;
+}
+
+.logo-image {
+    width: auto;
+    height: clamp(68px, 5.4vw, 96px);
+    aspect-ratio: 1920 / 500;
+    border-radius: 0;
+    overflow: hidden;
+    background: #ffffff;
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+    filter: contrast(1.08) saturate(1.06);
+    image-rendering: auto;
+}
+
+.logo-text {
+    display: none;
+}
+
+.mobile-logo-container {
+    gap: 0;
+}
+
+.mobile-logo-img {
+    width: min(300px, 70vw);
+    height: auto;
+    aspect-ratio: 1920 / 500;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0;
+    background: #ffffff;
+    padding: 0;
+    animation: none;
+    filter: contrast(1.08) saturate(1.06);
+}
+
+.mobile-logo-img:hover {
+    transform: scale(1.02);
+}
+
+.mobile-logo-text {
+    display: none;
+}
+
+@media (max-width: 1199px) {
+    .logo-image {
+        height: 78px;
+    }
+}
+
+@media (max-width: 767px) {
+    .logo-image {
+        height: 60px;
+    }
+
+    .mobile-logo-img {
+        width: min(250px, 66vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 52px;
+    }
+
+    .mobile-logo-img {
+        width: min(210px, 64vw);
+    }
+}
+
+@media (min-width: 1025px) {
+    .header-modern__nav {
+        padding: 0.45rem 2rem;
+    }
+
+    .logo-image {
+        height: 74px;
+    }
+}
+
+/* Navigation cleanup */
+.header-modern__links {
+    gap: 0.5rem;
+}
+
+.nav-link {
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+    border-radius: 0;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #1b3555;
+    background: transparent;
+    border-bottom-color: #1b3555;
+}
+
+.nav-link i {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.nav-link:hover i,
+.nav-link.active i {
+    color: #1b3555;
+}
+
+.dropdown-content,
+.nested-dropdown-content {
+    border-radius: 0;
+    background: #ffffff;
+    border: 1px solid #dbe2ea;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+    padding: 0.35rem 0;
+}
+
+.dropdown-content {
+    min-width: 260px;
+}
+
+.nested-dropdown-content {
+    min-width: 240px;
+}
+
+.dropdown-content a,
+.nested-dropdown-content a {
+    gap: 0.8rem;
+    padding: 0.85rem 1.1rem;
+    color: #334155;
+    font-size: 0.92rem;
+    font-weight: 500;
+    border-radius: 0;
+}
+
+.dropdown-content a:hover,
+.nested-dropdown-content a:hover {
+    background: #f8fafc;
+    color: #1b3555;
+}
+
+.dropdown-content a i,
+.nested-dropdown-content a i {
+    color: #64748b;
+}
+
+.dropdown-content a:hover i,
+.nested-dropdown-content a:hover i {
+    color: #1b3555;
+}
+
+/* Mobile menu cleanup */
+.header-modern__mobile-menu {
+    background: #ffffff;
+    animation: none;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.16);
+}
+
+.header-modern__mobile-menu::before {
+    display: none;
+}
+
+.header-modern__mobile-menu.open {
+    animation: menuSlideIn 0.35s ease forwards;
+}
+
+.mobile-menu-header {
+    background: #ffffff;
+    backdrop-filter: none;
+    border-bottom: 1px solid #e5e7eb;
+    animation: none;
+}
+
+.mobile-logo-img {
+    background: #ffffff;
+}
+
+.mobile-close-btn {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 0;
+    color: #334155;
+    backdrop-filter: none;
+    animation: none;
+}
+
+.mobile-close-btn:hover {
+    background: #f8fafc;
+    border-color: #1b3555;
+    color: #1b3555;
+}
+
+.header-modern__mobile-link,
+.mobile-dropdown-toggle {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #e5e7eb;
+    border-radius: 0;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+.header-modern__mobile-link i:first-child,
+.mobile-dropdown-toggle i:first-child,
+.mobile-dropdown-content .header-modern__mobile-link i:first-child,
+.mobile-dropdown-content .mobile-dropdown-toggle i:first-child {
+    color: #1b3555;
+}
+
+.header-modern__mobile-link:hover,
+.mobile-dropdown-toggle:hover,
+.mobile-dropdown-toggle.active {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateX(4px);
+}
+
+.header-modern__mobile-link:hover i:first-child,
+.mobile-dropdown-toggle:hover i:first-child {
+    color: #0f172a;
+}
+
+.mobile-dropdown {
+    border-radius: 0;
+}
+
+.mobile-dropdown-content {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0;
+    backdrop-filter: none;
+    margin-top: 0.35rem;
+}
+
+.mobile-dropdown-content .header-modern__mobile-link,
+.mobile-dropdown-content .mobile-dropdown-toggle {
+    color: #334155;
+    background: #ffffff;
+    border: 0;
+    border-radius: 0;
+}
+
+.mobile-dropdown-content .header-modern__mobile-link:hover,
+.mobile-dropdown-content .mobile-dropdown-toggle:hover {
+    background: #f8fafc;
+}
+
+.mobile-dropdown-content .mobile-dropdown-content {
+    background: #ffffff;
+    border-left: 2px solid #e5e7eb;
+    border-radius: 0;
+}
+
+.mobile-dropdown-toggle .dropdown-arrow,
+.mobile-dropdown-content .mobile-dropdown-toggle .dropdown-arrow {
+    color: #64748b;
+}
+
+.header-modern__mobile-menu::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.header-modern__mobile-menu::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 0;
 }
