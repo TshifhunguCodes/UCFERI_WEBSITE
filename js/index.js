@@ -264,7 +264,7 @@ function initPartnersCarousel() {
     
     function startAutoSlide() {
         if (autoSlideInterval) clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(nextSlide, 5000);
+        autoSlideInterval = setInterval(nextSlide, 8000);
     }
     
     function stopAutoSlide() {

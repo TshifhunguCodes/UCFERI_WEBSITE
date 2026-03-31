@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #32639F;
+    --primary-color: #03224d;
     --primary-color-rgb: 50, 99, 159;
     --secondary-color: #AB392C;
     --accent-color: #AB392C;
@@ -80,7 +80,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0f172a;
+    background: #03224d;
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
@@ -173,7 +173,7 @@ h1, h2, h3, h4 {
     color: #ffffff;
     padding: 8px 20px;
     background: rgba(0, 0, 0, 0.28);
-    border-left: 4px solid var(--brand-blue);
+    border-left: #03224d solid 4px;
     border-radius: 0 8px 8px 0;
     display: inline-block;
     max-width: 620px;
@@ -597,7 +597,7 @@ h1, h2, h3, h4 {
 }
 
 .badge-text {
-    color:  #c24132;
+    color:  #b42815;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -631,7 +631,7 @@ h1, h2, h3, h4 {
 
 
 .about-title .title-highlight {
-    color:   #c24132;
+    color:   #b42815;
     position: relative;
     display: inline-block;
 }
