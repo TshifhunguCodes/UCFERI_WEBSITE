@@ -1,7 +1,7 @@
 :root {
     --primary-color: #03224d;
-    --secondary-color: #b42815;
-    --accent-color: #b42815;
+    --secondary-color: #03224d;
+    --accent-color: #03224d;
     --success-color: #27ae60;
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
@@ -88,7 +88,7 @@ h1, h2, h3, h4 {
 
 .btn-primary:hover,
 .btn-primary:active {
-    background: #1a0fb0;
+    background: #03224d;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -97,7 +97,7 @@ h1, h2, h3, h4 {
 /* Page Header section */
 /* =============================================== */
 .page-header {
-    background: linear-gradient(135deg, #5349d6 0%, #3558e8 100%);
+    background: #03224d;
     padding: 80px 0;
     text-align: center;
     color: var(--white);
@@ -176,13 +176,13 @@ h1, h2, h3, h4 {
     box-shadow: var(--shadow-lg);
     position: relative;
     text-align: center;
-    border: 1px solid rgba(35, 22, 218, 0.1);
+    border: 1px solid rgba(3, 34, 77, 0.1);
     transition: all 0.3s ease;
 }
 
 .open-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(35, 22, 218, 0.15);
+    box-shadow: 0 15px 35px rgba(3, 34, 77, 0.15);
 }
 
 .open-status {
@@ -200,7 +200,7 @@ h1, h2, h3, h4 {
 .open-icon {
     width: 70px;
     height: 70px;
-    background: rgba(35, 22, 218, 0.1);
+    background: rgba(3, 34, 77, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -309,8 +309,8 @@ h1, h2, h3, h4 {
     align-items: center;
     gap: 15px;
     padding: 20px 25px;
-    background: linear-gradient(135deg, rgba(35, 22, 218, 0.05), rgba(223, 123, 29, 0.03));
-    border-bottom: 1px solid rgba(35, 22, 218, 0.1);
+    background: linear-gradient(135deg, rgba(3, 34, 77, 0.05), rgba(3, 34, 77, 0.03));
+    border-bottom: 1px solid rgba(3, 34, 77, 0.1);
 }
 
 .program-icon-large {
@@ -484,7 +484,7 @@ h1, h2, h3, h4 {
 }
 
 .sustainability-section .section-title {
-    color: var(--white);
+    color: #000000;
 }
 
 .sustainability-content {
@@ -528,6 +528,10 @@ h1, h2, h3, h4 {
 .sustainability-item:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.2);
+}
+
+.section-title {
+    color: #000000;
 }
 
 .sustainability-item i {

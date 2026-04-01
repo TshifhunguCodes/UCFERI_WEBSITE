@@ -17,16 +17,78 @@
 
 /* ===== PAGE HEADER ===== */
 .events-header {
-    background: linear-gradient(135deg, #5349d6, #3b32b0);
+    background: #03224d;
     padding: 80px 0 60px;
     color: var(--white);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .events-header h1 {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 15px;
+}
+
+.events-header .container,
+.page-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-video-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #03224d;
+}
+
+.hero-video-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(18, 25, 36, 0.85) 0%, rgba(9, 7, 26, 0.8) 100%);
+    pointer-events: none;
+}
+
+.hero-video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background:
+        linear-gradient(135deg, rgba(3, 34, 77, 0.92), rgba(3, 34, 77, 0.78)),
+        url('../assets/images/hero-banner-image1.jpeg') center/cover no-repeat;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.85rem;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+
+
+.hero-video-placeholder i {
+    font-size: 3rem;
+}
+
+.hero-video-container.is-video-ready .hero-video-placeholder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    z-index: 0;
 }
 
 .events-header .breadcrumb {
@@ -698,6 +760,11 @@
 @media (max-width: 768px) {
     .events-header {
         padding: 60px 0 40px;
+    }
+
+    .hero-video-placeholder {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
     }
     
     .events-header h1 {

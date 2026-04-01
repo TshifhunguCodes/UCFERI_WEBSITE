@@ -1,211 +1,193 @@
 // contact.js - Contact Page JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    const RECIPIENT_EMAIL = 'cferi@univen.ac.za';
+
+    function formatLabel(value) {
+        if (!value) return 'Not provided';
+        return value
+            .split(/[_-]/)
+            .map(function (part) {
+                return part.charAt(0).toUpperCase() + part.slice(1);
+            })
+            .join(' ');
+    }
+
+    function setFormStatus(statusElement, type, message) {
+        if (!statusElement) return;
+        statusElement.hidden = false;
+        statusElement.className = 'form-status is-' + type;
+        statusElement.textContent = message;
+    }
+
+    function clearFormStatus(statusElement) {
+        if (!statusElement) return;
+        statusElement.hidden = true;
+        statusElement.className = 'form-status';
+        statusElement.textContent = '';
+    }
+
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.addEventListener('click', function () {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            if (!isExpanded) {
-                mobileMenu.style.display = 'block';
-            } else {
-                mobileMenu.style.display = 'none';
-            }
+            this.setAttribute('aria-expanded', String(!isExpanded));
+            mobileMenu.style.display = isExpanded ? 'none' : 'block';
         });
     }
 
-    window.toggleMobileDropdown = function(button) {
+    window.toggleMobileDropdown = function (button) {
         button.classList.toggle('active');
         const content = button.nextElementSibling;
         if (content) {
             content.classList.toggle('show');
         }
     };
-    
-    // Contact form submission
-    const contactForm = document.getElementById('contactForm');
+
+    const contactForm = document.getElementById('newContactForm');
+    const formStatus = document.getElementById('formStatus');
+
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-content">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>Message Sent Successfully!</h3>
-                            <p>Thank you, ${formObject.fullName}! We've received your message and will contact you via ${formObject.preferredContact} within 48 hours.</p>
-                            <p><strong>Reference:</strong> UCfERI-${Date.now().toString().slice(-6)}</p>
-                        </div>
-                    </div>
-                `;
-                
-                // Style success message
-                successMessage.style.cssText = `
-                    background: linear-gradient(135deg, var(--success-color), #2ecc71);
-                    color: white;
-                    padding: 25px;
-                    border-radius: 12px;
-                    margin-top: 30px;
-                    animation: fadeIn 0.5s ease;
-                `;
-                
-                // Style content inside
-                const successContent = successMessage.querySelector('.success-content');
-                successContent.style.display = 'flex';
-                successContent.style.alignItems = 'flex-start';
-                successContent.style.gap = '20px';
-                
-                const icon = successContent.querySelector('i');
-                icon.style.fontSize = '3rem';
-                icon.style.marginTop = '5px';
-                
-                successContent.querySelector('h3').style.margin = '0 0 10px 0';
-                successContent.querySelector('p').style.margin = '0 0 8px 0';
-                
-                // Insert success message
-                const formFooter = this.querySelector('.form-footer');
-                formFooter.parentNode.insertBefore(successMessage, formFooter.nextSibling);
-                
-                // Reset form after 5 seconds
-                setTimeout(() => {
-                    this.reset();
-                    successMessage.style.opacity = '0';
-                    successMessage.style.transition = 'opacity 0.3s ease';
-                    
-                    setTimeout(() => {
-                        successMessage.remove();
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    }, 300);
-                }, 5000);
-            }, 1500);
-        });
-    }
-    
-    // Purpose card selection styling
-    const purposeCards = document.querySelectorAll('.purpose-card');
-    purposeCards.forEach(card => {
-        card.addEventListener('click', function() {
-            purposeCards.forEach(c => {
-                c.classList.remove('selected');
-            });
-            this.classList.add('selected');
-            
-            // Update radio button
-            const radio = this.querySelector('input[type="radio"]');
-            if (radio) {
-                radio.checked = true;
+
+            if (!contactForm.reportValidity()) {
+                setFormStatus(formStatus, 'error', 'Please complete the required fields before sending your message.');
+                return;
             }
+
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim() || 'Not provided';
+            const subject = document.getElementById('contactSubject').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+            const preferredMethod = formatLabel(document.getElementById('preferredMethod').value);
+            const inquiryType = formatLabel(document.getElementById('inquiryType').value);
+            const fullName = (firstName + ' ' + lastName).trim();
+            const reference = 'UCFERI-' + Date.now().toString().slice(-8);
+            const submittedAt = new Date().toLocaleString('en-ZA', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            const emailSubject = '[UCfERI Contact] ' + subject;
+            const emailBody = [
+                'UCfERI CONTACT FORM SUBMISSION',
+                '========================================',
+                'Reference: ' + reference,
+                'Submitted: ' + submittedAt,
+                '',
+                'CONTACT DETAILS',
+                '----------------------------------------',
+                'Name: ' + fullName,
+                'Email: ' + email,
+                'Phone: ' + phone,
+                'Preferred Contact Method: ' + preferredMethod,
+                '',
+                'INQUIRY DETAILS',
+                '----------------------------------------',
+                'Inquiry Type: ' + inquiryType,
+                'Subject: ' + subject,
+                '',
+                'MESSAGE',
+                '----------------------------------------',
+                message,
+                '',
+                'Source: UCfERI website contact form'
+            ].join('\n');
+
+            const mailtoLink =
+                'mailto:' +
+                encodeURIComponent(RECIPIENT_EMAIL) +
+                '?subject=' +
+                encodeURIComponent(emailSubject) +
+                '&body=' +
+                encodeURIComponent(emailBody);
+
+            setFormStatus(
+                formStatus,
+                'info',
+                'Your email app is opening with a pre-filled message to ' + RECIPIENT_EMAIL + '. Review it and click send to complete your submission.'
+            );
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-envelope-open-text"></i> Opening Email App...';
+            submitBtn.disabled = true;
+
+            window.location.href = mailtoLink;
+
+            window.setTimeout(function () {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                setFormStatus(
+                    formStatus,
+                    'success',
+                    'Email draft prepared for ' + RECIPIENT_EMAIL + '. If no mail window appeared, send the same details manually to that address.'
+                );
+            }, 1200);
         });
-    });
-    
-    // Add CSS for animations
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .success-message {
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .purpose-card.selected .purpose-content {
-            border-color: var(--primary-color) !important;
-            background: rgba(52, 152, 219, 0.1) !important;
-            transform: scale(1.02);
-        }
-        
-        .quick-link:hover {
-            transform: translateX(5px);
-        }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .partner-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .social-card:hover {
-            transform: translateY(-5px);
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Form validation
-    if (contactForm) {
+
         const inputs = contactForm.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.value.trim() === '' && this.hasAttribute('required')) {
-                    this.style.borderColor = 'var(--danger-color)';
+        inputs.forEach(function (input) {
+            input.addEventListener('input', function () {
+                clearFormStatus(formStatus);
+            });
+
+            input.addEventListener('blur', function () {
+                if (this.hasAttribute('required') && this.value.trim() === '') {
+                    this.style.borderColor = '#b42815';
                 } else {
-                    this.style.borderColor = '#e0e6eb';
+                    this.style.borderColor = '#e9ecef';
                 }
             });
-            
-            input.addEventListener('focus', function() {
+
+            input.addEventListener('focus', function () {
                 this.style.borderColor = 'var(--primary-color)';
             });
         });
     }
-    
-    // Phone number formatting
-    const phoneInput = document.getElementById('phone');
+
+    const phoneInput = document.getElementById('contactPhone');
     if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            
-            if (value.length > 0) {
+        phoneInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/[^\d+]/g, '');
+
+            if (value.startsWith('+27')) {
+                value = value.replace(/\D/g, '');
                 if (value.length <= 2) {
-                    value = '+27 ' + value;
-                } else if (value.length <= 5) {
-                    value = '+27 ' + value.substr(2, 3);
-                } else if (value.length <= 8) {
-                    value = '+27 ' + value.substr(2, 3) + ' ' + value.substr(5, 3);
-                } else {
-                    value = '+27 ' + value.substr(2, 3) + ' ' + value.substr(5, 3) + ' ' + value.substr(8, 4);
+                    e.target.value = '+27';
+                    return;
                 }
+
+                const rest = value.slice(2, 11);
+                const parts = [];
+                if (rest.slice(0, 2)) parts.push(rest.slice(0, 2));
+                if (rest.slice(2, 5)) parts.push(rest.slice(2, 5));
+                if (rest.slice(5, 9)) parts.push(rest.slice(5, 9));
+                e.target.value = '+27 ' + parts.join(' ');
+                return;
             }
-            
+
             e.target.value = value;
         });
     }
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             if (href !== '#') {
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
-                
+
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,

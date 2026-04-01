@@ -263,11 +263,20 @@
     <!-- Hero Contact Section -  -->
     <!-- ============================================================== -->
     <section class="contact-hero">
+      <div class="hero-video-container" aria-hidden="true">
+        <div class="hero-video-placeholder">
+            <i class="fas fa-play-circle"></i>
+            <span>Contact Hero Video</span>
+        </div>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-banner-image2.jpeg">
+            <source src="assets/video/contact-video.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="container">
         <div class="contact-hero-wrapper">
             <div class="contact-hero-content">
                   <h1>Contact Us</h1>
-                <p1 class="hero-description">Get in touch with our team for business support, funding guidance, or mentorship. We're here to help you succeed.</p>
+                <p class="hero-description">Get in touch with our team for business support, funding guidance, or mentorship. We're here to help you succeed.</p>
             </div>
         </div>
      </div>
@@ -299,7 +308,7 @@
                 <h3>Email Our Team</h3>
                 <p class="connect-main">cferi@univen.ac.za</p>
                 <p class="connect-alt">Response within 48 hours</p>
-                <a href="mailto:ucferi@univen.ac.za" class="connect-action">
+                <a href="mailto:cferi@univen.ac.za" class="connect-action">
                     <i class="fas fa-envelope"></i> Send Email
                 </a>
               
@@ -480,35 +489,35 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" placeholder="Your first name" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="Your first name" autocomplete="given-name" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" placeholder="Your last name" required>
+                            <input type="text" id="lastName" name="lastName" placeholder="Your last name" autocomplete="family-name" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactEmail">Email Address *</label>
-                            <input type="email" id="contactEmail" placeholder="you@example.com" required>
+                            <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" autocomplete="email" required>
                         </div>
                         <div class="form-group">
                             <label for="contactPhone">Phone Number</label>
-                            <input type="tel" id="contactPhone" placeholder="+27 12 345 6789">
+                            <input type="tel" id="contactPhone" name="contactPhone" placeholder="+27 12 345 6789" autocomplete="tel">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="contactSubject">Subject *</label>
-                        <input type="text" id="contactSubject" placeholder="What is this regarding?" required>
+                        <input type="text" id="contactSubject" name="contactSubject" placeholder="What is this regarding?" required>
                     </div>
                     <div class="form-group">
                         <label for="contactMessage">Message *</label>
-                        <textarea id="contactMessage" rows="6" placeholder="Tell us more about your inquiry..." required></textarea>
+                        <textarea id="contactMessage" name="contactMessage" rows="6" placeholder="Tell us more about your inquiry..." required></textarea>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="preferredMethod">Preferred Contact Method</label>
-                            <select id="preferredMethod">
+                            <select id="preferredMethod" name="preferredMethod">
                                 <option value="email">Email</option>
                                 <option value="phone">Phone Call</option>
                                 <option value="whatsapp">WhatsApp</option>
@@ -516,7 +525,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inquiryType">Inquiry Type</label>
-                            <select id="inquiryType">
+                            <select id="inquiryType" name="inquiryType">
                                 <option value="support">Business Support</option>
                                 <option value="funding">Funding Assistance</option>
                                 <option value="training">Training Programs</option>
@@ -528,6 +537,7 @@
                     <button type="submit" class="submit-btn">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
+                    <div class="form-status" id="formStatus" aria-live="polite" hidden></div>
                 </form>
                 <div class="form-sidebar">
                     <div class="info-box">
@@ -680,7 +690,43 @@
         </div>
     </footer>
     
-     <script src="js/contact.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/index.js"></script>
+    <script>
+        (function () {
+            const heroVideo = document.querySelector('.hero-video');
+            const heroContainer = document.querySelector('.hero-video-container');
+
+            if (!heroVideo || !heroContainer) return;
+
+            const markReady = function () {
+                heroContainer.classList.add('is-video-ready');
+            };
+
+            const attemptPlay = function () {
+                heroVideo.muted = true;
+                heroVideo.defaultMuted = true;
+                heroVideo.setAttribute('playsinline', '');
+                heroVideo.setAttribute('webkit-playsinline', '');
+
+                const playPromise = heroVideo.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function () {});
+                }
+            };
+
+            heroVideo.addEventListener('loadeddata', markReady, { once: true });
+            heroVideo.addEventListener('playing', markReady);
+
+            window.addEventListener('load', attemptPlay, { once: true });
+            ['touchstart', 'click', 'scroll'].forEach(function (eventName) {
+                window.addEventListener(eventName, attemptPlay, { once: true, passive: true });
+            });
+
+            document.addEventListener('visibilitychange', function () {
+                if (!document.hidden) attemptPlay();
+            });
+        })();
+    </script>
 </body>
 </html>

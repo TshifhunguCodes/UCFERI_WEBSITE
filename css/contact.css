@@ -45,23 +45,74 @@ h1, h2, h3, h4 {
 /* ==================================================== */
 .contact-hero {
     padding: 100px 0;
-    background: #5349d6;
+    background: #03224d;
     color: var(--white);
     text-align: center;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .contact-hero::before {
+    content: none;
+}
+
+.contact-hero .container,
+.contact-hero-wrapper,
+.contact-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-video-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #03224d;
+}
+
+.hero-video-container::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L90 10 L50 90 Z" fill="white"/></svg>');
-    background-size: 60px;
-    opacity: 0.1;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(18, 25, 36, 0.85) 0%, rgba(9, 7, 26, 0.8) 100%);
+    pointer-events: none;
+}
+
+.hero-video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background:
+        linear-gradient(135deg, rgba(3, 34, 77, 0.9), rgba(3, 34, 77, 0.72)),
+        url('../assets/images/hero-banner-image2.jpeg') center/cover no-repeat;
+    color: rgba(255, 255, 255, 0.82);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.85rem;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.hero-video-placeholder i {
+    font-size: 3rem;
+}
+
+.hero-video-container.is-video-ready .hero-video-placeholder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    z-index: 0;
 }
 
 .contact-hero-content {
@@ -629,6 +680,32 @@ h1, h2, h3, h4 {
     box-shadow: var(--shadow-lg);
 }
 
+.form-status {
+    padding: 16px 18px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: 1px solid transparent;
+}
+
+.form-status.is-info {
+    background: rgba(3, 34, 77, 0.08);
+    border-color: rgba(3, 34, 77, 0.18);
+    color: #03224d;
+}
+
+.form-status.is-success {
+    background: rgba(39, 174, 96, 0.12);
+    border-color: rgba(39, 174, 96, 0.24);
+    color: #1f6f43;
+}
+
+.form-status.is-error {
+    background: rgba(180, 40, 21, 0.1);
+    border-color: rgba(180, 40, 21, 0.22);
+    color: #8c2114;
+}
+
 .form-sidebar {
     display: flex;
     flex-direction: column;
@@ -817,6 +894,11 @@ h1, h2, h3, h4 {
 @media screen and (max-width: 768px) {
     .contact-hero {
         padding: 80px 0 60px;
+    }
+
+    .hero-video-placeholder {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
     }
     
     .location-wrapper {

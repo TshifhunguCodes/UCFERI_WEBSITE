@@ -1,10 +1,10 @@
 :root {
-    --blue-primary: #2316da;
-    --blue-secondary: #2a1ae0;
+    --blue-primary: #03224d;
+    --blue-secondary: #03224d;
     --blue-light: #e6e9ff;
-    --blue-dark: #1a0fa0;
-    --blue-gradient: linear-gradient(135deg, #2316da, #2a1ae0, #3d2eff);
-    --blue-gradient-simple: linear-gradient(135deg, #2316da, #3d2eff);
+    --blue-dark: #03224d;
+    --blue-gradient: linear-gradient(135deg, #03224d, #03224d, #03224d);
+    --blue-gradient-simple: linear-gradient(135deg, #03224d, #03224d);
     --white: #ffffff;
     --dark: #2c3e50;
     --gray: #6c757d;
@@ -46,8 +46,8 @@ h1, h2, h3, h4 {
 /* Hero Section  */
 /* ================================================ */
 .hero-incubation {
-    background: linear-gradient( 90deg,#5349d6,#5249d4);
-    padding: 80px 0;
+    background: linear-gradient( 90deg,#03224d,#03224d);
+    padding: 30px 0;
     text-align: center;
     position: relative;
     overflow: hidden;

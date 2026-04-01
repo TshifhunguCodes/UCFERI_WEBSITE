@@ -245,6 +245,15 @@
 
     <!-- Page Header -->
     <section class="page-header events-header">
+        <div class="hero-video-container" aria-hidden="true">
+            <div class="hero-video-placeholder">
+                <i class="fas fa-play-circle"></i>
+                <span>Events Hero Video</span>
+            </div>
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-banner-image1.jpeg">
+                <source src="assets/video/events-video.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="container">
             <div class="page-header-content">
                 <h1>Events</h1>
@@ -591,5 +600,41 @@
 
     <script src="js/index.js"></script>
     <script src="js/events.js"></script>
+    <script>
+        (function () {
+            const heroVideo = document.querySelector('.hero-video');
+            const heroContainer = document.querySelector('.hero-video-container');
+
+            if (!heroVideo || !heroContainer) return;
+
+            const markReady = function () {
+                heroContainer.classList.add('is-video-ready');
+            };
+
+            const attemptPlay = function () {
+                heroVideo.muted = true;
+                heroVideo.defaultMuted = true;
+                heroVideo.setAttribute('playsinline', '');
+                heroVideo.setAttribute('webkit-playsinline', '');
+
+                const playPromise = heroVideo.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function () {});
+                }
+            };
+
+            heroVideo.addEventListener('loadeddata', markReady, { once: true });
+            heroVideo.addEventListener('playing', markReady);
+
+            window.addEventListener('load', attemptPlay, { once: true });
+            ['touchstart', 'click', 'scroll'].forEach(function (eventName) {
+                window.addEventListener(eventName, attemptPlay, { once: true, passive: true });
+            });
+
+            document.addEventListener('visibilitychange', function () {
+                if (!document.hidden) attemptPlay();
+            });
+        })();
+    </script>
 </body>
 </html>
