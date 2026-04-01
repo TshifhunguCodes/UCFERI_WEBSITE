@@ -715,7 +715,6 @@
                 }
             };
 
-            heroVideo.addEventListener('loadeddata', markReady, { once: true });
             heroVideo.addEventListener('playing', markReady);
 
             window.addEventListener('load', attemptPlay, { once: true });
