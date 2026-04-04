@@ -1948,6 +1948,7 @@ body {
 /* Shared header logo override: use the landscape banner image only */
 .logo a {
     gap: 0;
+    justify-content: flex-start;
 }
 
 .header-modern {
@@ -1955,7 +1956,7 @@ body {
 }
 
 .logo-image {
-    width: auto;
+    width: clamp(220px, 18vw, 300px);
     height: clamp(68px, 5.4vw, 96px);
     aspect-ratio: 1920 / 500;
     border-radius: 0;
@@ -2006,13 +2007,19 @@ body {
 
 @media (max-width: 1199px) {
     .logo-image {
-        height: 78px;
+        width: clamp(200px, 24vw, 270px);
+        height: auto;
     }
 }
 
 @media (max-width: 767px) {
+    .header-modern__nav {
+        padding: 0.7rem 1rem 0.7rem 0.45rem;
+    }
+
     .logo-image {
-        height: 60px;
+        width: clamp(165px, 48vw, 215px);
+        height: auto;
     }
 
     .mobile-logo-img {
@@ -2022,7 +2029,8 @@ body {
 
 @media (max-width: 480px) {
     .logo-image {
-        height: 52px;
+        width: clamp(150px, 50vw, 190px);
+        height: auto;
     }
 
     .mobile-logo-img {
@@ -2036,7 +2044,8 @@ body {
     }
 
     .logo-image {
-        height: 74px;
+        width: clamp(220px, 18vw, 285px);
+        height: auto;
     }
 }
 
@@ -2223,7 +2232,6 @@ body {
 
 @media (max-width: 767px) {
     .header-modern__nav {
-        padding: 0.6rem 0.9rem 0.6rem 0.08rem;
         justify-content: space-between;
     }
 
@@ -2237,8 +2245,13 @@ body {
         margin-left: 0;
     }
 
+    .logo-image {
+        width: clamp(165px, 48vw, 215px);
+        height: auto;
+    }
+
     .header-modern__menu-btn {
-        margin-right: 0.25rem;
+        margin-right: 0.1rem;
     }
 
     .header-modern__mobile-menu {

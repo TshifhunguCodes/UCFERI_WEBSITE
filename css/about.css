@@ -77,6 +77,7 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
 }
 
@@ -734,6 +735,10 @@ h1, h2, h3, h4 {
         padding: 50px 0 40px;
         min-height: 260px;
     }
+
+    .hero-bg-img {
+        object-position: center center;
+    }
     
     .page-header h1 {
         font-size: 1.8rem;
@@ -873,6 +878,10 @@ h1, h2, h3, h4 {
     .page-header {
         padding: 40px 0 30px;
         min-height: 220px;
+    }
+
+    .hero-bg-img {
+        object-position: center center;
     }
     
     .page-header h1 {

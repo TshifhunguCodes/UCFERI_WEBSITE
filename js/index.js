@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // =============================================
-// HERO SLIDER - WITH VIDEO SUPPORT
+// HERO SLIDER - WITH MOBILE VIDEO SUPPORT & CENTERED CONTENT
 // =============================================
 
 function initHeroSlider() {
@@ -24,20 +24,80 @@ function initHeroSlider() {
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.slide-prev');
     const nextBtn = document.querySelector('.slide-next');
-    const videos = document.querySelectorAll('.slide-video');
     
     if (!heroSlides.length) return;
     
     let currentSlide = 0;
     let autoSlideInterval;
+    let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    let userInteracted = false;
+
+    // Track user interaction for mobile
+    function handleUserInteraction() {
+        if (!userInteracted) {
+            userInteracted = true;
+            playCurrentVideo(currentSlide);
+        }
+    }
+
+    document.addEventListener('click', handleUserInteraction);
+    document.addEventListener('touchstart', handleUserInteraction);
+    
+    function prepareVideos() {
+        const videos = document.querySelectorAll('.slide-video');
+        videos.forEach(video => {
+            if (!video) return;
+            video.muted = true;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            video.preload = 'auto';
+            video.load();
+            
+            video.addEventListener('error', function() {
+                this.style.display = 'none';
+                const container = this.closest('.slide-video-container');
+                if (container) {
+                    container.style.background = "#03224d url('assets/images/hero-banner-image3.jpeg') center/cover no-repeat";
+                }
+            });
+        });
+    }
     
     function pauseAllVideos() {
-        videos.forEach(video => { if (video) video.pause(); });
+        const videos = document.querySelectorAll('.slide-video');
+        videos.forEach(video => { 
+            if (video && typeof video.pause === 'function') {
+                video.pause();
+            }
+        });
     }
     
     function playCurrentVideo(index) {
-        const currentVideo = heroSlides[index]?.querySelector('.slide-video');
-        if (currentVideo) currentVideo.play().catch(e => console.log('Video autoplay failed:', e));
+        const currentSlideElement = heroSlides[index];
+        if (!currentSlideElement) return;
+        
+        const currentVideo = currentSlideElement.querySelector('.slide-video');
+        if (!currentVideo) return;
+        
+        if (isMobile && !userInteracted) {
+            return;
+        }
+        
+        try {
+            currentVideo.muted = true;
+            currentVideo.currentTime = 0;
+            const playPromise = currentVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(e => {
+                    const container = currentVideo.closest('.slide-video-container');
+                    if (container) {
+                        container.style.background = "#03224d url('assets/images/hero-banner-image3.jpeg') center/cover no-repeat";
+                    }
+                });
+            }
+        } catch (e) {
+            console.log('Video error:', e);
+        }
     }
     
     function showSlide(n) {
@@ -45,38 +105,87 @@ function initHeroSlider() {
         dots.forEach(dot => dot.classList.remove('active'));
         
         currentSlide = (n + heroSlides.length) % heroSlides.length;
+        
         heroSlides[currentSlide].classList.add('active');
         if (dots[currentSlide]) dots[currentSlide].classList.add('active');
         
         pauseAllVideos();
-        playCurrentVideo(currentSlide);
+        
+        setTimeout(() => {
+            playCurrentVideo(currentSlide);
+        }, 100);
     }
     
-    function nextSlide() { showSlide(currentSlide + 1); }
-    function prevSlide() { showSlide(currentSlide - 1); }
+    function nextSlide() { 
+        showSlide(currentSlide + 1); 
+        resetInterval();
+    }
+    
+    function prevSlide() { 
+        showSlide(currentSlide - 1); 
+        resetInterval();
+    }
     
     function resetInterval() {
         clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(nextSlide, 5000);
+        autoSlideInterval = setInterval(nextSlide, 6000);
     }
     
-    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); prevSlide(); resetInterval(); });
-    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); nextSlide(); resetInterval(); });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            prevSlide(); 
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            nextSlide(); 
+        });
+    }
     
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', (e) => { e.preventDefault(); showSlide(index); resetInterval(); });
+        dot.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            showSlide(index); 
+            resetInterval();
+        });
     });
     
-    autoSlideInterval = setInterval(nextSlide, 5000);
+    prepareVideos();
+    showSlide(0);
+    autoSlideInterval = setInterval(nextSlide, 6000);
     
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         heroSection.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-        heroSection.addEventListener('mouseleave', () => { autoSlideInterval = setInterval(nextSlide, 5000); });
+        heroSection.addEventListener('mouseleave', () => { 
+            autoSlideInterval = setInterval(nextSlide, 6000);
+        });
     }
     
-    showSlide(0);
+    // Ensure content stays centered on window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Re-apply center positioning
+            const activeSlide = document.querySelector('.hero-slide.active');
+            if (activeSlide) {
+                const content = activeSlide.querySelector('.slide-content');
+                if (content) {
+                    content.style.transform = 'translate(-50%, -50%)';
+                }
+            }
+        }, 100);
+    });
 }
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initHeroSlider();
+});
 
 // =============================================
 // MOBILE MENU - SIMPLE AND CLEAN
