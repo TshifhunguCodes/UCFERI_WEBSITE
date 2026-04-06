@@ -1,32 +1,58 @@
-// events.js - Clean Version (Mobile menu handled by index.js)
+// events.js - Updated for restructured events page
+
+(function() {
+    // Hero Video Handling
+    const heroVideo = document.querySelector('.hero-video');
+    const heroContainer = document.querySelector('.hero-video-container');
+
+    if (heroVideo && heroContainer) {
+        const markReady = function() {
+            heroContainer.classList.add('is-video-ready');
+        };
+
+        const attemptPlay = function() {
+            heroVideo.muted = true;
+            heroVideo.defaultMuted = true;
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('webkit-playsinline', '');
+
+            const playPromise = heroVideo.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(function() {});
+            }
+        };
+
+        heroVideo.addEventListener('playing', markReady);
+        window.addEventListener('load', attemptPlay, { once: true });
+        
+        ['touchstart', 'click', 'scroll'].forEach(function(eventName) {
+            window.addEventListener(eventName, attemptPlay, { once: true, passive: true });
+        });
+
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) attemptPlay();
+        });
+    }
+})();
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Events page initialized');
-    
-    // =============================================
-    // Register Button Handler
-    // =============================================
-    const registerBtn = document.querySelector('.event-registration .btn-primary');
-    if (registerBtn) {
-        registerBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            showNotification('📝 Registration form would open for this event', 'info');
-        });
-    }
 
     // =============================================
-    // Apply Now for Competition
+    // Register Button Handler for Upcoming Events
     // =============================================
-    const applyBtn = document.querySelector('.competition-info .btn-primary');
-    if (applyBtn) {
-        applyBtn.addEventListener('click', function(e) {
+    const registerBtns = document.querySelectorAll('.upcoming-event-card .btn-primary');
+    registerBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
             e.preventDefault();
-            showNotification('💰 HALT Prize Competition application form would open. Deadline: February 24, 2026', 'info');
+            const eventCard = this.closest('.upcoming-event-card');
+            const eventTitle = eventCard?.querySelector('h3')?.textContent || 'Event';
+            showNotification(`📝 Registration for "${eventTitle}" would open`, 'success');
         });
-    }
+    });
 
     // =============================================
-    // Learn More Buttons
+    // Learn More Buttons for Past Events
     // =============================================
     const learnMoreBtns = document.querySelectorAll('.btn-learn');
     learnMoreBtns.forEach(btn => {
@@ -35,66 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const eventCard = this.closest('.event-card');
             const eventTitle = eventCard?.querySelector('h3')?.textContent || 'Event';
             showNotification(`📋 More information about "${eventTitle}" would open`, 'info');
-        });
-    });
-
-    // =============================================
-    // Apply Buttons for Past Events
-    // =============================================
-    const applyPastBtns = document.querySelectorAll('.event-card .btn-apply');
-    applyPastBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const eventCard = this.closest('.event-card');
-            const eventTitle = eventCard?.querySelector('h3')?.textContent || 'Event';
-            showNotification(`📝 Application for "${eventTitle}" would open`, 'info');
-        });
-    });
-
-    // =============================================
-    // RSVP Button for Upcoming Events
-    // =============================================
-    const rsvpBtns = document.querySelectorAll('.event-registration .btn-primary');
-    rsvpBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const eventCard = this.closest('.featured-event-card');
-            const eventTitle = eventCard?.querySelector('h3')?.textContent || 'Event';
-            showNotification(`✅ RSVP for "${eventTitle}" would open`, 'success');
-        });
-    });
-
-    // =============================================
-    // Event Media Placeholders (Image Click)
-    // =============================================
-    const mediaPlaceholders = document.querySelectorAll('.event-media .media-placeholder');
-    
-    mediaPlaceholders.forEach(placeholder => {
-        placeholder.addEventListener('click', function() {
-            let eventName = 'Event';
-            const parent = this.closest('.featured-event-card, .event-card, .competition-card');
-            if (parent) {
-                const title = parent.querySelector('h3')?.textContent;
-                if (title) eventName = title;
-            }
-            showNotification(`🎬 Opening media for: ${eventName}`, 'info');
-        });
-    });
-
-    // =============================================
-    // Past Event Image Click (Popup)
-    // =============================================
-    const eventImages = document.querySelectorAll('.event-image');
-    eventImages.forEach(image => {
-        image.addEventListener('click', function() {
-            const popupId = this.getAttribute('onclick')?.match(/openPopup\('([^']+)'\)/)?.[1];
-            if (popupId) {
-                const popup = document.getElementById(popupId);
-                if (popup) {
-                    popup.classList.add('show');
-                    document.body.style.overflow = 'hidden';
-                }
-            }
         });
     });
 
@@ -109,40 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =============================================
-    // Category Tabs (if present)
-    // =============================================
-    const categoryTabs = document.querySelectorAll('.category-tab');
-    if (categoryTabs.length > 0) {
-        categoryTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                const category = this.getAttribute('data-category');
-                const eventCards = document.querySelectorAll('.event-card');
-                
-                // Update active tab
-                categoryTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Filter events
-                eventCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'flex';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-    }
-
-    // =============================================
     // Newsletter Form Handler
     // =============================================
     const newsletterForm = document.querySelector('.newsletter-form');
@@ -151,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const emailInput = this.querySelector('input[type="email"]');
             const email = emailInput ? emailInput.value.trim() : '';
-            
+
             if (email && /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/.test(email)) {
                 showNotification('Thank you for subscribing to our newsletter!', 'success');
                 this.reset();
@@ -188,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // =============================================
     const currentPage = window.location.pathname.split('/').pop() || 'events.html';
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPage) {
@@ -225,13 +157,24 @@ window.onclick = function(event) {
 };
 
 // =============================================
+// Mobile Dropdown Toggle (for header compatibility)
+// =============================================
+window.toggleMobileDropdown = function(button) {
+    button.classList.toggle('active');
+    const dropdownContent = button.nextElementSibling;
+    if (dropdownContent && dropdownContent.classList.contains('mobile-dropdown-content')) {
+        dropdownContent.classList.toggle('show');
+    }
+};
+
+// =============================================
 // Notification System
 // =============================================
 function showNotification(message, type) {
     // Remove existing notification
     const existing = document.querySelector('.event-notification');
     if (existing) existing.remove();
-    
+
     const notification = document.createElement('div');
     notification.className = `event-notification ${type}`;
     notification.innerHTML = `
@@ -240,7 +183,7 @@ function showNotification(message, type) {
             <span>${escapeHtml(message)}</span>
         </div>
     `;
-    
+
     // Add styles if not exists
     if (!document.querySelector('#event-notification-styles')) {
         const style = document.createElement('style');
@@ -300,9 +243,9 @@ function showNotification(message, type) {
         `;
         document.head.appendChild(style);
     }
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.animation = 'slideOutRight 0.3s ease';
         setTimeout(() => notification.remove(), 300);

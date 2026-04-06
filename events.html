@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="University of Venda Centre for Entrepreneurship & Rapid Incubation supporting innovation and entrepreneurs in Vhembe District.">
-    <title>UCFERI | Events - Workshops & Competitions</title>
+    <title>UCfERI | Events - Workshops & Competitions</title>
+    
+    <!-- External CSS & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/events.css">
     <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="css/mobile.css">
-
-        <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/">
-    <!-- Modern browsers -->
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io/favicon-16x16.png"> 
-    <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.png">
-     <!-- Android / PWA -->
     <link rel="manifest" href="assets/images/favicon_io/site.webmanifest">
 </head>
 <body class="social-announcement-page">
@@ -87,170 +83,147 @@
                 <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
 
-                  <!-- Mobile Menu Button -->
-<button type="button" class="header-modern__menu-btn" id="mobile-menu-button" 
-        aria-controls="mobile-menu" aria-expanded="false" aria-label="Open main menu">
-    <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-</button>
-
-<div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
-    
-    <div class="mobile-menu-header">
-        <!-- Logo Container with Animation -->
-        <div class="mobile-logo-container">
-            <img src="assets/Your%20paragraph%20text.png" alt="UCfERI logo" class="mobile-logo-img">
-        </div>
-        
-        <button class="mobile-close-btn" id="mobile-close-button" aria-label="Close menu">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    
-    <div class="header-modern__mobile-links">
-        
-        <!-- Home - Wrapped in container for consistent centering -->
-        <div class="menu-item-container">
-            <a href="index.html" class="header-modern__mobile-link">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </a>
-        </div>
-        
-        <!-- About Us Dropdown -->
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                <i class="fas fa-info-circle"></i>
-                <span class="dropdown-text">
-                    <span>About Us</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </span>
+            <!-- Mobile Menu Button -->
+            <button type="button" class="header-modern__menu-btn" id="mobile-menu-button" 
+                    aria-controls="mobile-menu" aria-expanded="false" aria-label="Open main menu">
+                <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </button>
-            <div class="mobile-dropdown-content">
-                <a href="about.html#mission&vision" class="header-modern__mobile-link">
-                    <i class="fas fa-bullseye"></i>
-                    <span>Mission</span>
-                </a>
-                <a href="about.html#mission&vision" class="header-modern__mobile-link">
-                    <i class="fas fa-low-vision"></i>
-                    <span>Vision</span>
-                </a>
-                <a href="about.html#history" class="header-modern__mobile-link">
-                    <i class="fas fa-history"></i>
-                    <span>History</span>
-                </a>
-            </div>
-        </div>
 
-        <!-- Programs Dropdown -->
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                <i class="fas fa-graduation-cap"></i>
-                <span class="dropdown-text">
-                    <span>Programs</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </span>
-            </button>
-            <div class="mobile-dropdown-content">
-                <a href="incubation.html" class="header-modern__mobile-link">
-                    <i class="fas fa-rocket"></i>
-                    <span>Business Incubation</span>
-                </a>
-                
-                <!-- Nested Dropdown -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                        <i class="fas fa-users"></i>
-                        <span class="dropdown-text">
-                            <span>CEEIIC Student Network</span>
-                            <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        </span>
+            <div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-header">
+                    <div class="mobile-logo-container">
+                        <img src="assets/Your%20paragraph%20text.png" alt="UCfERI logo" class="mobile-logo-img">
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-close-button" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
                     </button>
-                    <div class="mobile-dropdown-content">
-                        <a href="student-network.html" class="header-modern__mobile-link">
-                            <i class="fas fa-eye"></i>
-                            <span>CEEIIC Overview</span>
+                </div>
+                <div class="header-modern__mobile-links">
+                    <div class="menu-item-container">
+                        <a href="index.html" class="header-modern__mobile-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
                         </a>
-                        <a href="ceeiic-programs.html" class="header-modern__mobile-link">
-                            <i class="fas fa-gift"></i>
-                            <span>CEEIIC Programs</span>
+                    </div>
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="dropdown-text">
+                                <span>About Us</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="about.html#mission&vision" class="header-modern__mobile-link">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Mission</span>
+                            </a>
+                            <a href="about.html#mission&vision" class="header-modern__mobile-link">
+                                <i class="fas fa-low-vision"></i>
+                                <span>Vision</span>
+                            </a>
+                            <a href="about.html#history" class="header-modern__mobile-link">
+                                <i class="fas fa-history"></i>
+                                <span>History</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="dropdown-text">
+                                <span>Programs</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="incubation.html" class="header-modern__mobile-link">
+                                <i class="fas fa-rocket"></i>
+                                <span>Business Incubation</span>
+                            </a>
+                            <div class="mobile-dropdown">
+                                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                                    <i class="fas fa-users"></i>
+                                    <span class="dropdown-text">
+                                        <span>CEEIIC Student Network</span>
+                                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                                    </span>
+                                </button>
+                                <div class="mobile-dropdown-content">
+                                    <a href="student-network.html" class="header-modern__mobile-link">
+                                        <i class="fas fa-eye"></i>
+                                        <span>CEEIIC Overview</span>
+                                    </a>
+                                    <a href="ceeiic-programs.html" class="header-modern__mobile-link">
+                                        <i class="fas fa-gift"></i>
+                                        <span>CEEIIC Programs</span>
+                                    </a>
+                                    <a href="sweep.html" class="header-modern__mobile-link">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>SWEEP</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="programs.html#training" class="header-modern__mobile-link">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <span>Training Programs</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-container">
+                        <a href="events.html" class="header-modern__mobile-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
                         </a>
-                        <a href="sweep.html" class="header-modern__mobile-link">
-                            <i class="fas fa-file-alt"></i>
-                            <span>SWEEP</span>
+                    </div>
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                            <i class="fas fa-photo-video"></i>
+                            <span class="dropdown-text">
+                                <span>Media</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="blog.html" class="header-modern__mobile-link">
+                                <i class="fas fa-blog"></i>
+                                <span>Blog</span>
+                            </a>
+                            <a href="news.html" class="header-modern__mobile-link">
+                                <i class="fas fa-newspaper"></i>
+                                <span>News</span>
+                            </a>
+                            <a href="resources.html" class="header-modern__mobile-link">
+                                <i class="fas fa-book"></i>
+                                <span>Resources</span>
+                            </a>
+                            <a href="story.html" class="header-modern__mobile-link">
+                                <i class="fas fa-trophy"></i>
+                                <span>Success Story</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-item-container">
+                        <a href="contact.html" class="header-modern__mobile-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
                         </a>
                     </div>
                 </div>
-                
-                <a href="programs.html#training" class="header-modern__mobile-link">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span>Training Programs</span>
-                </a>
             </div>
-        </div>
-
-        <!-- Events - Wrapped in container -->
-        <div class="menu-item-container">
-            <a href="events.html" class="header-modern__mobile-link">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Events</span>
-            </a>
-        </div>
-
-        <!-- Media Dropdown -->
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                <i class="fas fa-photo-video"></i>
-                <span class="dropdown-text">
-                    <span>Media</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </span>
-            </button>
-            <div class="mobile-dropdown-content">
-                <a href="blog.html" class="header-modern__mobile-link">
-                    <i class="fas fa-blog"></i>
-                    <span>Blog</span>
-                </a>
-                <a href="news.html" class="header-modern__mobile-link">
-                    <i class="fas fa-newspaper"></i>
-                    <span>News</span>
-                </a>
-                <a href="resources.html" class="header-modern__mobile-link">
-                    <i class="fas fa-book"></i>
-                    <span>Resources</span>
-                </a>
-                <a href="story.html" class="header-modern__mobile-link">
-                    <i class="fas fa-trophy"></i>
-                    <span>Success Story</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Contact - Wrapped in container -->
-        <div class="menu-item-container">
-            <a href="contact.html" class="header-modern__mobile-link">
-                <i class="fas fa-envelope"></i>
-                <span>Contact</span>
-            </a>
-        </div>
-        
-    </div>
-</div>
-
         </nav>
-
-
     </section>
 
-    <!-- Page Header -->
+    <!-- Page Header with Video Background -->
     <section class="page-header events-header">
         <div class="hero-video-container" aria-hidden="true">
             <div class="hero-video-placeholder">
                 <i class="fas fa-play-circle"></i>
                 <span>Events Hero Video</span>
             </div>
-            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-banner-image1.jpeg">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" >
                 <source src="assets/video/events-video.mp4" type="video/mp4">
             </video>
         </div>
@@ -276,142 +249,109 @@
             </div>
             <h2 class="section-title">Don't Miss These Opportunities</h2>
             
-            <!-- Upcoming Events Grid -->
             <div class="upcoming-events-grid">
                 <!-- Event 1: Enactus Activation Campus Training -->
-                <div class="featured-event-card">
-                    <div class="event-left-content">
-                        <div class="event-date-ribbon">
+                <div class="upcoming-event-card">
+                    <div class="event-image-wrapper">
+                        <div class="event-image" onclick="openPopup('popupEnactus')">
+                            <img src="assets/images/events/enactus-image.jpeg" alt="Enactus Activation Training" onerror="this.src='images/event-placeholder.jpg'">
+                        </div>
+                    </div>
+                    <div class="event-content-wrapper">
+                        <div class="event-date-badge">
                             <span class="date-day">15</span>
                             <span class="date-month">APR</span>
                             <span class="date-year">2026</span>
                         </div>
+                        <h3>Enactus Activation Campus Training</h3>
+                        <p class="event-host">Hosted by Enactus UNIVEN & UCfERI</p>
                         
-                        <div class="event-main-content">
-                            <h3>Enactus Activation Campus Training</h3>
-                            <p class="event-host">Hosted by Enactus UNIVEN & UCfERI</p>
-                            
-                            <div class="event-details-grid">
-                                <div class="detail-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <div>
-                                        <strong>Venue:</strong>
-                                        <p>UCfERI Boardroom, School of Education Building</p>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-clock"></i>
-                                    <div>
-                                        <strong>Time:</strong>
-                                        <p>10:00 – 15:00</p>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-tag"></i>
-                                    <div>
-                                        <strong>Theme:</strong>
-                                        <p>Social Entrepreneurship & Community Impact</p>
-                                    </div>
-                                </div>
+                        <div class="event-details-list">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>UCfERI Boardroom, School of Education Building</span>
                             </div>
-                            
-                            <div class="event-description">
-                                <p><strong>Join the Enactus Activation Training!</strong> This interactive session will equip students with the skills to develop social enterprise projects that create positive community impact. Learn about project management, fundraising, and how to compete at national level.</p>
-                                <p>Open to all UNIVEN students passionate about social change and entrepreneurship.</p>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>10:00 – 15:00</span>
                             </div>
-                            
-                            <div class="event-registration">
-                                <a href="#" class="btn btn-primary btn-large"><i class="fas fa-registered"></i> Register Now</a>
-                                <span class="register-info">Limited spots available</span>
-                            </div>
-                            
-                            <div class="event-hashtags">
-                                <span>#EnactusUniven</span>
-                                <span>#SocialEntrepreneurship</span>
-                                <span>#CreatingFutureLeaders</span>
-                                <span>#UCfERI</span>
+                            <div class="detail-item">
+                                <i class="fas fa-tag"></i>
+                                <span>Social Entrepreneurship & Community Impact</span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="event-media">
-                        <div class="event-image" onclick="openPopup('popupEnactus')">
-                            <img src="assets/images/events/enactus-image.jpeg" alt="Enactus Activation Training" class="placeholder-image" onerror="this.src='images/event-placeholder.jpg'">
+                        
+                        <div class="event-description">
+                            <p><strong>Join the Enactus Activation Training!</strong> This interactive session will equip students with the skills to develop social enterprise projects that create positive community impact. Learn about project management, fundraising, and how to compete at national level.</p>
                         </div>
-                        <div class="media-caption">Enactus Activation Training</div>
+                        
+                        <div class="event-registration">
+                            <a href="#" class="btn btn-primary"><i class="fas fa-registered"></i> Register Now</a>
+                            <span class="register-info">Limited spots available</span>
+                        </div>
+                        
+                        <div class="event-hashtags">
+                            <span>#EnactusUniven</span>
+                            <span>#SocialEntrepreneurship</span>
+                            <span>#CreatingFutureLeaders</span>
+                            <span>#UCfERI</span>
+                        </div>
                     </div>
-
-
-
                 </div>
-                            <!-- Event 2: SWEEP Meet and Greet -->
-                <div class="featured-event-card">
-                    <div class="event-left-content">
-                        <div class="event-date-ribbon">
+
+                <!-- Event 2: SWEEP Meet and Greet -->
+                <div class="upcoming-event-card">
+                    <div class="event-image-wrapper">
+                        <div class="event-image" onclick="openPopup('popupSweep')">
+                            <img src="assets/images/events/sweep-image.jpeg" alt="SWEEP Meet and Greet Preview" onerror="this.src='images/event-placeholder.jpg'">
+                        </div>
+                    </div>
+                    <div class="event-content-wrapper">
+                        <div class="event-date-badge">
                             <span class="date-day">28</span>
                             <span class="date-month">APR</span>
                             <span class="date-year">2026</span>
                         </div>
+                        <h3>SWEEP Meet and Greet</h3>
+                        <p class="event-host">Hosted by SWEEP Executive Committee & UCfERI</p>
                         
-                        <div class="event-main-content">
-                            <h3>SWEEP Meet and Greet</h3>
-                            <p class="event-host">Hosted by SWEEP Executive Committee & UCfERI</p>
-                            
-                            <div class="event-details-grid">
-                                <div class="detail-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <div>
-                                        <strong>Venue:</strong>
-                                        <p>UCfERI Centre, UNIVEN Campus</p>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-clock"></i>
-                                    <div>
-                                        <strong>Time:</strong>
-                                        <p>11:00 – 14:00</p>
-                                    </div>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="fas fa-tag"></i>
-                                    <div>
-                                        <strong>Theme:</strong>
-                                        <p>Sisterhood, Leadership & Empowerment</p>
-                                    </div>
-                                </div>
+                        <div class="event-details-list">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>UCfERI Centre, UNIVEN Campus</span>
                             </div>
-                            
-                            <div class="event-description">
-                                <p><strong>Welcome to the SWEEP Family!</strong> The SWEEP Meet and Greet is an opportunity for new and returning members to connect, network, and learn about the exciting programs planned for 2026. Meet the executive team, engage in sisterhood circles, and discover leadership opportunities.</p>
-                                <p>All female students interested in leadership, entrepreneurship, and empowerment are welcome.</p>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>11:00 – 14:00</span>
                             </div>
-                            
-                            <div class="event-registration">
-                                <a href="#" class="btn btn-primary btn-large"><i class="fas fa-registered"></i> RSVP Now</a>
-                                <span class="register-info">Join the sisterhood circle</span>
-                            </div>
-                            
-                            <div class="event-hashtags">
-                                <span>#SWEEP2026</span>
-                                <span>#SisterhoodCircle</span>
-                                <span>#WomenInLeadership</span>
-                                <span>#EmpowerHer</span>
+                            <div class="detail-item">
+                                <i class="fas fa-tag"></i>
+                                <span>Sisterhood, Leadership & Empowerment</span>
                             </div>
                         </div>
-
-                          <div class="event-media">
-                        <div class="event-image" onclick="openPopup('popupSweep')">
-                            <img src="assets/images/events/sweep-image.jpeg" alt="SWEEP Meet and Greet Preview" class="placeholder-image" onerror="this.src='images/event-placeholder.jpg'">
+                        
+                        <div class="event-description">
+                            <p><strong>Welcome to the SWEEP Family!</strong> The SWEEP Meet and Greet is an opportunity for new and returning members to connect, network, and learn about the exciting programs planned for 2026. Meet the executive team, engage in sisterhood circles, and discover leadership opportunities.</p>
                         </div>
-                        <div class="media-caption">SWEEP Meet and Greet</div>
+                        
+                        <div class="event-registration">
+                            <a href="#" class="btn btn-primary"><i class="fas fa-registered"></i> RSVP Now</a>
+                            <span class="register-info">Join the sisterhood circle</span>
+                        </div>
+                        
+                        <div class="event-hashtags">
+                            <span>#SWEEP2026</span>
+                            <span>#SisterhoodCircle</span>
+                            <span>#WomenInLeadership</span>
+                            <span>#EmpowerHer</span>
+                        </div>
                     </div>
                 </div>
-        
             </div>
         </div>
     </section>
 
-    <!-- Past Events Section -->
+    <!-- Past Events Section (No Learn More buttons) -->
     <section class="past-events-section">
         <div class="container">
             <h2 class="section-title">Past Events</h2>
@@ -419,7 +359,7 @@
             <div class="events-grid">
                 <!-- Event 1: Hult Prize Competition -->
                 <div class="event-card">
-                    <div class="event-image" onclick="openPopup('popupHult')">
+                    <div class="event-image" onclick="openPopup('popupHultEvent')">
                         <img src="assets/images/events/hult-challenge-image.jpeg" alt="Hult Prize Competition">
                     </div>
                     <div class="event-content">
@@ -439,7 +379,7 @@
 
                 <!-- Event 2: Waste Innovation Challenge -->
                 <div class="event-card">
-                    <div class="event-image" onclick="openPopup('popup1')">
+                    <div class="event-image" onclick="openPopup('popupWaste')">
                         <img src="assets/images/events/waste-challenege-image.jpeg" alt="Waste Innovation Challenge">
                     </div>
                     <div class="event-content">
@@ -459,7 +399,7 @@
 
                 <!-- Event 3: The System Challenge -->
                 <div class="event-card">
-                    <div class="event-image" onclick="openPopup('popup3')">
+                    <div class="event-image" onclick="openPopup('popupSystem')">
                         <img src="assets/images/events/map-challenge-image.jpeg" alt="The System Challenge">
                     </div>
                     <div class="event-content">
@@ -509,24 +449,24 @@
         </div>
     </div>
 
-    <div id="popupHult" class="popup">
+    <div id="popupHultEvent" class="popup">
         <div class="popup-content">
             <img src="assets/images/events/hult-challenge-image.jpeg" alt="Hult Prize Competition">
-            <button class="close-btn" onclick="closePopup('popupHult')">Close</button>
+            <button class="close-btn" onclick="closePopup('popupHultEvent')">Close</button>
         </div>
     </div>
 
-    <div id="popup1" class="popup">
+    <div id="popupWaste" class="popup">
         <div class="popup-content">
             <img src="assets/images/events/waste-challenege-image.jpeg" alt="Waste Innovation Challenge">
-            <button class="close-btn" onclick="closePopup('popup1')">Close</button>
+            <button class="close-btn" onclick="closePopup('popupWaste')">Close</button>
         </div>
     </div>
 
-    <div id="popup3" class="popup">
+    <div id="popupSystem" class="popup">
         <div class="popup-content">
             <img src="assets/images/events/map-challenge-image.jpeg" alt="The System Challenge">
-            <button class="close-btn" onclick="closePopup('popup3')">Close</button>
+            <button class="close-btn" onclick="closePopup('popupSystem')">Close</button>
         </div>
     </div>
 
@@ -598,42 +538,8 @@
         </div>
     </footer>
 
+    <!-- External JavaScript Files -->
     <script src="js/index.js"></script>
     <script src="js/events.js"></script>
-    <script>
-        (function () {
-            const heroVideo = document.querySelector('.hero-video');
-            const heroContainer = document.querySelector('.hero-video-container');
-
-            if (!heroVideo || !heroContainer) return;
-
-            const markReady = function () {
-                heroContainer.classList.add('is-video-ready');
-            };
-
-            const attemptPlay = function () {
-                heroVideo.muted = true;
-                heroVideo.defaultMuted = true;
-                heroVideo.setAttribute('playsinline', '');
-                heroVideo.setAttribute('webkit-playsinline', '');
-
-                const playPromise = heroVideo.play();
-                if (playPromise && typeof playPromise.catch === 'function') {
-                    playPromise.catch(function () {});
-                }
-            };
-
-            heroVideo.addEventListener('playing', markReady);
-
-            window.addEventListener('load', attemptPlay, { once: true });
-            ['touchstart', 'click', 'scroll'].forEach(function (eventName) {
-                window.addEventListener(eventName, attemptPlay, { once: true, passive: true });
-            });
-
-            document.addEventListener('visibilitychange', function () {
-                if (!document.hidden) attemptPlay();
-            });
-        })();
-    </script>
 </body>
 </html>

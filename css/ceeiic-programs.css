@@ -1,7 +1,9 @@
 :root {
-    --primary-color: #03224d;
-    --secondary-color: #03224d;
-    --accent-color: #03224d;
+    --primary-blue: #03224d;
+    --primary-red: #c24132;
+    --primary-color: var(--primary-blue);
+    --secondary-color: var(--primary-red);
+    --accent-color: var(--primary-red);
     --success-color: #27ae60;
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
@@ -309,7 +311,7 @@ h1, h2, h3, h4 {
     align-items: center;
     gap: 15px;
     padding: 20px 25px;
-    background: linear-gradient(135deg, rgba(3, 34, 77, 0.05), rgba(3, 34, 77, 0.03));
+    background: rgba(3, 34, 77, 0.05);
     border-bottom: 1px solid rgba(3, 34, 77, 0.1);
 }
 
@@ -472,7 +474,7 @@ h1, h2, h3, h4 {
 /* ======================================================== */
 .sustainability-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: var(--white);
     text-align: center;
 }
@@ -484,7 +486,7 @@ h1, h2, h3, h4 {
 }
 
 .sustainability-section .section-title {
-    color: #000000;
+    color: var(--white);
 }
 
 .sustainability-content {

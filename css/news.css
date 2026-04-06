@@ -1,13 +1,18 @@
 /* news.css */
 :root {
-    --primary-color: #2316da;
-    --secondary-color: #df7b1d;
-    --accent-color: #e67e22;
+    --primary-blue: #03224d;
+    --primary-red: #c24132;
+    --primary-color: var(--primary-blue);
+    --secondary-color: var(--primary-red);
+    --accent-color: var(--primary-red);
+    --danger-color: var(--primary-red);
     --success-color: #27ae60;
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
     --gray-color: #95a5a6;
     --white: #ffffff;
+    --text: var(--dark-color);
+    --text-light: #4a5568;
     --border: #E0E0E0;
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
@@ -15,7 +20,7 @@
 }
 
 .news-header {
-    background: linear-gradient(135deg, #5349d6, #3b32b0);
+    background: var(--primary-blue);
     padding: 80px 0 60px;
     color: var(--white);
     text-align: center;
@@ -203,7 +208,7 @@
 }
 
 .media-placeholder.video.small {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     display: flex;
     flex-direction: column;
     align-items: center;

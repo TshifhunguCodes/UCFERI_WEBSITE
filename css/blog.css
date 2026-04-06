@@ -1,7 +1,9 @@
 :root {
-    --primary-color: #2316da;
-    --secondary-color: #df7b1d;
-    --accent-color: #e67e22;
+    --primary-blue: #03224d;
+    --primary-red: #c24132;
+    --primary-color: var(--primary-blue);
+    --secondary-color: var(--primary-red);
+    --accent-color: var(--primary-red);
     --success-color: #27ae60;
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
@@ -37,7 +39,7 @@ body {
 
 /* Page Header */
 .page-header {
-    background: #5349d6;
+    background: var(--primary-blue);
     padding: 60px 0 40px;
     color: var(--white);
     text-align: center;
@@ -92,7 +94,7 @@ body {
 
 .featured-content .post-category {
     display: inline-block;
-    background: rgba(35, 22, 218, 0.1);
+    background: rgba(3, 34, 77, 0.1);
     color: var(--primary-color);
     padding: 6px 16px;
     border-radius: 20px;
@@ -137,7 +139,7 @@ body {
 }
 
 .featured-hashtags span {
-    background: rgba(35, 22, 218, 0.05);
+    background: rgba(3, 34, 77, 0.05);
     color: var(--primary-color);
     padding: 4px 12px;
     border-radius: 20px;
@@ -226,8 +228,8 @@ body {
 
 .card-category {
     display: inline-block;
-    background: rgba(223, 123, 29, 0.1);
-    color: var(--secondary-color);
+    background: rgba(194, 65, 50, 0.12);
+    color: var(--accent-color);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -270,7 +272,7 @@ body {
 }
 
 .card-hashtags span {
-    background: rgba(35, 22, 218, 0.05);
+    background: rgba(3, 34, 77, 0.05);
     color: var(--primary-color);
     padding: 3px 10px;
     border-radius: 15px;
@@ -318,7 +320,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #1a0fb0;
+    background: #021a3a;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }

@@ -560,10 +560,10 @@ h1, h2, h3, h4 {
         margin-bottom: 20px;
         max-width: 100%;
         text-align: center;
-        display: block;
-        border-left: none;
-        border-radius: 8px;
-        background: rgba(0, 0, 0, 0.35);
+        display: inline-block;
+        border-left: #03224d solid 4px;
+        border-radius: 0 8px 8px 0;
+        background: rgba(0, 0, 0, 0.28);
     }
     
     .slide-buttons {
@@ -593,7 +593,7 @@ h1, h2, h3, h4 {
     }
 
     .slide-next {
-        right: -10px;
+        right: -22px;
     }
     
     .dot {
@@ -654,7 +654,7 @@ h1, h2, h3, h4 {
     }
 
     .slide-next {
-        right: -10px;
+        right: -24px;
     }
 
     .slide-dots {
