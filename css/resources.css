@@ -719,6 +719,43 @@ h1, h2, h3, h4 {
     flex-wrap: wrap;
 }
 
+.cta-section .btn {
+    box-shadow: var(--shadow-md);
+}
+
+.cta-section .btn-primary {
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--white);
+}
+
+.cta-section .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--primary-color);
+}
+
+.cta-section .btn-secondary {
+    background: var(--primary-red);
+    color: var(--white);
+    border: 2px solid var(--primary-red);
+}
+
+.cta-section .btn-secondary:hover {
+    background: #a9372a;
+    color: var(--white);
+}
+
+.cta-section .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.cta-section .btn-outline:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
 /* Footer */
 .footer {
     background: var(--dark-color);
