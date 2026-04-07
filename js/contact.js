@@ -2,6 +2,40 @@
 
 // Remove any conflicting code and ensure clean initialization
 
+(function() {
+    const heroVideo = document.querySelector('.hero-video');
+    const heroContainer = document.querySelector('.hero-video-container');
+
+    if (heroVideo && heroContainer) {
+        const markReady = function() {
+            heroContainer.classList.add('is-video-ready');
+        };
+
+        const attemptPlay = function() {
+            heroVideo.muted = true;
+            heroVideo.defaultMuted = true;
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('webkit-playsinline', '');
+
+            const playPromise = heroVideo.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(function() {});
+            }
+        };
+
+        heroVideo.addEventListener('playing', markReady);
+        window.addEventListener('load', attemptPlay, { once: true });
+
+        ['touchstart', 'click', 'scroll'].forEach(function(eventName) {
+            window.addEventListener(eventName, attemptPlay, { once: true, passive: true });
+        });
+
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) attemptPlay();
+        });
+    }
+})();
+
 // Initialize EmailJS
 (function() {
     if (typeof emailjs !== 'undefined') {

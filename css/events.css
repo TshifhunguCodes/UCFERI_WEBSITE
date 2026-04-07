@@ -111,6 +111,12 @@ body {
     object-position: center;
     position: relative;
     z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-video-container.is-video-ready .hero-video {
+    opacity: 1;
 }
 
 .events-header .breadcrumb {
