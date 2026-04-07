@@ -2233,6 +2233,7 @@ body {
 @media (max-width: 767px) {
     .header-modern__nav {
         justify-content: space-between;
+        padding: 0.7rem 0.82rem 0.7rem 0;
     }
 
     .logo {
@@ -2246,12 +2247,13 @@ body {
     }
 
     .logo-image {
-        width: clamp(165px, 48vw, 215px);
+        width: clamp(200px, 58vw, 255px);
         height: auto;
     }
 
     .header-modern__menu-btn {
-        margin-right: 0.1rem;
+        margin-right: 0;
+        margin-left: 0.5rem;
     }
 
     .header-modern__mobile-menu {
@@ -2288,6 +2290,17 @@ body {
     .header-modern__mobile-link,
     .mobile-dropdown-toggle {
         border-color: #d6dfeb;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-modern__nav {
+        padding: 0.65rem 0.68rem 0.65rem 0;
+    }
+
+    .logo-image {
+        width: clamp(185px, 60vw, 230px);
+        height: auto;
     }
 }
 
