@@ -2,24 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="University of Venda Centre for Entrepreneurship & Rapid Incubation supporting innovation and entrepreneurs in Vhembe District.">
-    <title>UCFERI | News - Latest Updates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="UCFERI News: SABC SME OnPoint feature and UCFERI-UCBAC Makhado Crossing outreach partnership. University of Venda Centre for Entrepreneurship & Rapid Incubation.">
+    <title>UCFERI | News – Centre for Entrepreneurship & Rapid Incubation</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <!-- External CSS -->
     <link rel="stylesheet" href="css/news.css">
     <link rel="stylesheet" href="css/header-footer.css">
-
-        <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/">
-    <!-- Modern browsers -->
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io/favicon-16x16.png"> 
-    <!-- Apple devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.png">
-     <!-- Android / PWA -->
-    <link rel="manifest" href="assets/images/favicon_io/site.webmanifest">
-
 </head>
 <body class="social-announcement-page">
     <!-- Announcement Bar -->
@@ -87,163 +83,105 @@
                 <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
 
-                                       <!-- Mobile Menu Button -->
-<button type="button" class="header-modern__menu-btn" id="mobile-menu-button" 
-        aria-controls="mobile-menu" aria-expanded="false" aria-label="Open main menu">
-    <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-</button>
-
-<div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
-    
-    <div class="mobile-menu-header">
-        <!-- Logo Container with Animation -->
-        <div class="mobile-logo-container">
-            <img src="assets/Your%20paragraph%20text.png" alt="UCfERI logo" class="mobile-logo-img">
-        </div>
-        
-        <button class="mobile-close-btn" id="mobile-close-button" aria-label="Close menu">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    
-    <div class="header-modern__mobile-links">
-        
-        <!-- Home - Wrapped in container for consistent centering -->
-        <div class="menu-item-container">
-            <a href="index.html" class="header-modern__mobile-link">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </a>
-        </div>
-        
-        <!-- About Us Dropdown -->
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                <i class="fas fa-info-circle"></i>
-                <span class="dropdown-text">
-                    <span>About Us</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </span>
+            <!-- Mobile Menu Button -->
+            <button type="button" class="header-modern__menu-btn" id="mobile-menu-button" 
+                    aria-controls="mobile-menu" aria-expanded="false" aria-label="Open main menu">
+                <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </button>
-            <div class="mobile-dropdown-content">
-                <a href="about.html#mission&vision" class="header-modern__mobile-link">
-                    <i class="fas fa-bullseye"></i>
-                    <span>Mission</span>
-                </a>
-                <a href="about.html#mission&vision" class="header-modern__mobile-link">
-                    <i class="fas fa-low-vision"></i>
-                    <span>Vision</span>
-                </a>
-                <a href="about.html#history" class="header-modern__mobile-link">
-                    <i class="fas fa-history"></i>
-                    <span>History</span>
-                </a>
-            </div>
-        </div>
 
-        <!-- Programs Dropdown -->
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                <i class="fas fa-graduation-cap"></i>
-                <span class="dropdown-text">
-                    <span>Programs</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </span>
-            </button>
-            <div class="mobile-dropdown-content">
-                <a href="incubation.html" class="header-modern__mobile-link">
-                    <i class="fas fa-rocket"></i>
-                    <span>Business Incubation</span>
-                </a>
-                
-                <!-- Nested Dropdown -->
-                <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                        <i class="fas fa-users"></i>
-                        <span class="dropdown-text">
-                            <span>CEEIIC Student Network</span>
-                            <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        </span>
+            <div class="header-modern__mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-header">
+                    <div class="mobile-logo-container">
+                        <img src="assets/Your%20paragraph%20text.png" alt="UCfERI logo" class="mobile-logo-img">
+                    </div>
+                    <button class="mobile-close-btn" id="mobile-close-button" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
                     </button>
-                    <div class="mobile-dropdown-content">
-                        <a href="student-network.html" class="header-modern__mobile-link">
-                            <i class="fas fa-eye"></i>
-                            <span>CEEIIC Overview</span>
+                </div>
+                <div class="header-modern__mobile-links">
+                    <div class="menu-item-container">
+                        <a href="index.html" class="header-modern__mobile-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
                         </a>
-                        <a href="ceeiic-programs.html" class="header-modern__mobile-link">
-                            <i class="fas fa-gift"></i>
-                            <span>CEEIIC Programs</span>
+                    </div>
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="dropdown-text">
+                                <span>About Us</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i> Mission</a>
+                            <a href="about.html#mission&vision"><i class="fas fa-low-vision"></i> Vision</a>
+                            <a href="about.html#history"><i class="fas fa-history"></i> History</a>
+                        </div>
+                    </div>
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="dropdown-text">
+                                <span>Programs</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="incubation.html"><i class="fas fa-rocket"></i> Business Incubation</a>
+                            <div class="mobile-dropdown">
+                                <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                                    <i class="fas fa-users"></i>
+                                    <span class="dropdown-text">
+                                        <span>CEEIIC Student Network</span>
+                                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                                    </span>
+                                </button>
+                                <div class="mobile-dropdown-content">
+                                    <a href="student-network.html"><i class="fas fa-eye"></i> CEEIIC Overview</a>
+                                    <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                    <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
+                                </div>
+                            </div>
+                            <a href="programs.html#training"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
+                        </div>
+                    </div>
+                    <div class="menu-item-container">
+                        <a href="events.html" class="header-modern__mobile-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Events</span>
                         </a>
-                        <a href="sweep.html" class="header-modern__mobile-link">
-                            <i class="fas fa-file-alt"></i>
-                            <span>SWEEP</span>
+                    </div>
+                    <div class="mobile-dropdown">
+                        <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+                            <i class="fas fa-photo-video"></i>
+                            <span class="dropdown-text">
+                                <span>Media</span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </span>
+                        </button>
+                        <div class="mobile-dropdown-content">
+                            <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="news.html"><i class="fas fa-newspaper"></i> News</a>
+                            <a href="resources.html"><i class="fas fa-book"></i> Resources</a>
+                            <a href="story.html"><i class="fas fa-trophy"></i> Success Story</a>
+                        </div>
+                    </div>
+                    <div class="menu-item-container">
+                        <a href="contact.html" class="header-modern__mobile-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
                         </a>
                     </div>
                 </div>
-                
-                <a href="programs.html#training" class="header-modern__mobile-link">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span>Training Programs</span>
-                </a>
             </div>
-        </div>
-
-        <!-- Events - Wrapped in container -->
-        <div class="menu-item-container">
-            <a href="events.html" class="header-modern__mobile-link">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Events</span>
-            </a>
-        </div>
-
-        <!-- Media Dropdown -->
-        <div class="mobile-dropdown">
-            <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
-                <i class="fas fa-photo-video"></i>
-                <span class="dropdown-text">
-                    <span>Media</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </span>
-            </button>
-            <div class="mobile-dropdown-content">
-                <a href="blog.html" class="header-modern__mobile-link">
-                    <i class="fas fa-blog"></i>
-                    <span>Blog</span>
-                </a>
-                <a href="news.html" class="header-modern__mobile-link">
-                    <i class="fas fa-newspaper"></i>
-                    <span>News</span>
-                </a>
-                <a href="resources.html" class="header-modern__mobile-link">
-                    <i class="fas fa-book"></i>
-                    <span>Resources</span>
-                </a>
-                <a href="story.html" class="header-modern__mobile-link">
-                    <i class="fas fa-trophy"></i>
-                    <span>Success Story</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Contact - Wrapped in container -->
-        <div class="menu-item-container">
-            <a href="contact.html" class="header-modern__mobile-link">
-                <i class="fas fa-envelope"></i>
-                <span>Contact</span>
-            </a>
-        </div>
-        
-    </div>
-</div>
         </nav>
-
-        
     </section>
 
     <!-- Page Header -->
-    <section class="page-header news-header">
+    <section class="news-header">
         <div class="container">
             <div class="page-header-content">
                 <h1>News</h1>
@@ -258,46 +196,7 @@
         </div>
     </section>
 
-    <!-- Featured News: SABC SME OnPoint -->
-   <section class="featured-news">
-    <div class="container">
-        <div class="featured-news-card">
-            <div class="featured-news-content">
-                <span class="news-tag"><i class="fas fa-tv"></i> SABC Feature</span>
-                <h2>University Perspectives on Entrepreneurship</h2>
-                <div class="news-meta">
-                    <span><i class="far fa-calendar"></i> January 28, 2026</span>
-                    <span><i class="far fa-user"></i> Mr Donald Morema, Manager: Economic Activation</span>
-                </div>
-                <p class="news-summary">The University of Venda featured on SME OnPoint panel discussion on SABC. The discussion reflected on the role of universities in preparing students and aspiring entrepreneurs with the necessary knowledge, skills and networks to grow sustainable enterprises.</p>
-                <div class="news-links">
-                    <a href="#" class="btn btn-primary"><i class="fas fa-play"></i> Watch Full Discussion</a>
-                    <a href="https://youtu.be/8aVLGyBxFj0?si=4VTj-hDF6WKTiDND" target="_blank" class="btn btn-outline"><i class="fab fa-youtube"></i> YouTube Link</a>
-                </div>
-                <div class="news-hashtags">
-                    <span>#2026AcademicYear</span>
-                    <span>#UNIVENLeadsTheFuture</span>
-                    <span>#CreatingFutureLeaders</span>
-                    <span>#StrategicVision2026_2030</span>
-                </div>
-            </div>
-            <div class="featured-news-media">
-                <!-- Video loads immediately -->
-                <div class="video-container">
-                    <iframe 
-                        width="100%" 
-                        height="315" 
-                        src="https://www.youtube.com/embed/8aVLGyBxFj0" 
-                        title="SME OnPoint - SABC Discussion" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+   
 
     <!-- News Grid -->
     <section class="news-grid-section">
@@ -305,85 +204,212 @@
             <h2 class="section-title">Latest News & Updates</h2>
             
             <div class="news-grid">
-                <!-- News 1: Makhado Crossing Outreach -->
-                <article class="news-item">
-                    <div class="news-item-media">
-                        <div class="media-placeholder image">
-                            <img src="assets/images/media/ubuntu.jpeg" alt="Makhado Crossing Outreach">
-                            <div class="media-fallback">📸 Makhado Crossing</div>
+            <!-- News Card 1: UCfERI Elim Pop-Up Market (Text only - no video) -->
+        
+        <article class="featured-news-card news-card-textonly">
+            <div class="featured-news-content">
+                <span class="news-tag"><i class="fas fa-store"></i> Pop-Up Market</span>
+                <h2>UCfERI Elim Pop-Up Market: Empowering Local Entrepreneurs</h2>
+                <div class="news-meta">
+                    <span><i class="far fa-calendar"></i> 2026</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Elim Mall, Limpopo</span>
+                    <span><i class="fas fa-handshake"></i> Makhado Municipality | SEDFA | Twin City Group</span>
+                </div>
+                <p class="news-summary">UCfERI Elim Pop-Up Market in Collaboration with Makhado Municipality, SEDFA and Twin
+                    City Group (Elim Mall).</p>
+                <p class="news-summary">The University of Venda Centre for Entrepreneurship Rapid Incubation (UCfERI), in
+                    collaboration with Makhado municipality, @sedfa_dsbd and Twin City Group (Elim Mall), hosted the Elim Pop-Up
+                    Market, creating a vibrant platform for local entrepreneurs to showcase their products, connect with
+                    customers, and grow their businesses.</p>
+                <p class="news-summary">This initiative reflects a shared commitment to fostering economic growth, supporting
+                    small businesses, and creating sustainable livelihoods for entrepreneurs in the Vhembe district.</p>
+                <div class="news-links">
+                    <button class="btn btn-primary play-local-video" type="button"><i class="fas fa-expand"></i> Watch Fullscreen</button>
+                </div>
+                <div class="news-hashtags">
+                    <span>#ElimPopUpMarket</span>
+                    <span>#UCfERI</span>
+                    <span>#MakhadoMunicipality</span>
+                    <span>#SEDFA</span>
+                    <span>#TwinCityGroup</span>
+                    <span>#SupportLocalBiz</span>
+                    <span>#Entrepreneurship</span>
+                    <span>#SMMEGrowth</span>
+                </div>
+            </div>
+            <div class="featured-news-media inline-video-wrapper">
+                <div class="video-container local-news-video">
+                    <video class="inline-news-video" controls preload="auto" playsinline muted autoplay loop
+                        data-preview-frame="0.2" title="UCfERI Elim Pop-Up Market Event Highlights">
+                        <source src="assets/video/news/popup-Market.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </article>
+
+            <!-- Article 2: Featured News: SABC SME OnPoint (YouTube) -->
+            <div class="featured-news">
+                <div class="container">
+                    <article class="featured-news-card">
+                        <div class="featured-news-content">
+                            <span class="news-tag"><i class="fas fa-tv"></i> SABC Feature</span>
+                            <h2>University Perspectives on Entrepreneurship</h2>
+                            <div class="news-meta">
+                                <span><i class="far fa-calendar"></i> January 28, 2026</span>
+                                <span><i class="far fa-user"></i> Mr Donald Morema, Manager: Economic Activation</span>
+                            </div>
+                            <p class="news-summary">The University of Venda featured on SME OnPoint panel discussion on SABC. The
+                                discussion reflected on the role of universities in preparing students and aspiring entrepreneurs
+                                with the necessary knowledge, skills and networks to grow sustainable enterprises.</p>
+                            <div class="news-links">
+                                <a href="https://youtu.be/8aVLGyBxFj0?si=4VTj-hDF6WKTiDND" target="_blank"
+                                    class="btn btn-primary"><i class="fab fa-youtube"></i> Watch on YouTube</a>
+                            </div>
+                            <div class="news-hashtags">
+                                <span>#2026AcademicYear</span>
+                                <span>#UNIVENLeadsTheFuture</span>
+                                <span>#CreatingFutureLeaders</span>
+                                <span>#StrategicVision2026_2030</span>
+                            </div>
+                        </div>
+                        <div class="featured-news-media">
+                            <div class="video-container youtube-video">
+                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8aVLGyBxFj0"
+                                    title="SME OnPoint - SABC Discussion" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+<!-- News Card: Honourable Deputy Minister Ms. Dipuo Peters Keynote Address -->
+<article class="featured-news-card video-news-card" data-video-path="assets/video/news/deputy-minister-speech.mp4"
+    data-video-title="Honourable Deputy Minister Dipuo Peters Keynote Address">
+    <div class="featured-news-content">
+        <span class="news-tag"><i class="fas fa-gavel"></i> Keynote Address</span>
+        <h2>Honourable Deputy Minister Dipuo Peters on Economic Growth & Youth Employment</h2>
+        <div class="news-meta">
+            <span><i class="far fa-calendar"></i> November 14, 2023</span>
+            <span><i class="fas fa-map-marker-alt"></i> University of Venda</span>
+            <span><i class="fas fa-chalkboard-user"></i> UCFERI Launch Event</span>
+        </div>
+        <p class="news-summary">A special thank you to Honourable Deputy Minister Ms. Dipuo Peters for gracing us with a
+            Keynote address that resonated deeply. Her insights touched on crucial points that truly align with our
+            strategy - from growing our local economy to tackling the high unemployment rate.</p>
+        <p class="news-summary">The Deputy Minister shared a powerful vision where our graduates become not just job
+            seekers, but well-rounded contributors to society. Her words inspired all in attendance and reinforced the
+            mission of the University of Venda Centre for Entrepreneurship and Rapid Incubation.</p>
+        <p class="news-summary">The address formed a highlight of the memorable UCFERI Launch, setting the tone for a
+            future of innovation, collaboration, and empowerment for the next generation of entrepreneurs and small
+            business owners in our community.</p>
+        <div class="news-links">
+            <button class="btn btn-primary play-local-video"><i class="fas fa-play"></i> Watch Keynote Address</button>
+        </div>
+        <div class="news-hashtags">
+            <span>#UCFERILaunch</span>
+            <span>#DeputyMinisterDipuoPeters</span>
+            <span>#EconomicGrowth</span>
+            <span>#YouthEmployment</span>
+            <span>#UNIVENStrategy</span>
+            <span>#JobCreatorsNotSeekers</span>
+            <span>#EmpoweringEntrepreneurs</span>
+            <span>#SuccessCelebration</span>
+        </div>
+    </div>
+    <div class="featured-news-media inline-video-wrapper">
+        <div class="video-container local-news-video">
+            <video class="inline-news-video" controls preload="auto" playsinline muted autoplay loop
+                data-preview-frame="0.2"
+                title="Honourable Deputy Minister Dipuo Peters Keynote Address at UCFERI Launch">
+                <source src="assets/video/news/deputy-minister-speech.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</article>
+
+                <!-- News Card 3: Ms Hwalani Mabaso Speech (Local Video) -->
+                <article class="featured-news-card video-news-card" data-video-path="assets/video/news/hwalani-mabaso-speech.mp4" data-video-title="Ms Hwalani Mabaso Speech">
+                    <div class="featured-news-content">
+                        <span class="news-tag"><i class="fas fa-microphone-alt"></i> Keynote Speech</span>
+                        <h2>Meet Ms Hwalani Mabaso: A Beacon of Change</h2>
+                        <div class="news-meta">
+                            <span><i class="far fa-calendar"></i> November 14, 2023</span>
+                            <span><i class="fas fa-user-tie"></i> Bank Executive & Country Director: Women in Tech SA</span>
+                        </div>
+                        <p class="news-summary">Ms Hwalani Mabaso recently gave a compelling speech at the launch of our Centre for Entrepreneurship, highlighting the remarkable journey of the UCFERI. As a distinguished Bank Executive, Certified Director, and Country Director for Women in Tech South Africa, she embodies leadership and innovation. We are truly honoured to have her as our guest.</p>
+                        <div class="news-links">
+                            <button class="btn btn-primary play-local-video" type="button"><i class="fas fa-expand"></i> Watch Fullscreen</button>
+                        </div>
+                        <div class="news-hashtags">
+                            <span>#WomenInTech</span>
+                            <span>#Leadership</span>
+                            <span>#Inspiration</span>
                         </div>
                     </div>
-                    <div class="news-item-content">
-                        <span class="news-date"><i class="far fa-calendar"></i> August 6, 2025</span>
-                        <h3>UCFERI partners with UCBAC for business support outreach</h3>
-                        <p>In a collaborative effort to uplift emerging enterprises, the Centre for Entrepreneurship and Rapid Incubation (UCFERI) partnered with the University of Venda Community Business Advisory Centre (UCBAC) to conduct a targeted business support outreach at Makhado Crossing Mall in Louis Trichardt on 31 July 2025. The initiative formed part of UNIVEN's broader strategy to foster inclusive economic development.</p>
-                        <div class="news-meta-small">
-                            <span><i class="fas fa-map-marker-alt"></i> Makhado Crossing Mall</span>
+                    <div class="featured-news-media inline-video-wrapper">
+                        <div class="video-container local-news-video">
+                            <video class="inline-news-video" controls preload="metadata" playsinline title="Ms Hwalani Mabaso Speech">
+                                <source src="assets/video/news/hwalani-mabaso-speech.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
-                        <a href="#" class="read-more">Read Full Story <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <!-- News 2: 2026 DOING Year Announcement -->
-                <article class="news-item">
-                    <div class="news-item-media">
-                        <img src="assets/images/media/newyear.jpeg" alt="2026 DOING Year Announcement">
-                        <div class="media-placeholder video small">
-                            <i class="fas fa-play"></i>
-                            <span>2026 Message</span>
+                <!-- News Card 4: Biogas Student Hackathon (Local Video) -->
+                <article class="featured-news-card video-news-card" data-video-path="assets/video/news/bioGas-Hack.mp4"
+                    data-video-title="From Waste to Energy: Biogas Student Hackathon 2023">
+                    <div class="featured-news-content">
+                        <span class="news-tag"><i class="fas fa-microbe"></i> Hackathon Milestone</span>
+                        <h2>From Waste to Energy: Biogas Student Hackathon 2023</h2>
+                        <div class="news-meta">
+                            <span><i class="far fa-calendar"></i> September 28, 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> University of Venda, Limpopo Region</span>
+                            <span><i class="fas fa-trophy"></i> First of its kind in Limpopo</span>
+                        </div>
+                        <p class="news-summary">Throwback to an amazing milestone! Unforgettable memories from our inaugural "From Waste
+                            to Energy: Biogas Student Hackathon" last July. It was the first of its kind in the Limpopo Region, and what
+                            a resounding success it was! 🎉 Let's take a moment to celebrate the incredible creativity, innovation, and
+                            teamwork that made it all possible. 💛💙</p>
+                        <p class="news-summary">And guess what? We're counting down to our next thrilling event! 🚀 Stay tuned for more
+                            updates, as we embark on another exciting journey of inspiration and entrepreneurship. 🌟</p>
+                        <div class="news-links">
+                            <button class="btn btn-primary play-local-video" type="button"><i class="fas fa-expand"></i> Watch Fullscreen</button>
+                        </div>
+                        <div class="news-hashtags">
+                            <span>#ThrowbackThursday</span>
+                            <span>#HackathonSuccess</span>
+                            <span>#InnovationJourney</span>
+                            <span>#NextEventComingSoon</span>
+                            <span>#UNIVENCentreForEntrepreneurship</span>
+                            <span>#WasteToEnergy</span>
+                            <span>#BiogasHackathon</span>
                         </div>
                     </div>
-                    <div class="news-item-content">
-                        <span class="news-date"><i class="far fa-calendar"></i> January 29, 2026</span>
-                        <h3>Making 2026 a DOING year - A year of ACTION</h3>
-                        <p>UCFERI announces: "Walk in, plug in, and make use of UCFERI services. Let's build, grow, and thrive together. 2026 has officially clocked in, no snoozing allowed! Whether you're a student with a big idea, a hustler refining your side business, or an entrepreneur ready to scale, UCFERI is here for you."</p>
-                        <div class="service-tags">
-                            <span>🏅 Mentorship</span>
-                            <span>🏅 Training</span>
-                            <span>🏅 Incubation</span>
-                            <span>🏅 Market access</span>
-                            <span>🏅 Access to funding</span>
+                    <div class="featured-news-media inline-video-wrapper">
+                        <div class="video-container local-news-video">
+                            <video class="inline-news-video" controls preload="auto" playsinline muted autoplay loop
+                                data-preview-frame="0.2"
+                                title="From Waste to Energy: Biogas Student Hackathon 2023">
+                                <source src="assets/video/news/bioGas-Hack.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 
-
-                <!-- News 4: UCFERI Services Announcement -->
-                <article class="news-item">
-                    <div class="news-item-media">
-                        <div class="media-placeholder image">
-                            <img src="assets/images/media/heritage.jpeg" alt="UCFERI Business Services">
-                            <div class="media-fallback">💼 Business Services</div>
-                        </div>
-                    </div>
-                    <div class="news-item-content">
-                        <span class="news-date"><i class="far fa-calendar"></i> 2025</span>
-                        <h3>UCFERI Business Services - Your Partner in Growth</h3>
-                        <p>We offer comprehensive business services including:</p>
-                        <ul class="service-list">
-                            <li><i class="fas fa-check-circle"></i> Business Consulting</li>
-                            <li><i class="fas fa-check-circle"></i> Entrepreneurial Training</li>
-                            <li><i class="fas fa-check-circle"></i> Incubation and Mentorship</li>
-                            <li><i class="fas fa-check-circle"></i> Digital Literacy</li>
-                        </ul>
-                        <p class="social-handle"><i class="fab fa-instagram"></i> @Univen.Cferi</p>
-                        <a href="#" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-             
-              
+                
             </div>
-
-          
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-     
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -426,7 +452,7 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Newsletter</h4>
                     <p>Subscribe for updates on programs and opportunities</p>
-                    <form class="newsletter-form">
+                    <form class="newsletter-form" id="newsletterForm">
                         <input type="email" placeholder="Your email address" required>
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
@@ -450,6 +476,7 @@
         </div>
     </footer>
 
+    <!-- External JavaScript -->
     <script src="js/index.js"></script>
     <script src="js/news.js"></script>
 </body>
