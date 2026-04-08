@@ -706,6 +706,79 @@ h1, h2, h3, h4 {
     color: var(--red);
 }
 
+/* ==================================================================== */
+/* Abbreviations Guide */
+/* ==================================================================== */
+.abbreviations-section {
+    padding: 70px 0;
+    background: var(--white);
+}
+
+.abbreviations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.abbreviation-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 18px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-top: 4px solid var(--blue);
+}
+
+.abbreviation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-top-color: var(--red);
+}
+
+.abbreviation-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(3, 34, 77, 0.08);
+    color: var(--blue);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+}
+
+.abbreviation-meaning {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.abbreviation-card.is-manual {
+    border-top-style: dashed;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+}
+
+.abbreviations-note {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: rgba(3, 34, 77, 0.05);
+    border: 1px solid rgba(3, 34, 77, 0.12);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.abbreviations-note strong {
+    color: var(--blue);
+    display: inline-block;
+    margin-right: 6px;
+}
+
 
 
 /* =============================================================== */
@@ -858,6 +931,28 @@ h1, h2, h3, h4 {
     .service-card h3 {
         font-size: 1.1rem;
     }
+
+    .abbreviations-section {
+        padding: 50px 0;
+    }
+
+    .abbreviations-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .abbreviation-card {
+        padding: 18px 16px;
+    }
+
+    .abbreviation-meaning {
+        font-size: 0.9rem;
+    }
+
+    .abbreviations-note {
+        padding: 16px 18px;
+        font-size: 0.92rem;
+    }
     
     .footer-grid {
         grid-template-columns: 1fr;
@@ -932,5 +1027,14 @@ h1, h2, h3, h4 {
     
     .service-card {
         padding: 18px;
+    }
+
+    .abbreviation-code {
+        font-size: 0.85rem;
+    }
+
+    .abbreviations-note {
+        padding: 14px 15px;
+        font-size: 0.88rem;
     }
 }

@@ -217,6 +217,7 @@ function initMobileMenu() {
     // Function to open menu
     function openMenu() {
         mobileMenu.classList.add('open');
+        document.body.classList.add('mobile-menu-active');
         document.body.style.overflow = 'hidden';
         menuBtn.setAttribute('aria-expanded', 'true');
     }
@@ -224,6 +225,7 @@ function initMobileMenu() {
     // Function to close menu
     function closeMenu() {
         mobileMenu.classList.remove('open');
+        document.body.classList.remove('mobile-menu-active');
         document.body.style.overflow = '';
         menuBtn.setAttribute('aria-expanded', 'false');
         

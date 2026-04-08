@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.setAttribute('aria-hidden', isExpanded);
-            mobileMenu.style.display = isExpanded ? 'none' : 'block';
+            mobileMenu.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
+            mobileMenu.classList.toggle('open', !isExpanded);
+            document.body.classList.toggle('mobile-menu-active', !isExpanded);
+            document.body.style.overflow = isExpanded ? '' : 'hidden';
         });
     }
 

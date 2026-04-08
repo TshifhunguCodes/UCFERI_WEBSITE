@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuBtn.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.setAttribute('aria-hidden', isExpanded);
-            mobileMenu.style.display = isExpanded ? 'none' : 'block';
+            mobileMenu.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
+            mobileMenu.classList.toggle('open', !isExpanded);
+            document.body.classList.toggle('mobile-menu-active', !isExpanded);
+            document.body.style.overflow = isExpanded ? '' : 'hidden';
         });
     }
 
@@ -116,8 +118,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 // Close mobile menu if open
-                if (mobileMenu && mobileMenu.style.display === 'block') {
-                    mobileMenu.style.display = 'none';
+                if (mobileMenu && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                    document.body.classList.remove('mobile-menu-active');
+                    document.body.style.overflow = '';
                     if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
                 }
             }
