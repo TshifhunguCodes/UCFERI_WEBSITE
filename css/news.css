@@ -330,7 +330,17 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
     .featured-news-card {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+    }
+
+    .featured-news-media {
+        order: -1;
+    }
+
+    .featured-news-content {
+        order: 1;
     }
     
     .featured-news-media {

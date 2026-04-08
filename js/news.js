@@ -27,16 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const inlineVideos = document.querySelectorAll('.inline-news-video');
 
     inlineVideos.forEach(video => {
-        const previewFrame = Number(video.dataset.previewFrame || 0);
-
-        const showPreviewFrame = () => {
-            if (!previewFrame || !Number.isFinite(previewFrame) || !video.duration) return;
-
-            const targetTime = Math.min(previewFrame, Math.max(video.duration - 0.1, 0));
-            if (targetTime <= 0) return;
+        const primeFirstFrame = () => {
+            const duration = Number.isFinite(video.duration) ? video.duration : 0;
+            const targetTime = Math.min(0.1, Math.max(duration - 0.1, 0));
 
             try {
-                if (video.currentTime < targetTime) {
+                if (targetTime > 0 && video.currentTime < targetTime) {
                     video.currentTime = targetTime;
                 }
             } catch (error) {
@@ -44,14 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        video.addEventListener('loadeddata', showPreviewFrame, { once: true });
-
-        if (video.hasAttribute('autoplay')) {
-            video.play().catch(() => {
-                showPreviewFrame();
-            });
-        }
-
+        video.addEventListener('loadedmetadata', primeFirstFrame, { once: true });
         video.addEventListener('error', function() {
             const failedSrc = video.currentSrc || video.querySelector('source')?.getAttribute('src') || 'the selected video';
             showNotification(`Unable to load video: ${failedSrc}`, 'error');
