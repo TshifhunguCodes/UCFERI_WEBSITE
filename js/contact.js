@@ -36,11 +36,15 @@
     }
 })();
 
+const EMAILJS_PUBLIC_KEY = 'QGPyj8w--XmYGtoy9';
+const EMAILJS_SERVICE_ID = 'service_79qykug';
+const EMAILJS_TEMPLATE_ID = 'template_7wghgjs';
+
 // Initialize EmailJS
 (function() {
     if (typeof emailjs !== 'undefined') {
         emailjs.init({
-            publicKey: "QGPyj8w--XmYGtoy9"
+            publicKey: EMAILJS_PUBLIC_KEY
         });
         console.log("EmailJS initialized successfully");
     } else {
@@ -173,11 +177,7 @@ async function sendMail(event) {
         console.log("Attempting to send email with params:", params);
         
         // Send email - USING YOUR CORRECT IDs FROM THE ERROR LOG
-        const response = await emailjs.send(
-            'service_79qykug',  // Your Service ID
-            'template_7wghgjs',  // Your Template ID
-            params
-        );
+        const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
         
         console.log('SUCCESS! Full response:', response);
         
@@ -227,37 +227,24 @@ async function sendMail(event) {
     }
 }
 
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM loaded - setting up contact form");
-    
+function initContactForm() {
     const form = document.getElementById('contactForm');
-    if (form) {
-        // Remove any existing event listeners by replacing the form
-        const newForm = form.cloneNode(true);
-        form.parentNode.replaceChild(newForm, form);
-        
-        // Add event listener to the new form
-        newForm.addEventListener('submit', sendMail);
-        console.log("Form submit handler attached successfully");
-    } else {
+    if (!form) {
         console.error("Contact form not found with ID 'contactForm'");
+        return;
     }
-});
 
-// Also add a backup listener for dynamically loaded forms
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('contactForm');
-        if (form && !form.hasAttribute('data-listener-added')) {
-            form.setAttribute('data-listener-added', 'true');
-            form.addEventListener('submit', sendMail);
-        }
-    });
-} else {
-    const form = document.getElementById('contactForm');
-    if (form && !form.hasAttribute('data-listener-added')) {
-        form.setAttribute('data-listener-added', 'true');
-        form.addEventListener('submit', sendMail);
+    if (form.dataset.listenerAdded === 'true') {
+        return;
     }
+
+    form.dataset.listenerAdded = 'true';
+    form.addEventListener('submit', sendMail);
+    console.log("Form submit handler attached successfully");
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactForm);
+} else {
+    initContactForm();
 }

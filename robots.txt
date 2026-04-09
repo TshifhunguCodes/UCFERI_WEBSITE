@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Link to your sitemap
+Sitemap: https://tshifhungucodes.github.io/UCFERI_WEBSITE/sitemap.xml
