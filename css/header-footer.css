@@ -110,13 +110,13 @@ body {
 /* HEADER
 /* =============================================================================== */
 
-.header-modern {
-    width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    position: relative;
-    z-index: 1000;
-}
+ .header-modern {
+     width: 100%;
+     background: #ffffff; /* reverted to white */
+     border-bottom: 1px solid #e2e8f0;
+     position: relative;
+     z-index: 1000;
+ }
 
 .header-modern__nav {
     max-width: 90rem;
@@ -329,8 +329,8 @@ body {
     /* INCREASED HEADER BAR HEIGHT */
     .header-modern__nav {
         justify-content: space-between;
-        padding: 1rem 1.2rem 1rem 1.2rem !important;
-        min-height: 80px;
+        padding: 1rem 0.25rem 1rem 0 !important; /* remove left padding so logo sits at the edge */
+        min-height: 96px; /* conservative mobile header height to avoid layout issues */
     }
     
     /* LARGER HAMBURGER MENU */
@@ -353,7 +353,7 @@ body {
         margin-left: 0;
         position: relative;
         left: 0;
-        padding-left: 0.2rem;
+        padding-left: 0px; /* nudge logo closer to left edge */
     }
     
     .logo a {
@@ -362,10 +362,14 @@ body {
         transform: none;
     }
     
-    .logo-image {
-        width: clamp(260px, 70vw, 320px);
-        height: auto;
-        min-height: 55px;
+    .header-modern .logo-image {
+        /* mobile logo scoped to header, conservative size to avoid breaking layout */
+        width: auto;
+        height: 72px;
+        min-height: 72px;
+        max-width: calc(100% - 64px);
+        margin-left: -10px; /* nudge logo slightly more to the left edge */
+        display: block;
     }
     
     .logo-image img {
@@ -377,14 +381,18 @@ body {
         position: fixed;
         top: 0;
         left: 0;
+        right: 0;
         width: 100%;
-        background: white;
-        z-index: 2000;
+        /* ensure it covers the full viewport height to avoid clipping */
+        height: 100vh;
+        max-height: 100vh;
+        /* make the mobile menu background match the mobile header so no white gap appears */
+        background: #8B0000;
+        z-index: 10002;
         transform: translateY(-100%);
         transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        max-height: 90vh;
         overflow-y: auto;
-        border-radius: 0 0 20px 20px;
+        border-radius: 0; /* remove rounded corners so it doesn't clip on some devices */
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
     
@@ -411,17 +419,48 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 20px;
+        padding: 10px 6px; /* bring logo slightly closer to edge */
     }
     
-    .mobile-logo-img {
-        width: min(280px, 70vw);
-        height: 50px;
+    .header-modern .mobile-logo-img {
+        /* mobile logo in menu header scoped to header - limit width so it doesn't span the full menu */
+        width: min(240px, 60vw);
+        height: auto;
+        max-width: 60vw;
         object-fit: contain;
-        object-position: center;
+        object-position: left center;
         background: #ffffff;
         filter: contrast(1.08) saturate(1.06);
     }
+
+/* Make hero slide navigation appear above header (fix missing right arrow) */
+.slide-nav {
+    z-index: 11000 !important;
+}
+
+/* Ensure arrows are visible and clickable above other content */
+.slide-prev,
+.slide-next {
+    z-index: 11001 !important;
+    pointer-events: auto !important;
+    background: transparent !important;
+    color: #fff !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Slightly darken arrow icon on hover for affordance */
+.slide-prev:hover, .slide-next:hover {
+    transform: translateY(-50%) scale(1.05) !important;
+}
+
+/* Position arrows near the viewport edges so they don't overlap content */
+.slide-prev { left: 1px !important; }
+.slide-next { right: 1px !important; }
     
     .mobile-logo-img:hover {
         transform: scale(1.02);
@@ -555,7 +594,7 @@ body {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 1999;
+        z-index: 10001;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -583,9 +622,6 @@ body {
         padding-left: 0.15rem;
     }
     
-    .logo-image {
-        width: clamp(240px, 65vw, 290px);
-    }
     
     .mobile-logo-img {
         width: min(250px, 68vw);
@@ -621,9 +657,7 @@ body {
 }
 
 @media (max-width: 1199px) {
-    .logo-image {
-        width: clamp(200px, 24vw, 270px);
-    }
+    /* logo sizing for mid-size screens handled in specific breakpoints */
 }
 
 /* =============================================================================== */
@@ -826,5 +860,30 @@ body {
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
+    }
+}
+
+/* Safety responsive rules: ensure program/service grids stack on small screens
+   in case other stylesheet order caused desktop grid to persist */
+@media (max-width: 767px) {
+    .programs-grid,
+    .services-grid,
+    .positions-grid,
+    .overview-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    .program-card,
+    .service,
+    .position-card,
+    .overview-image {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
     }
 }
