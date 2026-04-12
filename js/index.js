@@ -172,132 +172,109 @@ function initHeroSlider() {
     });
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-    initHeroSlider();
-});
-
 // =============================================
-// MOBILE MENU - SIMPLE AND CLEAN
+// MOBILE MENU
 // =============================================
 
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (!menuBtn || !mobileMenu) {
-        console.log('Mobile menu not found');
-        return;
-    }
-    
-    // Check if header already exists
-    const existingHeader = mobileMenu.querySelector('.mobile-menu-header');
-    if (!existingHeader) {
-        // Create header with logo
-        const header = document.createElement('div');
-        header.className = 'mobile-menu-header';
-        header.innerHTML = `
-            <div class="mobile-logo-container">
-                <img src="assets/images/logo.png" alt="Logo" class="mobile-logo-img" onerror="this.style.display='none'">
-                <div class="mobile-logo-text">
-                    <span class="mobile-logo-title">CEEIIC</span>
-                    <span class="mobile-logo-subtitle">Student Network</span>
-                </div>
-            </div>
-            <button class="mobile-close-btn">
-                <i class="fas fa-times"></i>
-            </button>
-        `;
-        mobileMenu.insertBefore(header, mobileMenu.firstChild);
-    }
-    
-    // Get close button
-    const closeBtn = mobileMenu.querySelector('.mobile-close-btn');
-    
-    // Function to open menu
+    const closeBtn = document.getElementById('mobile-close-button');
+    const overlay = document.getElementById('mobile-menu-overlay');
+
+    if (!menuBtn || !mobileMenu) return;
+
     function openMenu() {
         mobileMenu.classList.add('open');
-        document.body.classList.add('mobile-menu-active');
-        document.body.style.overflow = 'hidden';
+        mobileMenu.setAttribute('aria-hidden', 'false');
         menuBtn.setAttribute('aria-expanded', 'true');
+        if (overlay) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
-    
-    // Function to close menu
+
     function closeMenu() {
         mobileMenu.classList.remove('open');
-        document.body.classList.remove('mobile-menu-active');
-        document.body.style.overflow = '';
+        mobileMenu.setAttribute('aria-hidden', 'true');
         menuBtn.setAttribute('aria-expanded', 'false');
-        
-        // Close all dropdowns
-        document.querySelectorAll('.mobile-dropdown-toggle.active').forEach(toggle => {
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Collapse all open dropdowns
+        mobileMenu.querySelectorAll('.mobile-dropdown-toggle.active').forEach(function(toggle) {
             toggle.classList.remove('active');
-            const content = toggle.nextElementSibling;
-            if (content) content.classList.remove('show');
+            var content = toggle.nextElementSibling;
+            if (content && content.classList.contains('mobile-dropdown-content')) {
+                content.classList.remove('show');
+            }
         });
     }
-    
-    // Toggle menu on button click
+
+    // Open on hamburger click
     menuBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-        if (mobileMenu.classList.contains('open')) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
+        mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
     });
-    
-    // Close menu on close button click
+
+    // Close on close button
     if (closeBtn) {
         closeBtn.addEventListener('click', closeMenu);
     }
-    
-    // Close menu on Escape key
+
+    // Close on overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+    }
+
+    // Close on Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
             closeMenu();
         }
     });
-    
-    // Close menu when clicking on links (optional)
-    const links = mobileMenu.querySelectorAll('.header-modern__mobile-link');
-    links.forEach(link => {
+
+    // Close when a final link (not a dropdown toggle) is clicked
+    mobileMenu.querySelectorAll('a.mobile-nav-item, a.mobile-sub-item').forEach(function(link) {
         link.addEventListener('click', function() {
-            setTimeout(closeMenu, 300);
+            setTimeout(closeMenu, 200);
         });
     });
 }
 
 // =============================================
-// MOBILE DROPDOWN TOGGLE
+// MOBILE DROPDOWN TOGGLES
 // =============================================
 
 function initDropdowns() {
-    const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
-    
-    dropdownToggles.forEach(toggle => {
-        // Remove any existing onclick to prevent conflicts
-        toggle.removeAttribute('onclick');
-        
+    document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            
-            // Toggle active class
-            this.classList.toggle('active');
-            
-            // Find and toggle the dropdown content
-            const content = this.nextElementSibling;
-            if (content && content.classList.contains('mobile-dropdown-content')) {
-                content.classList.toggle('show');
+
+            var content = this.nextElementSibling;
+            var isOpen = this.classList.contains('active');
+
+            // Close all sibling dropdowns at the same level
+            var parent = this.closest('.header-modern__mobile-links, .mobile-dropdown-content');
+            if (parent) {
+                parent.querySelectorAll(':scope > .mobile-dropdown > .mobile-dropdown-toggle.active').forEach(function(other) {
+                    other.classList.remove('active');
+                    var otherContent = other.nextElementSibling;
+                    if (otherContent) otherContent.classList.remove('show');
+                });
+            }
+
+            // Toggle this one
+            if (!isOpen) {
+                this.classList.add('active');
+                if (content && content.classList.contains('mobile-dropdown-content')) {
+                    content.classList.add('show');
+                }
             }
         });
     });
 }
 
-// =============================================
-// PARTNERS CAROUSEL
-// =============================================
+
 
 function initPartnersCarousel() {
     const carousel = document.querySelector('.partners-carousel');
