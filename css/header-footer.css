@@ -629,16 +629,17 @@ body {
 
     .header-modern__menu-btn {
         display: inline-flex;
-        padding: 0.55rem;
+        padding: 0.65rem; /* slightly larger tappable area */
         margin: 0;
         border: none;
         background: transparent;
         box-shadow: none;
+        margin-left: auto; /* ensure button sits on right */
     }
 
     .header-modern__menu-icon {
-        width: 1.6rem;
-        height: 1.6rem;
+        width: 2rem;
+        height: 2rem;
     }
 
     .logo {
@@ -647,12 +648,12 @@ body {
 
     .header-modern .logo-image {
         width: auto;
-        height: 72px; /* fit inside reduced header */
-        min-height: 48px;
+        height: 56px; /* enlarge but keep inside 56px header */
+        min-height: 40px;
         max-width: 200px;
         margin-left: 0;
         display: block;
-        transform: translateX(-18px);
+        transform: translateX(-14px);
     }
 
     .header-modern .mobile-logo-img {
