@@ -654,7 +654,7 @@ body {
         max-width: 190px;
         margin-left: 0;
         display: block;
-        transform: translateX(-40px); /* nudge logo left */
+        transform: translateX(-28px); /* nudge logo left */
     }
 
     .header-modern .mobile-logo-img {
