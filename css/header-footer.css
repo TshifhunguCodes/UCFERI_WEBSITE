@@ -341,7 +341,7 @@ body {
     /* LARGER HAMBURGER MENU */
     .header-modern__menu-btn {
         display: inline-flex;
-        padding: 0.45rem; /* slightly smaller padding */
+        padding: 0.55rem; /* slightly larger for bigger tappable area */
         margin: 0; /* ensure hamburger sits in its normal place and is clickable */
         transform: none;
         border: none; /* remove desktop border so it doesn't change header height */
@@ -349,11 +349,12 @@ body {
         box-shadow: none;
         align-items: center;
         justify-content: center;
+        margin-left: auto; /* push menu button to the right on mobile */
     }
 
     .header-modern__menu-icon {
-        width: 1.8rem; /* slightly larger than desktop but smaller than before */
-        height: 1.8rem;
+        width: 2.2rem; /* larger hamburger on mobile */
+        height: 2.2rem;
     }
     
     /* LARGER LOGO - POSITIONED CLOSE TO LEFT EDGE BUT NOT TOUCHING */
@@ -372,14 +373,14 @@ body {
     }
     
     .header-modern .logo-image {
-        /* mobile logo: slightly reduced to fit the smaller header */
+        /* mobile logo: enlarge but keep within header height */
         width: auto;
-        height: 80px;
-        min-height: 56px;
+        height: 64px; /* fits within 72px header */
+        min-height: 48px;
         max-width: 220px;
         margin-left: 0;
         display: block;
-        transform: translateX(-24px);
+        transform: translateX(-18px);
     }
     
     .logo-image img {
