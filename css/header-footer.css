@@ -329,6 +329,7 @@ body {
     /* MOBILE HEADER: reduced height and white background for normal appearance */
     .header-modern {
         background: #ffffff;
+        overflow: visible; /* ensure decorative children don't clip the border */
     }
     .header-modern__nav {
         justify-content: space-between;
@@ -340,9 +341,14 @@ body {
     /* LARGER HAMBURGER MENU */
     .header-modern__menu-btn {
         display: inline-flex;
-        padding: 0.6rem; /* reduce button padding so the hamburger appears smaller */
+        padding: 0.45rem; /* slightly smaller padding */
         margin: 0; /* ensure hamburger sits in its normal place and is clickable */
         transform: none;
+        border: none; /* remove desktop border so it doesn't change header height */
+        background: transparent;
+        box-shadow: none;
+        align-items: center;
+        justify-content: center;
     }
 
     .header-modern__menu-icon {
@@ -624,6 +630,9 @@ body {
         display: inline-flex;
         padding: 0.55rem;
         margin: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
     }
 
     .header-modern__menu-icon {
