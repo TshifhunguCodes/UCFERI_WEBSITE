@@ -325,27 +325,26 @@ body {
     .header-modern__links {
         display: none;
     }
-    
-    /* INCREASED HEADER BAR HEIGHT */
+
+    /* MOBILE HEADER: larger logo but reduced header height for balance */
     .header-modern__nav {
         justify-content: space-between;
-        padding: 1rem 0.25rem 1rem 0 !important;/* remove left padding so logo sits at the edge */
-         min-height: 100px; /* conservative mobile header height to avoid layout issues */
-        max-height: 100px;
-        height: 30px;
+        padding: 0.6rem 0.75rem;
+        min-height: 84px; /* reduced mobile header height per request */
+        height: auto;
     }
     
     /* LARGER HAMBURGER MENU */
     .header-modern__menu-btn {
         display: inline-flex;
-        padding: 0.6rem;
+        padding: 0.6rem; /* reduce button padding so the hamburger appears smaller */
         margin: 0; /* ensure hamburger sits in its normal place and is clickable */
         transform: none;
     }
-    
+
     .header-modern__menu-icon {
-        width: 2rem;
-        height: 2rem;
+        width: 1.8rem; /* slightly larger than desktop but smaller than before */
+        height: 1.8rem;
     }
     
     /* LARGER LOGO - POSITIONED CLOSE TO LEFT EDGE BUT NOT TOUCHING */
@@ -364,13 +363,14 @@ body {
     }
     
     .header-modern .logo-image {
-        /* mobile logo scoped to header, conservative size to avoid breaking layout */
+        /* mobile logo: larger and nudged left for visibility */
         width: auto;
-        height: 100px;
-        min-height: 100px;
-        max-width: calc(100% - 64px);
-        margin-left: -40px; /* nudge logo slightly more to the left edge */
+        height: 88px;
+        min-height: 72px;
+        max-width: 240px;
+        margin-left: 0;
         display: block;
+        transform: translateX(-30px); /* move logo left ~30px */
     }
     
     .logo-image img {
@@ -420,14 +420,14 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 6px; /* bring logo slightly closer to edge */
+        padding: 14px 10px; /* more vertical padding to accommodate larger logo */
     }
     
     .header-modern .mobile-logo-img {
-        /* mobile logo in menu header scoped to header - limit width so it doesn't span the full menu */
-        width: min(240px, 60vw);
+        /* mobile logo in menu header: allow slightly larger width */
+        width: min(320px, 70vw);
         height: auto;
-        max-width: 60vw;
+        max-width: 70vw;
         object-fit: contain;
         object-position: left center;
         background: #ffffff;
@@ -605,53 +605,65 @@ body {
     }
 }
 
-/* Mobile - Small Screens */
+
+/* Mobile - Small Screens (<=480px): keep the larger header/logo for visibility */
 @media (max-width: 480px) {
-    /* use same header sizing as the main mobile breakpoint so small phones match larger mobiles */
+    /* Small phones: reduce header height but keep logo prominent */
     .header-modern__nav {
-        padding: 1rem 0.25rem 1rem 0 !important;
-        min-height: 100px;
-        max-height: 100px;
+        padding: 0.5rem 0.6rem;
+        min-height: 84px;
         height: auto;
     }
-    
-    .header-modern__menu-icon {
-        width: 1.9rem;
-        height: 1.9rem;
+
+    .header-modern__menu-btn {
+        display: inline-flex;
+        padding: 0.55rem;
+        margin: 0;
     }
-    
+
+    .header-modern__menu-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
     .logo {
         padding-left: 0;
     }
 
     .header-modern .logo-image {
         width: auto;
-        height: 100px;
-        min-height: 100px;
-        max-width: calc(100% - 64px);
-        margin-left: -40px;
+        height: 88px;
+        min-height: 72px;
+        max-width: 220px;
+        margin-left: 0;
         display: block;
+        transform: translateX(-30px); /* nudge left */
     }
 
     .header-modern .mobile-logo-img {
-        width: min(240px, 60vw);
+        width: min(320px, 70vw);
         height: auto;
-        max-width: 60vw;
+        max-width: 70vw;
     }
-    
+
     .header-modern__mobile-links {
-        padding: 10px 12px 18px 12px;
+        padding: 12px 14px 20px 14px;
     }
-    
+
     .mobile-nav-item {
-        font-size: 13px;
-        padding: 12px 14px;
+        font-size: 14px;
+        padding: 13px 16px;
     }
-    
+
     .mobile-sub-item {
-        font-size: 12px;
-        padding: 9px 14px;
+        font-size: 13px;
+        padding: 10px 16px;
     }
+
+    /* Prevent horizontal overflow and constrain media on small screens */
+    html, body { overflow-x: hidden; }
+    img, picture, video, iframe, svg { max-width: 100%; height: auto; display: block; }
+    .header-modern, .header-modern__mobile-menu, .container { box-sizing: border-box; max-width: 100%; }
 }
 
 /* Tablet Adjustments */
@@ -901,3 +913,6 @@ body {
         padding-right: 14px !important;
     }
 }
+
+
+/* Duplicate small-screen tuning removed — consolidated rules live earlier in this file. */ 
