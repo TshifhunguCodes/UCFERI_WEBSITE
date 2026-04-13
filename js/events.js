@@ -136,7 +136,8 @@ window.openPopup = function(popupId) {
     const popup = document.getElementById(popupId);
     if (popup) {
         popup.classList.add('show');
-        document.body.style.overflow = 'hidden';
+        if (typeof window.lockBodyScroll === 'function') window.lockBodyScroll();
+        else document.body.style.overflow = 'hidden';
     }
 };
 
@@ -144,7 +145,8 @@ window.closePopup = function(popupId) {
     const popup = document.getElementById(popupId);
     if (popup) {
         popup.classList.remove('show');
-        document.body.style.overflow = '';
+        if (typeof window.unlockBodyScroll === 'function') window.unlockBodyScroll();
+        else document.body.style.overflow = '';
     }
 };
 
@@ -152,7 +154,8 @@ window.closePopup = function(popupId) {
 window.onclick = function(event) {
     if (event.target.classList && event.target.classList.contains('popup')) {
         event.target.classList.remove('show');
-        document.body.style.overflow = '';
+        if (typeof window.unlockBodyScroll === 'function') window.unlockBodyScroll();
+        else document.body.style.overflow = '';
     }
 };
 

@@ -189,7 +189,12 @@ function initMobileMenu() {
         mobileMenu.setAttribute('aria-hidden', 'false');
         menuBtn.setAttribute('aria-expanded', 'true');
         if (overlay) overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        // Lock body scroll and compensate for scrollbar width to avoid layout shift
+        if (typeof window.lockBodyScroll === 'function') {
+            window.lockBodyScroll();
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     function closeMenu() {
@@ -197,7 +202,12 @@ function initMobileMenu() {
         mobileMenu.setAttribute('aria-hidden', 'true');
         menuBtn.setAttribute('aria-expanded', 'false');
         if (overlay) overlay.classList.remove('active');
-        document.body.style.overflow = '';
+        // Unlock body scroll and remove any compensation padding
+        if (typeof window.unlockBodyScroll === 'function') {
+            window.unlockBodyScroll();
+        } else {
+            document.body.style.overflow = '';
+        }
 
         // Collapse all open dropdowns
         mobileMenu.querySelectorAll('.mobile-dropdown-toggle.active').forEach(function(toggle) {
@@ -531,3 +541,25 @@ function initAnnouncementBar() {
         }
     });
 }
+
+// Body scroll lock helpers — compute scrollbar width and add equivalent padding-right
+window.lockBodyScroll = function() {
+    try {
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+        if (scrollBarWidth > 0) {
+            document.body.style.paddingRight = scrollBarWidth + 'px';
+        }
+        document.body.style.overflow = 'hidden';
+    } catch (e) {
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.unlockBodyScroll = function() {
+    try {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    } catch (e) {
+        document.body.style.overflow = '';
+    }
+};

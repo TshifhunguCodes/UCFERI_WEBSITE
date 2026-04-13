@@ -311,7 +311,8 @@ window.closePopup = function(popupId) {
     const popup = document.getElementById(popupId);
     if (popup) {
         popup.classList.remove('show');
-        document.body.style.overflow = 'auto';
+        if (typeof window.unlockBodyScroll === 'function') window.unlockBodyScroll();
+        else document.body.style.overflow = 'auto';
     }
 };
 
@@ -320,7 +321,8 @@ window.openPopup = function(popupId) {
     const popup = document.getElementById(popupId);
     if (popup) {
         popup.classList.add('show');
-        document.body.style.overflow = 'hidden';
+        if (typeof window.lockBodyScroll === 'function') window.lockBodyScroll();
+        else document.body.style.overflow = 'hidden';
     }
 };
 
