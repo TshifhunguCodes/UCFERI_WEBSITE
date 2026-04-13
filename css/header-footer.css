@@ -610,11 +610,12 @@ body {
 
 /* Mobile - Small Screens */
 @media (max-width: 480px) {
+    /* use same header sizing as the main mobile breakpoint so small phones match larger mobiles */
     .header-modern__nav {
-        padding: 0.9rem 1rem 0.9rem 1rem !important;
-        min-height: 75px;
-        max-height: 75px;
-        height: 30px;
+        padding: 1rem 0.25rem 1rem 0 !important;
+        min-height: 100px;
+        max-height: 100px;
+        height: auto;
     }
     
     .header-modern__menu-icon {
@@ -623,13 +624,22 @@ body {
     }
     
     .logo {
-        padding-left: 0.15rem;
+        padding-left: 0;
     }
-    
-    
-    .mobile-logo-img {
-        width: min(250px, 68vw);
-        height: 45px;
+
+    .header-modern .logo-image {
+        width: auto;
+        height: 100px;
+        min-height: 100px;
+        max-width: calc(100% - 64px);
+        margin-left: -40px;
+        display: block;
+    }
+
+    .header-modern .mobile-logo-img {
+        width: min(240px, 60vw);
+        height: auto;
+        max-width: 60vw;
     }
     
     .header-modern__mobile-links {
@@ -649,9 +659,12 @@ body {
 
 /* Tablet Adjustments */
 @media (min-width: 768px) and (max-width: 1023px) {
+    /* Tablet: make logo larger so it doesn't appear tiny between mobile and desktop */
     .logo-image {
-        width: 60px;
-        height: 60px;
+        width: auto;
+        height: 92px;
+        min-height: 64px;
+        max-width: 220px;
     }
     
     .nav-link {
