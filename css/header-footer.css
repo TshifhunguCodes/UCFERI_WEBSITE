@@ -618,28 +618,29 @@ body {
 
 /* Mobile - Small Screens (<=480px): keep the larger header/logo for visibility */
 @media (max-width: 480px) {
-    /* Small phones: reduce header height and use white header background */
+    /* Small phones: adjust header, enlarge logo and reposition hamburger */
     .header-modern { background: #ffffff; }
     .header-modern__nav {
-        padding: 0.25rem 0.4rem;
-        min-height: 56px; /* reduced header height for very small screens */
+        padding: 0.3rem 0.45rem;
+        min-height: 100px; /* increase header height to fit larger logo */
         height: auto;
         align-items: center;
     }
 
     .header-modern__menu-btn {
         display: inline-flex;
-        padding: 0.65rem; /* slightly larger tappable area */
+        padding: 0.6rem;
         margin: 0;
         border: none;
         background: transparent;
         box-shadow: none;
-        margin-left: auto; /* ensure button sits on right */
+        margin-left: 0; /* remove auto so we can nudge via right margin */
+        margin-right: 22px; /* move hamburger left from the edge */
     }
 
     .header-modern__menu-icon {
-        width: 2rem;
-        height: 2rem;
+        width: 2.6rem;
+        height: 2.6rem;
     }
 
     .logo {
@@ -648,12 +649,12 @@ body {
 
     .header-modern .logo-image {
         width: auto;
-        height: 56px; /* enlarge but keep inside 56px header */
-        min-height: 40px;
-        max-width: 200px;
+        height: 92px; /* larger logo on very small screens */
+        min-height: 72px;
+        max-width: 260px;
         margin-left: 0;
         display: block;
-        transform: translateX(-14px);
+        transform: translateX(-28px);
     }
 
     .header-modern .mobile-logo-img {
