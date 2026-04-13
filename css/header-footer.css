@@ -326,11 +326,14 @@ body {
         display: none;
     }
 
-    /* MOBILE HEADER: larger logo but reduced header height for balance */
+    /* MOBILE HEADER: reduced height and white background for normal appearance */
+    .header-modern {
+        background: #ffffff;
+    }
     .header-modern__nav {
         justify-content: space-between;
-        padding: 0.6rem 0.75rem;
-        min-height: 84px; /* reduced mobile header height per request */
+        padding: 0.45rem 0.6rem;
+        min-height: 72px; /* reduced mobile header height */
         height: auto;
     }
     
@@ -363,14 +366,14 @@ body {
     }
     
     .header-modern .logo-image {
-        /* mobile logo: larger and nudged left for visibility */
+        /* mobile logo: slightly reduced to fit the smaller header */
         width: auto;
-        height: 88px;
-        min-height: 72px;
-        max-width: 240px;
+        height: 80px;
+        min-height: 56px;
+        max-width: 220px;
         margin-left: 0;
         display: block;
-        transform: translateX(-30px); /* move logo left ~30px */
+        transform: translateX(-24px);
     }
     
     .logo-image img {
@@ -608,12 +611,12 @@ body {
 
 /* Mobile - Small Screens (<=480px): keep the larger header/logo for visibility */
 @media (max-width: 480px) {
-    /* Small phones: reduce header height and increase logo a bit for visibility */
+    /* Small phones: reduce header height and use white header background */
+    .header-modern { background: #ffffff; }
     .header-modern__nav {
-        padding: 0.35rem 0.5rem;
-        min-height: 80px; /* reduced header height */
-        max-height: 80px;
-        height: 30px;
+        padding: 0.25rem 0.4rem;
+        min-height: 56px; /* reduced header height for very small screens */
+        height: auto;
         align-items: center;
     }
 
@@ -634,12 +637,12 @@ body {
 
     .header-modern .logo-image {
         width: auto;
-        height: 104px; /* slightly larger logo */
-        min-height: 80px;
-        max-width: 240px;
+        height: 72px; /* fit inside reduced header */
+        min-height: 48px;
+        max-width: 200px;
         margin-left: 0;
         display: block;
-        transform: translateX(-20px); /* smaller left nudge to avoid clipping */
+        transform: translateX(-18px);
     }
 
     .header-modern .mobile-logo-img {
