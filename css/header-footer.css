@@ -339,8 +339,7 @@ body {
     .header-modern__menu-btn {
         display: inline-flex;
         padding: 0.6rem;
-        margin-right: 20px; /* move hamburger menu to the right edge */ 
-        margin-left: -50px; /* nudge hamburger menu closer to the left edge */
+        margin: 0; /* ensure hamburger sits in its normal place and is clickable */
         transform: none;
     }
     
@@ -435,15 +434,14 @@ body {
         filter: contrast(1.08) saturate(1.06);
     }
 
-/* Make hero slide navigation appear above header (fix missing right arrow) */
+/* Hero slide navigation: keep below header so header controls remain clickable */
 .slide-nav {
-    z-index: 11000 !important;
+    z-index: 900 !important;
 }
 
-/* Ensure arrows are visible and clickable above other content */
 .slide-prev,
 .slide-next {
-    z-index: 11001 !important;
+    z-index: 901 !important;
     pointer-events: auto !important;
     background: transparent !important;
     color: #fff !important;
@@ -455,13 +453,12 @@ body {
     justify-content: center !important;
 }
 
-/* Slightly darken arrow icon on hover for affordance */
 .slide-prev:hover, .slide-next:hover {
     transform: translateY(-50%) scale(1.05) !important;
 }
 
-/* Position arrows near the viewport edges so they don't overlap content */
-.slide-prev { left: 12px ; }
+/* Default arrow positions for mobile/tablet */
+.slide-prev { left: 12px; }
 .slide-next { right: 12px; }
     
     .mobile-logo-img:hover {
