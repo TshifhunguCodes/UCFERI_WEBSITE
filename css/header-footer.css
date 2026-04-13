@@ -329,8 +329,8 @@ body {
     /* INCREASED HEADER BAR HEIGHT */
     .header-modern__nav {
         justify-content: space-between;
-        padding: 1rem 0.25rem 1rem 0 ; /* remove left padding so logo sits at the edge */
-        min-height: 100px; /* conservative mobile header height to avoid layout issues */
+        padding: 1rem 0.25rem 1rem 0 !important;/* remove left padding so logo sits at the edge */
+         min-height: 100px; /* conservative mobile header height to avoid layout issues */
         max-height: 100px;
         height: 30px;
     }
@@ -613,6 +613,8 @@ body {
     .header-modern__nav {
         padding: 0.9rem 1rem 0.9rem 1rem !important;
         min-height: 75px;
+        max-height: 75px;
+        height: 30px;
     }
     
     .header-modern__menu-icon {
