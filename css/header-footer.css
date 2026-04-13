@@ -329,16 +329,18 @@ body {
     /* INCREASED HEADER BAR HEIGHT */
     .header-modern__nav {
         justify-content: space-between;
-        padding: 1rem 0.25rem 1rem 0 !important; /* remove left padding so logo sits at the edge */
-        min-height: 96px; /* conservative mobile header height to avoid layout issues */
+        padding: 1rem 0.25rem 1rem 0 ; /* remove left padding so logo sits at the edge */
+        min-height: 100px; /* conservative mobile header height to avoid layout issues */
+        max-height: 100px;
+        height: 30px;
     }
     
     /* LARGER HAMBURGER MENU */
     .header-modern__menu-btn {
         display: inline-flex;
         padding: 0.6rem;
-        margin-right: 0;
-        margin-left: 0;
+        margin-right: 20px; /* move hamburger menu to the right edge */ 
+        margin-left: -50px; /* nudge hamburger menu closer to the left edge */
         transform: none;
     }
     
@@ -365,10 +367,10 @@ body {
     .header-modern .logo-image {
         /* mobile logo scoped to header, conservative size to avoid breaking layout */
         width: auto;
-        height: 72px;
-        min-height: 72px;
+        height: 100px;
+        min-height: 100px;
         max-width: calc(100% - 64px);
-        margin-left: -10px; /* nudge logo slightly more to the left edge */
+        margin-left: -40px; /* nudge logo slightly more to the left edge */
         display: block;
     }
     
@@ -459,8 +461,8 @@ body {
 }
 
 /* Position arrows near the viewport edges so they don't overlap content */
-.slide-prev { left: 1px !important; }
-.slide-next { right: 1px !important; }
+.slide-prev { left: 12px ; }
+.slide-next { right: 12px; }
     
     .mobile-logo-img:hover {
         transform: scale(1.02);
