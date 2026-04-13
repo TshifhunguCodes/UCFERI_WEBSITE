@@ -649,12 +649,12 @@ body {
 
     .header-modern .logo-image {
         width: auto;
-        height: 55px; /* reduced logo height for compact header */
+        height: 60px; /* fits within compact header */
         min-height: 40px;
-        max-width: 220px;
+        max-width: 190px;
         margin-left: 0;
         display: block;
-        transform: translateX(-18px); /* nudge logo left */
+        transform: translateX(-40px); /* nudge logo left */
     }
 
     .header-modern .mobile-logo-img {
@@ -687,19 +687,18 @@ body {
         width: 44px !important; /* larger touch area */
         height: 44px !important;
         z-index: 1200 !important; /* above hero content */
-        background: rgba(0,0,0,0.45) !important;
+       
         color: #fff !important;
         border-radius: 50% !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
-        backdrop-filter: blur(3px) !important;
+      
         opacity: 0.98 !important;
     }
 
-    .slide-prev { left: 8px !important; }
-    .slide-next { right: 8px !important; }
+    .slide-prev { left: -15px !important; }
+    .slide-next { right: -15px !important; }
 
     /* Ensure inner icon scales to the container */
     .slide-prev svg, .slide-next svg, .slide-prev i, .slide-next i {
