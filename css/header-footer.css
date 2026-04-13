@@ -611,8 +611,9 @@ body {
     /* Small phones: reduce header height and increase logo a bit for visibility */
     .header-modern__nav {
         padding: 0.35rem 0.5rem;
-        min-height: 50px; /* reduced header height */
-        height: auto;
+        min-height: 80px; /* reduced header height */
+        max-height: 80px;
+        height: 30px;
         align-items: center;
     }
 
