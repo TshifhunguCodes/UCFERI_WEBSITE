@@ -621,7 +621,7 @@ body {
     .header-modern { background: #ffffff; border-bottom: 3px solid #0070f3; }
     .header-modern__nav {
         padding: 0.2rem 0.45rem;
-        min-height: 56px; /* compact header height */
+        min-height: 67px; /* compact header height */
         height: auto;
         align-items: center;
         display: flex;
@@ -642,14 +642,14 @@ body {
 
     .header-modern__menu-icon {
         width: 2.0rem;
-        height: 2.0rem;
+        height: 3.0rem;
     }
 
     .logo { padding-left: 0; }
 
     .header-modern .logo-image {
         width: auto;
-        height: 48px; /* reduced logo height for compact header */
+        height: 55px; /* reduced logo height for compact header */
         min-height: 40px;
         max-width: 220px;
         margin-left: 0;
