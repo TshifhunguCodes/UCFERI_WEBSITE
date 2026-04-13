@@ -616,65 +616,65 @@ body {
 }
 
 
-/* Mobile - Small Screens (<=480px): keep the larger header/logo for visibility */
+/* Mobile - Small Screens (<=480px): compact header, left-shifted logo, smaller hamburger, blue bottom border */
 @media (max-width: 480px) {
-    /* Small phones: adjust header, enlarge logo and reposition hamburger */
-    .header-modern { background: #ffffff; }
+    .header-modern { background: #ffffff; border-bottom: 3px solid #0070f3; }
     .header-modern__nav {
-        padding: 0.3rem 0.45rem;
-        min-height: 100px; /* increase header height to fit larger logo */
+        padding: 0.2rem 0.45rem;
+        min-height: 56px; /* compact header height */
         height: auto;
         align-items: center;
+        display: flex;
+        justify-content: space-between;
     }
 
     .header-modern__menu-btn {
         display: inline-flex;
-        padding: 0.6rem;
+        padding: 0.4rem;
         margin: 0;
         border: none;
         background: transparent;
         box-shadow: none;
-        margin-left: 0; /* remove auto so we can nudge via right margin */
-        margin-right: 22px; /* move hamburger left from the edge */
+        margin-left: 0;
+        margin-right: 12px; /* hamburger slightly inset from edge */
+        align-self: center;
     }
 
     .header-modern__menu-icon {
-        width: 2.6rem;
-        height: 2.6rem;
+        width: 2.0rem;
+        height: 2.0rem;
     }
 
-    .logo {
-        padding-left: 0;
-    }
+    .logo { padding-left: 0; }
 
     .header-modern .logo-image {
         width: auto;
-        height: 92px; /* larger logo on very small screens */
-        min-height: 72px;
-        max-width: 260px;
+        height: 48px; /* reduced logo height for compact header */
+        min-height: 40px;
+        max-width: 220px;
         margin-left: 0;
         display: block;
-        transform: translateX(-28px);
+        transform: translateX(-18px); /* nudge logo left */
     }
 
     .header-modern .mobile-logo-img {
-        width: min(320px, 70vw);
+        width: min(220px, 65vw);
         height: auto;
-        max-width: 70vw;
+        max-width: 65vw;
     }
 
     .header-modern__mobile-links {
-        padding: 12px 14px 20px 14px;
+        padding: 10px 12px 18px 12px;
     }
 
     .mobile-nav-item {
         font-size: 14px;
-        padding: 13px 16px;
+        padding: 12px 14px;
     }
 
     .mobile-sub-item {
         font-size: 13px;
-        padding: 10px 16px;
+        padding: 10px 14px;
     }
 
     /* Prevent horizontal overflow and constrain media on small screens */
