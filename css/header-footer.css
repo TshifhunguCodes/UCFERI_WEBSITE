@@ -608,11 +608,12 @@ body {
 
 /* Mobile - Small Screens (<=480px): keep the larger header/logo for visibility */
 @media (max-width: 480px) {
-    /* Small phones: reduce header height but keep logo prominent */
+    /* Small phones: reduce header height and increase logo a bit for visibility */
     .header-modern__nav {
-        padding: 0.5rem 0.6rem;
-        min-height: 84px;
+        padding: 0.35rem 0.5rem;
+        min-height: 64px; /* reduced header height */
         height: auto;
+        align-items: center;
     }
 
     .header-modern__menu-btn {
@@ -632,12 +633,12 @@ body {
 
     .header-modern .logo-image {
         width: auto;
-        height: 88px;
-        min-height: 72px;
-        max-width: 220px;
+        height: 104px; /* slightly larger logo */
+        min-height: 80px;
+        max-width: 240px;
         margin-left: 0;
         display: block;
-        transform: translateX(-30px); /* nudge left */
+        transform: translateX(-20px); /* smaller left nudge to avoid clipping */
     }
 
     .header-modern .mobile-logo-img {
@@ -664,6 +665,16 @@ body {
     html, body { overflow-x: hidden; }
     img, picture, video, iframe, svg { max-width: 100%; height: auto; display: block; }
     .header-modern, .header-modern__mobile-menu, .container { box-sizing: border-box; max-width: 100%; }
+
+    /* Move hero slide arrows toward the edges on small screens and reduce their size */
+    .slide-prev, .slide-next {
+        width: 36px !important;
+        height: 36px !important;
+        z-index: 950 !important;
+    }
+
+    .slide-prev { left: 6px !important; }
+    .slide-next { right: 6px !important; }
 }
 
 /* Tablet Adjustments */
