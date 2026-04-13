@@ -618,7 +618,7 @@ body {
 
 /* Mobile - Small Screens (<=480px): compact header, left-shifted logo, smaller hamburger, blue bottom border */
 @media (max-width: 480px) {
-    .header-modern { background: #ffffff; border-bottom: 3px solid #0070f3; }
+    .header-modern { background: #ffffff; border-bottom: 3px solid #03224d; }
     .header-modern__nav {
         padding: 0.2rem 0.45rem;
         min-height: 67px; /* compact header height */
