@@ -905,4 +905,21 @@ h1, h2, h3, h4 {
     .faq-question h3 {
         font-size: 0.9rem;
     }
+
+    /* Center incubation hero image on small screens */
+    .hero-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 12px;
+    }
+
+    .hero-image-container .hero-image {
+        max-width: 92%;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+    }
 }

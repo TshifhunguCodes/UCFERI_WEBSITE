@@ -1,31 +1,7 @@
 // CEEIIC Programs Page - Clean JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    // =============================================
-    // Mobile Menu Toggle
-    // =============================================
-    const mobileMenuBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
-            mobileMenu.classList.toggle('open', !isExpanded);
-            document.body.classList.toggle('mobile-menu-active', !isExpanded);
-            document.body.style.overflow = isExpanded ? '' : 'hidden';
-        });
-    }
-
-    // Mobile Dropdown Toggle (Exposed globally for inline onclick)
-    window.toggleMobileDropdown = function(button) {
-        button.classList.toggle('active');
-        const content = button.nextElementSibling;
-        if (content) {
-            content.classList.toggle('show');
-        }
-    };
+  
 
     // =============================================
     // Hero Slider (if exists on page)

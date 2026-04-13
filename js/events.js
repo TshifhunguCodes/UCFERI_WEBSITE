@@ -164,7 +164,9 @@ window.onclick = function(event) {
 // =============================================
 window.toggleMobileDropdown = function(button) {
     button.classList.toggle('active');
-    const dropdownContent = button.nextElementSibling;
+    // Find the dropdown content within the closest .mobile-dropdown container
+    const container = button.closest('.mobile-dropdown');
+    const dropdownContent = container ? container.querySelector('.mobile-dropdown-content') : null;
     if (dropdownContent && dropdownContent.classList.contains('mobile-dropdown-content')) {
         dropdownContent.classList.toggle('show');
     }
