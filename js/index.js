@@ -1,4 +1,4 @@
-// Complete JavaScript for UCfERI Website - Clean Version
+
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded - initializing all components');
