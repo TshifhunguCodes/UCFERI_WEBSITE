@@ -82,7 +82,7 @@
 
             <!-- Desktop Navigation -->
             <ul class="header-modern__links">
-                <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
 
                 <li class="dropdown">
                     <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us <i
@@ -475,6 +475,28 @@
             <div class="events-grid">
 
                 <div class="event-card">
+                    <div class="event-image" onclick="openPopup('popup1')">
+                        <img src="assets/images/events/IKSSAP.jpg" alt="Local Competition">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-badge">IKSSAP & SYA</span>
+                        <h3>World Art Day</h3>
+                        <p class="event-description">Embracing Art For Healing And Mental Heath </p>
+
+                        <div class="event-details">
+                            <p><i class="fas fa-calendar"></i> <strong>Date:</strong> 15 April 2026</p>
+                            <p><i class="fas fa-clock"></i> <strong>Time:</strong> 09:00 - 14:00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Venue:</strong> UCFERI Auditorium</p>
+                            <p><i class="fas fa-university"></i> <strong>Location:</strong> University Of Venda</p>
+                        </div>
+                        <div class="event-buttons">
+                            <a href="tel:+27661049256"
+                                class="btn btn-primary btn-apply">More Information</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
                     <div class="event-image" onclick="openPopup('popup2')">
                         <img src="assets/images/events/enactus-image.jpeg" alt="Local Competition">
                     </div>
@@ -498,7 +520,7 @@
                 </div>
 
                 <div class="event-card">
-                    <div class="event-image" onclick="openPopup('popup1')">
+                    <div class="event-image" onclick="openPopup('popup3')">
                         <img src="assets/images/events/waste-challenege-image.jpeg" alt="Waste Innovation Challenge">
                     </div>
                     <div class="event-content">
@@ -522,36 +544,7 @@
                 </div>
 
 
-                <div class="event-card">
-                    <div class="event-image" onclick="openPopup('popup3')">
-                        <img src="assets/images/events/map-challenge-image.jpeg" alt="The System Challenge">
-                    </div>
-                    <div class="event-content">
-                        <h3>THE SYSTEM</h3>
-                        <p class="subtitle">University of Venda - Creating Future Leaders</p>
-                        <p class="event-description">An interdisciplinary challenge that requires participants to use a
-                            systems-thinking approach to problem-solving.</p>
-                        <div class="challenge-features">
-                            <div class="feature-item">
-                                <i class="fas fa-brain"></i>
-                                <span>Develop systems thinking skills</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-users"></i>
-                                <span>Connect with socially conscious students</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-globe"></i>
-                                <span>Share findings at Global Finals</span>
-                            </div>
-                        </div>
-                        <div class="event-buttons">
-                            <a href="events.html" class="btn btn-outline btn-learn">Learn More</a>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-gA_v4dAwwh5n6yr2bOqxsj7F_nHz5WJwb5C4NaN6DTNeqQ/viewform"
-                                class="btn btn-primary btn-apply">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
+                
 
             </div>
         </div>
@@ -561,7 +554,7 @@
         <!-- Popups for full images -->
         <div id="popup1" class="popup">
             <div class="popup-content">
-                <img src="assets/images/events/waste-challenege-image.jpeg" alt="Waste Innovation Challenge">
+                <img src="assets/images/events/IKSSAP.jpg" alt="Waste Innovation Challenge">
                 <button class="close-btn" onclick="closePopup('popup1')">Close</button>
             </div>
         </div>
@@ -575,7 +568,7 @@
 
         <div id="popup3" class="popup">
             <div class="popup-content">
-                <img src="assets/images/events/map-challenge-image.jpeg" alt="The System Challenge">
+                <img src="assets/images/events/waste-challenege-image.jpeg" alt="The System Challenge">
                 <button class="close-btn" onclick="closePopup('popup3')">Close</button>
             </div>
         </div>

@@ -29,6 +29,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.png">
     <link rel="manifest" href="assets/images/favicon_io/site.webmanifest">
+    <!-- jsPDF CDN (required for PDF download) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body class="social-announcement-page">
@@ -70,7 +72,7 @@
 
         <!-- Desktop Navigation -->
         <ul class="header-modern__links">
-            <li><a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
 
             <li class="dropdown">
                 <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i></a>
@@ -198,24 +200,72 @@
 
 </section>
 
-    <!-- ================================================-->
-    <!-- Page Header / Hero Section -->
-    <!-- ================================================-->
-    <section class="page-header">
-        <div class="hero-background">
-            <img src="assets/images/vision-mission-banner.png" alt="UCfERI Campus" class="hero-bg-img">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="container hero-content">
-            <h1>About UCfERI</h1>
-            <p>Empowering rural entrepreneurs, accelerating sustainable businesses</p>
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <i class="fas fa-chevron-right"></i>
-                <span>About Us</span>
+<!-- ================================================-->
+<!-- Page Header / Hero Section with 3 Interchangeable Slides -->
+<!-- ================================================-->
+<section class="page-header" id="heroSlideshowSection">
+    <div class="hero-background-slider" id="heroBgSlider">
+        <!-- Slide 1 - About UCfERI -->
+        <div class="hero-slide active" data-slide="0">
+            <div class="hero-background">
+                <img src="assets/images/about/hero1.jpeg" alt="UCfERI Campus" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <h1>About UCfERI</h1>
+                <p>Empowering rural entrepreneurs, accelerating sustainable businesses</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>About Us</span>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Slide 2 - Same H1 and Paragraph as Slide 1 -->
+        <div class="hero-slide" data-slide="1">
+            <div class="hero-background">
+                <img src="assets/images/about/hero2.jpg" alt="UCfERI Campus" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <h1>About UCfERI</h1>
+                <p>Empowering rural entrepreneurs, accelerating sustainable businesses</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>About Us</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 - Same H1 and Paragraph as Slide 1 -->
+        <div class="hero-slide" data-slide="2">
+            <div class="hero-background">
+                <img src="assets/images/about/hero3.jpg" alt="UCfERI Campus" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <h1>About UCfERI</h1>
+                <p>Empowering rural entrepreneurs, accelerating sustainable businesses</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>About Us</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Scroll Indicator -->
+    <div class="hero-scroll-indicator">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</section>
 
     <!--==================================================-->
     <!-- About Content Section: Mission & Vision -->
@@ -492,6 +542,7 @@
         </div>
     </section>
 
+
     <!--=============================================================-->
     <!-- Services Section -->
     <!--=============================================================-->
@@ -527,130 +578,251 @@
         </div>
     </section>
 
-    <!--=============================================================-->
-    <!-- Abbreviations Guide -->
-    <!--=============================================================-->
-    <section class="abbreviations-section" id="abbreviations">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Abbreviations Guide</h2>
-                <p class="section-subtitle">A quick reference for the terms used across the UCfERI website</p>
-            </div>
+    
 
-            <div class="abbreviations-grid">
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">UCfERI</span>
-                    <p class="abbreviation-meaning">UNIVEN Centre for Entrepreneurship and Rapid Incubation</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">UNIVEN</span>
-                    <p class="abbreviation-meaning">University of Venda</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">CEEIIC</span>
-                    <p class="abbreviation-meaning">Community Engagement, Entrepreneurship, Inclusive Innovation and
-                        Commercialisation</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">CEEIIC-SN</span>
-                    <p class="abbreviation-meaning">CEEIIC Student Network</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">SMME</span>
-                    <p class="abbreviation-meaning">Small, Medium and Micro Enterprise</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">SME</span>
-                    <p class="abbreviation-meaning">Small and Medium Enterprise</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">CIPC</span>
-                    <p class="abbreviation-meaning">Companies and Intellectual Property Commission</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">SARS</span>
-                    <p class="abbreviation-meaning">South African Revenue Service</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">ISO</span>
-                    <p class="abbreviation-meaning">International Organization for Standardization</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">IP</span>
-                    <p class="abbreviation-meaning">Intellectual Property</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">DHET</span>
-                    <p class="abbreviation-meaning">Department of Higher Education and Training</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">DTI</span>
-                    <p class="abbreviation-meaning">Department of Trade and Industry</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">EDHE</span>
-                    <p class="abbreviation-meaning">Entrepreneurship Development in Higher Education</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">NIPMO</span>
-                    <p class="abbreviation-meaning">National Intellectual Property Management Office</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">SEDA</span>
-                    <p class="abbreviation-meaning">Small Enterprise Development Agency</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">SABC</span>
-                    <p class="abbreviation-meaning">South African Broadcasting Corporation</p>
-                </article>
-                <article class="abbreviation-card">
-                    <span class="abbreviation-code">TIA</span>
-                    <p class="abbreviation-meaning">Technology Innovation Agency</p>
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">SWEEP</span>
-                    <p class="abbreviation-meaning">Add manually</p>
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">ABSA</span>
-                    <p class="abbreviation-meaning">Absa Bank</p>
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">BMFSC</span>
-                    <p class="abbreviation-meaning">Bureau of Market Research, Faculty of Social Sciences, UNIVEN</p>
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">CBA</span>
-                    <p class="abbreviation-meaning">Community Based Assessment</p>      
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">DCEEIIC</span>
-                    <p class="abbreviation-meaning">Directorate of Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation</p>       
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">ENACTUS</span>
-                    <p class="abbreviation-meaning">Entrepreneurial Action FOR US</p>
-                </article>
-                <article class="abbreviation-card is-manual">   
-                    <span class="abbreviation-code">ESAP</span>
-                    <p class="abbreviation-meaning">Entrepreneurship Support Access Point</p>   
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">IKS</span>
-                    <p class="abbreviation-meaning">INDIGENOUS Knowledge Systems</p>
-                </article>
-                <article class="abbreviation-card is-manual">
-                    <span class="abbreviation-code">IKSAP</span>
-                    <p class="abbreviation-meaning">INDIGENOUS Knowledge Systems Acceleration Programme</p>
-            </div>
-
-            <div class="abbreviations-note">
-                <strong>Needs manual input:</strong>
-                <span>ABSA, BMFSC, CBA, DCEEIIC, ENACTUS, ESAP, HULT, IKS, IKSAP, PWA, RSVP, SEDFA, SFFP, YAEI,
-                    YLC</span>
-            </div>
+       <!--=============================================================-->
+<!-- Abbreviations Guide Section -->
+<!--=============================================================-->
+<section class="abbreviations-section" id="abbreviations">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Abbreviations Guide</h2>
+            <p class="section-subtitle">A quick reference for the terms used across the UCfERI website</p>
         </div>
-    </section>
+
+        <!-- Toolbar: search + download -->
+        <div class="abbr-toolbar">
+            <div class="abbr-search-wrap">
+                <svg class="abbr-search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input
+                    type="text"
+                    id="abbrSearch"
+                    class="abbr-search"
+                    placeholder="Search abbreviations…"
+                    aria-label="Search abbreviations"
+                />
+            </div>
+
+            <button class="abbr-download-btn" id="downloadAbbrPdf" aria-label="Download all abbreviations as PDF">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+            </button>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="abbr-stats" id="abbrStats">
+            <span id="abbrVisibleCount">0</span> of <span id="abbrTotalCount">0</span> abbreviations shown
+        </div>
+
+        <!-- Grid -->
+        <div class="abbreviations-grid" id="abbreviationsGrid">
+
+            <!-- Standard abbreviations -->
+            <article class="abbreviation-card" data-code="UCfERI" data-meaning="UNIVEN Centre for Entrepreneurship and Rapid Incubation">
+                <span class="abbreviation-code">UCfERI</span>
+                <p class="abbreviation-meaning">UNIVEN Centre for Entrepreneurship and Rapid Incubation</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="UNIVEN" data-meaning="University of Venda">
+                <span class="abbreviation-code">UNIVEN</span>
+                <p class="abbreviation-meaning">University of Venda</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="CEEIIC" data-meaning="Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation">
+                <span class="abbreviation-code">CEEIIC</span>
+                <p class="abbreviation-meaning">Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="CEEIIC-SN" data-meaning="CEEIIC Student Network">
+                <span class="abbreviation-code">CEEIIC-SN</span>
+                <p class="abbreviation-meaning">CEEIIC Student Network</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="SMME" data-meaning="Small, Medium and Micro Enterprise">
+                <span class="abbreviation-code">SMME</span>
+                <p class="abbreviation-meaning">Small, Medium and Micro Enterprise</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="SME" data-meaning="Small and Medium Enterprise">
+                <span class="abbreviation-code">SME</span>
+                <p class="abbreviation-meaning">Small and Medium Enterprise</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="CIPC" data-meaning="Companies and Intellectual Property Commission">
+                <span class="abbreviation-code">CIPC</span>
+                <p class="abbreviation-meaning">Companies and Intellectual Property Commission</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="SARS" data-meaning="South African Revenue Service">
+                <span class="abbreviation-code">SARS</span>
+                <p class="abbreviation-meaning">South African Revenue Service</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="ISO" data-meaning="International Organization for Standardization">
+                <span class="abbreviation-code">ISO</span>
+                <p class="abbreviation-meaning">International Organization for Standardization</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="IP" data-meaning="Intellectual Property">
+                <span class="abbreviation-code">IP</span>
+                <p class="abbreviation-meaning">Intellectual Property</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="DHET" data-meaning="Department of Higher Education and Training">
+                <span class="abbreviation-code">DHET</span>
+                <p class="abbreviation-meaning">Department of Higher Education and Training</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="DTI" data-meaning="Department of Trade and Industry">
+                <span class="abbreviation-code">DTI</span>
+                <p class="abbreviation-meaning">Department of Trade and Industry</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="EDHE" data-meaning="Entrepreneurship Development in Higher Education">
+                <span class="abbreviation-code">EDHE</span>
+                <p class="abbreviation-meaning">Entrepreneurship Development in Higher Education</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="NIPMO" data-meaning="National Intellectual Property Management Office">
+                <span class="abbreviation-code">NIPMO</span>
+                <p class="abbreviation-meaning">National Intellectual Property Management Office</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="SEDA" data-meaning="Small Enterprise Development Agency">
+                <span class="abbreviation-code">SEDA</span>
+                <p class="abbreviation-meaning">Small Enterprise Development Agency</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="SABC" data-meaning="South African Broadcasting Corporation">
+                <span class="abbreviation-code">SABC</span>
+                <p class="abbreviation-meaning">South African Broadcasting Corporation</p>
+            </article>
+
+            <article class="abbreviation-card" data-code="TIA" data-meaning="Technology Innovation Agency">
+                <span class="abbreviation-code">TIA</span>
+                <p class="abbreviation-meaning">Technology Innovation Agency</p>
+            </article>
+
+            <!-- Manual abbreviations -->
+            <article class="abbreviation-card is-manual" data-code="ABSA" data-meaning="Amalgamated Banks of South Africa">
+                <span class="abbreviation-code">ABSA</span>
+                <p class="abbreviation-meaning">Amalgamated Banks of South Africa</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="BMFSC" data-meaning="Bureau of Market Research, Faculty of Social Sciences, UNIVEN">
+                <span class="abbreviation-code">BMFSC</span>
+                <p class="abbreviation-meaning">Bureau of Market Research, Faculty of Social Sciences, UNIVEN</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="CBA" data-meaning="Community Based Assessment">
+                <span class="abbreviation-code">CBA</span>
+                <p class="abbreviation-meaning">Community Based Assessment</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="DCEEIIC" data-meaning="Directorate of Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation">
+                <span class="abbreviation-code">DCEEIIC</span>
+                <p class="abbreviation-meaning">Directorate of Community Engagement, Entrepreneurship, Inclusive Innovation and Commercialisation</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="ENACTUS" data-meaning="Entrepreneurial Action FOR US">
+                <span class="abbreviation-code">ENACTUS</span>
+                <p class="abbreviation-meaning">Entrepreneurial Action FOR US</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="ESAP" data-meaning="Entrepreneurship Support Access Point">
+                <span class="abbreviation-code">ESAP</span>
+                <p class="abbreviation-meaning">Entrepreneurship Support Access Point</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="IKS" data-meaning="Indigenous Knowledge Systems">
+                <span class="abbreviation-code">IKS</span>
+                <p class="abbreviation-meaning">Indigenous Knowledge Systems</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="IKSAP" data-meaning="Indigenous Knowledge Systems Acceleration Programme">
+                <span class="abbreviation-code">IKSAP</span>
+                <p class="abbreviation-meaning">Indigenous Knowledge Systems Acceleration Programme</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="PWA" data-meaning="Pitching Workshop for Entrepreneurs">
+                <span class="abbreviation-code">PWA</span>
+                <p class="abbreviation-meaning">Pitching Workshop for Entrepreneurs</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="RSVP" data-meaning="Rapid Support for Viable Projects">
+                <span class="abbreviation-code">RSVP</span>
+                <p class="abbreviation-meaning">Rapid Support for Viable Projects</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="SEDFA" data-meaning="Small Enterprise Development and Finance Agency">
+                <span class="abbreviation-code">SEDFA</span>
+                <p class="abbreviation-meaning">Small Enterprise Development and Finance Agency</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="SFP" data-meaning="Startup Founder Pitch">
+                <span class="abbreviation-code">SFP</span>
+                <p class="abbreviation-meaning">Startup Founder Pitch</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="SWEEP" data-meaning="SWEEP — definition to be added">
+                <span class="abbreviation-code">SWEEP</span>
+                <p class="abbreviation-meaning">SWEEP — definition to be added</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="YAEI" data-meaning="Youth Agri-Entrepreneurship Initiative">
+                <span class="abbreviation-code">YAEI</span>
+                <p class="abbreviation-meaning">Youth Agri-Entrepreneurship Initiative</p>
+            </article>
+
+            <article class="abbreviation-card is-manual" data-code="YLC" data-meaning="Youth Leadership Club">
+                <span class="abbreviation-code">YLC</span>
+                <p class="abbreviation-meaning">Youth Leadership Club</p>
+            </article>
+
+        </div><!-- /.abbreviations-grid -->
+
+        <!-- No results message -->
+        <div class="abbr-no-results" id="abbrNoResults" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+            </svg>
+            <p>No abbreviations match "<strong id="abbrSearchTerm"></strong>"</p>
+        </div>
+
+        <!-- Load More / Collapse controls -->
+        <div class="abbr-load-controls" id="abbrLoadControls">
+            <button class="abbr-load-btn" id="abbrLoadMore" aria-label="Load more abbreviations">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+                Show More
+                <span class="abbr-load-badge" id="abbrRemaining"></span>
+            </button>
+
+            <button class="abbr-collapse-btn" id="abbrCollapse" aria-label="Collapse abbreviations" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="18 15 12 9 6 15"/>
+                </svg>
+                Show Less
+            </button>
+        </div>
+
+        <!-- Legend note -->
+        <div class="abbreviations-note">
+            <strong>Legend:</strong>
+            Cards with a <span class="abbr-legend-dashed">dashed top border</span> are manually added entries.
+            Solid-border cards are from the standard UCfERI reference list.
+        </div>
+
+    </div><!-- /.container -->
+</section>
 
     <!-- ================================================== -->
     <!-- Footer -->
@@ -733,6 +905,7 @@
         </div>
     </footer>
      <script src="js/index.js"></script>
+     <script src="js/about.js"></script>
 </body>
 
 </html>

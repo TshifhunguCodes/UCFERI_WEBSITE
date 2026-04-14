@@ -66,6 +66,48 @@ body {
     align-items: center;
 }
 
+.announcement-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+}
+
+.announcement-tag,
+.announcement-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.announcement-tag {
+    justify-self: start;
+}
+
+.announcement-text {
+    justify-self: center;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.announcement-link {
+    justify-self: end;
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.announcement-link:hover {
+    opacity: 0.82;
+}
+
 /* Social Links in Announcement Bar */
 @keyframes socialFloat {
     0%, 100% { transform: translateY(0); }
@@ -104,6 +146,24 @@ body {
     background: rgba(255, 255, 255, 0.24);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     transform: translateY(-3px) scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .announcement-content {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .announcement-tag,
+    .announcement-text,
+    .announcement-link {
+        justify-self: center;
+    }
+
+    .announcement-text {
+        letter-spacing: 0.03em;
+    }
 }
 
 /* =============================================================================== */
