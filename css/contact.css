@@ -489,96 +489,91 @@ h1, h2, h3, h4 {
     }
 }
 
-/* ==================================================== */
-/* Team Contacts */
-/* ==================================================== */
-.team-contacts {
-    padding: 80px 0;
+/* ==================================================================== */
+/* Operational Contact Section */
+/* ==================================================================== */
+.contact-operational {
+    padding: 0 0 70px 0;
     background: var(--white);
 }
 
-.section-header {
+.contact-persons {
+    background: linear-gradient(135deg, var(--light-bg) 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.contact-persons h3 {
+    color: var(--dark);
+    margin-bottom: 25px;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.6rem;
     text-align: center;
-    margin-bottom: 50px;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    color: var(--dark-color);
-    margin-bottom: 15px;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: var(--gray-color);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.team-grid {
+.contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
 }
 
-.team-contact-card {
+.contact-card {
     background: var(--white);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-sm);
+    padding: 22px;
+    border-radius: 14px;
     text-align: center;
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    border-left: 3px solid var(--red);
 }
 
-.team-contact-card:hover {
-    transform: translateY(-5px);
+.contact-card:hover {
+    transform: translateY(-3px);
     box-shadow: var(--shadow-md);
 }
 
-.team-avatar {
-    width: 100px;
-    height: 100px;
-    background: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    margin: 0 auto 20px;
+.contact-card i:first-child {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 12px;
 }
 
-.team-contact-card h4 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    color: var(--dark-color);
-}
-
-.team-role {
-    color: var(--primary-color);
+.contact-card .contact-title {
+    color: var(--red);
     font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
 }
 
-.team-email, .team-phone {
-    display: block;
-    color: var(--gray-color);
-    text-decoration: none;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    transition: var(--transition);
+.contact-card p {
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: 0.9rem;
 }
 
-.team-email:hover, .team-phone:hover {
-    color: var(--primary-color);
+.contact-card i.fa-envelope,
+.contact-card i.fa-phone {
+    font-size: 0.85rem;
+    margin-right: 6px;
+    color: var(--blue);
 }
 
-.team-email i, .team-phone i {
+.office-location {
+    text-align: center;
+    padding: 16px;
+    background: rgba(83, 73, 214, 0.08);
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.office-location i {
+    color: var(--red);
     margin-right: 8px;
-    width: 16px;
 }
+
+
+
 
 /* ==================================================== */
 /* Contact Form */
