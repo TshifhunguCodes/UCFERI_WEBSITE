@@ -642,7 +642,7 @@ h1, h2, h3, h4 {
     margin: 0 0 15px;
     padding: 14px;
     background: linear-gradient(145deg, #eef4fa, #dce8f4);
-    border: 2px dashed rgba(28, 74, 122, 0.28);
+    border: 2px ;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
