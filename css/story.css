@@ -250,7 +250,7 @@ p { margin-bottom: 1rem; }
     position: absolute;
     top: 20px;
     left: 20px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-red);
     color: var(--white);
     padding: 8px 16px;
     border-radius: 20px;

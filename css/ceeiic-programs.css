@@ -339,10 +339,10 @@ h1, h2, h3, h4 {
 }
 
 .program-description-full h4 {
-    color: var(--accent-color);
+    color: var(--primary-red);
     margin: 15px 0 8px;
     font-size: 1rem;
-    border-bottom: 1px solid var(--light-color);
+    border-bottom: 1px solid var(--primary-color);
     padding-bottom: 5px;
 }
 
@@ -458,7 +458,7 @@ h1, h2, h3, h4 {
 .outcomes-card li i {
     position: absolute;
     left: 0;
-    color: var(--accent-color);
+    color: var(--primary-red);
     width: 20px;
 }
 
@@ -474,7 +474,7 @@ h1, h2, h3, h4 {
 /* ======================================================== */
 .sustainability-section {
     padding: 60px 0;
-    background: var(--primary-color);
+    background: var(--primary-blue);
     color: var(--white);
     text-align: center;
 }
