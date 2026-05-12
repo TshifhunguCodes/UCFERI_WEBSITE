@@ -3,28 +3,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Blog page initialized');
 
-    const featuredVideo = document.querySelector('.inline-featured-video');
-
-    if (featuredVideo) {
-        const primeFirstFrame = () => {
-            const duration = Number.isFinite(featuredVideo.duration) ? featuredVideo.duration : 0;
-            const targetTime = Math.min(0.1, Math.max(duration - 0.1, 0));
-
-            try {
-                if (targetTime > 0 && featuredVideo.currentTime < targetTime) {
-                    featuredVideo.currentTime = targetTime;
-                }
-            } catch (error) {
-                console.log('Featured frame unavailable:', error);
-            }
-        };
-
-        featuredVideo.addEventListener('loadedmetadata', primeFirstFrame, { once: true });
-        featuredVideo.addEventListener('error', function() {
-            showNotification('Featured interview video could not be loaded. Please check the file path.', 'error');
-        });
-    }
-
     // Video Modal Elements (ONLY for featured Dr. Mlu Ganto video)
     const modal = document.getElementById('videoModal');
     const modalVideo = document.getElementById('modalVideo');
@@ -62,22 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 closeVideoModal();
-            }
-        });
-    }
-
-    // ONLY Featured Video Triggers (Dr. Mlu Ganto)
-    const featuredWatchButton = document.querySelector('.featured-content .btn-primary.watch-video-btn');
-
-    if (featuredWatchButton) {
-        featuredWatchButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            const videoSrc = this.getAttribute('data-video-src');
-            const videoTitle = this.getAttribute('data-video-title');
-            if (videoSrc) {
-                openVideoModal(videoSrc, videoTitle);
-            } else {
-                showNotification('Video coming soon!', 'info');
             }
         });
     }
