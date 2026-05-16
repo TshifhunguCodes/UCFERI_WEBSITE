@@ -1,6 +1,6 @@
 :root {
     --primary-color: #03224d;
-        
+    
     --secondary-color: #AB392C;
     --accent-color: #AB392C;
     --accent-color-rgb: 230, 126, 34;
@@ -22,13 +22,6 @@
     --brand-blue-soft: #EEF4FF;
 }
 
-/* Reset & Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -38,12 +31,6 @@ body {
     color: var(--dark-color);
     line-height: 1.6;
     overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* Typography */
