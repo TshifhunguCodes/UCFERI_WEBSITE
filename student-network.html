@@ -99,18 +99,29 @@
                     <a href="story.html"><i class="fas fa-trophy"></i> Success Story</a>
                 </div>
             </li>
-
-            <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li class="header-utilities">
+                    <!-- Search Toggle -->
+                    <button type="button" class="header-utility-btn" id="search-toggle" aria-label="Toggle search" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <!-- CTA Button -->
+                    <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Contact Us</a>
+                </li>
         </ul>
 
-        <!-- Mobile Hamburger Button (RIGHT side) -->
-        <button type="button" class="header-modern__menu-btn" id="mobile-menu-button" aria-controls="mobile-menu"
-            aria-expanded="false" aria-label="Open main menu">
-            <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
+        <!-- Mobile: Search + Hamburger (visible on mobile only) -->
+        <div class="header-mobile-actions">
+            <button type="button" class="header-mobile-search" id="mobile-search-toggle" aria-label="Toggle search" title="Search">
+                <i class="fas fa-search"></i>
+            </button>
+            <button type="button" class="header-modern__menu-btn" id="mobile-menu-button" aria-controls="mobile-menu"
+                aria-expanded="false" aria-label="Open main menu">
+                <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
     </nav>
 
     <!-- Mobile Menu Panel -->
@@ -179,7 +190,7 @@
                 </div>
             </div>
 
-            <a href="contact.html" class="mobile-nav-item mobile-contact-item">Contact Us &rarr;</a>
+            <a href="contact.html" class="mobile-nav-item mobile-contact-item">Contact Us</a>
 
         </div>
     </div>
@@ -570,15 +581,18 @@
             <div class="strategic-grid">
                 <div class="strategic-card">
                     <h3>Institutional</h3>
-                    <ul><li>Strengthens student-centeredness</li><li>Advances research & innovation</li><li>Supports people & environment</li><li>Enhances internationalization</li></ul>
+                    <ul><li>Strengthens student-centeredness</li><li>Advances research & innovation</li><li>Supports people & environment</li><li>Enhances internationalization</li>
+        </ul>
                 </div>
                 <div class="strategic-card">
                     <h3>Directorate</h3>
-                    <ul><li>Reduces duplication & silos</li><li>Centralises reporting</li><li>Improves succession planning</li><li>Strengthens institutional memory</li></ul>
+                    <ul><li>Reduces duplication & silos</li><li>Centralises reporting</li><li>Improves succession planning</li><li>Strengthens institutional memory</li>
+        </ul>
                 </div>
                 <div class="strategic-card">
                     <h3>Student</h3>
-                    <ul><li>Access to diverse opportunities</li><li>Leadership development</li><li>Peer learning & mentorship</li><li>Increased employability</li></ul>
+                    <ul><li>Access to diverse opportunities</li><li>Leadership development</li><li>Peer learning & mentorship</li><li>Increased employability</li>
+        </ul>
                 </div>
             </div>
         </div>
@@ -591,7 +605,8 @@
                 <h2 class="section-title">Target <span class="title-highlight">Beneficiaries</span></h2>
                 <p>Undergraduate and postgraduate students across all faculties, including student representatives (SRC).</p>
                 <h3>Program Attributes:</h3>
-                <ul><li>Research-based learning & problem-solving</li><li>Diversity & equitable access</li><li>Community development & social impact</li><li>Practical & leadership skills</li><li>Enterprise development & innovation</li></ul>
+                <ul><li>Research-based learning & problem-solving</li><li>Diversity & equitable access</li><li>Community development & social impact</li><li>Practical & leadership skills</li><li>Enterprise development & innovation</li>
+        </ul>
             </div>
         </div>
     </section>
@@ -606,7 +621,8 @@
                     <p>Undergraduate and postgraduate students across all faculties. Participate in any programme of your choice.</p>
                     <div class="benefits-box">
                         <h4>Recruitment Process:</h4>
-                        <ul><li>Programs incepted within the directorate</li><li>Alignment with shared values</li><li>Submit program overview for assessment</li><li>No political programs or parties</li><li>Active participation = recognition</li></ul>
+                        <ul><li>Programs incepted within the directorate</li><li>Alignment with shared values</li><li>Submit program overview for assessment</li><li>No political programs or parties</li><li>Active participation = recognition</li>
+        </ul>
                     </div>
                     <a href="ceeiic-programs.html#open-applications" class="btn btn-primary btn-large">Find a programme <i class="fas fa-arrow-right"></i></a>
                 </div>
@@ -710,7 +726,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="programs.html">Programs</a></li>
                         <li><a href="events.html">Events</a></li>
-                    </ul>
+        </ul>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Info</h4>

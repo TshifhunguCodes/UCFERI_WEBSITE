@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initPartnersCarousel();
     initSmoothScrolling();
     initPopupHandlers();
+    initSearchOverlay();
     initAnnouncementBar();
 });
 
@@ -495,6 +496,129 @@ function initSmoothScrolling() {
                 }
             }
         });
+    });
+}
+
+// =============================================
+// SEARCH OVERLAY
+// =============================================
+
+function initSearchOverlay() {
+    const searchToggle = document.getElementById('search-toggle');
+    const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    if ((!searchToggle && !mobileSearchToggle) || !searchOverlay) return;
+
+    // Site pages index for search
+    const sitePages = [
+        { title: 'Home', url: 'index.html', icon: 'fas fa-home' },
+        { title: 'About UCfERI', url: 'about.html#ucferi', icon: 'fas fa-bullseye' },
+        { title: 'Mission & Vision', url: 'about.html#mission&vision', icon: 'fas fa-low-vision' },
+        { title: 'History', url: 'about.html#history', icon: 'fas fa-history' },
+        { title: 'Leadership Team', url: 'about.html#leadership', icon: 'fas fa-timeline' },
+        { title: 'Advisory Board', url: 'about.html#advisory', icon: 'fas fa-users' },
+        { title: 'Services Snapshot', url: 'about.html#services', icon: 'fas fa-cogs' },
+        { title: 'Abbreviations', url: 'about.html#abbreviations', icon: 'fas fa-book' },
+        { title: 'Programs', url: 'programs.html', icon: 'fas fa-graduation-cap' },
+        { title: 'Business Incubation', url: 'incubation.html', icon: 'fas fa-rocket' },
+        { title: 'CEEIIC Student Network', url: 'student-network.html', icon: 'fas fa-users' },
+        { title: 'CEEIIC Programs', url: 'ceeiic-programs.html', icon: 'fas fa-gift' },
+        { title: 'SWEEP', url: 'sweep.html', icon: 'fas fa-file-alt' },
+        { title: 'Training Programs', url: 'programs.html#training', icon: 'fas fa-chalkboard-teacher' },
+        { title: 'Events', url: 'events.html', icon: 'fas fa-calendar-alt' },
+        { title: 'Media - Blog', url: 'blog.html', icon: 'fas fa-blog' },
+        { title: 'Media - News', url: 'news.html', icon: 'fas fa-newspaper' },
+        { title: 'Media - Resources', url: 'resources.html', icon: 'fas fa-book' },
+        { title: 'Media - Success Stories', url: 'story.html', icon: 'fas fa-trophy' },
+        { title: 'Contact', url: 'contact.html', icon: 'fas fa-envelope' },
+        { title: 'Privacy Policy', url: 'policy.html', icon: 'fas fa-shield-alt' },
+        { title: 'Terms of Service', url: 'terms.html', icon: 'fas fa-file-contract' },
+        { title: 'Accessibility', url: 'accessibility.html', icon: 'fas fa-universal-access' }
+    ];
+
+    function openSearch() {
+        searchOverlay.classList.add('active');
+        searchOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function() { searchInput.focus(); }, 100);
+    }
+
+    function closeSearch() {
+        searchOverlay.classList.remove('active');
+        searchOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        searchInput.value = '';
+        searchResults.classList.remove('active');
+        searchResults.innerHTML = '';
+    }
+
+    function performSearch(query) {
+        var q = query.toLowerCase().trim();
+        if (!q) {
+            searchResults.classList.remove('active');
+            searchResults.innerHTML = '';
+            return;
+        }
+
+        var matches = sitePages.filter(function(page) {
+            return page.title.toLowerCase().indexOf(q) !== -1;
+        });
+
+        if (matches.length === 0) {
+            searchResults.innerHTML = '<div class="search-overlay__no-results">No results found for "' + query + '"</div>';
+            searchResults.classList.add('active');
+            return;
+        }
+
+        var html = '';
+        matches.forEach(function(page) {
+            html += '<a href="' + page.url + '" class="search-overlay__result-item" tabindex="0">' +
+                    '<i class="' + page.icon + '"></i>' +
+                    '<span>' + page.title + '</span>' +
+                    '</a>';
+        });
+        searchResults.innerHTML = html;
+        searchResults.classList.add('active');
+    }
+
+    // Event listeners
+    if (searchToggle) searchToggle.addEventListener('click', openSearch);
+    if (mobileSearchToggle) mobileSearchToggle.addEventListener('click', openSearch);
+
+    if (searchClose) {
+        searchClose.addEventListener('click', closeSearch);
+    }
+
+    searchInput.addEventListener('input', function() {
+        performSearch(this.value);
+    });
+
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSearch();
+        if (e.key === 'Enter') {
+            var firstResult = searchResults.querySelector('.search-overlay__result-item');
+            if (firstResult) window.location.href = firstResult.getAttribute('href');
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+            closeSearch();
+        }
+        // Ctrl+K / Cmd+K to open search
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            openSearch();
+        }
+    });
+
+    // Close on overlay click (but not on inner clicks)
+    searchOverlay.addEventListener('click', function(e) {
+        if (e.target === searchOverlay) closeSearch();
     });
 }
 

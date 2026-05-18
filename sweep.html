@@ -129,18 +129,29 @@
                     <a href="story.html"><i class="fas fa-trophy"></i> Success Story</a>
                 </div>
             </li>
-
-            <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li class="header-utilities">
+                    <!-- Search Toggle -->
+                    <button type="button" class="header-utility-btn" id="search-toggle" aria-label="Toggle search" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <!-- CTA Button -->
+                    <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Contact Us</a>
+                </li>
         </ul>
 
-        <!-- Mobile Hamburger Button (RIGHT side) -->
-        <button type="button" class="header-modern__menu-btn" id="mobile-menu-button" aria-controls="mobile-menu"
-            aria-expanded="false" aria-label="Open main menu">
-            <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
+        <!-- Mobile: Search + Hamburger (visible on mobile only) -->
+        <div class="header-mobile-actions">
+            <button type="button" class="header-mobile-search" id="mobile-search-toggle" aria-label="Toggle search" title="Search">
+                <i class="fas fa-search"></i>
+            </button>
+            <button type="button" class="header-modern__menu-btn" id="mobile-menu-button" aria-controls="mobile-menu"
+                aria-expanded="false" aria-label="Open main menu">
+                <svg class="header-modern__menu-icon" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
     </nav>
 
     <!-- Mobile Menu Panel -->
@@ -209,7 +220,7 @@
                 </div>
             </div>
 
-            <a href="contact.html" class="mobile-nav-item mobile-contact-item">Contact Us &rarr;</a>
+            <a href="contact.html" class="mobile-nav-item mobile-contact-item">Contact Us</a>
 
         </div>
     </div>
@@ -283,7 +294,7 @@
                                 the System</li>
                             <li><i class="fas fa-check"></i> Focus on sustainable development and community engagement
                             </li>
-                        </ul>
+        </ul>
                     </div>
                 </div>
 
@@ -475,7 +486,7 @@
                             <li><strong>Motivational letter</strong> explaining: why SWEEP, preferred position, skills,
                                 vision</li>
                             <li><strong>Academic transcript</strong> (unofficial copy acceptable)</li>
-                        </ul>
+        </ul>
                     </div>
                 </div>
                 <div class="instruction-step">
@@ -671,7 +682,7 @@
                         <li><a href="programs.html">Programs</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="events.html">Events</a></li>
-                    </ul>
+        </ul>
                 </div>
 
                 <div class="footer-col">
