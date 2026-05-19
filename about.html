@@ -78,7 +78,7 @@
                 <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-down"></i></a>
                 <div class="dropdown-content">
                     <a href="about.html#ucferi"><i class="fas fa-bullseye"></i>About UCfERI</a>
-                    <a href="about.html#mission&vision"><i class="fas fa-bullseye"></i>Our Mission & Vision</a>
+                    <a href="about.html#mission-vision"><i class="fas fa-bullseye"></i>Our Mission & Vision</a>
                     <a href="about.html#history"><i class="fas fa-history"></i> Timeline</a>
                     <a href="about.html#leadership"><i class="fas fa-timeline"></i> Leadership Team</a>
                     <a href="about.html#advisory"><i class="fas fa-users"></i> Advisory Board</a>
@@ -166,7 +166,7 @@
                 </button>
                 <div class="mobile-dropdown-content">
                     <a href="about.html#ucferi" class="mobile-sub-item"><i class="fas fa-bullseye"></i> About UCfERI</a>
-                    <a href="about.html#mission&vision" class="mobile-sub-item"><i class="fas fa-bullseye"></i> Our Mission & Vision</a>
+                    <a href="about.html#mission-vision" class="mobile-sub-item"><i class="fas fa-bullseye"></i> Our Mission & Vision</a>
                     <a href="about.html#history" class="mobile-sub-item"><i class="fas fa-history"></i> History</a>
                     <a href="about.html#leadership" class="mobile-sub-item"><i class="fas fa-timeline"></i> Leadership Team</a>
                     <a href="about.html#advisory" class="mobile-sub-item"><i class="fas fa-users"></i> Advisory Board</a>
@@ -215,6 +215,22 @@
 
     <!-- Backdrop overlay -->
     <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+        <!-- ================================================== -->
+        <!-- Search Overlay -->
+        <!--================================================== -->
+        <div class="search-overlay" id="search-overlay" aria-hidden="true">
+            <div class="search-overlay__inner">
+                <button type="button" class="search-overlay__close" id="search-close" aria-label="Close search">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="search-overlay__form">
+                    <i class="fas fa-search search-overlay__icon"></i>
+                    <input type="search" class="search-overlay__input" id="search-input" placeholder="Search the site..." aria-label="Search the site" autocomplete="off">
+                </div>
+                <div class="search-overlay__results" id="search-results"></div>
+            </div>
+        </div>
 
 </section>
 
@@ -589,7 +605,7 @@
                     type="text"
                     id="abbrSearch"
                     class="abbr-search"
-                    placeholder="Search abbreviations…"
+                    placeholder="Search abbreviationsâ€¦"
                     aria-label="Search abbreviations"
                 />
             </div>
@@ -759,9 +775,9 @@
                 <p class="abbreviation-meaning">Startup Founder Pitch</p>
             </article>
 
-            <article class="abbreviation-card " data-code="SWEEP" data-meaning="SWEEP — definition to be added">
+            <article class="abbreviation-card " data-code="SWEEP" data-meaning="SWEEP â€” definition to be added">
                 <span class="abbreviation-code">SWEEP</span>
-                <p class="abbreviation-meaning">SWEEP — definition to be added</p>
+                <p class="abbreviation-meaning">SWEEP â€” definition to be added</p>
             </article>
 
             <article class="abbreviation-card " data-code="YAEI" data-meaning="Youth Agri-Entrepreneurship Initiative">
