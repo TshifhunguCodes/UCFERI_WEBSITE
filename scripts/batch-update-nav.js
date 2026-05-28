@@ -4,8 +4,9 @@ const path = require('path');
 const rootDir = path.resolve(__dirname, '..');
 const files = fs.readdirSync(rootDir).filter(file => file.endsWith('.html'));
 
-// The OLD desktop nested-dropdown-content block to replace
-const oldDesktopRegex = /<div class="nested-dropdown-content">\s*<a href="student-network\.html"><i class="fas fa-eye"><\/i> CEEIIC Overview<\/a>\s*<a href="ceeiic-programs\.html"><i class="fas fa-gift"><\/i> CEEIIC Programs<\/a>\s*<a href="sweep\.html"><i class="fas fa-file-alt"><\/i> SWEEP<\/a>\s*<\/div>/g;
+// The OLD desktop nested-dropdown-content block to replace.
+// Use flexible whitespace matching so the updater still works when HTML indentation or line breaks vary.
+const oldDesktopRegex = /<div class="nested-dropdown-content">[\s\S]*?<a href="student-network\.html"><i class="fas fa-eye"><\/i> CEEIIC Overview<\/a>[\s\S]*?<a href="ceeiic-programs\.html"><i class="fas fa-gift"><\/i> CEEIIC Programs<\/a>[\s\S]*?<a href="sweep\.html"><i class="fas fa-file-alt"><\/i> SWEEP<\/a>[\s\S]*?<\/div>/g;
 
 // The NEW desktop nested-dropdown-content block
 const newDesktopBlock = `<div class="nested-dropdown-content">
@@ -30,10 +31,10 @@ const newDesktopBlock = `<div class="nested-dropdown-content">
                         </div>`;
 
 const mobileOverviewInsert = `<a href="student-network.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-eye"></i> Overview Home</a>\n`;
-const mobileOverviewPattern = /(<a href="student-network\.html#about" class="mobile-sub-item mobile-deep-item"><i class="fas fa-info-circle"><\/i> About<\/a>)/g;
+const mobileOverviewPattern = /(<a href="student-network\.html#about"[^>]*><i class="fas fa-info-circle"><\/i>\s*About<\/a>)/g;
 const mobileOverviewHomeRegex = /<a href="student-network\.html" class="mobile-sub-item mobile-deep-item"[\s\S]*?>[\s\S]*?Overview Home[\s\S]*?<\/a>/;
 
-const oldMobileNestedBlockRegex = /<div class="mobile-dropdown mobile-nested">[\s\S]*?<button[\s\S]*?CEEIIC Student Network[\s\S]*?<\/button>\s*<div class="mobile-dropdown-content">[\s\S]*?<\/div>\s*<\/div>/g;
+const oldMobileNestedBlockRegex = /<div class="mobile-dropdown mobile-nested">[\s\S]*?<button[^>]*>[\s\S]*?CEEIIC Student Network[\s\S]*?<\/button>[\s\S]*?<div class="mobile-dropdown-content">[\s\S]*?<\/div>\s*<\/div>/g;
 const newMobileOverviewBlock = `<div class="mobile-dropdown-content">
                                     <a href="student-network.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-eye"></i> Overview Home</a>
                                     <a href="student-network.html#about" class="mobile-sub-item mobile-deep-item"><i class="fas fa-info-circle"></i> About</a>
