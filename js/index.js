@@ -1,5 +1,16 @@
 
 
+// =============================================
+// CEEIIC Overview Toggle - Click to show/hide sections
+// =============================================
+function toggleCeeiicSections(button) {
+    const sections = button.nextElementSibling;
+    if (sections && sections.classList.contains('nested-dropdown-inline-sections')) {
+        sections.classList.toggle('show');
+        button.classList.toggle('active');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded - initializing all components');
     

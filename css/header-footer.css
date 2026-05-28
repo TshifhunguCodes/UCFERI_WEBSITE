@@ -476,6 +476,75 @@ body {
     transform: translateX(0);
 }
 
+/* CEEIIC Overview Inline Sections - hidden by default, shown on click */
+.nested-dropdown-inline-sections {
+    padding-left: 0;
+    display: none;
+    background: #eef4ff;
+    border-radius: 0 0 8px 8px;
+    margin: 0 6px 4px 6px;
+    overflow: hidden;
+}
+
+.nested-dropdown-inline-sections.show {
+    display: block;
+}
+
+.nested-dropdown-inline-sections a {
+    padding-left: 2.8rem;
+    font-size: 0.85rem;
+    border-left: 2px solid transparent;
+    padding: 0.6rem 0.8rem 0.6rem 2.8rem;
+    color: #1e40af;
+}
+
+.nested-dropdown-inline-sections a:hover {
+    border-left-color: var(--brand-blue-strong);
+    background: #dbeafe;
+    color: var(--brand-blue-strong);
+}
+
+/* Toggle icon for CEEIIC Overview */
+.nested-dropdown-overview-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    gap: 0.5rem;
+    padding: 0.85rem 1.1rem !important;
+    color: #334155 !important;
+    text-decoration: none !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease;
+    background: transparent !important;
+    border: none;
+    font-family: inherit;
+    text-align: left;
+}
+
+.nested-dropdown-overview-toggle:hover {
+    background: var(--brand-blue-soft) !important;
+    color: var(--brand-blue-strong) !important;
+}
+
+.nested-dropdown-overview-toggle i:last-child {
+    font-size: 0.7rem;
+    margin-left: auto;
+    transition: transform 0.25s ease;
+    color: #64748b;
+}
+
+.nested-dropdown-overview-toggle.active i:last-child {
+    transform: rotate(90deg);
+}
+
+/* Blue background for nested dropdown */
+.nested-dropdown-content {
+    background: #f0f4ff;
+}
+
 /* Desktop - Hide Mobile Elements */
 @media (min-width: 768px) {
     .header-modern__mobile-menu,

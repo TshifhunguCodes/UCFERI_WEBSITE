@@ -100,8 +100,23 @@
                             <i class="fas fa-users"></i> CEEIIC Student Network
                             <i class="fas fa-chevron-right"></i>
                         </a>
-                        <div class="nested-dropdown-content">
-                            <a href="student-network.html"><i class="fas fa-eye"></i> CEEIIC Overview</a>
+                <div class="nested-dropdown-content">
+                            <button class="nested-dropdown-overview-toggle" onclick="toggleCeeiicSections(this)">
+                                <span><i class="fas fa-eye"></i> CEEIIC Overview</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="nested-dropdown-inline-sections">
+                                <a href="student-network.html#about"><i class="fas fa-info-circle"></i> About</a>
+                                <a href="student-network.html#vision-mission"><i class="fas fa-low-vision"></i> Vision & Mission</a>
+                                <a href="student-network.html#values"><i class="fas fa-heart"></i> Core Principles</a>
+                                <a href="student-network.html#programs"><i class="fas fa-graduation-cap"></i> Programmes</a>
+                                <a href="student-network.html#stakeholders"><i class="fas fa-handshake"></i> Stakeholders</a>
+                                <a href="student-network.html#strategic-impact"><i class="fas fa-chart-line"></i> Strategic Impact</a>
+                                <a href="student-network.html#target-beneficiaries"><i class="fas fa-users"></i> Beneficiaries</a>
+                                <a href="student-network.html#recruitment"><i class="fas fa-user-plus"></i> Recruitment</a>
+                                <a href="student-network.html#activities"><i class="fas fa-tasks"></i> Activities</a>
+                                <a href="student-network.html#governance"><i class="fas fa-balance-scale"></i> Governance</a>
+                            </div>
                             <a href="ceeiic-programs.html"><i class="fas fa-gift"></i> CEEIIC Programs</a>
                             <a href="sweep.html"><i class="fas fa-file-alt"></i> SWEEP</a>
                         </div>
@@ -189,11 +204,21 @@
                             <i class="fas fa-users"></i> CEEIIC Student Network <i class="fas fa-chevron-down mobile-arrow"></i>
                         </button>
                         <div class="mobile-dropdown-content">
-                            <a href="student-network.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-eye"></i> CEEIIC Overview</a>
-                            <a href="ceeiic-programs.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-gift"></i> CEEIIC Programs</a>
-                            <a href="sweep.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-file-alt"></i> SWEEP</a>
-                        </div>
-                    </div>
+                                    <a href="student-network.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-eye"></i> Overview Home</a>
+                                    <a href="student-network.html#about" class="mobile-sub-item mobile-deep-item"><i class="fas fa-info-circle"></i> About</a>
+                                    <a href="student-network.html#vision-mission" class="mobile-sub-item mobile-deep-item"><i class="fas fa-low-vision"></i> Vision & Mission</a>
+                                    <a href="student-network.html#values" class="mobile-sub-item mobile-deep-item"><i class="fas fa-heart"></i> Core Principles</a>
+                                    <a href="student-network.html#programs" class="mobile-sub-item mobile-deep-item"><i class="fas fa-graduation-cap"></i> Programmes</a>
+                                    <a href="student-network.html#stakeholders" class="mobile-sub-item mobile-deep-item"><i class="fas fa-handshake"></i> Stakeholders</a>
+                                    <a href="student-network.html#strategic-impact" class="mobile-sub-item mobile-deep-item"><i class="fas fa-chart-line"></i> Strategic Impact</a>
+                                    <a href="student-network.html#target-beneficiaries" class="mobile-sub-item mobile-deep-item"><i class="fas fa-users"></i> Beneficiaries</a>
+                                    <a href="student-network.html#recruitment" class="mobile-sub-item mobile-deep-item"><i class="fas fa-user-plus"></i> Recruitment</a>
+                                    <a href="student-network.html#activities" class="mobile-sub-item mobile-deep-item"><i class="fas fa-tasks"></i> Activities</a>
+                                    <a href="student-network.html#governance" class="mobile-sub-item mobile-deep-item"><i class="fas fa-balance-scale"></i> Governance</a>
+                                    <a href="ceeiic-programs.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-gift"></i> CEEIIC Programs</a>
+                                    <a href="sweep.html" class="mobile-sub-item mobile-deep-item"><i class="fas fa-file-alt"></i> SWEEP</a>
+                                </div>
+                            </div>
                     <a href="programs.html#training" class="mobile-sub-item"><i class="fas fa-chalkboard-teacher"></i> Training Programs</a>
                 </div>
             </div>
@@ -259,81 +284,70 @@
    </section>
  
      <!-- ==================================================== -->
-     <!-- Quick Connect Cards - NEW -->
+     <!-- Quick Connect - Consolidated -->
      <!-- ==================================================== -->
      <section class="quick-connect">
         <div class="container">
-         <div class="connect-grid">
-            <div class="connect-card">
-                <div class="connect-icon">
-                    <i class="fas fa-phone-alt"></i>
+            <div class="connect-card-single">
+                <div class="connect-card-header">
+                    <h2>Quick Connect</h2>
+                    <p>Reach us directly through any of the channels below</p>
                 </div>
-                <h3>Call Us Directly</h3>
-                <p class="connect-main">+27 15 962 8829</p>
-                <p class="connect-alt">Mobile: +27 82 586 8078</p>
-                <a href="tel:+27159628829" class="connect-action">
-                    <i class="fas fa-phone"></i> Call Now
-                </a>
-                
+                <div class="connect-items">
+                    <div class="connect-item">
+                        <div class="connect-item-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="connect-item-details">
+                            <span class="connect-item-label">Call Us</span>
+                            <span class="connect-item-value">+27 15 962 8829</span>
+                            <span class="connect-item-sub">Mobile: +27 82 586 8078</span>
+                        </div>
+                        <a href="tel:+27159628829" class="connect-item-action">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="connect-item-details">
+                            <span class="connect-item-label">Email Us</span>
+                            <span class="connect-item-value">cferi@univen.ac.za</span>
+                            <span class="connect-item-sub">We respond within 48 hours</span>
+                        </div>
+                        <a href="mailto:cferi@univen.ac.za" class="connect-item-action">
+                            <i class="fas fa-envelope"></i> Send Email
+                        </a>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="connect-item-details">
+                            <span class="connect-item-label">WhatsApp</span>
+                            <span class="connect-item-value">060 687 7662</span>
+                            <span class="connect-item-sub">Quick responses on WhatsApp</span>
+                        </div>
+                        <a href="https://wa.me/27825868078" target="_blank" class="connect-item-action">
+                            <i class="fab fa-whatsapp"></i> Message Us
+                        </a>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="connect-item-details">
+                            <span class="connect-item-label">Book a Meeting</span>
+                            <span class="connect-item-value">Schedule a consultation</span>
+                            <span class="connect-item-sub">In-person or virtual options available</span>
+                        </div>
+                        <a href="#contact-form" class="connect-item-action">
+                            <i class="fas fa-calendar-alt"></i> Book Now
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="connect-card">
-                <div class="connect-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3>Email Our Team</h3>
-                <p class="connect-main">cferi@univen.ac.za</p>
-                <p class="connect-alt">Response within 48 hours</p>
-                <a href="mailto:cferi@univen.ac.za" class="connect-action">
-                    <i class="fas fa-envelope"></i> Send Email
-                </a>
-              
-                
-            </div>
-            
-            <div class="connect-card">
-                <div class="connect-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <h3>WhatsApp Support</h3>
-                <p class="connect-main">060 687 7662</p>
-                <p class="connect-alt">Quick responses on WhatsApp</p>
-                <a href="https://wa.me/27825868078" target="_blank" class="connect-action">
-                    <i class="fab fa-whatsapp"></i> Message Us
-                </a>
-               
-                <div class="connect-social">
-                    <a href="https://www.facebook.com/profile.php?id=61559043681399" class="connect-social-link facebook" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/univen.cferi/" class="connect-social-link instagram" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/univencferi/posts/?feedView=all" class="connect-social-link linkedin" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@UCfERIPressClub" class="connect-social-link youtube" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@univen.cferi" class="connect-social-link tiktok" aria-label="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="connect-card">
-                <div class="connect-icon">
-                    <i class="fas fa-calendar-check"></i>
-                </div>
-                <h3>Book a Meeting</h3>
-                <p class="connect-main">Schedule a consultation</p>
-                <p class="connect-alt">In-person or virtual options</p>
-                <a href="#contact-form" class="connect-action">
-                    <i class="fas fa-calendar-alt"></i> Book Now
-                </a>
-            
-            </div>
-           </div>
         </div>
    </section>
 
@@ -416,7 +430,7 @@
                     <div class="contact-card">
                         <i class="fas fa-user-circle"></i>
                         <p><strong>Dr. Mlungiseleli Ganto</strong></p>
-                        <p class="contact-title">Acting Centre Manager</p>
+                        <p class="contact-title">Centre Manager</p>
                         <p><i class="fas fa-envelope"></i> mlungiseleli.ganto@univen.ac.za</p>
                         <p><i class="fas fa-phone"></i> 015-962-9056</p>
                     </div>
